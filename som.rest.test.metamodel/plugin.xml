@@ -10,7 +10,7 @@
       <!-- @generated TestSuite -->
       <package
             uri="http://example.com/rest/test"
-            class="test.TestPackage"
+            class="edu.uoc.som.rest.test.TestPackage"
             genModel="model/TestSuite.genmodel"/>
    </extension>
 
