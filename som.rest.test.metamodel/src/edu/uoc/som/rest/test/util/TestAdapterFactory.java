@@ -76,8 +76,8 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 				return createTestCaseAdapter();
 			}
 			@Override
-			public Adapter caseTest(Test object) {
-				return createTestAdapter();
+			public Adapter caseTestStep(TestStep object) {
+				return createTestStepAdapter();
 			}
 			@Override
 			public Adapter caseRequest(Request object) {
@@ -92,8 +92,8 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 				return createParameterAdapter();
 			}
 			@Override
-			public Adapter caseHeaderField(HeaderField object) {
-				return createHeaderFieldAdapter();
+			public Adapter caseHeader(Header object) {
+				return createHeaderAdapter();
 			}
 			@Override
 			public Adapter caseAssertion(Assertion object) {
@@ -168,6 +168,18 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 				return createOAuth2Adapter();
 			}
 			@Override
+			public Adapter caseBody(Body object) {
+				return createBodyAdapter();
+			}
+			@Override
+			public Adapter casePropertyTransfer(PropertyTransfer object) {
+				return createPropertyTransferAdapter();
+			}
+			@Override
+			public Adapter caseProperty(Property object) {
+				return createPropertyAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -216,16 +228,16 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link edu.uoc.som.rest.test.Test <em>Test</em>}'.
+	 * Creates a new adapter for an object of class '{@link edu.uoc.som.rest.test.TestStep <em>Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see edu.uoc.som.rest.test.Test
+	 * @see edu.uoc.som.rest.test.TestStep
 	 * @generated
 	 */
-	public Adapter createTestAdapter() {
+	public Adapter createTestStepAdapter() {
 		return null;
 	}
 
@@ -272,16 +284,16 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link edu.uoc.som.rest.test.HeaderField <em>Header Field</em>}'.
+	 * Creates a new adapter for an object of class '{@link edu.uoc.som.rest.test.Header <em>Header</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see edu.uoc.som.rest.test.HeaderField
+	 * @see edu.uoc.som.rest.test.Header
 	 * @generated
 	 */
-	public Adapter createHeaderFieldAdapter() {
+	public Adapter createHeaderAdapter() {
 		return null;
 	}
 
@@ -534,6 +546,48 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOAuth2Adapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.uoc.som.rest.test.Body <em>Body</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.uoc.som.rest.test.Body
+	 * @generated
+	 */
+	public Adapter createBodyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.uoc.som.rest.test.PropertyTransfer <em>Property Transfer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.uoc.som.rest.test.PropertyTransfer
+	 * @generated
+	 */
+	public Adapter createPropertyTransferAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.uoc.som.rest.test.Property <em>Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.uoc.som.rest.test.Property
+	 * @generated
+	 */
+	public Adapter createPropertyAdapter() {
 		return null;
 	}
 

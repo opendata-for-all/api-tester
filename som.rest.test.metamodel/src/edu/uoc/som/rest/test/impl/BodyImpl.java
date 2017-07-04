@@ -2,8 +2,7 @@
  */
 package edu.uoc.som.rest.test.impl;
 
-import edu.uoc.som.rest.test.Parameter;
-import edu.uoc.som.rest.test.ParameterLocation;
+import edu.uoc.som.rest.test.Body;
 import edu.uoc.som.rest.test.TestPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -14,59 +13,38 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Parameter</b></em>'.
+ * An implementation of the model object '<em><b>Body</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link edu.uoc.som.rest.test.impl.ParameterImpl#getLocation <em>Location</em>}</li>
- *   <li>{@link edu.uoc.som.rest.test.impl.ParameterImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.uoc.som.rest.test.impl.ParameterImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link edu.uoc.som.rest.test.impl.BodyImpl#getMediaType <em>Media Type</em>}</li>
+ *   <li>{@link edu.uoc.som.rest.test.impl.BodyImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ParameterImpl extends PropertyImpl implements Parameter {
+public class BodyImpl extends PropertyImpl implements Body {
 	/**
-	 * The default value of the '{@link #getLocation() <em>Location</em>}' attribute.
+	 * The default value of the '{@link #getMediaType() <em>Media Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLocation()
+	 * @see #getMediaType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ParameterLocation LOCATION_EDEFAULT = ParameterLocation.UNDEFINED;
+	protected static final String MEDIA_TYPE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getLocation() <em>Location</em>}' attribute.
+	 * The cached value of the '{@link #getMediaType() <em>Media Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLocation()
+	 * @see #getMediaType()
 	 * @generated
 	 * @ordered
 	 */
-	protected ParameterLocation location = LOCATION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
+	protected String mediaType = MEDIA_TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -93,7 +71,7 @@ public class ParameterImpl extends PropertyImpl implements Parameter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ParameterImpl() {
+	protected BodyImpl() {
 		super();
 	}
 
@@ -104,7 +82,7 @@ public class ParameterImpl extends PropertyImpl implements Parameter {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TestPackage.Literals.PARAMETER;
+		return TestPackage.Literals.BODY;
 	}
 
 	/**
@@ -112,8 +90,8 @@ public class ParameterImpl extends PropertyImpl implements Parameter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ParameterLocation getLocation() {
-		return location;
+	public String getMediaType() {
+		return mediaType;
 	}
 
 	/**
@@ -121,32 +99,11 @@ public class ParameterImpl extends PropertyImpl implements Parameter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLocation(ParameterLocation newLocation) {
-		ParameterLocation oldLocation = location;
-		location = newLocation == null ? LOCATION_EDEFAULT : newLocation;
+	public void setMediaType(String newMediaType) {
+		String oldMediaType = mediaType;
+		mediaType = newMediaType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.PARAMETER__LOCATION, oldLocation, location));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.PARAMETER__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.BODY__MEDIA_TYPE, oldMediaType, mediaType));
 	}
 
 	/**
@@ -167,7 +124,7 @@ public class ParameterImpl extends PropertyImpl implements Parameter {
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.PARAMETER__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.BODY__VALUE, oldValue, value));
 	}
 
 	/**
@@ -178,11 +135,9 @@ public class ParameterImpl extends PropertyImpl implements Parameter {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TestPackage.PARAMETER__LOCATION:
-				return getLocation();
-			case TestPackage.PARAMETER__NAME:
-				return getName();
-			case TestPackage.PARAMETER__VALUE:
+			case TestPackage.BODY__MEDIA_TYPE:
+				return getMediaType();
+			case TestPackage.BODY__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -196,13 +151,10 @@ public class ParameterImpl extends PropertyImpl implements Parameter {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TestPackage.PARAMETER__LOCATION:
-				setLocation((ParameterLocation)newValue);
+			case TestPackage.BODY__MEDIA_TYPE:
+				setMediaType((String)newValue);
 				return;
-			case TestPackage.PARAMETER__NAME:
-				setName((String)newValue);
-				return;
-			case TestPackage.PARAMETER__VALUE:
+			case TestPackage.BODY__VALUE:
 				setValue((String)newValue);
 				return;
 		}
@@ -217,13 +169,10 @@ public class ParameterImpl extends PropertyImpl implements Parameter {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TestPackage.PARAMETER__LOCATION:
-				setLocation(LOCATION_EDEFAULT);
+			case TestPackage.BODY__MEDIA_TYPE:
+				setMediaType(MEDIA_TYPE_EDEFAULT);
 				return;
-			case TestPackage.PARAMETER__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case TestPackage.PARAMETER__VALUE:
+			case TestPackage.BODY__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -238,11 +187,9 @@ public class ParameterImpl extends PropertyImpl implements Parameter {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TestPackage.PARAMETER__LOCATION:
-				return location != LOCATION_EDEFAULT;
-			case TestPackage.PARAMETER__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case TestPackage.PARAMETER__VALUE:
+			case TestPackage.BODY__MEDIA_TYPE:
+				return MEDIA_TYPE_EDEFAULT == null ? mediaType != null : !MEDIA_TYPE_EDEFAULT.equals(mediaType);
+			case TestPackage.BODY__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
@@ -258,14 +205,12 @@ public class ParameterImpl extends PropertyImpl implements Parameter {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (location: ");
-		result.append(location);
-		result.append(", name: ");
-		result.append(name);
+		result.append(" (mediaType: ");
+		result.append(mediaType);
 		result.append(", value: ");
 		result.append(value);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ParameterImpl
+} //BodyImpl

@@ -2,7 +2,6 @@
  */
 package edu.uoc.som.rest.test;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Parameter extends EObject {
+public interface Parameter extends Property {
 	/**
 	 * Returns the value of the '<em><b>Location</b></em>' attribute.
 	 * The literals are from the enumeration {@link edu.uoc.som.rest.test.ParameterLocation}.

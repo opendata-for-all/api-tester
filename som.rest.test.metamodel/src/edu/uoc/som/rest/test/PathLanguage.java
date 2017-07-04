@@ -10,14 +10,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Parameter Location</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Path Language</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see edu.uoc.som.rest.test.TestPackage#getParameterLocation()
+ * @see edu.uoc.som.rest.test.TestPackage#getPathLanguage()
  * @model
  * @generated
  */
-public enum ParameterLocation implements Enumerator {
+public enum PathLanguage implements Enumerator {
 	/**
 	 * The '<em><b>Undefined</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -29,24 +29,24 @@ public enum ParameterLocation implements Enumerator {
 	UNDEFINED(0, "undefined", "undefined"),
 
 	/**
-	 * The '<em><b>Query</b></em>' literal object.
+	 * The '<em><b>XPath</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #QUERY_VALUE
+	 * @see #XPATH_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	QUERY(1, "query", "query"),
+	XPATH(1, "XPath", "xpath"),
 
 	/**
-	 * The '<em><b>Path</b></em>' literal object.
+	 * The '<em><b>JSON Path</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PATH_VALUE
+	 * @see #JSON_PATH_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	PATH(2, "path", "path");
+	JSON_PATH(2, "JSONPath", "jsonpath");
 
 	/**
 	 * The '<em><b>Undefined</b></em>' literal value.
@@ -64,67 +64,67 @@ public enum ParameterLocation implements Enumerator {
 	public static final int UNDEFINED_VALUE = 0;
 
 	/**
-	 * The '<em><b>Query</b></em>' literal value.
+	 * The '<em><b>XPath</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Query</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>XPath</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #QUERY
-	 * @model name="query"
+	 * @see #XPATH
+	 * @model name="XPath" literal="xpath"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int QUERY_VALUE = 1;
+	public static final int XPATH_VALUE = 1;
 
 	/**
-	 * The '<em><b>Path</b></em>' literal value.
+	 * The '<em><b>JSON Path</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Path</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>JSON Path</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #PATH
-	 * @model name="path"
+	 * @see #JSON_PATH
+	 * @model name="JSONPath" literal="jsonpath"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PATH_VALUE = 2;
+	public static final int JSON_PATH_VALUE = 2;
 
 	/**
-	 * An array of all the '<em><b>Parameter Location</b></em>' enumerators.
+	 * An array of all the '<em><b>Path Language</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ParameterLocation[] VALUES_ARRAY =
-		new ParameterLocation[] {
+	private static final PathLanguage[] VALUES_ARRAY =
+		new PathLanguage[] {
 			UNDEFINED,
-			QUERY,
-			PATH,
+			XPATH,
+			JSON_PATH,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Parameter Location</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Path Language</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<ParameterLocation> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<PathLanguage> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Parameter Location</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Path Language</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static ParameterLocation get(String literal) {
+	public static PathLanguage get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			ParameterLocation result = VALUES_ARRAY[i];
+			PathLanguage result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -133,16 +133,16 @@ public enum ParameterLocation implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Parameter Location</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Path Language</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static ParameterLocation getByName(String name) {
+	public static PathLanguage getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			ParameterLocation result = VALUES_ARRAY[i];
+			PathLanguage result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -151,18 +151,18 @@ public enum ParameterLocation implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Parameter Location</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Path Language</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static ParameterLocation get(int value) {
+	public static PathLanguage get(int value) {
 		switch (value) {
 			case UNDEFINED_VALUE: return UNDEFINED;
-			case QUERY_VALUE: return QUERY;
-			case PATH_VALUE: return PATH;
+			case XPATH_VALUE: return XPATH;
+			case JSON_PATH_VALUE: return JSON_PATH;
 		}
 		return null;
 	}
@@ -194,7 +194,7 @@ public enum ParameterLocation implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private ParameterLocation(int value, String name, String literal) {
+	private PathLanguage(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -238,4 +238,4 @@ public enum ParameterLocation implements Enumerator {
 		return literal;
 	}
 	
-} //ParameterLocation
+} //PathLanguage

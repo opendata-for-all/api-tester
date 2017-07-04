@@ -4,26 +4,24 @@ package edu.uoc.som.rest.test;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Header Field</b></em>'.
+ * A representation of the model object '<em><b>Header</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link edu.uoc.som.rest.test.HeaderField#getKey <em>Key</em>}</li>
- *   <li>{@link edu.uoc.som.rest.test.HeaderField#getValue <em>Value</em>}</li>
+ *   <li>{@link edu.uoc.som.rest.test.Header#getKey <em>Key</em>}</li>
+ *   <li>{@link edu.uoc.som.rest.test.Header#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see edu.uoc.som.rest.test.TestPackage#getHeaderField()
+ * @see edu.uoc.som.rest.test.TestPackage#getHeader()
  * @model
  * @generated
  */
-public interface HeaderField extends EObject {
+public interface Header extends Property {
 	/**
 	 * Returns the value of the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -34,14 +32,14 @@ public interface HeaderField extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Key</em>' attribute.
 	 * @see #setKey(String)
-	 * @see edu.uoc.som.rest.test.TestPackage#getHeaderField_Key()
+	 * @see edu.uoc.som.rest.test.TestPackage#getHeader_Key()
 	 * @model
 	 * @generated
 	 */
 	String getKey();
 
 	/**
-	 * Sets the value of the '{@link edu.uoc.som.rest.test.HeaderField#getKey <em>Key</em>}' attribute.
+	 * Sets the value of the '{@link edu.uoc.som.rest.test.Header#getKey <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Key</em>' attribute.
@@ -60,10 +58,10 @@ public interface HeaderField extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute list.
-	 * @see edu.uoc.som.rest.test.TestPackage#getHeaderField_Value()
+	 * @see edu.uoc.som.rest.test.TestPackage#getHeader_Value()
 	 * @model
 	 * @generated
 	 */
 	EList<String> getValue();
 
-} // HeaderField
+} // Header

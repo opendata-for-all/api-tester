@@ -5,31 +5,36 @@ package edu.uoc.som.rest.test.impl;
 import edu.uoc.som.rest.test.Assertion;
 import edu.uoc.som.rest.test.Authorization;
 import edu.uoc.som.rest.test.Basic;
+import edu.uoc.som.rest.test.Body;
 import edu.uoc.som.rest.test.ComplianceAssertion;
 import edu.uoc.som.rest.test.ContainsAssertion;
 import edu.uoc.som.rest.test.EqualsAssertion;
 import edu.uoc.som.rest.test.HTTPMethod;
 import edu.uoc.som.rest.test.HTTPStatusAssertion;
+import edu.uoc.som.rest.test.Header;
 import edu.uoc.som.rest.test.HeaderAssertion;
 import edu.uoc.som.rest.test.HeaderEqualsAssertion;
 import edu.uoc.som.rest.test.HeaderExistsAssertion;
-import edu.uoc.som.rest.test.HeaderField;
 import edu.uoc.som.rest.test.InvalidStatusCodesAssertion;
 import edu.uoc.som.rest.test.NamedElement;
 import edu.uoc.som.rest.test.OAuth2;
 import edu.uoc.som.rest.test.OpenAPIComplianceAssertion;
 import edu.uoc.som.rest.test.Parameter;
 import edu.uoc.som.rest.test.ParameterLocation;
+import edu.uoc.som.rest.test.PathLanguage;
 import edu.uoc.som.rest.test.PerformanceAssertion;
+import edu.uoc.som.rest.test.Property;
+import edu.uoc.som.rest.test.PropertyLocation;
+import edu.uoc.som.rest.test.PropertyTransfer;
 import edu.uoc.som.rest.test.Request;
 import edu.uoc.som.rest.test.ResponseMessageAssertion;
 import edu.uoc.som.rest.test.SLAAssertion;
 import edu.uoc.som.rest.test.SchemaComplianceAssertion;
 import edu.uoc.som.rest.test.SchemeType;
-import edu.uoc.som.rest.test.Test;
 import edu.uoc.som.rest.test.TestCase;
 import edu.uoc.som.rest.test.TestFactory;
 import edu.uoc.som.rest.test.TestPackage;
+import edu.uoc.som.rest.test.TestStep;
 import edu.uoc.som.rest.test.TestSuite;
 import edu.uoc.som.rest.test.ValidStatusCodesAssertion;
 
@@ -67,7 +72,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass testEClass = null;
+	private EClass testStepEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,7 +100,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass headerFieldEClass = null;
+	private EClass headerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -228,7 +233,28 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum httpMethodEEnum = null;
+	private EClass bodyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass propertyTransferEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass propertyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum parameterLocationEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -242,7 +268,21 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum parameterLocationEEnum = null;
+	private EEnum httpMethodEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum pathLanguageEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum propertyLocationEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -382,8 +422,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTest() {
-		return testEClass;
+	public EClass getTestStep() {
+		return testStepEClass;
 	}
 
 	/**
@@ -418,7 +458,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRequest_Resource() {
+	public EAttribute getRequest_Path() {
 		return (EAttribute)requestEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -465,6 +505,15 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	public EReference getRequest_Authorization() {
 		return (EReference)requestEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRequest_Body() {
+		return (EReference)requestEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -526,8 +575,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getHeaderField() {
-		return headerFieldEClass;
+	public EClass getHeader() {
+		return headerEClass;
 	}
 
 	/**
@@ -535,8 +584,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getHeaderField_Key() {
-		return (EAttribute)headerFieldEClass.getEStructuralFeatures().get(0);
+	public EAttribute getHeader_Key() {
+		return (EAttribute)headerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -544,8 +593,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getHeaderField_Value() {
-		return (EAttribute)headerFieldEClass.getEStructuralFeatures().get(1);
+	public EAttribute getHeader_Value() {
+		return (EAttribute)headerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -814,8 +863,125 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getHTTPMethod() {
-		return httpMethodEEnum;
+	public EClass getBody() {
+		return bodyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBody_MediaType() {
+		return (EAttribute)bodyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBody_Value() {
+		return (EAttribute)bodyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPropertyTransfer() {
+		return propertyTransferEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPropertyTransfer_Source() {
+		return (EReference)propertyTransferEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPropertyTransfer_SourcePropertyLocation() {
+		return (EAttribute)propertyTransferEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPropertyTransfer_SourceProperty() {
+		return (EReference)propertyTransferEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPropertyTransfer_SourcePropertyPath() {
+		return (EAttribute)propertyTransferEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPropertyTransfer_Target() {
+		return (EReference)propertyTransferEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPropertyTransfer_TargetPropertyLocation() {
+		return (EAttribute)propertyTransferEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPropertyTransfer_TargetProperty() {
+		return (EReference)propertyTransferEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPropertyTransfer_TargetPropertyPath() {
+		return (EAttribute)propertyTransferEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getProperty() {
+		return propertyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getParameterLocation() {
+		return parameterLocationEEnum;
 	}
 
 	/**
@@ -832,8 +998,26 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getParameterLocation() {
-		return parameterLocationEEnum;
+	public EEnum getHTTPMethod() {
+		return httpMethodEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getPathLanguage() {
+		return pathLanguageEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getPropertyLocation() {
+		return propertyLocationEEnum;
 	}
 
 	/**
@@ -874,17 +1058,18 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		createEAttribute(testCaseEClass, TEST_CASE__DESCRIPTION);
 		createEReference(testCaseEClass, TEST_CASE__TESTS);
 
-		testEClass = createEClass(TEST);
+		testStepEClass = createEClass(TEST_STEP);
 
 		requestEClass = createEClass(REQUEST);
 		createEAttribute(requestEClass, REQUEST__HTTP_METHOD);
 		createEAttribute(requestEClass, REQUEST__HOST);
-		createEAttribute(requestEClass, REQUEST__RESOURCE);
+		createEAttribute(requestEClass, REQUEST__PATH);
 		createEAttribute(requestEClass, REQUEST__SCHEME);
 		createEReference(requestEClass, REQUEST__HEADERS);
 		createEReference(requestEClass, REQUEST__PARAMETERS);
 		createEReference(requestEClass, REQUEST__ASSERTIONS);
 		createEReference(requestEClass, REQUEST__AUTHORIZATION);
+		createEReference(requestEClass, REQUEST__BODY);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
@@ -894,9 +1079,9 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		createEAttribute(parameterEClass, PARAMETER__NAME);
 		createEAttribute(parameterEClass, PARAMETER__VALUE);
 
-		headerFieldEClass = createEClass(HEADER_FIELD);
-		createEAttribute(headerFieldEClass, HEADER_FIELD__KEY);
-		createEAttribute(headerFieldEClass, HEADER_FIELD__VALUE);
+		headerEClass = createEClass(HEADER);
+		createEAttribute(headerEClass, HEADER__KEY);
+		createEAttribute(headerEClass, HEADER__VALUE);
 
 		assertionEClass = createEClass(ASSERTION);
 		createEAttribute(assertionEClass, ASSERTION__ERROR_MESSAGE);
@@ -945,10 +1130,28 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		oAuth2EClass = createEClass(OAUTH2);
 		createEAttribute(oAuth2EClass, OAUTH2__TOKEN);
 
+		bodyEClass = createEClass(BODY);
+		createEAttribute(bodyEClass, BODY__MEDIA_TYPE);
+		createEAttribute(bodyEClass, BODY__VALUE);
+
+		propertyTransferEClass = createEClass(PROPERTY_TRANSFER);
+		createEReference(propertyTransferEClass, PROPERTY_TRANSFER__SOURCE);
+		createEAttribute(propertyTransferEClass, PROPERTY_TRANSFER__SOURCE_PROPERTY_LOCATION);
+		createEReference(propertyTransferEClass, PROPERTY_TRANSFER__SOURCE_PROPERTY);
+		createEAttribute(propertyTransferEClass, PROPERTY_TRANSFER__SOURCE_PROPERTY_PATH);
+		createEReference(propertyTransferEClass, PROPERTY_TRANSFER__TARGET);
+		createEAttribute(propertyTransferEClass, PROPERTY_TRANSFER__TARGET_PROPERTY_LOCATION);
+		createEReference(propertyTransferEClass, PROPERTY_TRANSFER__TARGET_PROPERTY);
+		createEAttribute(propertyTransferEClass, PROPERTY_TRANSFER__TARGET_PROPERTY_PATH);
+
+		propertyEClass = createEClass(PROPERTY);
+
 		// Create enums
-		httpMethodEEnum = createEEnum(HTTP_METHOD);
-		schemeTypeEEnum = createEEnum(SCHEME_TYPE);
 		parameterLocationEEnum = createEEnum(PARAMETER_LOCATION);
+		schemeTypeEEnum = createEEnum(SCHEME_TYPE);
+		httpMethodEEnum = createEEnum(HTTP_METHOD);
+		pathLanguageEEnum = createEEnum(PATH_LANGUAGE);
+		propertyLocationEEnum = createEEnum(PROPERTY_LOCATION);
 	}
 
 	/**
@@ -981,8 +1184,10 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		// Add supertypes to classes
 		testSuiteEClass.getESuperTypes().add(this.getNamedElement());
 		testCaseEClass.getESuperTypes().add(this.getNamedElement());
-		testEClass.getESuperTypes().add(this.getNamedElement());
-		requestEClass.getESuperTypes().add(this.getTest());
+		testStepEClass.getESuperTypes().add(this.getNamedElement());
+		requestEClass.getESuperTypes().add(this.getTestStep());
+		parameterEClass.getESuperTypes().add(this.getProperty());
+		headerEClass.getESuperTypes().add(this.getProperty());
 		complianceAssertionEClass.getESuperTypes().add(this.getAssertion());
 		performanceAssertionEClass.getESuperTypes().add(this.getAssertion());
 		responseMessageAssertionEClass.getESuperTypes().add(this.getAssertion());
@@ -997,8 +1202,11 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		invalidStatusCodesAssertionEClass.getESuperTypes().add(this.getHTTPStatusAssertion());
 		validStatusCodesAssertionEClass.getESuperTypes().add(this.getHTTPStatusAssertion());
 		openAPIComplianceAssertionEClass.getESuperTypes().add(this.getComplianceAssertion());
+		authorizationEClass.getESuperTypes().add(this.getProperty());
 		basicEClass.getESuperTypes().add(this.getAuthorization());
 		oAuth2EClass.getESuperTypes().add(this.getAuthorization());
+		bodyEClass.getESuperTypes().add(this.getProperty());
+		propertyTransferEClass.getESuperTypes().add(this.getTestStep());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(testSuiteEClass, TestSuite.class, "TestSuite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1009,19 +1217,20 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 
 		initEClass(testCaseEClass, TestCase.class, "TestCase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTestCase_Description(), ecorePackage.getEString(), "description", null, 0, 1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTestCase_Tests(), this.getTest(), null, "tests", null, 0, -1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTestCase_Tests(), this.getTestStep(), null, "tests", null, 0, -1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(testEClass, Test.class, "Test", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(testStepEClass, TestStep.class, "TestStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(requestEClass, Request.class, "Request", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRequest_HttpMethod(), this.getHTTPMethod(), "httpMethod", null, 0, 1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequest_Host(), ecorePackage.getEString(), "host", null, 0, 1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRequest_Resource(), ecorePackage.getEString(), "resource", null, 0, 1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequest_Path(), ecorePackage.getEString(), "path", null, 0, 1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequest_Scheme(), this.getSchemeType(), "scheme", null, 0, 1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRequest_Headers(), this.getHeaderField(), null, "headers", null, 0, -1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequest_Headers(), this.getHeader(), null, "headers", null, 0, -1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRequest_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRequest_Assertions(), this.getAssertion(), null, "assertions", null, 0, -1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRequest_Authorization(), this.getAuthorization(), null, "authorization", null, 0, 1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequest_Body(), this.getBody(), null, "body", null, 0, 1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1031,9 +1240,9 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParameter_Value(), ecorePackage.getEString(), "value", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(headerFieldEClass, HeaderField.class, "HeaderField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getHeaderField_Key(), ecorePackage.getEString(), "key", null, 0, 1, HeaderField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHeaderField_Value(), ecorePackage.getEString(), "value", null, 0, -1, HeaderField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(headerEClass, Header.class, "Header", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getHeader_Key(), ecorePackage.getEString(), "key", null, 0, 1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHeader_Value(), ecorePackage.getEString(), "value", null, 0, -1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(assertionEClass, Assertion.class, "Assertion", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAssertion_ErrorMessage(), ecorePackage.getEString(), "errorMessage", null, 0, 1, Assertion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1082,7 +1291,33 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEClass(oAuth2EClass, OAuth2.class, "OAuth2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOAuth2_Token(), ecorePackage.getEString(), "token", null, 0, 1, OAuth2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(bodyEClass, Body.class, "Body", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBody_MediaType(), ecorePackage.getEString(), "mediaType", null, 0, 1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBody_Value(), ecorePackage.getEString(), "value", null, 0, 1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(propertyTransferEClass, PropertyTransfer.class, "PropertyTransfer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPropertyTransfer_Source(), this.getTestStep(), null, "source", null, 0, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPropertyTransfer_SourcePropertyLocation(), this.getPropertyLocation(), "sourcePropertyLocation", null, 0, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertyTransfer_SourceProperty(), this.getProperty(), null, "sourceProperty", null, 0, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPropertyTransfer_SourcePropertyPath(), this.getPathLanguage(), "sourcePropertyPath", null, 0, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertyTransfer_Target(), this.getTestStep(), null, "target", null, 0, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPropertyTransfer_TargetPropertyLocation(), this.getPropertyLocation(), "targetPropertyLocation", null, 0, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertyTransfer_TargetProperty(), this.getProperty(), null, "targetProperty", null, 0, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPropertyTransfer_TargetPropertyPath(), this.getPathLanguage(), "targetPropertyPath", null, 0, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(propertyEClass, Property.class, "Property", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		// Initialize enums and add enum literals
+		initEEnum(parameterLocationEEnum, ParameterLocation.class, "ParameterLocation");
+		addEEnumLiteral(parameterLocationEEnum, ParameterLocation.UNDEFINED);
+		addEEnumLiteral(parameterLocationEEnum, ParameterLocation.QUERY);
+		addEEnumLiteral(parameterLocationEEnum, ParameterLocation.PATH);
+
+		initEEnum(schemeTypeEEnum, SchemeType.class, "SchemeType");
+		addEEnumLiteral(schemeTypeEEnum, SchemeType.UNDEFINED);
+		addEEnumLiteral(schemeTypeEEnum, SchemeType.HTTP);
+		addEEnumLiteral(schemeTypeEEnum, SchemeType.HTTPS);
+
 		initEEnum(httpMethodEEnum, HTTPMethod.class, "HTTPMethod");
 		addEEnumLiteral(httpMethodEEnum, HTTPMethod.UNDEFINED);
 		addEEnumLiteral(httpMethodEEnum, HTTPMethod.GET);
@@ -1091,18 +1326,17 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		addEEnumLiteral(httpMethodEEnum, HTTPMethod.DELETE);
 		addEEnumLiteral(httpMethodEEnum, HTTPMethod.OPTIONS);
 
-		initEEnum(schemeTypeEEnum, SchemeType.class, "SchemeType");
-		addEEnumLiteral(schemeTypeEEnum, SchemeType.UNDEFINED);
-		addEEnumLiteral(schemeTypeEEnum, SchemeType.HTTP);
-		addEEnumLiteral(schemeTypeEEnum, SchemeType.HTTPS);
+		initEEnum(pathLanguageEEnum, PathLanguage.class, "PathLanguage");
+		addEEnumLiteral(pathLanguageEEnum, PathLanguage.UNDEFINED);
+		addEEnumLiteral(pathLanguageEEnum, PathLanguage.XPATH);
+		addEEnumLiteral(pathLanguageEEnum, PathLanguage.JSON_PATH);
 
-		initEEnum(parameterLocationEEnum, ParameterLocation.class, "ParameterLocation");
-		addEEnumLiteral(parameterLocationEEnum, ParameterLocation.UNDEFINED);
-		addEEnumLiteral(parameterLocationEEnum, ParameterLocation.QUERY);
-		addEEnumLiteral(parameterLocationEEnum, ParameterLocation.PATH);
-		addEEnumLiteral(parameterLocationEEnum, ParameterLocation.HEADER);
-		addEEnumLiteral(parameterLocationEEnum, ParameterLocation.BODY);
-		addEEnumLiteral(parameterLocationEEnum, ParameterLocation.FORM);
+		initEEnum(propertyLocationEEnum, PropertyLocation.class, "PropertyLocation");
+		addEEnumLiteral(propertyLocationEEnum, PropertyLocation.UNDEFINED);
+		addEEnumLiteral(propertyLocationEEnum, PropertyLocation.PARAMETER);
+		addEEnumLiteral(propertyLocationEEnum, PropertyLocation.HEADER);
+		addEEnumLiteral(propertyLocationEEnum, PropertyLocation.BODY);
+		addEEnumLiteral(propertyLocationEEnum, PropertyLocation.RESPONSE);
 
 		// Create resource
 		createResource(eNS_URI);

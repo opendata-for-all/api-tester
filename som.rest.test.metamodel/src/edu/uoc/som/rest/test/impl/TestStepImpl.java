@@ -2,25 +2,25 @@
  */
 package edu.uoc.som.rest.test.impl;
 
-import edu.uoc.som.rest.test.Test;
 import edu.uoc.som.rest.test.TestPackage;
+import edu.uoc.som.rest.test.TestStep;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Test</b></em>'.
+ * An implementation of the model object '<em><b>Step</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public abstract class TestImpl extends NamedElementImpl implements Test {
+public abstract class TestStepImpl extends NamedElementImpl implements TestStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TestImpl() {
+	protected TestStepImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public abstract class TestImpl extends NamedElementImpl implements Test {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TestPackage.Literals.TEST;
+		return TestPackage.Literals.TEST_STEP;
 	}
 
-} //TestImpl
+} //TestStepImpl

@@ -47,7 +47,7 @@ public interface TestPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "edu.uoc.som.rest";
+	String eNS_PREFIX = "";
 
 	/**
 	 * The singleton instance of the package.
@@ -223,14 +223,14 @@ public interface TestPackage extends EPackage {
 	int TEST_CASE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link edu.uoc.som.rest.test.impl.TestImpl <em>Test</em>}' class.
+	 * The meta object id for the '{@link edu.uoc.som.rest.test.impl.TestStepImpl <em>Step</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see edu.uoc.som.rest.test.impl.TestImpl
-	 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getTest()
+	 * @see edu.uoc.som.rest.test.impl.TestStepImpl
+	 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getTestStep()
 	 * @generated
 	 */
-	int TEST = 2;
+	int TEST_STEP = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -239,25 +239,25 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST__NAME = NAMED_ELEMENT__NAME;
+	int TEST_STEP__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The number of structural features of the '<em>Test</em>' class.
+	 * The number of structural features of the '<em>Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int TEST_STEP_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Test</em>' class.
+	 * The number of operations of the '<em>Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int TEST_STEP_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link edu.uoc.som.rest.test.impl.RequestImpl <em>Request</em>}' class.
@@ -276,7 +276,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__NAME = TEST__NAME;
+	int REQUEST__NAME = TEST_STEP__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Http Method</b></em>' attribute.
@@ -285,7 +285,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__HTTP_METHOD = TEST_FEATURE_COUNT + 0;
+	int REQUEST__HTTP_METHOD = TEST_STEP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Host</b></em>' attribute.
@@ -294,16 +294,16 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__HOST = TEST_FEATURE_COUNT + 1;
+	int REQUEST__HOST = TEST_STEP_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Resource</b></em>' attribute.
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__RESOURCE = TEST_FEATURE_COUNT + 2;
+	int REQUEST__PATH = TEST_STEP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Scheme</b></em>' attribute.
@@ -312,7 +312,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__SCHEME = TEST_FEATURE_COUNT + 3;
+	int REQUEST__SCHEME = TEST_STEP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Headers</b></em>' containment reference list.
@@ -321,7 +321,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__HEADERS = TEST_FEATURE_COUNT + 4;
+	int REQUEST__HEADERS = TEST_STEP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -330,7 +330,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__PARAMETERS = TEST_FEATURE_COUNT + 5;
+	int REQUEST__PARAMETERS = TEST_STEP_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Assertions</b></em>' containment reference list.
@@ -339,7 +339,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__ASSERTIONS = TEST_FEATURE_COUNT + 6;
+	int REQUEST__ASSERTIONS = TEST_STEP_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Authorization</b></em>' containment reference.
@@ -348,7 +348,16 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__AUTHORIZATION = TEST_FEATURE_COUNT + 7;
+	int REQUEST__AUTHORIZATION = TEST_STEP_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Body</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUEST__BODY = TEST_STEP_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Request</em>' class.
@@ -357,7 +366,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST_FEATURE_COUNT = TEST_FEATURE_COUNT + 8;
+	int REQUEST_FEATURE_COUNT = TEST_STEP_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Request</em>' class.
@@ -366,7 +375,35 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST_OPERATION_COUNT = TEST_OPERATION_COUNT + 0;
+	int REQUEST_OPERATION_COUNT = TEST_STEP_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link edu.uoc.som.rest.test.impl.PropertyImpl <em>Property</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.uoc.som.rest.test.impl.PropertyImpl
+	 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getProperty()
+	 * @generated
+	 */
+	int PROPERTY = 27;
+
+	/**
+	 * The number of structural features of the '<em>Property</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Property</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link edu.uoc.som.rest.test.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -385,7 +422,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__LOCATION = 0;
+	int PARAMETER__LOCATION = PROPERTY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -394,7 +431,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__NAME = 1;
+	int PARAMETER__NAME = PROPERTY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -403,7 +440,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__VALUE = 2;
+	int PARAMETER__VALUE = PROPERTY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
@@ -412,7 +449,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_FEATURE_COUNT = 3;
+	int PARAMETER_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Parameter</em>' class.
@@ -421,17 +458,17 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_OPERATION_COUNT = 0;
+	int PARAMETER_OPERATION_COUNT = PROPERTY_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link edu.uoc.som.rest.test.impl.HeaderFieldImpl <em>Header Field</em>}' class.
+	 * The meta object id for the '{@link edu.uoc.som.rest.test.impl.HeaderImpl <em>Header</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see edu.uoc.som.rest.test.impl.HeaderFieldImpl
-	 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getHeaderField()
+	 * @see edu.uoc.som.rest.test.impl.HeaderImpl
+	 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getHeader()
 	 * @generated
 	 */
-	int HEADER_FIELD = 6;
+	int HEADER = 6;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -440,7 +477,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HEADER_FIELD__KEY = 0;
+	int HEADER__KEY = PROPERTY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute list.
@@ -449,25 +486,25 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HEADER_FIELD__VALUE = 1;
+	int HEADER__VALUE = PROPERTY_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Header Field</em>' class.
+	 * The number of structural features of the '<em>Header</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HEADER_FIELD_FEATURE_COUNT = 2;
+	int HEADER_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Header Field</em>' class.
+	 * The number of operations of the '<em>Header</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HEADER_FIELD_OPERATION_COUNT = 0;
+	int HEADER_OPERATION_COUNT = PROPERTY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link edu.uoc.som.rest.test.impl.AssertionImpl <em>Assertion</em>}' class.
@@ -1176,7 +1213,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORIZATION_FEATURE_COUNT = 0;
+	int AUTHORIZATION_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Authorization</em>' class.
@@ -1185,7 +1222,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORIZATION_OPERATION_COUNT = 0;
+	int AUTHORIZATION_OPERATION_COUNT = PROPERTY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link edu.uoc.som.rest.test.impl.BasicImpl <em>Basic</em>}' class.
@@ -1271,24 +1308,159 @@ public interface TestPackage extends EPackage {
 	int OAUTH2_OPERATION_COUNT = AUTHORIZATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link edu.uoc.som.rest.test.HTTPMethod <em>HTTP Method</em>}' enum.
+	 * The meta object id for the '{@link edu.uoc.som.rest.test.impl.BodyImpl <em>Body</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see edu.uoc.som.rest.test.HTTPMethod
-	 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getHTTPMethod()
+	 * @see edu.uoc.som.rest.test.impl.BodyImpl
+	 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getBody()
 	 * @generated
 	 */
-	int HTTP_METHOD = 25;
+	int BODY = 25;
 
 	/**
-	 * The meta object id for the '{@link edu.uoc.som.rest.test.SchemeType <em>Scheme Type</em>}' enum.
+	 * The feature id for the '<em><b>Media Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see edu.uoc.som.rest.test.SchemeType
-	 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getSchemeType()
+	 * @generated
+	 * @ordered
+	 */
+	int BODY__MEDIA_TYPE = PROPERTY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BODY__VALUE = PROPERTY_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Body</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BODY_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Body</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BODY_OPERATION_COUNT = PROPERTY_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link edu.uoc.som.rest.test.impl.PropertyTransferImpl <em>Property Transfer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.uoc.som.rest.test.impl.PropertyTransferImpl
+	 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getPropertyTransfer()
 	 * @generated
 	 */
-	int SCHEME_TYPE = 26;
+	int PROPERTY_TRANSFER = 26;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_TRANSFER__NAME = TEST_STEP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_TRANSFER__SOURCE = TEST_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Source Property Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_TRANSFER__SOURCE_PROPERTY_LOCATION = TEST_STEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Source Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_TRANSFER__SOURCE_PROPERTY = TEST_STEP_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Source Property Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_TRANSFER__SOURCE_PROPERTY_PATH = TEST_STEP_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_TRANSFER__TARGET = TEST_STEP_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_TRANSFER__TARGET_PROPERTY_LOCATION = TEST_STEP_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Target Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_TRANSFER__TARGET_PROPERTY = TEST_STEP_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_TRANSFER__TARGET_PROPERTY_PATH = TEST_STEP_FEATURE_COUNT + 7;
+
+	/**
+	 * The number of structural features of the '<em>Property Transfer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_TRANSFER_FEATURE_COUNT = TEST_STEP_FEATURE_COUNT + 8;
+
+	/**
+	 * The number of operations of the '<em>Property Transfer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_TRANSFER_OPERATION_COUNT = TEST_STEP_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link edu.uoc.som.rest.test.ParameterLocation <em>Parameter Location</em>}' enum.
@@ -1298,7 +1470,47 @@ public interface TestPackage extends EPackage {
 	 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getParameterLocation()
 	 * @generated
 	 */
-	int PARAMETER_LOCATION = 27;
+	int PARAMETER_LOCATION = 28;
+
+	/**
+	 * The meta object id for the '{@link edu.uoc.som.rest.test.SchemeType <em>Scheme Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.uoc.som.rest.test.SchemeType
+	 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getSchemeType()
+	 * @generated
+	 */
+	int SCHEME_TYPE = 29;
+
+	/**
+	 * The meta object id for the '{@link edu.uoc.som.rest.test.HTTPMethod <em>HTTP Method</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.uoc.som.rest.test.HTTPMethod
+	 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getHTTPMethod()
+	 * @generated
+	 */
+	int HTTP_METHOD = 30;
+
+	/**
+	 * The meta object id for the '{@link edu.uoc.som.rest.test.PathLanguage <em>Path Language</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.uoc.som.rest.test.PathLanguage
+	 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getPathLanguage()
+	 * @generated
+	 */
+	int PATH_LANGUAGE = 31;
+
+	/**
+	 * The meta object id for the '{@link edu.uoc.som.rest.test.PropertyLocation <em>Property Location</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.uoc.som.rest.test.PropertyLocation
+	 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getPropertyLocation()
+	 * @generated
+	 */
+	int PROPERTY_LOCATION = 32;
 
 
 	/**
@@ -1388,14 +1600,14 @@ public interface TestPackage extends EPackage {
 	EReference getTestCase_Tests();
 
 	/**
-	 * Returns the meta object for class '{@link edu.uoc.som.rest.test.Test <em>Test</em>}'.
+	 * Returns the meta object for class '{@link edu.uoc.som.rest.test.TestStep <em>Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Test</em>'.
-	 * @see edu.uoc.som.rest.test.Test
+	 * @return the meta object for class '<em>Step</em>'.
+	 * @see edu.uoc.som.rest.test.TestStep
 	 * @generated
 	 */
-	EClass getTest();
+	EClass getTestStep();
 
 	/**
 	 * Returns the meta object for class '{@link edu.uoc.som.rest.test.Request <em>Request</em>}'.
@@ -1430,15 +1642,15 @@ public interface TestPackage extends EPackage {
 	EAttribute getRequest_Host();
 
 	/**
-	 * Returns the meta object for the attribute '{@link edu.uoc.som.rest.test.Request#getResource <em>Resource</em>}'.
+	 * Returns the meta object for the attribute '{@link edu.uoc.som.rest.test.Request#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Resource</em>'.
-	 * @see edu.uoc.som.rest.test.Request#getResource()
+	 * @return the meta object for the attribute '<em>Path</em>'.
+	 * @see edu.uoc.som.rest.test.Request#getPath()
 	 * @see #getRequest()
 	 * @generated
 	 */
-	EAttribute getRequest_Resource();
+	EAttribute getRequest_Path();
 
 	/**
 	 * Returns the meta object for the attribute '{@link edu.uoc.som.rest.test.Request#getScheme <em>Scheme</em>}'.
@@ -1494,6 +1706,17 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRequest_Authorization();
+
+	/**
+	 * Returns the meta object for the reference '{@link edu.uoc.som.rest.test.Request#getBody <em>Body</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Body</em>'.
+	 * @see edu.uoc.som.rest.test.Request#getBody()
+	 * @see #getRequest()
+	 * @generated
+	 */
+	EReference getRequest_Body();
 
 	/**
 	 * Returns the meta object for class '{@link edu.uoc.som.rest.test.NamedElement <em>Named Element</em>}'.
@@ -1560,36 +1783,36 @@ public interface TestPackage extends EPackage {
 	EAttribute getParameter_Value();
 
 	/**
-	 * Returns the meta object for class '{@link edu.uoc.som.rest.test.HeaderField <em>Header Field</em>}'.
+	 * Returns the meta object for class '{@link edu.uoc.som.rest.test.Header <em>Header</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Header Field</em>'.
-	 * @see edu.uoc.som.rest.test.HeaderField
+	 * @return the meta object for class '<em>Header</em>'.
+	 * @see edu.uoc.som.rest.test.Header
 	 * @generated
 	 */
-	EClass getHeaderField();
+	EClass getHeader();
 
 	/**
-	 * Returns the meta object for the attribute '{@link edu.uoc.som.rest.test.HeaderField#getKey <em>Key</em>}'.
+	 * Returns the meta object for the attribute '{@link edu.uoc.som.rest.test.Header#getKey <em>Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Key</em>'.
-	 * @see edu.uoc.som.rest.test.HeaderField#getKey()
-	 * @see #getHeaderField()
+	 * @see edu.uoc.som.rest.test.Header#getKey()
+	 * @see #getHeader()
 	 * @generated
 	 */
-	EAttribute getHeaderField_Key();
+	EAttribute getHeader_Key();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link edu.uoc.som.rest.test.HeaderField#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute list '{@link edu.uoc.som.rest.test.Header#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Value</em>'.
-	 * @see edu.uoc.som.rest.test.HeaderField#getValue()
-	 * @see #getHeaderField()
+	 * @see edu.uoc.som.rest.test.Header#getValue()
+	 * @see #getHeader()
 	 * @generated
 	 */
-	EAttribute getHeaderField_Value();
+	EAttribute getHeader_Value();
 
 	/**
 	 * Returns the meta object for class '{@link edu.uoc.som.rest.test.Assertion <em>Assertion</em>}'.
@@ -1893,14 +2116,154 @@ public interface TestPackage extends EPackage {
 	EAttribute getOAuth2_Token();
 
 	/**
-	 * Returns the meta object for enum '{@link edu.uoc.som.rest.test.HTTPMethod <em>HTTP Method</em>}'.
+	 * Returns the meta object for class '{@link edu.uoc.som.rest.test.Body <em>Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>HTTP Method</em>'.
-	 * @see edu.uoc.som.rest.test.HTTPMethod
+	 * @return the meta object for class '<em>Body</em>'.
+	 * @see edu.uoc.som.rest.test.Body
 	 * @generated
 	 */
-	EEnum getHTTPMethod();
+	EClass getBody();
+
+	/**
+	 * Returns the meta object for the attribute '{@link edu.uoc.som.rest.test.Body#getMediaType <em>Media Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Media Type</em>'.
+	 * @see edu.uoc.som.rest.test.Body#getMediaType()
+	 * @see #getBody()
+	 * @generated
+	 */
+	EAttribute getBody_MediaType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link edu.uoc.som.rest.test.Body#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see edu.uoc.som.rest.test.Body#getValue()
+	 * @see #getBody()
+	 * @generated
+	 */
+	EAttribute getBody_Value();
+
+	/**
+	 * Returns the meta object for class '{@link edu.uoc.som.rest.test.PropertyTransfer <em>Property Transfer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Property Transfer</em>'.
+	 * @see edu.uoc.som.rest.test.PropertyTransfer
+	 * @generated
+	 */
+	EClass getPropertyTransfer();
+
+	/**
+	 * Returns the meta object for the reference '{@link edu.uoc.som.rest.test.PropertyTransfer#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see edu.uoc.som.rest.test.PropertyTransfer#getSource()
+	 * @see #getPropertyTransfer()
+	 * @generated
+	 */
+	EReference getPropertyTransfer_Source();
+
+	/**
+	 * Returns the meta object for the attribute '{@link edu.uoc.som.rest.test.PropertyTransfer#getSourcePropertyLocation <em>Source Property Location</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source Property Location</em>'.
+	 * @see edu.uoc.som.rest.test.PropertyTransfer#getSourcePropertyLocation()
+	 * @see #getPropertyTransfer()
+	 * @generated
+	 */
+	EAttribute getPropertyTransfer_SourcePropertyLocation();
+
+	/**
+	 * Returns the meta object for the reference '{@link edu.uoc.som.rest.test.PropertyTransfer#getSourceProperty <em>Source Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source Property</em>'.
+	 * @see edu.uoc.som.rest.test.PropertyTransfer#getSourceProperty()
+	 * @see #getPropertyTransfer()
+	 * @generated
+	 */
+	EReference getPropertyTransfer_SourceProperty();
+
+	/**
+	 * Returns the meta object for the attribute '{@link edu.uoc.som.rest.test.PropertyTransfer#getSourcePropertyPath <em>Source Property Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source Property Path</em>'.
+	 * @see edu.uoc.som.rest.test.PropertyTransfer#getSourcePropertyPath()
+	 * @see #getPropertyTransfer()
+	 * @generated
+	 */
+	EAttribute getPropertyTransfer_SourcePropertyPath();
+
+	/**
+	 * Returns the meta object for the reference '{@link edu.uoc.som.rest.test.PropertyTransfer#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see edu.uoc.som.rest.test.PropertyTransfer#getTarget()
+	 * @see #getPropertyTransfer()
+	 * @generated
+	 */
+	EReference getPropertyTransfer_Target();
+
+	/**
+	 * Returns the meta object for the attribute '{@link edu.uoc.som.rest.test.PropertyTransfer#getTargetPropertyLocation <em>Target Property Location</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Target Property Location</em>'.
+	 * @see edu.uoc.som.rest.test.PropertyTransfer#getTargetPropertyLocation()
+	 * @see #getPropertyTransfer()
+	 * @generated
+	 */
+	EAttribute getPropertyTransfer_TargetPropertyLocation();
+
+	/**
+	 * Returns the meta object for the reference '{@link edu.uoc.som.rest.test.PropertyTransfer#getTargetProperty <em>Target Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target Property</em>'.
+	 * @see edu.uoc.som.rest.test.PropertyTransfer#getTargetProperty()
+	 * @see #getPropertyTransfer()
+	 * @generated
+	 */
+	EReference getPropertyTransfer_TargetProperty();
+
+	/**
+	 * Returns the meta object for the attribute '{@link edu.uoc.som.rest.test.PropertyTransfer#getTargetPropertyPath <em>Target Property Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Target Property Path</em>'.
+	 * @see edu.uoc.som.rest.test.PropertyTransfer#getTargetPropertyPath()
+	 * @see #getPropertyTransfer()
+	 * @generated
+	 */
+	EAttribute getPropertyTransfer_TargetPropertyPath();
+
+	/**
+	 * Returns the meta object for class '{@link edu.uoc.som.rest.test.Property <em>Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Property</em>'.
+	 * @see edu.uoc.som.rest.test.Property
+	 * @generated
+	 */
+	EClass getProperty();
+
+	/**
+	 * Returns the meta object for enum '{@link edu.uoc.som.rest.test.ParameterLocation <em>Parameter Location</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Parameter Location</em>'.
+	 * @see edu.uoc.som.rest.test.ParameterLocation
+	 * @generated
+	 */
+	EEnum getParameterLocation();
 
 	/**
 	 * Returns the meta object for enum '{@link edu.uoc.som.rest.test.SchemeType <em>Scheme Type</em>}'.
@@ -1913,14 +2276,34 @@ public interface TestPackage extends EPackage {
 	EEnum getSchemeType();
 
 	/**
-	 * Returns the meta object for enum '{@link edu.uoc.som.rest.test.ParameterLocation <em>Parameter Location</em>}'.
+	 * Returns the meta object for enum '{@link edu.uoc.som.rest.test.HTTPMethod <em>HTTP Method</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Parameter Location</em>'.
-	 * @see edu.uoc.som.rest.test.ParameterLocation
+	 * @return the meta object for enum '<em>HTTP Method</em>'.
+	 * @see edu.uoc.som.rest.test.HTTPMethod
 	 * @generated
 	 */
-	EEnum getParameterLocation();
+	EEnum getHTTPMethod();
+
+	/**
+	 * Returns the meta object for enum '{@link edu.uoc.som.rest.test.PathLanguage <em>Path Language</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Path Language</em>'.
+	 * @see edu.uoc.som.rest.test.PathLanguage
+	 * @generated
+	 */
+	EEnum getPathLanguage();
+
+	/**
+	 * Returns the meta object for enum '{@link edu.uoc.som.rest.test.PropertyLocation <em>Property Location</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Property Location</em>'.
+	 * @see edu.uoc.som.rest.test.PropertyLocation
+	 * @generated
+	 */
+	EEnum getPropertyLocation();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2014,14 +2397,14 @@ public interface TestPackage extends EPackage {
 		EReference TEST_CASE__TESTS = eINSTANCE.getTestCase_Tests();
 
 		/**
-		 * The meta object literal for the '{@link edu.uoc.som.rest.test.impl.TestImpl <em>Test</em>}' class.
+		 * The meta object literal for the '{@link edu.uoc.som.rest.test.impl.TestStepImpl <em>Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see edu.uoc.som.rest.test.impl.TestImpl
-		 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getTest()
+		 * @see edu.uoc.som.rest.test.impl.TestStepImpl
+		 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getTestStep()
 		 * @generated
 		 */
-		EClass TEST = eINSTANCE.getTest();
+		EClass TEST_STEP = eINSTANCE.getTestStep();
 
 		/**
 		 * The meta object literal for the '{@link edu.uoc.som.rest.test.impl.RequestImpl <em>Request</em>}' class.
@@ -2050,12 +2433,12 @@ public interface TestPackage extends EPackage {
 		EAttribute REQUEST__HOST = eINSTANCE.getRequest_Host();
 
 		/**
-		 * The meta object literal for the '<em><b>Resource</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REQUEST__RESOURCE = eINSTANCE.getRequest_Resource();
+		EAttribute REQUEST__PATH = eINSTANCE.getRequest_Path();
 
 		/**
 		 * The meta object literal for the '<em><b>Scheme</b></em>' attribute feature.
@@ -2096,6 +2479,14 @@ public interface TestPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REQUEST__AUTHORIZATION = eINSTANCE.getRequest_Authorization();
+
+		/**
+		 * The meta object literal for the '<em><b>Body</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUEST__BODY = eINSTANCE.getRequest_Body();
 
 		/**
 		 * The meta object literal for the '{@link edu.uoc.som.rest.test.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -2150,14 +2541,14 @@ public interface TestPackage extends EPackage {
 		EAttribute PARAMETER__VALUE = eINSTANCE.getParameter_Value();
 
 		/**
-		 * The meta object literal for the '{@link edu.uoc.som.rest.test.impl.HeaderFieldImpl <em>Header Field</em>}' class.
+		 * The meta object literal for the '{@link edu.uoc.som.rest.test.impl.HeaderImpl <em>Header</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see edu.uoc.som.rest.test.impl.HeaderFieldImpl
-		 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getHeaderField()
+		 * @see edu.uoc.som.rest.test.impl.HeaderImpl
+		 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getHeader()
 		 * @generated
 		 */
-		EClass HEADER_FIELD = eINSTANCE.getHeaderField();
+		EClass HEADER = eINSTANCE.getHeader();
 
 		/**
 		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
@@ -2165,7 +2556,7 @@ public interface TestPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute HEADER_FIELD__KEY = eINSTANCE.getHeaderField_Key();
+		EAttribute HEADER__KEY = eINSTANCE.getHeader_Key();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute list feature.
@@ -2173,7 +2564,7 @@ public interface TestPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute HEADER_FIELD__VALUE = eINSTANCE.getHeaderField_Value();
+		EAttribute HEADER__VALUE = eINSTANCE.getHeader_Value();
 
 		/**
 		 * The meta object literal for the '{@link edu.uoc.som.rest.test.impl.AssertionImpl <em>Assertion</em>}' class.
@@ -2444,14 +2835,124 @@ public interface TestPackage extends EPackage {
 		EAttribute OAUTH2__TOKEN = eINSTANCE.getOAuth2_Token();
 
 		/**
-		 * The meta object literal for the '{@link edu.uoc.som.rest.test.HTTPMethod <em>HTTP Method</em>}' enum.
+		 * The meta object literal for the '{@link edu.uoc.som.rest.test.impl.BodyImpl <em>Body</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see edu.uoc.som.rest.test.HTTPMethod
-		 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getHTTPMethod()
+		 * @see edu.uoc.som.rest.test.impl.BodyImpl
+		 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getBody()
 		 * @generated
 		 */
-		EEnum HTTP_METHOD = eINSTANCE.getHTTPMethod();
+		EClass BODY = eINSTANCE.getBody();
+
+		/**
+		 * The meta object literal for the '<em><b>Media Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BODY__MEDIA_TYPE = eINSTANCE.getBody_MediaType();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BODY__VALUE = eINSTANCE.getBody_Value();
+
+		/**
+		 * The meta object literal for the '{@link edu.uoc.som.rest.test.impl.PropertyTransferImpl <em>Property Transfer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see edu.uoc.som.rest.test.impl.PropertyTransferImpl
+		 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getPropertyTransfer()
+		 * @generated
+		 */
+		EClass PROPERTY_TRANSFER = eINSTANCE.getPropertyTransfer();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROPERTY_TRANSFER__SOURCE = eINSTANCE.getPropertyTransfer_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Property Location</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROPERTY_TRANSFER__SOURCE_PROPERTY_LOCATION = eINSTANCE.getPropertyTransfer_SourcePropertyLocation();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Property</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROPERTY_TRANSFER__SOURCE_PROPERTY = eINSTANCE.getPropertyTransfer_SourceProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Property Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROPERTY_TRANSFER__SOURCE_PROPERTY_PATH = eINSTANCE.getPropertyTransfer_SourcePropertyPath();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROPERTY_TRANSFER__TARGET = eINSTANCE.getPropertyTransfer_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Property Location</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROPERTY_TRANSFER__TARGET_PROPERTY_LOCATION = eINSTANCE.getPropertyTransfer_TargetPropertyLocation();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Property</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROPERTY_TRANSFER__TARGET_PROPERTY = eINSTANCE.getPropertyTransfer_TargetProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Property Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROPERTY_TRANSFER__TARGET_PROPERTY_PATH = eINSTANCE.getPropertyTransfer_TargetPropertyPath();
+
+		/**
+		 * The meta object literal for the '{@link edu.uoc.som.rest.test.impl.PropertyImpl <em>Property</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see edu.uoc.som.rest.test.impl.PropertyImpl
+		 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getProperty()
+		 * @generated
+		 */
+		EClass PROPERTY = eINSTANCE.getProperty();
+
+		/**
+		 * The meta object literal for the '{@link edu.uoc.som.rest.test.ParameterLocation <em>Parameter Location</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see edu.uoc.som.rest.test.ParameterLocation
+		 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getParameterLocation()
+		 * @generated
+		 */
+		EEnum PARAMETER_LOCATION = eINSTANCE.getParameterLocation();
 
 		/**
 		 * The meta object literal for the '{@link edu.uoc.som.rest.test.SchemeType <em>Scheme Type</em>}' enum.
@@ -2464,14 +2965,34 @@ public interface TestPackage extends EPackage {
 		EEnum SCHEME_TYPE = eINSTANCE.getSchemeType();
 
 		/**
-		 * The meta object literal for the '{@link edu.uoc.som.rest.test.ParameterLocation <em>Parameter Location</em>}' enum.
+		 * The meta object literal for the '{@link edu.uoc.som.rest.test.HTTPMethod <em>HTTP Method</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see edu.uoc.som.rest.test.ParameterLocation
-		 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getParameterLocation()
+		 * @see edu.uoc.som.rest.test.HTTPMethod
+		 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getHTTPMethod()
 		 * @generated
 		 */
-		EEnum PARAMETER_LOCATION = eINSTANCE.getParameterLocation();
+		EEnum HTTP_METHOD = eINSTANCE.getHTTPMethod();
+
+		/**
+		 * The meta object literal for the '{@link edu.uoc.som.rest.test.PathLanguage <em>Path Language</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see edu.uoc.som.rest.test.PathLanguage
+		 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getPathLanguage()
+		 * @generated
+		 */
+		EEnum PATH_LANGUAGE = eINSTANCE.getPathLanguage();
+
+		/**
+		 * The meta object literal for the '{@link edu.uoc.som.rest.test.PropertyLocation <em>Property Location</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see edu.uoc.som.rest.test.PropertyLocation
+		 * @see edu.uoc.som.rest.test.impl.TestPackageImpl#getPropertyLocation()
+		 * @generated
+		 */
+		EEnum PROPERTY_LOCATION = eINSTANCE.getPropertyLocation();
 
 	}
 

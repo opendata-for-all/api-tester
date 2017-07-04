@@ -58,13 +58,13 @@ public interface TestFactory extends EFactory {
 	Parameter createParameter();
 
 	/**
-	 * Returns a new object of class '<em>Header Field</em>'.
+	 * Returns a new object of class '<em>Header</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Header Field</em>'.
+	 * @return a new object of class '<em>Header</em>'.
 	 * @generated
 	 */
-	HeaderField createHeaderField();
+	Header createHeader();
 
 	/**
 	 * Returns a new object of class '<em>Contains Assertion</em>'.
@@ -164,6 +164,24 @@ public interface TestFactory extends EFactory {
 	 * @generated
 	 */
 	OAuth2 createOAuth2();
+
+	/**
+	 * Returns a new object of class '<em>Body</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Body</em>'.
+	 * @generated
+	 */
+	Body createBody();
+
+	/**
+	 * Returns a new object of class '<em>Property Transfer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Property Transfer</em>'.
+	 * @generated
+	 */
+	PropertyTransfer createPropertyTransfer();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -4,8 +4,9 @@ package edu.uoc.som.rest.test.impl;
 
 import edu.uoc.som.rest.test.Assertion;
 import edu.uoc.som.rest.test.Authorization;
+import edu.uoc.som.rest.test.Body;
 import edu.uoc.som.rest.test.HTTPMethod;
-import edu.uoc.som.rest.test.HeaderField;
+import edu.uoc.som.rest.test.Header;
 import edu.uoc.som.rest.test.Parameter;
 import edu.uoc.som.rest.test.Request;
 import edu.uoc.som.rest.test.SchemeType;
@@ -36,17 +37,18 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link edu.uoc.som.rest.test.impl.RequestImpl#getHttpMethod <em>Http Method</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.impl.RequestImpl#getHost <em>Host</em>}</li>
- *   <li>{@link edu.uoc.som.rest.test.impl.RequestImpl#getResource <em>Resource</em>}</li>
+ *   <li>{@link edu.uoc.som.rest.test.impl.RequestImpl#getPath <em>Path</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.impl.RequestImpl#getScheme <em>Scheme</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.impl.RequestImpl#getHeaders <em>Headers</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.impl.RequestImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.impl.RequestImpl#getAssertions <em>Assertions</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.impl.RequestImpl#getAuthorization <em>Authorization</em>}</li>
+ *   <li>{@link edu.uoc.som.rest.test.impl.RequestImpl#getBody <em>Body</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RequestImpl extends TestImpl implements Request {
+public class RequestImpl extends TestStepImpl implements Request {
 	/**
 	 * The default value of the '{@link #getHttpMethod() <em>Http Method</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -88,24 +90,24 @@ public class RequestImpl extends TestImpl implements Request {
 	protected String host = HOST_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getResource() <em>Resource</em>}' attribute.
+	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getResource()
+	 * @see #getPath()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String RESOURCE_EDEFAULT = null;
+	protected static final String PATH_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getResource() <em>Resource</em>}' attribute.
+	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getResource()
+	 * @see #getPath()
 	 * @generated
 	 * @ordered
 	 */
-	protected String resource = RESOURCE_EDEFAULT;
+	protected String path = PATH_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getScheme() <em>Scheme</em>}' attribute.
@@ -135,7 +137,7 @@ public class RequestImpl extends TestImpl implements Request {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<HeaderField> headers;
+	protected EList<Header> headers;
 
 	/**
 	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
@@ -166,6 +168,16 @@ public class RequestImpl extends TestImpl implements Request {
 	 * @ordered
 	 */
 	protected Authorization authorization;
+
+	/**
+	 * The cached value of the '{@link #getBody() <em>Body</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBody()
+	 * @generated
+	 * @ordered
+	 */
+	protected Body body;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -233,8 +245,8 @@ public class RequestImpl extends TestImpl implements Request {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getResource() {
-		return resource;
+	public String getPath() {
+		return path;
 	}
 
 	/**
@@ -242,11 +254,11 @@ public class RequestImpl extends TestImpl implements Request {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setResource(String newResource) {
-		String oldResource = resource;
-		resource = newResource;
+	public void setPath(String newPath) {
+		String oldPath = path;
+		path = newPath;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.REQUEST__RESOURCE, oldResource, resource));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.REQUEST__PATH, oldPath, path));
 	}
 
 	/**
@@ -275,9 +287,9 @@ public class RequestImpl extends TestImpl implements Request {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<HeaderField> getHeaders() {
+	public EList<Header> getHeaders() {
 		if (headers == null) {
-			headers = new EObjectContainmentEList<HeaderField>(HeaderField.class, this, TestPackage.REQUEST__HEADERS);
+			headers = new EObjectContainmentEList<Header>(Header.class, this, TestPackage.REQUEST__HEADERS);
 		}
 		return headers;
 	}
@@ -354,6 +366,44 @@ public class RequestImpl extends TestImpl implements Request {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Body getBody() {
+		if (body != null && body.eIsProxy()) {
+			InternalEObject oldBody = (InternalEObject)body;
+			body = (Body)eResolveProxy(oldBody);
+			if (body != oldBody) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestPackage.REQUEST__BODY, oldBody, body));
+			}
+		}
+		return body;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Body basicGetBody() {
+		return body;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBody(Body newBody) {
+		Body oldBody = body;
+		body = newBody;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.REQUEST__BODY, oldBody, body));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -381,8 +431,8 @@ public class RequestImpl extends TestImpl implements Request {
 				return getHttpMethod();
 			case TestPackage.REQUEST__HOST:
 				return getHost();
-			case TestPackage.REQUEST__RESOURCE:
-				return getResource();
+			case TestPackage.REQUEST__PATH:
+				return getPath();
 			case TestPackage.REQUEST__SCHEME:
 				return getScheme();
 			case TestPackage.REQUEST__HEADERS:
@@ -393,6 +443,9 @@ public class RequestImpl extends TestImpl implements Request {
 				return getAssertions();
 			case TestPackage.REQUEST__AUTHORIZATION:
 				return getAuthorization();
+			case TestPackage.REQUEST__BODY:
+				if (resolve) return getBody();
+				return basicGetBody();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -412,15 +465,15 @@ public class RequestImpl extends TestImpl implements Request {
 			case TestPackage.REQUEST__HOST:
 				setHost((String)newValue);
 				return;
-			case TestPackage.REQUEST__RESOURCE:
-				setResource((String)newValue);
+			case TestPackage.REQUEST__PATH:
+				setPath((String)newValue);
 				return;
 			case TestPackage.REQUEST__SCHEME:
 				setScheme((SchemeType)newValue);
 				return;
 			case TestPackage.REQUEST__HEADERS:
 				getHeaders().clear();
-				getHeaders().addAll((Collection<? extends HeaderField>)newValue);
+				getHeaders().addAll((Collection<? extends Header>)newValue);
 				return;
 			case TestPackage.REQUEST__PARAMETERS:
 				getParameters().clear();
@@ -432,6 +485,9 @@ public class RequestImpl extends TestImpl implements Request {
 				return;
 			case TestPackage.REQUEST__AUTHORIZATION:
 				setAuthorization((Authorization)newValue);
+				return;
+			case TestPackage.REQUEST__BODY:
+				setBody((Body)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -451,8 +507,8 @@ public class RequestImpl extends TestImpl implements Request {
 			case TestPackage.REQUEST__HOST:
 				setHost(HOST_EDEFAULT);
 				return;
-			case TestPackage.REQUEST__RESOURCE:
-				setResource(RESOURCE_EDEFAULT);
+			case TestPackage.REQUEST__PATH:
+				setPath(PATH_EDEFAULT);
 				return;
 			case TestPackage.REQUEST__SCHEME:
 				setScheme(SCHEME_EDEFAULT);
@@ -468,6 +524,9 @@ public class RequestImpl extends TestImpl implements Request {
 				return;
 			case TestPackage.REQUEST__AUTHORIZATION:
 				setAuthorization((Authorization)null);
+				return;
+			case TestPackage.REQUEST__BODY:
+				setBody((Body)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -485,8 +544,8 @@ public class RequestImpl extends TestImpl implements Request {
 				return httpMethod != HTTP_METHOD_EDEFAULT;
 			case TestPackage.REQUEST__HOST:
 				return HOST_EDEFAULT == null ? host != null : !HOST_EDEFAULT.equals(host);
-			case TestPackage.REQUEST__RESOURCE:
-				return RESOURCE_EDEFAULT == null ? resource != null : !RESOURCE_EDEFAULT.equals(resource);
+			case TestPackage.REQUEST__PATH:
+				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 			case TestPackage.REQUEST__SCHEME:
 				return scheme != SCHEME_EDEFAULT;
 			case TestPackage.REQUEST__HEADERS:
@@ -497,6 +556,8 @@ public class RequestImpl extends TestImpl implements Request {
 				return assertions != null && !assertions.isEmpty();
 			case TestPackage.REQUEST__AUTHORIZATION:
 				return authorization != null;
+			case TestPackage.REQUEST__BODY:
+				return body != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -515,8 +576,8 @@ public class RequestImpl extends TestImpl implements Request {
 		result.append(httpMethod);
 		result.append(", host: ");
 		result.append(host);
-		result.append(", resource: ");
-		result.append(resource);
+		result.append(", path: ");
+		result.append(path);
 		result.append(", scheme: ");
 		result.append(scheme);
 		result.append(')');

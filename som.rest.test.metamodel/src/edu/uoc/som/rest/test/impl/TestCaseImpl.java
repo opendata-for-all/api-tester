@@ -2,9 +2,9 @@
  */
 package edu.uoc.som.rest.test.impl;
 
-import edu.uoc.som.rest.test.Test;
 import edu.uoc.som.rest.test.TestCase;
 import edu.uoc.som.rest.test.TestPackage;
+import edu.uoc.som.rest.test.TestStep;
 
 import java.util.Collection;
 
@@ -64,7 +64,7 @@ public class TestCaseImpl extends NamedElementImpl implements TestCase {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Test> tests;
+	protected EList<TestStep> tests;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,9 +111,9 @@ public class TestCaseImpl extends NamedElementImpl implements TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Test> getTests() {
+	public EList<TestStep> getTests() {
 		if (tests == null) {
-			tests = new EObjectContainmentEList<Test>(Test.class, this, TestPackage.TEST_CASE__TESTS);
+			tests = new EObjectContainmentEList<TestStep>(TestStep.class, this, TestPackage.TEST_CASE__TESTS);
 		}
 		return tests;
 	}
@@ -162,7 +162,7 @@ public class TestCaseImpl extends NamedElementImpl implements TestCase {
 				return;
 			case TestPackage.TEST_CASE__TESTS:
 				getTests().clear();
-				getTests().addAll((Collection<? extends Test>)newValue);
+				getTests().addAll((Collection<? extends TestStep>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

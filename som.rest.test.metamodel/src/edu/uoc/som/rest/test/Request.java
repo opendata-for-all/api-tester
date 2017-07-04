@@ -15,19 +15,20 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link edu.uoc.som.rest.test.Request#getHttpMethod <em>Http Method</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.Request#getHost <em>Host</em>}</li>
- *   <li>{@link edu.uoc.som.rest.test.Request#getResource <em>Resource</em>}</li>
+ *   <li>{@link edu.uoc.som.rest.test.Request#getPath <em>Path</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.Request#getScheme <em>Scheme</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.Request#getHeaders <em>Headers</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.Request#getParameters <em>Parameters</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.Request#getAssertions <em>Assertions</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.Request#getAuthorization <em>Authorization</em>}</li>
+ *   <li>{@link edu.uoc.som.rest.test.Request#getBody <em>Body</em>}</li>
  * </ul>
  *
  * @see edu.uoc.som.rest.test.TestPackage#getRequest()
  * @model
  * @generated
  */
-public interface Request extends Test {
+public interface Request extends TestStep {
 	/**
 	 * Returns the value of the '<em><b>Http Method</b></em>' attribute.
 	 * The literals are from the enumeration {@link edu.uoc.som.rest.test.HTTPMethod}.
@@ -84,30 +85,30 @@ public interface Request extends Test {
 	void setHost(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Resource</b></em>' attribute.
+	 * Returns the value of the '<em><b>Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Resource</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Path</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resource</em>' attribute.
-	 * @see #setResource(String)
-	 * @see edu.uoc.som.rest.test.TestPackage#getRequest_Resource()
+	 * @return the value of the '<em>Path</em>' attribute.
+	 * @see #setPath(String)
+	 * @see edu.uoc.som.rest.test.TestPackage#getRequest_Path()
 	 * @model
 	 * @generated
 	 */
-	String getResource();
+	String getPath();
 
 	/**
-	 * Sets the value of the '{@link edu.uoc.som.rest.test.Request#getResource <em>Resource</em>}' attribute.
+	 * Sets the value of the '{@link edu.uoc.som.rest.test.Request#getPath <em>Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Resource</em>' attribute.
-	 * @see #getResource()
+	 * @param value the new value of the '<em>Path</em>' attribute.
+	 * @see #getPath()
 	 * @generated
 	 */
-	void setResource(String value);
+	void setPath(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Scheme</b></em>' attribute.
@@ -140,7 +141,7 @@ public interface Request extends Test {
 
 	/**
 	 * Returns the value of the '<em><b>Headers</b></em>' containment reference list.
-	 * The list contents are of type {@link edu.uoc.som.rest.test.HeaderField}.
+	 * The list contents are of type {@link edu.uoc.som.rest.test.Header}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Headers</em>' containment reference list isn't clear,
@@ -152,7 +153,7 @@ public interface Request extends Test {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<HeaderField> getHeaders();
+	EList<Header> getHeaders();
 
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
@@ -211,5 +212,31 @@ public interface Request extends Test {
 	 * @generated
 	 */
 	void setAuthorization(Authorization value);
+
+	/**
+	 * Returns the value of the '<em><b>Body</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Body</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Body</em>' reference.
+	 * @see #setBody(Body)
+	 * @see edu.uoc.som.rest.test.TestPackage#getRequest_Body()
+	 * @model
+	 * @generated
+	 */
+	Body getBody();
+
+	/**
+	 * Sets the value of the '{@link edu.uoc.som.rest.test.Request#getBody <em>Body</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Body</em>' reference.
+	 * @see #getBody()
+	 * @generated
+	 */
+	void setBody(Body value);
 
 } // Request

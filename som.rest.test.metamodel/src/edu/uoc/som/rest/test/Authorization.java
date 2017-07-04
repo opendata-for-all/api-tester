@@ -2,7 +2,6 @@
  */
 package edu.uoc.som.rest.test;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +13,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface Authorization extends EObject {
+public interface Authorization extends Property {
 } // Authorization

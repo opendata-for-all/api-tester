@@ -80,17 +80,17 @@ public class TestSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TestPackage.TEST: {
-				Test test = (Test)theEObject;
-				T result = caseTest(test);
-				if (result == null) result = caseNamedElement(test);
+			case TestPackage.TEST_STEP: {
+				TestStep testStep = (TestStep)theEObject;
+				T result = caseTestStep(testStep);
+				if (result == null) result = caseNamedElement(testStep);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TestPackage.REQUEST: {
 				Request request = (Request)theEObject;
 				T result = caseRequest(request);
-				if (result == null) result = caseTest(request);
+				if (result == null) result = caseTestStep(request);
 				if (result == null) result = caseNamedElement(request);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -104,12 +104,14 @@ public class TestSwitch<T> extends Switch<T> {
 			case TestPackage.PARAMETER: {
 				Parameter parameter = (Parameter)theEObject;
 				T result = caseParameter(parameter);
+				if (result == null) result = caseProperty(parameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TestPackage.HEADER_FIELD: {
-				HeaderField headerField = (HeaderField)theEObject;
-				T result = caseHeaderField(headerField);
+			case TestPackage.HEADER: {
+				Header header = (Header)theEObject;
+				T result = caseHeader(header);
+				if (result == null) result = caseProperty(header);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -229,6 +231,7 @@ public class TestSwitch<T> extends Switch<T> {
 			case TestPackage.AUTHORIZATION: {
 				Authorization authorization = (Authorization)theEObject;
 				T result = caseAuthorization(authorization);
+				if (result == null) result = caseProperty(authorization);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -236,6 +239,7 @@ public class TestSwitch<T> extends Switch<T> {
 				Basic basic = (Basic)theEObject;
 				T result = caseBasic(basic);
 				if (result == null) result = caseAuthorization(basic);
+				if (result == null) result = caseProperty(basic);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -243,6 +247,28 @@ public class TestSwitch<T> extends Switch<T> {
 				OAuth2 oAuth2 = (OAuth2)theEObject;
 				T result = caseOAuth2(oAuth2);
 				if (result == null) result = caseAuthorization(oAuth2);
+				if (result == null) result = caseProperty(oAuth2);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TestPackage.BODY: {
+				Body body = (Body)theEObject;
+				T result = caseBody(body);
+				if (result == null) result = caseProperty(body);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TestPackage.PROPERTY_TRANSFER: {
+				PropertyTransfer propertyTransfer = (PropertyTransfer)theEObject;
+				T result = casePropertyTransfer(propertyTransfer);
+				if (result == null) result = caseTestStep(propertyTransfer);
+				if (result == null) result = caseNamedElement(propertyTransfer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TestPackage.PROPERTY: {
+				Property property = (Property)theEObject;
+				T result = caseProperty(property);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -281,17 +307,17 @@ public class TestSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Test</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Test</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTest(Test object) {
+	public T caseTestStep(TestStep object) {
 		return null;
 	}
 
@@ -341,17 +367,17 @@ public class TestSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Header Field</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Header</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Header Field</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Header</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseHeaderField(HeaderField object) {
+	public T caseHeader(Header object) {
 		return null;
 	}
 
@@ -622,6 +648,51 @@ public class TestSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOAuth2(OAuth2 object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Body</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Body</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBody(Body object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Property Transfer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Property Transfer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePropertyTransfer(PropertyTransfer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Property</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProperty(Property object) {
 		return null;
 	}
 

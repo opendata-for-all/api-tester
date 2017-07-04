@@ -10,14 +10,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Parameter Location</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Property Location</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see edu.uoc.som.rest.test.TestPackage#getParameterLocation()
+ * @see edu.uoc.som.rest.test.TestPackage#getPropertyLocation()
  * @model
  * @generated
  */
-public enum ParameterLocation implements Enumerator {
+public enum PropertyLocation implements Enumerator {
 	/**
 	 * The '<em><b>Undefined</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -29,24 +29,44 @@ public enum ParameterLocation implements Enumerator {
 	UNDEFINED(0, "undefined", "undefined"),
 
 	/**
-	 * The '<em><b>Query</b></em>' literal object.
+	 * The '<em><b>Parameter</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #QUERY_VALUE
+	 * @see #PARAMETER_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	QUERY(1, "query", "query"),
+	PARAMETER(1, "parameter", "parameter"),
 
 	/**
-	 * The '<em><b>Path</b></em>' literal object.
+	 * The '<em><b>Header</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PATH_VALUE
+	 * @see #HEADER_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	PATH(2, "path", "path");
+	HEADER(2, "header", "header"),
+
+	/**
+	 * The '<em><b>Body</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #BODY_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	BODY(3, "body", "body"),
+
+	/**
+	 * The '<em><b>Response</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #RESPONSE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	RESPONSE(4, "response", "response");
 
 	/**
 	 * The '<em><b>Undefined</b></em>' literal value.
@@ -64,67 +84,99 @@ public enum ParameterLocation implements Enumerator {
 	public static final int UNDEFINED_VALUE = 0;
 
 	/**
-	 * The '<em><b>Query</b></em>' literal value.
+	 * The '<em><b>Parameter</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Query</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Parameter</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #QUERY
-	 * @model name="query"
+	 * @see #PARAMETER
+	 * @model name="parameter"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int QUERY_VALUE = 1;
+	public static final int PARAMETER_VALUE = 1;
 
 	/**
-	 * The '<em><b>Path</b></em>' literal value.
+	 * The '<em><b>Header</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Path</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Header</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #PATH
-	 * @model name="path"
+	 * @see #HEADER
+	 * @model name="header"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PATH_VALUE = 2;
+	public static final int HEADER_VALUE = 2;
 
 	/**
-	 * An array of all the '<em><b>Parameter Location</b></em>' enumerators.
+	 * The '<em><b>Body</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Body</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #BODY
+	 * @model name="body"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int BODY_VALUE = 3;
+
+	/**
+	 * The '<em><b>Response</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Response</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #RESPONSE
+	 * @model name="response"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int RESPONSE_VALUE = 4;
+
+	/**
+	 * An array of all the '<em><b>Property Location</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ParameterLocation[] VALUES_ARRAY =
-		new ParameterLocation[] {
+	private static final PropertyLocation[] VALUES_ARRAY =
+		new PropertyLocation[] {
 			UNDEFINED,
-			QUERY,
-			PATH,
+			PARAMETER,
+			HEADER,
+			BODY,
+			RESPONSE,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Parameter Location</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Property Location</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<ParameterLocation> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<PropertyLocation> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Parameter Location</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Property Location</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static ParameterLocation get(String literal) {
+	public static PropertyLocation get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			ParameterLocation result = VALUES_ARRAY[i];
+			PropertyLocation result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -133,16 +185,16 @@ public enum ParameterLocation implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Parameter Location</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Property Location</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static ParameterLocation getByName(String name) {
+	public static PropertyLocation getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			ParameterLocation result = VALUES_ARRAY[i];
+			PropertyLocation result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -151,18 +203,20 @@ public enum ParameterLocation implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Parameter Location</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Property Location</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static ParameterLocation get(int value) {
+	public static PropertyLocation get(int value) {
 		switch (value) {
 			case UNDEFINED_VALUE: return UNDEFINED;
-			case QUERY_VALUE: return QUERY;
-			case PATH_VALUE: return PATH;
+			case PARAMETER_VALUE: return PARAMETER;
+			case HEADER_VALUE: return HEADER;
+			case BODY_VALUE: return BODY;
+			case RESPONSE_VALUE: return RESPONSE;
 		}
 		return null;
 	}
@@ -194,7 +248,7 @@ public enum ParameterLocation implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private ParameterLocation(int value, String name, String literal) {
+	private PropertyLocation(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -238,4 +292,4 @@ public enum ParameterLocation implements Enumerator {
 		return literal;
 	}
 	
-} //ParameterLocation
+} //PropertyLocation

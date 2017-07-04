@@ -50,7 +50,7 @@ public interface TestCase extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Tests</b></em>' containment reference list.
-	 * The list contents are of type {@link edu.uoc.som.rest.test.Test}.
+	 * The list contents are of type {@link edu.uoc.som.rest.test.TestStep}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tests</em>' containment reference list isn't clear,
@@ -62,6 +62,6 @@ public interface TestCase extends NamedElement {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Test> getTests();
+	EList<TestStep> getTests();
 
 } // TestCase

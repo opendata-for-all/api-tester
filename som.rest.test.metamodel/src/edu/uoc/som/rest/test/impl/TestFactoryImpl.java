@@ -61,7 +61,7 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 			case TestPackage.TEST_CASE: return createTestCase();
 			case TestPackage.REQUEST: return createRequest();
 			case TestPackage.PARAMETER: return createParameter();
-			case TestPackage.HEADER_FIELD: return createHeaderField();
+			case TestPackage.HEADER: return createHeader();
 			case TestPackage.CONTAINS_ASSERTION: return createContainsAssertion();
 			case TestPackage.EQUALS_ASSERTION: return createEqualsAssertion();
 			case TestPackage.SCHEMA_COMPLIANCE_ASSERTION: return createSchemaComplianceAssertion();
@@ -73,6 +73,8 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 			case TestPackage.OPEN_API_COMPLIANCE_ASSERTION: return createOpenAPIComplianceAssertion();
 			case TestPackage.BASIC: return createBasic();
 			case TestPackage.OAUTH2: return createOAuth2();
+			case TestPackage.BODY: return createBody();
+			case TestPackage.PROPERTY_TRANSFER: return createPropertyTransfer();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -86,12 +88,16 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case TestPackage.HTTP_METHOD:
-				return createHTTPMethodFromString(eDataType, initialValue);
-			case TestPackage.SCHEME_TYPE:
-				return createSchemeTypeFromString(eDataType, initialValue);
 			case TestPackage.PARAMETER_LOCATION:
 				return createParameterLocationFromString(eDataType, initialValue);
+			case TestPackage.SCHEME_TYPE:
+				return createSchemeTypeFromString(eDataType, initialValue);
+			case TestPackage.HTTP_METHOD:
+				return createHTTPMethodFromString(eDataType, initialValue);
+			case TestPackage.PATH_LANGUAGE:
+				return createPathLanguageFromString(eDataType, initialValue);
+			case TestPackage.PROPERTY_LOCATION:
+				return createPropertyLocationFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -105,12 +111,16 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case TestPackage.HTTP_METHOD:
-				return convertHTTPMethodToString(eDataType, instanceValue);
-			case TestPackage.SCHEME_TYPE:
-				return convertSchemeTypeToString(eDataType, instanceValue);
 			case TestPackage.PARAMETER_LOCATION:
 				return convertParameterLocationToString(eDataType, instanceValue);
+			case TestPackage.SCHEME_TYPE:
+				return convertSchemeTypeToString(eDataType, instanceValue);
+			case TestPackage.HTTP_METHOD:
+				return convertHTTPMethodToString(eDataType, instanceValue);
+			case TestPackage.PATH_LANGUAGE:
+				return convertPathLanguageToString(eDataType, instanceValue);
+			case TestPackage.PROPERTY_LOCATION:
+				return convertPropertyLocationToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -161,9 +171,9 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HeaderField createHeaderField() {
-		HeaderFieldImpl headerField = new HeaderFieldImpl();
-		return headerField;
+	public Header createHeader() {
+		HeaderImpl header = new HeaderImpl();
+		return header;
 	}
 
 	/**
@@ -281,8 +291,28 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HTTPMethod createHTTPMethodFromString(EDataType eDataType, String initialValue) {
-		HTTPMethod result = HTTPMethod.get(initialValue);
+	public Body createBody() {
+		BodyImpl body = new BodyImpl();
+		return body;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PropertyTransfer createPropertyTransfer() {
+		PropertyTransferImpl propertyTransfer = new PropertyTransferImpl();
+		return propertyTransfer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ParameterLocation createParameterLocationFromString(EDataType eDataType, String initialValue) {
+		ParameterLocation result = ParameterLocation.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -292,7 +322,7 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertHTTPMethodToString(EDataType eDataType, Object instanceValue) {
+	public String convertParameterLocationToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -321,8 +351,8 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ParameterLocation createParameterLocationFromString(EDataType eDataType, String initialValue) {
-		ParameterLocation result = ParameterLocation.get(initialValue);
+	public HTTPMethod createHTTPMethodFromString(EDataType eDataType, String initialValue) {
+		HTTPMethod result = HTTPMethod.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -332,7 +362,47 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertParameterLocationToString(EDataType eDataType, Object instanceValue) {
+	public String convertHTTPMethodToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PathLanguage createPathLanguageFromString(EDataType eDataType, String initialValue) {
+		PathLanguage result = PathLanguage.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertPathLanguageToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PropertyLocation createPropertyLocationFromString(EDataType eDataType, String initialValue) {
+		PropertyLocation result = PropertyLocation.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertPropertyLocationToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -2,25 +2,27 @@
  */
 package edu.uoc.som.rest.test.impl;
 
-import edu.uoc.som.rest.test.Authorization;
+import edu.uoc.som.rest.test.Property;
 import edu.uoc.som.rest.test.TestPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Authorization</b></em>'.
+ * An implementation of the model object '<em><b>Property</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public abstract class AuthorizationImpl extends PropertyImpl implements Authorization {
+public abstract class PropertyImpl extends MinimalEObjectImpl.Container implements Property {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AuthorizationImpl() {
+	protected PropertyImpl() {
 		super();
 	}
 
@@ -31,7 +33,7 @@ public abstract class AuthorizationImpl extends PropertyImpl implements Authoriz
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TestPackage.Literals.AUTHORIZATION;
+		return TestPackage.Literals.PROPERTY;
 	}
 
-} //AuthorizationImpl
+} //PropertyImpl
