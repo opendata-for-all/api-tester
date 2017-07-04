@@ -5,6 +5,7 @@
     <semanticResources>model/TestSuite.genmodel</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <semanticResources>plugin.xml</semanticResources>
+    <semanticResources>model/TestSuite.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_Br3RsD-gEee0uKoPYYZAxA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_Gli9cD-gEee0uKoPYYZAxA" name="core class diagram" representation="_GljkgD-gEee0uKoPYYZAxA">

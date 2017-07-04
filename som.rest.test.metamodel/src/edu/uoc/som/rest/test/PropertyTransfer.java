@@ -16,10 +16,12 @@ package edu.uoc.som.rest.test;
  *   <li>{@link edu.uoc.som.rest.test.PropertyTransfer#getSourcePropertyLocation <em>Source Property Location</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.PropertyTransfer#getSourceProperty <em>Source Property</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.PropertyTransfer#getSourcePropertyPath <em>Source Property Path</em>}</li>
+ *   <li>{@link edu.uoc.som.rest.test.PropertyTransfer#getSourcePropertyPathValue <em>Source Property Path Value</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.PropertyTransfer#getTarget <em>Target</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.PropertyTransfer#getTargetPropertyLocation <em>Target Property Location</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.PropertyTransfer#getTargetProperty <em>Target Property</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.PropertyTransfer#getTargetPropertyPath <em>Target Property Path</em>}</li>
+ *   <li>{@link edu.uoc.som.rest.test.PropertyTransfer#getTargetPropertyPathValue <em>Target Property Path Value</em>}</li>
  * </ul>
  *
  * @see edu.uoc.som.rest.test.TestPackage#getPropertyTransfer()
@@ -138,6 +140,32 @@ public interface PropertyTransfer extends TestStep {
 	void setSourcePropertyPath(PathLanguage value);
 
 	/**
+	 * Returns the value of the '<em><b>Source Property Path Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Source Property Path Value</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source Property Path Value</em>' attribute.
+	 * @see #setSourcePropertyPathValue(String)
+	 * @see edu.uoc.som.rest.test.TestPackage#getPropertyTransfer_SourcePropertyPathValue()
+	 * @model
+	 * @generated
+	 */
+	String getSourcePropertyPathValue();
+
+	/**
+	 * Sets the value of the '{@link edu.uoc.som.rest.test.PropertyTransfer#getSourcePropertyPathValue <em>Source Property Path Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Source Property Path Value</em>' attribute.
+	 * @see #getSourcePropertyPathValue()
+	 * @generated
+	 */
+	void setSourcePropertyPathValue(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -246,5 +274,31 @@ public interface PropertyTransfer extends TestStep {
 	 * @generated
 	 */
 	void setTargetPropertyPath(PathLanguage value);
+
+	/**
+	 * Returns the value of the '<em><b>Target Property Path Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Target Property Path Value</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Target Property Path Value</em>' attribute.
+	 * @see #setTargetPropertyPathValue(String)
+	 * @see edu.uoc.som.rest.test.TestPackage#getPropertyTransfer_TargetPropertyPathValue()
+	 * @model
+	 * @generated
+	 */
+	String getTargetPropertyPathValue();
+
+	/**
+	 * Sets the value of the '{@link edu.uoc.som.rest.test.PropertyTransfer#getTargetPropertyPathValue <em>Target Property Path Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Target Property Path Value</em>' attribute.
+	 * @see #getTargetPropertyPathValue()
+	 * @generated
+	 */
+	void setTargetPropertyPathValue(String value);
 
 } // PropertyTransfer

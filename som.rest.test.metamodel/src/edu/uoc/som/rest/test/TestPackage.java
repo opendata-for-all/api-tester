@@ -141,13 +141,13 @@ public interface TestPackage extends EPackage {
 	int TEST_SUITE__UPDATED_AT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Test Cases</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Test Steps</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SUITE__TEST_CASES = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int TEST_SUITE__TEST_STEPS = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Suite</em>' class.
@@ -1409,13 +1409,22 @@ public interface TestPackage extends EPackage {
 	int PROPERTY_TRANSFER__SOURCE_PROPERTY_PATH = TEST_STEP_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Source Property Path Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_TRANSFER__SOURCE_PROPERTY_PATH_VALUE = TEST_STEP_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_TRANSFER__TARGET = TEST_STEP_FEATURE_COUNT + 4;
+	int PROPERTY_TRANSFER__TARGET = TEST_STEP_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Target Property Location</b></em>' attribute.
@@ -1424,7 +1433,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_TRANSFER__TARGET_PROPERTY_LOCATION = TEST_STEP_FEATURE_COUNT + 5;
+	int PROPERTY_TRANSFER__TARGET_PROPERTY_LOCATION = TEST_STEP_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Target Property</b></em>' reference.
@@ -1433,7 +1442,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_TRANSFER__TARGET_PROPERTY = TEST_STEP_FEATURE_COUNT + 6;
+	int PROPERTY_TRANSFER__TARGET_PROPERTY = TEST_STEP_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Target Property Path</b></em>' attribute.
@@ -1442,7 +1451,16 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_TRANSFER__TARGET_PROPERTY_PATH = TEST_STEP_FEATURE_COUNT + 7;
+	int PROPERTY_TRANSFER__TARGET_PROPERTY_PATH = TEST_STEP_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Path Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_TRANSFER__TARGET_PROPERTY_PATH_VALUE = TEST_STEP_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Property Transfer</em>' class.
@@ -1451,7 +1469,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_TRANSFER_FEATURE_COUNT = TEST_STEP_FEATURE_COUNT + 8;
+	int PROPERTY_TRANSFER_FEATURE_COUNT = TEST_STEP_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Property Transfer</em>' class.
@@ -1557,15 +1575,15 @@ public interface TestPackage extends EPackage {
 	EAttribute getTestSuite_UpdatedAt();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link edu.uoc.som.rest.test.TestSuite#getTestCases <em>Test Cases</em>}'.
+	 * Returns the meta object for the containment reference list '{@link edu.uoc.som.rest.test.TestSuite#getTestSteps <em>Test Steps</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Test Cases</em>'.
-	 * @see edu.uoc.som.rest.test.TestSuite#getTestCases()
+	 * @return the meta object for the containment reference list '<em>Test Steps</em>'.
+	 * @see edu.uoc.som.rest.test.TestSuite#getTestSteps()
 	 * @see #getTestSuite()
 	 * @generated
 	 */
-	EReference getTestSuite_TestCases();
+	EReference getTestSuite_TestSteps();
 
 	/**
 	 * Returns the meta object for class '{@link edu.uoc.som.rest.test.TestCase <em>Case</em>}'.
@@ -2202,6 +2220,17 @@ public interface TestPackage extends EPackage {
 	EAttribute getPropertyTransfer_SourcePropertyPath();
 
 	/**
+	 * Returns the meta object for the attribute '{@link edu.uoc.som.rest.test.PropertyTransfer#getSourcePropertyPathValue <em>Source Property Path Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source Property Path Value</em>'.
+	 * @see edu.uoc.som.rest.test.PropertyTransfer#getSourcePropertyPathValue()
+	 * @see #getPropertyTransfer()
+	 * @generated
+	 */
+	EAttribute getPropertyTransfer_SourcePropertyPathValue();
+
+	/**
 	 * Returns the meta object for the reference '{@link edu.uoc.som.rest.test.PropertyTransfer#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2244,6 +2273,17 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPropertyTransfer_TargetPropertyPath();
+
+	/**
+	 * Returns the meta object for the attribute '{@link edu.uoc.som.rest.test.PropertyTransfer#getTargetPropertyPathValue <em>Target Property Path Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Target Property Path Value</em>'.
+	 * @see edu.uoc.som.rest.test.PropertyTransfer#getTargetPropertyPathValue()
+	 * @see #getPropertyTransfer()
+	 * @generated
+	 */
+	EAttribute getPropertyTransfer_TargetPropertyPathValue();
 
 	/**
 	 * Returns the meta object for class '{@link edu.uoc.som.rest.test.Property <em>Property</em>}'.
@@ -2363,12 +2403,12 @@ public interface TestPackage extends EPackage {
 		EAttribute TEST_SUITE__UPDATED_AT = eINSTANCE.getTestSuite_UpdatedAt();
 
 		/**
-		 * The meta object literal for the '<em><b>Test Cases</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Test Steps</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEST_SUITE__TEST_CASES = eINSTANCE.getTestSuite_TestCases();
+		EReference TEST_SUITE__TEST_STEPS = eINSTANCE.getTestSuite_TestSteps();
 
 		/**
 		 * The meta object literal for the '{@link edu.uoc.som.rest.test.impl.TestCaseImpl <em>Case</em>}' class.
@@ -2903,6 +2943,14 @@ public interface TestPackage extends EPackage {
 		EAttribute PROPERTY_TRANSFER__SOURCE_PROPERTY_PATH = eINSTANCE.getPropertyTransfer_SourcePropertyPath();
 
 		/**
+		 * The meta object literal for the '<em><b>Source Property Path Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROPERTY_TRANSFER__SOURCE_PROPERTY_PATH_VALUE = eINSTANCE.getPropertyTransfer_SourcePropertyPathValue();
+
+		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2933,6 +2981,14 @@ public interface TestPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PROPERTY_TRANSFER__TARGET_PROPERTY_PATH = eINSTANCE.getPropertyTransfer_TargetPropertyPath();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Property Path Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROPERTY_TRANSFER__TARGET_PROPERTY_PATH_VALUE = eINSTANCE.getPropertyTransfer_TargetPropertyPathValue();
 
 		/**
 		 * The meta object literal for the '{@link edu.uoc.som.rest.test.impl.PropertyImpl <em>Property</em>}' class.

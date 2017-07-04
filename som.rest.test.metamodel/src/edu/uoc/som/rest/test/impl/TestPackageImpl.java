@@ -386,7 +386,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTestSuite_TestCases() {
+	public EReference getTestSuite_TestSteps() {
 		return (EReference)testSuiteEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -935,8 +935,17 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPropertyTransfer_SourcePropertyPathValue() {
+		return (EAttribute)propertyTransferEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getPropertyTransfer_Target() {
-		return (EReference)propertyTransferEClass.getEStructuralFeatures().get(4);
+		return (EReference)propertyTransferEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -945,7 +954,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	public EAttribute getPropertyTransfer_TargetPropertyLocation() {
-		return (EAttribute)propertyTransferEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)propertyTransferEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -954,7 +963,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	public EReference getPropertyTransfer_TargetProperty() {
-		return (EReference)propertyTransferEClass.getEStructuralFeatures().get(6);
+		return (EReference)propertyTransferEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -963,7 +972,16 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	public EAttribute getPropertyTransfer_TargetPropertyPath() {
-		return (EAttribute)propertyTransferEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)propertyTransferEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPropertyTransfer_TargetPropertyPathValue() {
+		return (EAttribute)propertyTransferEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1052,7 +1070,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		createEAttribute(testSuiteEClass, TEST_SUITE__DESCRIPTION);
 		createEAttribute(testSuiteEClass, TEST_SUITE__CREATED_AT);
 		createEAttribute(testSuiteEClass, TEST_SUITE__UPDATED_AT);
-		createEReference(testSuiteEClass, TEST_SUITE__TEST_CASES);
+		createEReference(testSuiteEClass, TEST_SUITE__TEST_STEPS);
 
 		testCaseEClass = createEClass(TEST_CASE);
 		createEAttribute(testCaseEClass, TEST_CASE__DESCRIPTION);
@@ -1139,10 +1157,12 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		createEAttribute(propertyTransferEClass, PROPERTY_TRANSFER__SOURCE_PROPERTY_LOCATION);
 		createEReference(propertyTransferEClass, PROPERTY_TRANSFER__SOURCE_PROPERTY);
 		createEAttribute(propertyTransferEClass, PROPERTY_TRANSFER__SOURCE_PROPERTY_PATH);
+		createEAttribute(propertyTransferEClass, PROPERTY_TRANSFER__SOURCE_PROPERTY_PATH_VALUE);
 		createEReference(propertyTransferEClass, PROPERTY_TRANSFER__TARGET);
 		createEAttribute(propertyTransferEClass, PROPERTY_TRANSFER__TARGET_PROPERTY_LOCATION);
 		createEReference(propertyTransferEClass, PROPERTY_TRANSFER__TARGET_PROPERTY);
 		createEAttribute(propertyTransferEClass, PROPERTY_TRANSFER__TARGET_PROPERTY_PATH);
+		createEAttribute(propertyTransferEClass, PROPERTY_TRANSFER__TARGET_PROPERTY_PATH_VALUE);
 
 		propertyEClass = createEClass(PROPERTY);
 
@@ -1212,8 +1232,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEClass(testSuiteEClass, TestSuite.class, "TestSuite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTestSuite_Description(), ecorePackage.getEString(), "description", null, 0, 1, TestSuite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestSuite_CreatedAt(), ecorePackage.getEDate(), "createdAt", null, 0, 1, TestSuite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTestSuite_UpdatedAt(), ecorePackage.getEString(), "updatedAt", null, 0, 1, TestSuite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTestSuite_TestCases(), this.getTestCase(), null, "testCases", null, 0, -1, TestSuite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTestSuite_UpdatedAt(), ecorePackage.getEDate(), "updatedAt", null, 0, 1, TestSuite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTestSuite_TestSteps(), this.getTestStep(), null, "testSteps", null, 0, -1, TestSuite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(testCaseEClass, TestCase.class, "TestCase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTestCase_Description(), ecorePackage.getEString(), "description", null, 0, 1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1300,10 +1320,12 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEAttribute(getPropertyTransfer_SourcePropertyLocation(), this.getPropertyLocation(), "sourcePropertyLocation", null, 0, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPropertyTransfer_SourceProperty(), this.getProperty(), null, "sourceProperty", null, 0, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPropertyTransfer_SourcePropertyPath(), this.getPathLanguage(), "sourcePropertyPath", null, 0, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPropertyTransfer_SourcePropertyPathValue(), ecorePackage.getEString(), "sourcePropertyPathValue", null, 0, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPropertyTransfer_Target(), this.getTestStep(), null, "target", null, 0, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPropertyTransfer_TargetPropertyLocation(), this.getPropertyLocation(), "targetPropertyLocation", null, 0, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPropertyTransfer_TargetProperty(), this.getProperty(), null, "targetProperty", null, 0, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPropertyTransfer_TargetPropertyPath(), this.getPathLanguage(), "targetPropertyPath", null, 0, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPropertyTransfer_TargetPropertyPathValue(), ecorePackage.getEString(), "targetPropertyPathValue", null, 0, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyEClass, Property.class, "Property", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
