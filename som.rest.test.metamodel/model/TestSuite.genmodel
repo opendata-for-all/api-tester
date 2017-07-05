@@ -7,6 +7,16 @@
   <foreignModel>TestSuite.ecore</foreignModel>
   <genPackages prefix="Test" basePackage="edu.uoc.som.rest" disposableProviderFactory="true"
       ecorePackage="TestSuite.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TestSuite.ecore#//ParameterLocation">
+      <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//ParameterLocation/undefined"/>
+      <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//ParameterLocation/query"/>
+      <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//ParameterLocation/path"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TestSuite.ecore#//SchemeType">
+      <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//SchemeType/undefined"/>
+      <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//SchemeType/http"/>
+      <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//SchemeType/https"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="TestSuite.ecore#//HTTPMethod">
       <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//HTTPMethod/undefined"/>
       <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//HTTPMethod/GET"/>
@@ -15,18 +25,10 @@
       <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//HTTPMethod/DELETE"/>
       <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//HTTPMethod/OPTIONS"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TestSuite.ecore#//SchemeType">
-      <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//SchemeType/undefined"/>
-      <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//SchemeType/http"/>
-      <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//SchemeType/https"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TestSuite.ecore#//ParameterLocation">
-      <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//ParameterLocation/undefined"/>
-      <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//ParameterLocation/query"/>
-      <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//ParameterLocation/path"/>
-      <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//ParameterLocation/header"/>
-      <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//ParameterLocation/body"/>
-      <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//ParameterLocation/form"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TestSuite.ecore#//PathLanguage">
+      <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//PathLanguage/undefined"/>
+      <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//PathLanguage/XPath"/>
+      <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//PathLanguage/JSONPath"/>
     </genEnums>
     <genClasses ecoreClass="TestSuite.ecore#//TestSuite">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//TestSuite/description"/>
@@ -36,18 +38,19 @@
     </genClasses>
     <genClasses ecoreClass="TestSuite.ecore#//TestCase">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//TestCase/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestSuite.ecore#//TestCase/tests"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestSuite.ecore#//TestCase/testSteps"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="TestSuite.ecore#//Test"/>
+    <genClasses image="false" ecoreClass="TestSuite.ecore#//TestStep"/>
     <genClasses ecoreClass="TestSuite.ecore#//Request">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Request/httpMethod"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Request/host"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Request/resource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Request/path"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Request/scheme"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestSuite.ecore#//Request/headers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestSuite.ecore#//Request/parameters"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestSuite.ecore#//Request/assertions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestSuite.ecore#//Request/authorization"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestSuite.ecore#//Request/body"/>
     </genClasses>
     <genClasses image="false" ecoreClass="TestSuite.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//NamedElement/name"/>
@@ -57,9 +60,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Parameter/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Parameter/value"/>
     </genClasses>
-    <genClasses ecoreClass="TestSuite.ecore#//HeaderField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//HeaderField/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//HeaderField/value"/>
+    <genClasses ecoreClass="TestSuite.ecore#//Header">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Header/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Header/value"/>
     </genClasses>
     <genClasses image="false" ecoreClass="TestSuite.ecore#//Assertion">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Assertion/errorMessage"/>
@@ -99,6 +102,31 @@
     </genClasses>
     <genClasses ecoreClass="TestSuite.ecore#//OAuth2">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//OAuth2/token"/>
+    </genClasses>
+    <genClasses ecoreClass="TestSuite.ecore#//Body">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Body/mediaType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Body/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TestSuite.ecore#//PropertyTransfer">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference TestSuite.ecore#//PropertyTransfer/source"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference TestSuite.ecore#//PropertyTransfer/target"/>
+    </genClasses>
+    <genClasses ecoreClass="TestSuite.ecore#//Property"/>
+    <genClasses ecoreClass="TestSuite.ecore#//HeaderProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TestSuite.ecore#//HeaderProperty/header"/>
+    </genClasses>
+    <genClasses ecoreClass="TestSuite.ecore#//ParameterProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TestSuite.ecore#//ParameterProperty/parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="TestSuite.ecore#//ResponseProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TestSuite.ecore#//ResponseProperty/request"/>
+    </genClasses>
+    <genClasses ecoreClass="TestSuite.ecore#//BodyProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TestSuite.ecore#//BodyProperty/body"/>
+    </genClasses>
+    <genClasses ecoreClass="TestSuite.ecore#//ComplexProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//ComplexProperty/pathLanguage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//ComplexProperty/pathValue"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
