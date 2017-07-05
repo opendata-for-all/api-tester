@@ -170,7 +170,7 @@ public class RequestImpl extends TestStepImpl implements Request {
 	protected Authorization authorization;
 
 	/**
-	 * The cached value of the '{@link #getBody() <em>Body</em>}' reference.
+	 * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBody()
@@ -367,14 +367,6 @@ public class RequestImpl extends TestStepImpl implements Request {
 	 * @generated
 	 */
 	public Body getBody() {
-		if (body != null && body.eIsProxy()) {
-			InternalEObject oldBody = (InternalEObject)body;
-			body = (Body)eResolveProxy(oldBody);
-			if (body != oldBody) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestPackage.REQUEST__BODY, oldBody, body));
-			}
-		}
 		return body;
 	}
 
@@ -383,8 +375,14 @@ public class RequestImpl extends TestStepImpl implements Request {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Body basicGetBody() {
-		return body;
+	public NotificationChain basicSetBody(Body newBody, NotificationChain msgs) {
+		Body oldBody = body;
+		body = newBody;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TestPackage.REQUEST__BODY, oldBody, newBody);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -393,10 +391,17 @@ public class RequestImpl extends TestStepImpl implements Request {
 	 * @generated
 	 */
 	public void setBody(Body newBody) {
-		Body oldBody = body;
-		body = newBody;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.REQUEST__BODY, oldBody, body));
+		if (newBody != body) {
+			NotificationChain msgs = null;
+			if (body != null)
+				msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TestPackage.REQUEST__BODY, null, msgs);
+			if (newBody != null)
+				msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TestPackage.REQUEST__BODY, null, msgs);
+			msgs = basicSetBody(newBody, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.REQUEST__BODY, newBody, newBody));
 	}
 
 	/**
@@ -415,6 +420,8 @@ public class RequestImpl extends TestStepImpl implements Request {
 				return ((InternalEList<?>)getAssertions()).basicRemove(otherEnd, msgs);
 			case TestPackage.REQUEST__AUTHORIZATION:
 				return basicSetAuthorization(null, msgs);
+			case TestPackage.REQUEST__BODY:
+				return basicSetBody(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -444,8 +451,7 @@ public class RequestImpl extends TestStepImpl implements Request {
 			case TestPackage.REQUEST__AUTHORIZATION:
 				return getAuthorization();
 			case TestPackage.REQUEST__BODY:
-				if (resolve) return getBody();
-				return basicGetBody();
+				return getBody();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

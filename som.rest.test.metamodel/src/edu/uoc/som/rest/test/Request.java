@@ -214,26 +214,26 @@ public interface Request extends TestStep {
 	void setAuthorization(Authorization value);
 
 	/**
-	 * Returns the value of the '<em><b>Body</b></em>' reference.
+	 * Returns the value of the '<em><b>Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Body</em>' reference isn't clear,
+	 * If the meaning of the '<em>Body</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Body</em>' reference.
+	 * @return the value of the '<em>Body</em>' containment reference.
 	 * @see #setBody(Body)
 	 * @see edu.uoc.som.rest.test.TestPackage#getRequest_Body()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	Body getBody();
 
 	/**
-	 * Sets the value of the '{@link edu.uoc.som.rest.test.Request#getBody <em>Body</em>}' reference.
+	 * Sets the value of the '{@link edu.uoc.som.rest.test.Request#getBody <em>Body</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Body</em>' reference.
+	 * @param value the new value of the '<em>Body</em>' containment reference.
 	 * @see #getBody()
 	 * @generated
 	 */

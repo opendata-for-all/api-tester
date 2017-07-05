@@ -104,14 +104,12 @@ public class TestSwitch<T> extends Switch<T> {
 			case TestPackage.PARAMETER: {
 				Parameter parameter = (Parameter)theEObject;
 				T result = caseParameter(parameter);
-				if (result == null) result = caseProperty(parameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TestPackage.HEADER: {
 				Header header = (Header)theEObject;
 				T result = caseHeader(header);
-				if (result == null) result = caseProperty(header);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -231,7 +229,6 @@ public class TestSwitch<T> extends Switch<T> {
 			case TestPackage.AUTHORIZATION: {
 				Authorization authorization = (Authorization)theEObject;
 				T result = caseAuthorization(authorization);
-				if (result == null) result = caseProperty(authorization);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -239,7 +236,6 @@ public class TestSwitch<T> extends Switch<T> {
 				Basic basic = (Basic)theEObject;
 				T result = caseBasic(basic);
 				if (result == null) result = caseAuthorization(basic);
-				if (result == null) result = caseProperty(basic);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -247,14 +243,12 @@ public class TestSwitch<T> extends Switch<T> {
 				OAuth2 oAuth2 = (OAuth2)theEObject;
 				T result = caseOAuth2(oAuth2);
 				if (result == null) result = caseAuthorization(oAuth2);
-				if (result == null) result = caseProperty(oAuth2);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TestPackage.BODY: {
 				Body body = (Body)theEObject;
 				T result = caseBody(body);
-				if (result == null) result = caseProperty(body);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -269,6 +263,43 @@ public class TestSwitch<T> extends Switch<T> {
 			case TestPackage.PROPERTY: {
 				Property property = (Property)theEObject;
 				T result = caseProperty(property);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TestPackage.HEADER_PROPERTY: {
+				HeaderProperty headerProperty = (HeaderProperty)theEObject;
+				T result = caseHeaderProperty(headerProperty);
+				if (result == null) result = caseProperty(headerProperty);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TestPackage.PARAMETER_PROPERTY: {
+				ParameterProperty parameterProperty = (ParameterProperty)theEObject;
+				T result = caseParameterProperty(parameterProperty);
+				if (result == null) result = caseProperty(parameterProperty);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TestPackage.RESPONSE_PROPERTY: {
+				ResponseProperty responseProperty = (ResponseProperty)theEObject;
+				T result = caseResponseProperty(responseProperty);
+				if (result == null) result = caseComplexProperty(responseProperty);
+				if (result == null) result = caseProperty(responseProperty);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TestPackage.BODY_PROPERTY: {
+				BodyProperty bodyProperty = (BodyProperty)theEObject;
+				T result = caseBodyProperty(bodyProperty);
+				if (result == null) result = caseComplexProperty(bodyProperty);
+				if (result == null) result = caseProperty(bodyProperty);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TestPackage.COMPLEX_PROPERTY: {
+				ComplexProperty complexProperty = (ComplexProperty)theEObject;
+				T result = caseComplexProperty(complexProperty);
+				if (result == null) result = caseProperty(complexProperty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -693,6 +724,81 @@ public class TestSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseProperty(Property object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Header Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Header Property</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHeaderProperty(HeaderProperty object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Parameter Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parameter Property</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParameterProperty(ParameterProperty object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Response Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Response Property</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResponseProperty(ResponseProperty object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Body Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Body Property</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBodyProperty(BodyProperty object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Complex Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Complex Property</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComplexProperty(ComplexProperty object) {
 		return null;
 	}
 

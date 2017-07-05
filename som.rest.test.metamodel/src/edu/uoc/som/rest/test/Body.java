@@ -2,6 +2,7 @@
  */
 package edu.uoc.som.rest.test;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ package edu.uoc.som.rest.test;
  * @model
  * @generated
  */
-public interface Body extends Property {
+public interface Body extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Media Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->

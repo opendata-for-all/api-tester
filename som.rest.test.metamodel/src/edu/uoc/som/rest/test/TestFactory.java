@@ -184,6 +184,42 @@ public interface TestFactory extends EFactory {
 	PropertyTransfer createPropertyTransfer();
 
 	/**
+	 * Returns a new object of class '<em>Header Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Header Property</em>'.
+	 * @generated
+	 */
+	HeaderProperty createHeaderProperty();
+
+	/**
+	 * Returns a new object of class '<em>Parameter Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Parameter Property</em>'.
+	 * @generated
+	 */
+	ParameterProperty createParameterProperty();
+
+	/**
+	 * Returns a new object of class '<em>Response Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Response Property</em>'.
+	 * @generated
+	 */
+	ResponseProperty createResponseProperty();
+
+	/**
+	 * Returns a new object of class '<em>Body Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Body Property</em>'.
+	 * @generated
+	 */
+	BodyProperty createBodyProperty();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link edu.uoc.som.rest.test.TestSuite#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.TestSuite#getCreatedAt <em>Created At</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.TestSuite#getUpdatedAt <em>Updated At</em>}</li>
- *   <li>{@link edu.uoc.som.rest.test.TestSuite#getTestSteps <em>Test Steps</em>}</li>
+ *   <li>{@link edu.uoc.som.rest.test.TestSuite#getTestCases <em>Test Cases</em>}</li>
  * </ul>
  *
  * @see edu.uoc.som.rest.test.TestPackage#getTestSuite()
@@ -105,19 +105,19 @@ public interface TestSuite extends NamedElement {
 	void setUpdatedAt(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Test Steps</b></em>' containment reference list.
-	 * The list contents are of type {@link edu.uoc.som.rest.test.TestStep}.
+	 * Returns the value of the '<em><b>Test Cases</b></em>' containment reference list.
+	 * The list contents are of type {@link edu.uoc.som.rest.test.TestCase}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Test Steps</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Test Cases</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Test Steps</em>' containment reference list.
-	 * @see edu.uoc.som.rest.test.TestPackage#getTestSuite_TestSteps()
+	 * @return the value of the '<em>Test Cases</em>' containment reference list.
+	 * @see edu.uoc.som.rest.test.TestPackage#getTestSuite_TestCases()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<TestStep> getTestSteps();
+	EList<TestCase> getTestCases();
 
 } // TestSuite

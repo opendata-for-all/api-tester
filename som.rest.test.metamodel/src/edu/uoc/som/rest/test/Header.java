@@ -4,6 +4,8 @@ package edu.uoc.som.rest.test;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Header</b></em>'.
@@ -21,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Header extends Property {
+public interface Header extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->

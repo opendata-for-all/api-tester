@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -31,7 +32,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *
  * @generated
  */
-public class HeaderImpl extends PropertyImpl implements Header {
+public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	/**
 	 * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->

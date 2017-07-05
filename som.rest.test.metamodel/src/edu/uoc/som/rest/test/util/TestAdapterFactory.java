@@ -180,6 +180,26 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 				return createPropertyAdapter();
 			}
 			@Override
+			public Adapter caseHeaderProperty(HeaderProperty object) {
+				return createHeaderPropertyAdapter();
+			}
+			@Override
+			public Adapter caseParameterProperty(ParameterProperty object) {
+				return createParameterPropertyAdapter();
+			}
+			@Override
+			public Adapter caseResponseProperty(ResponseProperty object) {
+				return createResponsePropertyAdapter();
+			}
+			@Override
+			public Adapter caseBodyProperty(BodyProperty object) {
+				return createBodyPropertyAdapter();
+			}
+			@Override
+			public Adapter caseComplexProperty(ComplexProperty object) {
+				return createComplexPropertyAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -588,6 +608,76 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPropertyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.uoc.som.rest.test.HeaderProperty <em>Header Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.uoc.som.rest.test.HeaderProperty
+	 * @generated
+	 */
+	public Adapter createHeaderPropertyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.uoc.som.rest.test.ParameterProperty <em>Parameter Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.uoc.som.rest.test.ParameterProperty
+	 * @generated
+	 */
+	public Adapter createParameterPropertyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.uoc.som.rest.test.ResponseProperty <em>Response Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.uoc.som.rest.test.ResponseProperty
+	 * @generated
+	 */
+	public Adapter createResponsePropertyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.uoc.som.rest.test.BodyProperty <em>Body Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.uoc.som.rest.test.BodyProperty
+	 * @generated
+	 */
+	public Adapter createBodyPropertyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.uoc.som.rest.test.ComplexProperty <em>Complex Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.uoc.som.rest.test.ComplexProperty
+	 * @generated
+	 */
+	public Adapter createComplexPropertyAdapter() {
 		return null;
 	}
 

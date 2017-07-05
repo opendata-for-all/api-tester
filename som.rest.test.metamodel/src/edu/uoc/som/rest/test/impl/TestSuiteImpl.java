@@ -2,8 +2,8 @@
  */
 package edu.uoc.som.rest.test.impl;
 
+import edu.uoc.som.rest.test.TestCase;
 import edu.uoc.som.rest.test.TestPackage;
-import edu.uoc.som.rest.test.TestStep;
 import edu.uoc.som.rest.test.TestSuite;
 
 import java.util.Collection;
@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link edu.uoc.som.rest.test.impl.TestSuiteImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.impl.TestSuiteImpl#getCreatedAt <em>Created At</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.impl.TestSuiteImpl#getUpdatedAt <em>Updated At</em>}</li>
- *   <li>{@link edu.uoc.som.rest.test.impl.TestSuiteImpl#getTestSteps <em>Test Steps</em>}</li>
+ *   <li>{@link edu.uoc.som.rest.test.impl.TestSuiteImpl#getTestCases <em>Test Cases</em>}</li>
  * </ul>
  *
  * @generated
@@ -100,14 +100,14 @@ public class TestSuiteImpl extends NamedElementImpl implements TestSuite {
 	protected Date updatedAt = UPDATED_AT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTestSteps() <em>Test Steps</em>}' containment reference list.
+	 * The cached value of the '{@link #getTestCases() <em>Test Cases</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTestSteps()
+	 * @see #getTestCases()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TestStep> testSteps;
+	protected EList<TestCase> testCases;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,11 +196,11 @@ public class TestSuiteImpl extends NamedElementImpl implements TestSuite {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TestStep> getTestSteps() {
-		if (testSteps == null) {
-			testSteps = new EObjectContainmentEList<TestStep>(TestStep.class, this, TestPackage.TEST_SUITE__TEST_STEPS);
+	public EList<TestCase> getTestCases() {
+		if (testCases == null) {
+			testCases = new EObjectContainmentEList<TestCase>(TestCase.class, this, TestPackage.TEST_SUITE__TEST_CASES);
 		}
-		return testSteps;
+		return testCases;
 	}
 
 	/**
@@ -211,8 +211,8 @@ public class TestSuiteImpl extends NamedElementImpl implements TestSuite {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TestPackage.TEST_SUITE__TEST_STEPS:
-				return ((InternalEList<?>)getTestSteps()).basicRemove(otherEnd, msgs);
+			case TestPackage.TEST_SUITE__TEST_CASES:
+				return ((InternalEList<?>)getTestCases()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -231,8 +231,8 @@ public class TestSuiteImpl extends NamedElementImpl implements TestSuite {
 				return getCreatedAt();
 			case TestPackage.TEST_SUITE__UPDATED_AT:
 				return getUpdatedAt();
-			case TestPackage.TEST_SUITE__TEST_STEPS:
-				return getTestSteps();
+			case TestPackage.TEST_SUITE__TEST_CASES:
+				return getTestCases();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -255,9 +255,9 @@ public class TestSuiteImpl extends NamedElementImpl implements TestSuite {
 			case TestPackage.TEST_SUITE__UPDATED_AT:
 				setUpdatedAt((Date)newValue);
 				return;
-			case TestPackage.TEST_SUITE__TEST_STEPS:
-				getTestSteps().clear();
-				getTestSteps().addAll((Collection<? extends TestStep>)newValue);
+			case TestPackage.TEST_SUITE__TEST_CASES:
+				getTestCases().clear();
+				getTestCases().addAll((Collection<? extends TestCase>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -280,8 +280,8 @@ public class TestSuiteImpl extends NamedElementImpl implements TestSuite {
 			case TestPackage.TEST_SUITE__UPDATED_AT:
 				setUpdatedAt(UPDATED_AT_EDEFAULT);
 				return;
-			case TestPackage.TEST_SUITE__TEST_STEPS:
-				getTestSteps().clear();
+			case TestPackage.TEST_SUITE__TEST_CASES:
+				getTestCases().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -301,8 +301,8 @@ public class TestSuiteImpl extends NamedElementImpl implements TestSuite {
 				return CREATED_AT_EDEFAULT == null ? createdAt != null : !CREATED_AT_EDEFAULT.equals(createdAt);
 			case TestPackage.TEST_SUITE__UPDATED_AT:
 				return UPDATED_AT_EDEFAULT == null ? updatedAt != null : !UPDATED_AT_EDEFAULT.equals(updatedAt);
-			case TestPackage.TEST_SUITE__TEST_STEPS:
-				return testSteps != null && !testSteps.isEmpty();
+			case TestPackage.TEST_SUITE__TEST_CASES:
+				return testCases != null && !testCases.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

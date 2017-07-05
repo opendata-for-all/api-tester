@@ -7,6 +7,8 @@ import edu.uoc.som.rest.test.TestPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Authorization</b></em>'.
@@ -14,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class AuthorizationImpl extends PropertyImpl implements Authorization {
+public abstract class AuthorizationImpl extends MinimalEObjectImpl.Container implements Authorization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

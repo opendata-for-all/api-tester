@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link edu.uoc.som.rest.test.impl.TestCaseImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link edu.uoc.som.rest.test.impl.TestCaseImpl#getTests <em>Tests</em>}</li>
+ *   <li>{@link edu.uoc.som.rest.test.impl.TestCaseImpl#getTestSteps <em>Test Steps</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,14 +57,14 @@ public class TestCaseImpl extends NamedElementImpl implements TestCase {
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTests() <em>Tests</em>}' containment reference list.
+	 * The cached value of the '{@link #getTestSteps() <em>Test Steps</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTests()
+	 * @see #getTestSteps()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TestStep> tests;
+	protected EList<TestStep> testSteps;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,11 +111,11 @@ public class TestCaseImpl extends NamedElementImpl implements TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TestStep> getTests() {
-		if (tests == null) {
-			tests = new EObjectContainmentEList<TestStep>(TestStep.class, this, TestPackage.TEST_CASE__TESTS);
+	public EList<TestStep> getTestSteps() {
+		if (testSteps == null) {
+			testSteps = new EObjectContainmentEList<TestStep>(TestStep.class, this, TestPackage.TEST_CASE__TEST_STEPS);
 		}
-		return tests;
+		return testSteps;
 	}
 
 	/**
@@ -126,8 +126,8 @@ public class TestCaseImpl extends NamedElementImpl implements TestCase {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TestPackage.TEST_CASE__TESTS:
-				return ((InternalEList<?>)getTests()).basicRemove(otherEnd, msgs);
+			case TestPackage.TEST_CASE__TEST_STEPS:
+				return ((InternalEList<?>)getTestSteps()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -142,8 +142,8 @@ public class TestCaseImpl extends NamedElementImpl implements TestCase {
 		switch (featureID) {
 			case TestPackage.TEST_CASE__DESCRIPTION:
 				return getDescription();
-			case TestPackage.TEST_CASE__TESTS:
-				return getTests();
+			case TestPackage.TEST_CASE__TEST_STEPS:
+				return getTestSteps();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -160,9 +160,9 @@ public class TestCaseImpl extends NamedElementImpl implements TestCase {
 			case TestPackage.TEST_CASE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case TestPackage.TEST_CASE__TESTS:
-				getTests().clear();
-				getTests().addAll((Collection<? extends TestStep>)newValue);
+			case TestPackage.TEST_CASE__TEST_STEPS:
+				getTestSteps().clear();
+				getTestSteps().addAll((Collection<? extends TestStep>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -179,8 +179,8 @@ public class TestCaseImpl extends NamedElementImpl implements TestCase {
 			case TestPackage.TEST_CASE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case TestPackage.TEST_CASE__TESTS:
-				getTests().clear();
+			case TestPackage.TEST_CASE__TEST_STEPS:
+				getTestSteps().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -196,8 +196,8 @@ public class TestCaseImpl extends NamedElementImpl implements TestCase {
 		switch (featureID) {
 			case TestPackage.TEST_CASE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case TestPackage.TEST_CASE__TESTS:
-				return tests != null && !tests.isEmpty();
+			case TestPackage.TEST_CASE__TEST_STEPS:
+				return testSteps != null && !testSteps.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

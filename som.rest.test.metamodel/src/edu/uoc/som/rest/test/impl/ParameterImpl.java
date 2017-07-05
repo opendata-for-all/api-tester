@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ParameterImpl extends PropertyImpl implements Parameter {
+public class ParameterImpl extends MinimalEObjectImpl.Container implements Parameter {
 	/**
 	 * The default value of the '{@link #getLocation() <em>Location</em>}' attribute.
 	 * <!-- begin-user-doc -->
