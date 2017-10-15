@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="ASCII"?>
+<openAPI.core:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:openAPI.core="http://example.com/openAPI/core">
+  <api swagger="2.0" host="petstore.swagger.io" basePath="/v2" definitions="Order Category User Tag Pet ApiResponse">
+    <externalDocs description="Find out more about Swagger" url="http://swagger.io"/>
+    <info title="Swagger Petstore" description="This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters." version="1.0.0">
+      <contact email="apiteam@swagger.io"/>
+      <license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
+    </info>
+    <schemes>http</schemes>
+    <paths pattern="/pet">
+      <put summary="Update an existing pet" description="" operationId="updatePet">
+        <tagReferences>pet</tagReferences>
+        <consumes>application/json</consumes>
+        <consumes>application/xml</consumes>
+        <produces>application/xml</produces>
+        <produces>application/json</produces>
+      </put>
+      <post summary="Add a new pet to the store" description="" operationId="addPet">
+        <tagReferences>pet</tagReferences>
+        <consumes>application/json</consumes>
+        <consumes>application/xml</consumes>
+        <produces>application/xml</produces>
+        <produces>application/json</produces>
+      </post>
+    </paths>
+    <paths pattern="/pet/findByStatus">
+      <get summary="Finds Pets by status" description="Multiple status values can be provided with comma separated strings" operationId="findPetsByStatus">
+        <tagReferences>pet</tagReferences>
+        <produces>application/xml</produces>
+        <produces>application/json</produces>
+      </get>
+    </paths>
+    <paths pattern="/pet/findByTags">
+      <get summary="Finds Pets by tags" description="Muliple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing." operationId="findPetsByTags" deprecated="true">
+        <tagReferences>pet</tagReferences>
+        <produces>application/xml</produces>
+        <produces>application/json</produces>
+      </get>
+    </paths>
+    <paths pattern="/pet/{petId}">
+      <get summary="Find pet by ID" description="Returns a single pet" operationId="getPetById">
+        <tagReferences>pet</tagReferences>
+        <produces>application/xml</produces>
+        <produces>application/json</produces>
+      </get>
+      <post summary="Updates a pet in the store with form data" description="" operationId="updatePetWithForm">
+        <tagReferences>pet</tagReferences>
+        <consumes>application/x-www-form-urlencoded</consumes>
+        <produces>application/xml</produces>
+        <produces>application/json</produces>
+      </post>
+      <delete summary="Deletes a pet" description="" operationId="deletePet">
+        <tagReferences>pet</tagReferences>
+        <produces>application/xml</produces>
+        <produces>application/json</produces>
+      </delete>
+    </paths>
+    <paths pattern="/pet/{petId}/uploadImage">
+      <post summary="uploads an image" description="" operationId="uploadFile">
+        <tagReferences>pet</tagReferences>
+        <consumes>multipart/form-data</consumes>
+        <produces>application/json</produces>
+      </post>
+    </paths>
+    <paths pattern="/store/inventory">
+      <get summary="Returns pet inventories by status" description="Returns a map of status codes to quantities" operationId="getInventory">
+        <tagReferences>store</tagReferences>
+        <produces>application/json</produces>
+      </get>
+    </paths>
+    <paths pattern="/store/order">
+      <post summary="Place an order for a pet" description="" operationId="placeOrder">
+        <tagReferences>store</tagReferences>
+        <produces>application/xml</produces>
+        <produces>application/json</produces>
+      </post>
+    </paths>
+    <paths pattern="/store/order/{orderId}">
+      <get summary="Find purchase order by ID" description="For valid response try integer IDs with value >= 1 and &lt;= 10. Other values will generated exceptions" operationId="getOrderById">
+        <tagReferences>store</tagReferences>
+        <produces>application/xml</produces>
+        <produces>application/json</produces>
+      </get>
+      <delete summary="Delete purchase order by ID" description="For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors" operationId="deleteOrder">
+        <tagReferences>store</tagReferences>
+        <produces>application/xml</produces>
+        <produces>application/json</produces>
+      </delete>
+    </paths>
+    <paths pattern="/user">
+      <post summary="Create user" description="This can only be done by the logged in user." operationId="createUser">
+        <tagReferences>user</tagReferences>
+        <produces>application/xml</produces>
+        <produces>application/json</produces>
+      </post>
+    </paths>
+    <paths pattern="/user/createWithArray">
+      <post summary="Creates list of users with given input array" description="" operationId="createUsersWithArrayInput">
+        <tagReferences>user</tagReferences>
+        <produces>application/xml</produces>
+        <produces>application/json</produces>
+      </post>
+    </paths>
+    <paths pattern="/user/createWithList">
+      <post summary="Creates list of users with given input array" description="" operationId="createUsersWithListInput">
+        <tagReferences>user</tagReferences>
+        <produces>application/xml</produces>
+        <produces>application/json</produces>
+      </post>
+    </paths>
+    <paths pattern="/user/login">
+      <get summary="Logs user into the system" description="" operationId="loginUser">
+        <tagReferences>user</tagReferences>
+        <produces>application/xml</produces>
+        <produces>application/json</produces>
+      </get>
+    </paths>
+    <paths pattern="/user/logout">
+      <get summary="Logs out current logged in user session" description="" operationId="logoutUser">
+        <tagReferences>user</tagReferences>
+        <produces>application/xml</produces>
+        <produces>application/json</produces>
+      </get>
+    </paths>
+    <paths pattern="/user/{username}">
+      <get summary="Get user by user name" description="" operationId="getUserByName">
+        <tagReferences>user</tagReferences>
+        <produces>application/xml</produces>
+        <produces>application/json</produces>
+      </get>
+      <put summary="Updated user" description="This can only be done by the logged in user." operationId="updateUser">
+        <tagReferences>user</tagReferences>
+        <produces>application/xml</produces>
+        <produces>application/json</produces>
+      </put>
+      <delete summary="Delete user" description="This can only be done by the logged in user." operationId="deleteUser">
+        <tagReferences>user</tagReferences>
+        <produces>application/xml</produces>
+        <produces>application/json</produces>
+      </delete>
+    </paths>
+    <securityDefinitions type="oauth2" flow="implicit" authorizationUrl="http://petstore.swagger.io/oauth/dialog" globalName="petstore_auth">
+      <scopes name="write:pets" description="modify pets in your account"/>
+      <scopes name="read:pets" description="read your pets"/>
+    </securityDefinitions>
+    <securityDefinitions type="apiKey" name="api_key" location="header" globalName="api_key"/>
+    <tags name="pet" description="Everything about your Pets">
+      <externalDocs description="Find out more" url="http://swagger.io"/>
+    </tags>
+    <tags name="store" description="Access to Petstore orders"/>
+    <tags name="user" description="Operations about user">
+      <externalDocs description="Find out more about our store" url="http://swagger.io"/>
+    </tags>
+  </api>
+  <schemas type="object" name="Order" properties="id petId quantity shipDate status complete" declaringContext="//@api">
+    <xml name="Order"/>
+  </schemas>
+  <schemas type="object" name="Category" properties="id name" declaringContext="//@api">
+    <xml name="Category"/>
+  </schemas>
+  <schemas type="object" name="User" properties="id username firstName lastName email password phone userStatus" declaringContext="//@api">
+    <xml name="User"/>
+  </schemas>
+  <schemas type="object" name="Tag" properties="id name" declaringContext="//@api">
+    <xml name="Tag"/>
+  </schemas>
+  <schemas type="object" name="Pet" properties="id category name photoUrls tags status" declaringContext="//@api">
+    <required>name</required>
+    <required>photoUrls</required>
+    <xml name="Pet"/>
+  </schemas>
+  <schemas type="object" name="ApiResponse" properties="code type message" declaringContext="//@api"/>
+</openAPI.core:Root>
