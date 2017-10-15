@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Generator
+Bundle-SymbolicName: som.openapi.test.generator
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: som.openapi.test.generator.Activator
+Bundle-Vendor: SOM Research Lab
+Require-Bundle: org.eclipse.ui,
+  org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
