@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="som.openapi.test.generator.objectContribution1"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="som.openapi.test.generator.menu1"
+               label="Open API"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="som.openapi.test.generator.popup.actions.GenerateOpenAPIModelAction"
+               enablesFor="1"
+               id="som.openapi.test.generator.action1"
+               label="Generate Open API model"
+               menubarPath="som.openapi.test.generator.menu1/group1">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>
