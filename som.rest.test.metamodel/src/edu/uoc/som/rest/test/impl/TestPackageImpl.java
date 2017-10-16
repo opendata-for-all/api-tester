@@ -427,6 +427,15 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getTestSuite_Api() {
+		return (EAttribute)testSuiteEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTestCase() {
 		return testCaseEClass;
 	}
@@ -1121,6 +1130,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		createEAttribute(testSuiteEClass, TEST_SUITE__CREATED_AT);
 		createEAttribute(testSuiteEClass, TEST_SUITE__UPDATED_AT);
 		createEReference(testSuiteEClass, TEST_SUITE__TEST_CASES);
+		createEAttribute(testSuiteEClass, TEST_SUITE__API);
 
 		testCaseEClass = createEClass(TEST_CASE);
 		createEAttribute(testCaseEClass, TEST_CASE__DESCRIPTION);
@@ -1292,6 +1302,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEAttribute(getTestSuite_CreatedAt(), ecorePackage.getEDate(), "createdAt", null, 0, 1, TestSuite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestSuite_UpdatedAt(), ecorePackage.getEDate(), "updatedAt", null, 0, 1, TestSuite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTestSuite_TestCases(), this.getTestCase(), null, "testCases", null, 0, -1, TestSuite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTestSuite_Api(), ecorePackage.getEString(), "api", null, 0, 1, TestSuite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(testCaseEClass, TestCase.class, "TestCase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTestCase_Description(), ecorePackage.getEString(), "description", null, 0, 1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

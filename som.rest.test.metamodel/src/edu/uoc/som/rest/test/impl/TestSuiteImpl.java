@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link edu.uoc.som.rest.test.impl.TestSuiteImpl#getCreatedAt <em>Created At</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.impl.TestSuiteImpl#getUpdatedAt <em>Updated At</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.impl.TestSuiteImpl#getTestCases <em>Test Cases</em>}</li>
+ *   <li>{@link edu.uoc.som.rest.test.impl.TestSuiteImpl#getApi <em>Api</em>}</li>
  * </ul>
  *
  * @generated
@@ -108,6 +109,26 @@ public class TestSuiteImpl extends NamedElementImpl implements TestSuite {
 	 * @ordered
 	 */
 	protected EList<TestCase> testCases;
+
+	/**
+	 * The default value of the '{@link #getApi() <em>Api</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getApi()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String API_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getApi() <em>Api</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getApi()
+	 * @generated
+	 * @ordered
+	 */
+	protected String api = API_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,6 +229,27 @@ public class TestSuiteImpl extends NamedElementImpl implements TestSuite {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getApi() {
+		return api;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setApi(String newApi) {
+		String oldApi = api;
+		api = newApi;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TEST_SUITE__API, oldApi, api));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -233,6 +275,8 @@ public class TestSuiteImpl extends NamedElementImpl implements TestSuite {
 				return getUpdatedAt();
 			case TestPackage.TEST_SUITE__TEST_CASES:
 				return getTestCases();
+			case TestPackage.TEST_SUITE__API:
+				return getApi();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -259,6 +303,9 @@ public class TestSuiteImpl extends NamedElementImpl implements TestSuite {
 				getTestCases().clear();
 				getTestCases().addAll((Collection<? extends TestCase>)newValue);
 				return;
+			case TestPackage.TEST_SUITE__API:
+				setApi((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -283,6 +330,9 @@ public class TestSuiteImpl extends NamedElementImpl implements TestSuite {
 			case TestPackage.TEST_SUITE__TEST_CASES:
 				getTestCases().clear();
 				return;
+			case TestPackage.TEST_SUITE__API:
+				setApi(API_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -303,6 +353,8 @@ public class TestSuiteImpl extends NamedElementImpl implements TestSuite {
 				return UPDATED_AT_EDEFAULT == null ? updatedAt != null : !UPDATED_AT_EDEFAULT.equals(updatedAt);
 			case TestPackage.TEST_SUITE__TEST_CASES:
 				return testCases != null && !testCases.isEmpty();
+			case TestPackage.TEST_SUITE__API:
+				return API_EDEFAULT == null ? api != null : !API_EDEFAULT.equals(api);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -323,6 +375,8 @@ public class TestSuiteImpl extends NamedElementImpl implements TestSuite {
 		result.append(createdAt);
 		result.append(", updatedAt: ");
 		result.append(updatedAt);
+		result.append(", api: ");
+		result.append(api);
 		result.append(')');
 		return result.toString();
 	}

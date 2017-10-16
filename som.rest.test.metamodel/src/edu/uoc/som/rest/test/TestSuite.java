@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link edu.uoc.som.rest.test.TestSuite#getCreatedAt <em>Created At</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.TestSuite#getUpdatedAt <em>Updated At</em>}</li>
  *   <li>{@link edu.uoc.som.rest.test.TestSuite#getTestCases <em>Test Cases</em>}</li>
+ *   <li>{@link edu.uoc.som.rest.test.TestSuite#getApi <em>Api</em>}</li>
  * </ul>
  *
  * @see edu.uoc.som.rest.test.TestPackage#getTestSuite()
@@ -119,5 +120,31 @@ public interface TestSuite extends NamedElement {
 	 * @generated
 	 */
 	EList<TestCase> getTestCases();
+
+	/**
+	 * Returns the value of the '<em><b>Api</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Api</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Api</em>' attribute.
+	 * @see #setApi(String)
+	 * @see edu.uoc.som.rest.test.TestPackage#getTestSuite_Api()
+	 * @model
+	 * @generated
+	 */
+	String getApi();
+
+	/**
+	 * Sets the value of the '{@link edu.uoc.som.rest.test.TestSuite#getApi <em>Api</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Api</em>' attribute.
+	 * @see #getApi()
+	 * @generated
+	 */
+	void setApi(String value);
 
 } // TestSuite

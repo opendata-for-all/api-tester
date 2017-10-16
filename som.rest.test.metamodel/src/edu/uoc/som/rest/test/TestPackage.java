@@ -150,13 +150,22 @@ public interface TestPackage extends EPackage {
 	int TEST_SUITE__TEST_CASES = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Api</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SUITE__API = NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Suite</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SUITE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int TEST_SUITE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Suite</em>' class.
@@ -1734,6 +1743,17 @@ public interface TestPackage extends EPackage {
 	EReference getTestSuite_TestCases();
 
 	/**
+	 * Returns the meta object for the attribute '{@link edu.uoc.som.rest.test.TestSuite#getApi <em>Api</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Api</em>'.
+	 * @see edu.uoc.som.rest.test.TestSuite#getApi()
+	 * @see #getTestSuite()
+	 * @generated
+	 */
+	EAttribute getTestSuite_Api();
+
+	/**
 	 * Returns the meta object for class '{@link edu.uoc.som.rest.test.TestCase <em>Case</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2575,6 +2595,14 @@ public interface TestPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TEST_SUITE__TEST_CASES = eINSTANCE.getTestSuite_TestCases();
+
+		/**
+		 * The meta object literal for the '<em><b>Api</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TEST_SUITE__API = eINSTANCE.getTestSuite_Api();
 
 		/**
 		 * The meta object literal for the '{@link edu.uoc.som.rest.test.impl.TestCaseImpl <em>Case</em>}' class.
