@@ -22,6 +22,12 @@
                label="Generate Open API model"
                menubarPath="som.openapi.test.generator.menu1/group1">
          </action>
+         <action
+               class="som.openapi.test.generator.popup.actions.GenerateTestModelAction"
+               id="som.openapi.test.generator.action2"
+               label="Generate TestSuite Model"
+               menubarPath="som.openapi.test.generator.menu1/group1">
+         </action>
       </objectContribution>
    </extension>
 
