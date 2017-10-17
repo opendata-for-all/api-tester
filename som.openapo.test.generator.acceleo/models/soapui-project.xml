@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="xxxx" activeEnvironment="Default" name="" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config">
+   <con:settings/>
+   <con:testSuite id="xxxx" name="">
+   </con:testSuite>
+</con:soapui-project>
