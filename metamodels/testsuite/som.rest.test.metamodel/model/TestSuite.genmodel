@@ -5,7 +5,7 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     language="" operationReflection="true" importOrganizing="true">
   <foreignModel>TestSuite.ecore</foreignModel>
-  <genPackages prefix="Test" basePackage="edu.uoc.som.rest" disposableProviderFactory="true"
+  <genPackages prefix="Test" basePackage="som.rest" disposableProviderFactory="true"
       ecorePackage="TestSuite.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="TestSuite.ecore#//ParameterLocation">
       <genEnumLiterals ecoreEnumLiteral="TestSuite.ecore#//ParameterLocation/undefined"/>
@@ -35,6 +35,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//TestSuite/createdAt"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//TestSuite/updatedAt"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestSuite.ecore#//TestSuite/testCases"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//TestSuite/api"/>
     </genClasses>
     <genClasses ecoreClass="TestSuite.ecore#//TestCase">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//TestCase/description"/>

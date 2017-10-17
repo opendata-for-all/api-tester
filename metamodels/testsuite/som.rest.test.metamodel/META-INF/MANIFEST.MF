@@ -7,12 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: edu.uoc.som.rest.test,
- edu.uoc.som.rest.test.impl,
- edu.uoc.som.rest.test.util,
- edu.uoc.som.rest.test,
- edu.uoc.som.rest.test.impl,
- edu.uoc.som.rest.test.util
+Export-Package: som.rest.test,
+ som.rest.test.impl,
+ som.rest.test.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy
