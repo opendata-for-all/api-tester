@@ -24,7 +24,7 @@ import org.eclipse.m2m.atl.emftvm.util.ModuleResolver;
 import org.eclipse.m2m.atl.emftvm.util.TimingData;
 
 import core.CorePackage;
-import edu.uoc.som.rest.test.TestPackage;
+import som.rest.test.TestPackage;
 
 public class ATLRunner {
 
