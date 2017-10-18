@@ -80,8 +80,8 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 				return createTestStepAdapter();
 			}
 			@Override
-			public Adapter caseRequest(Request object) {
-				return createRequestAdapter();
+			public Adapter caseAPIRequest(APIRequest object) {
+				return createAPIRequestAdapter();
 			}
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
@@ -90,10 +90,6 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseParameter(Parameter object) {
 				return createParameterAdapter();
-			}
-			@Override
-			public Adapter caseHeader(Header object) {
-				return createHeaderAdapter();
 			}
 			@Override
 			public Adapter caseAssertion(Assertion object) {
@@ -112,12 +108,12 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 				return createResponseMessageAssertionAdapter();
 			}
 			@Override
-			public Adapter caseContainsAssertion(ContainsAssertion object) {
-				return createContainsAssertionAdapter();
+			public Adapter caseResponseMessageContainsAssertion(ResponseMessageContainsAssertion object) {
+				return createResponseMessageContainsAssertionAdapter();
 			}
 			@Override
-			public Adapter caseEqualsAssertion(EqualsAssertion object) {
-				return createEqualsAssertionAdapter();
+			public Adapter caseResponseMessageEqualsAssertion(ResponseMessageEqualsAssertion object) {
+				return createResponseMessageEqualsAssertionAdapter();
 			}
 			@Override
 			public Adapter caseSchemaComplianceAssertion(SchemaComplianceAssertion object) {
@@ -152,10 +148,6 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 				return createValidStatusCodesAssertionAdapter();
 			}
 			@Override
-			public Adapter caseOpenAPIComplianceAssertion(OpenAPIComplianceAssertion object) {
-				return createOpenAPIComplianceAssertionAdapter();
-			}
-			@Override
 			public Adapter caseAuthorization(Authorization object) {
 				return createAuthorizationAdapter();
 			}
@@ -168,20 +160,12 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 				return createOAuth2Adapter();
 			}
 			@Override
-			public Adapter caseBody(Body object) {
-				return createBodyAdapter();
-			}
-			@Override
 			public Adapter casePropertyTransfer(PropertyTransfer object) {
 				return createPropertyTransferAdapter();
 			}
 			@Override
 			public Adapter caseProperty(Property object) {
 				return createPropertyAdapter();
-			}
-			@Override
-			public Adapter caseHeaderProperty(HeaderProperty object) {
-				return createHeaderPropertyAdapter();
 			}
 			@Override
 			public Adapter caseParameterProperty(ParameterProperty object) {
@@ -192,12 +176,16 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 				return createResponsePropertyAdapter();
 			}
 			@Override
-			public Adapter caseBodyProperty(BodyProperty object) {
-				return createBodyPropertyAdapter();
+			public Adapter caseInputProperty(InputProperty object) {
+				return createInputPropertyAdapter();
 			}
 			@Override
-			public Adapter caseComplexProperty(ComplexProperty object) {
-				return createComplexPropertyAdapter();
+			public Adapter caseOutputProperty(OutputProperty object) {
+				return createOutputPropertyAdapter();
+			}
+			@Override
+			public Adapter caseHeaderProperty(HeaderProperty object) {
+				return createHeaderPropertyAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -262,16 +250,16 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link som.rest.test.Request <em>Request</em>}'.
+	 * Creates a new adapter for an object of class '{@link som.rest.test.APIRequest <em>API Request</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see som.rest.test.Request
+	 * @see som.rest.test.APIRequest
 	 * @generated
 	 */
-	public Adapter createRequestAdapter() {
+	public Adapter createAPIRequestAdapter() {
 		return null;
 	}
 
@@ -300,20 +288,6 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createParameterAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link som.rest.test.Header <em>Header</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see som.rest.test.Header
-	 * @generated
-	 */
-	public Adapter createHeaderAdapter() {
 		return null;
 	}
 
@@ -374,30 +348,30 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link som.rest.test.ContainsAssertion <em>Contains Assertion</em>}'.
+	 * Creates a new adapter for an object of class '{@link som.rest.test.ResponseMessageContainsAssertion <em>Response Message Contains Assertion</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see som.rest.test.ContainsAssertion
+	 * @see som.rest.test.ResponseMessageContainsAssertion
 	 * @generated
 	 */
-	public Adapter createContainsAssertionAdapter() {
+	public Adapter createResponseMessageContainsAssertionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link som.rest.test.EqualsAssertion <em>Equals Assertion</em>}'.
+	 * Creates a new adapter for an object of class '{@link som.rest.test.ResponseMessageEqualsAssertion <em>Response Message Equals Assertion</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see som.rest.test.EqualsAssertion
+	 * @see som.rest.test.ResponseMessageEqualsAssertion
 	 * @generated
 	 */
-	public Adapter createEqualsAssertionAdapter() {
+	public Adapter createResponseMessageEqualsAssertionAdapter() {
 		return null;
 	}
 
@@ -514,20 +488,6 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link som.rest.test.OpenAPIComplianceAssertion <em>Open API Compliance Assertion</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see som.rest.test.OpenAPIComplianceAssertion
-	 * @generated
-	 */
-	public Adapter createOpenAPIComplianceAssertionAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link som.rest.test.Authorization <em>Authorization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -570,20 +530,6 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link som.rest.test.Body <em>Body</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see som.rest.test.Body
-	 * @generated
-	 */
-	public Adapter createBodyAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link som.rest.test.PropertyTransfer <em>Property Transfer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -608,20 +554,6 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPropertyAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link som.rest.test.HeaderProperty <em>Header Property</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see som.rest.test.HeaderProperty
-	 * @generated
-	 */
-	public Adapter createHeaderPropertyAdapter() {
 		return null;
 	}
 
@@ -654,30 +586,44 @@ public class TestAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link som.rest.test.BodyProperty <em>Body Property</em>}'.
+	 * Creates a new adapter for an object of class '{@link som.rest.test.InputProperty <em>Input Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see som.rest.test.BodyProperty
+	 * @see som.rest.test.InputProperty
 	 * @generated
 	 */
-	public Adapter createBodyPropertyAdapter() {
+	public Adapter createInputPropertyAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link som.rest.test.ComplexProperty <em>Complex Property</em>}'.
+	 * Creates a new adapter for an object of class '{@link som.rest.test.OutputProperty <em>Output Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see som.rest.test.ComplexProperty
+	 * @see som.rest.test.OutputProperty
 	 * @generated
 	 */
-	public Adapter createComplexPropertyAdapter() {
+	public Adapter createOutputPropertyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link som.rest.test.HeaderProperty <em>Header Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see som.rest.test.HeaderProperty
+	 * @generated
+	 */
+	public Adapter createHeaderPropertyAdapter() {
 		return null;
 	}
 

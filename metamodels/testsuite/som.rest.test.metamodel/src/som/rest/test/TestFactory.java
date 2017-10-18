@@ -40,13 +40,13 @@ public interface TestFactory extends EFactory {
 	TestCase createTestCase();
 
 	/**
-	 * Returns a new object of class '<em>Request</em>'.
+	 * Returns a new object of class '<em>API Request</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Request</em>'.
+	 * @return a new object of class '<em>API Request</em>'.
 	 * @generated
 	 */
-	Request createRequest();
+	APIRequest createAPIRequest();
 
 	/**
 	 * Returns a new object of class '<em>Parameter</em>'.
@@ -58,31 +58,22 @@ public interface TestFactory extends EFactory {
 	Parameter createParameter();
 
 	/**
-	 * Returns a new object of class '<em>Header</em>'.
+	 * Returns a new object of class '<em>Response Message Contains Assertion</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Header</em>'.
+	 * @return a new object of class '<em>Response Message Contains Assertion</em>'.
 	 * @generated
 	 */
-	Header createHeader();
+	ResponseMessageContainsAssertion createResponseMessageContainsAssertion();
 
 	/**
-	 * Returns a new object of class '<em>Contains Assertion</em>'.
+	 * Returns a new object of class '<em>Response Message Equals Assertion</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Contains Assertion</em>'.
+	 * @return a new object of class '<em>Response Message Equals Assertion</em>'.
 	 * @generated
 	 */
-	ContainsAssertion createContainsAssertion();
-
-	/**
-	 * Returns a new object of class '<em>Equals Assertion</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Equals Assertion</em>'.
-	 * @generated
-	 */
-	EqualsAssertion createEqualsAssertion();
+	ResponseMessageEqualsAssertion createResponseMessageEqualsAssertion();
 
 	/**
 	 * Returns a new object of class '<em>Schema Compliance Assertion</em>'.
@@ -139,15 +130,6 @@ public interface TestFactory extends EFactory {
 	ValidStatusCodesAssertion createValidStatusCodesAssertion();
 
 	/**
-	 * Returns a new object of class '<em>Open API Compliance Assertion</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Open API Compliance Assertion</em>'.
-	 * @generated
-	 */
-	OpenAPIComplianceAssertion createOpenAPIComplianceAssertion();
-
-	/**
 	 * Returns a new object of class '<em>Basic</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -166,15 +148,6 @@ public interface TestFactory extends EFactory {
 	OAuth2 createOAuth2();
 
 	/**
-	 * Returns a new object of class '<em>Body</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Body</em>'.
-	 * @generated
-	 */
-	Body createBody();
-
-	/**
 	 * Returns a new object of class '<em>Property Transfer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -182,15 +155,6 @@ public interface TestFactory extends EFactory {
 	 * @generated
 	 */
 	PropertyTransfer createPropertyTransfer();
-
-	/**
-	 * Returns a new object of class '<em>Header Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Header Property</em>'.
-	 * @generated
-	 */
-	HeaderProperty createHeaderProperty();
 
 	/**
 	 * Returns a new object of class '<em>Parameter Property</em>'.
@@ -211,13 +175,13 @@ public interface TestFactory extends EFactory {
 	ResponseProperty createResponseProperty();
 
 	/**
-	 * Returns a new object of class '<em>Body Property</em>'.
+	 * Returns a new object of class '<em>Header Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Body Property</em>'.
+	 * @return a new object of class '<em>Header Property</em>'.
 	 * @generated
 	 */
-	BodyProperty createBodyProperty();
+	HeaderProperty createHeaderProperty();
 
 	/**
 	 * Returns the package supported by this factory.

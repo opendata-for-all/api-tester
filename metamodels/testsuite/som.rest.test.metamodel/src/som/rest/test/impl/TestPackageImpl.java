@@ -10,26 +10,22 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import som.rest.test.APIRequest;
 import som.rest.test.Assertion;
 import som.rest.test.Authorization;
 import som.rest.test.Basic;
-import som.rest.test.Body;
-import som.rest.test.BodyProperty;
-import som.rest.test.ComplexProperty;
 import som.rest.test.ComplianceAssertion;
-import som.rest.test.ContainsAssertion;
-import som.rest.test.EqualsAssertion;
 import som.rest.test.HTTPMethod;
 import som.rest.test.HTTPStatusAssertion;
-import som.rest.test.Header;
 import som.rest.test.HeaderAssertion;
 import som.rest.test.HeaderEqualsAssertion;
 import som.rest.test.HeaderExistsAssertion;
 import som.rest.test.HeaderProperty;
+import som.rest.test.InputProperty;
 import som.rest.test.InvalidStatusCodesAssertion;
 import som.rest.test.NamedElement;
 import som.rest.test.OAuth2;
-import som.rest.test.OpenAPIComplianceAssertion;
+import som.rest.test.OutputProperty;
 import som.rest.test.Parameter;
 import som.rest.test.ParameterLocation;
 import som.rest.test.ParameterProperty;
@@ -37,8 +33,9 @@ import som.rest.test.PathLanguage;
 import som.rest.test.PerformanceAssertion;
 import som.rest.test.Property;
 import som.rest.test.PropertyTransfer;
-import som.rest.test.Request;
 import som.rest.test.ResponseMessageAssertion;
+import som.rest.test.ResponseMessageContainsAssertion;
+import som.rest.test.ResponseMessageEqualsAssertion;
 import som.rest.test.ResponseProperty;
 import som.rest.test.SLAAssertion;
 import som.rest.test.SchemaComplianceAssertion;
@@ -83,7 +80,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass requestEClass = null;
+	private EClass apiRequestEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,13 +95,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	private EClass parameterEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass headerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,14 +129,14 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass containsAssertionEClass = null;
+	private EClass responseMessageContainsAssertionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass equalsAssertionEClass = null;
+	private EClass responseMessageEqualsAssertionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,13 +199,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass openAPIComplianceAssertionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass authorizationEClass = null;
 
 	/**
@@ -237,13 +220,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass bodyEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass propertyTransferEClass = null;
 
 	/**
@@ -252,13 +228,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	private EClass propertyEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass headerPropertyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -279,14 +248,21 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass bodyPropertyEClass = null;
+	private EClass inputPropertyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass complexPropertyEClass = null;
+	private EClass outputPropertyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass headerPropertyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -400,26 +376,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTestSuite_CreatedAt() {
-		return (EAttribute)testSuiteEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTestSuite_UpdatedAt() {
-		return (EAttribute)testSuiteEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getTestSuite_TestCases() {
-		return (EReference)testSuiteEClass.getEStructuralFeatures().get(3);
+		return (EReference)testSuiteEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -428,7 +386,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	public EAttribute getTestSuite_Api() {
-		return (EAttribute)testSuiteEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)testSuiteEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -472,8 +430,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRequest() {
-		return requestEClass;
+	public EClass getAPIRequest() {
+		return apiRequestEClass;
 	}
 
 	/**
@@ -481,8 +439,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRequest_HttpMethod() {
-		return (EAttribute)requestEClass.getEStructuralFeatures().get(0);
+	public EAttribute getAPIRequest_OperationId() {
+		return (EAttribute)apiRequestEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -490,8 +448,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRequest_Host() {
-		return (EAttribute)requestEClass.getEStructuralFeatures().get(1);
+	public EAttribute getAPIRequest_ContentType() {
+		return (EAttribute)apiRequestEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -499,8 +457,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRequest_Path() {
-		return (EAttribute)requestEClass.getEStructuralFeatures().get(2);
+	public EAttribute getAPIRequest_Accept() {
+		return (EAttribute)apiRequestEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -508,8 +466,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRequest_Scheme() {
-		return (EAttribute)requestEClass.getEStructuralFeatures().get(3);
+	public EAttribute getAPIRequest_Scheme() {
+		return (EAttribute)apiRequestEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -517,8 +475,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRequest_Headers() {
-		return (EReference)requestEClass.getEStructuralFeatures().get(4);
+	public EReference getAPIRequest_Parameters() {
+		return (EReference)apiRequestEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -526,8 +484,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRequest_Parameters() {
-		return (EReference)requestEClass.getEStructuralFeatures().get(5);
+	public EReference getAPIRequest_Assertions() {
+		return (EReference)apiRequestEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -535,26 +493,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRequest_Assertions() {
-		return (EReference)requestEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRequest_Authorization() {
-		return (EReference)requestEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRequest_Body() {
-		return (EReference)requestEClass.getEStructuralFeatures().get(8);
+	public EReference getAPIRequest_Authorization() {
+		return (EReference)apiRequestEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -609,33 +549,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 */
 	public EAttribute getParameter_Value() {
 		return (EAttribute)parameterEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getHeader() {
-		return headerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getHeader_Key() {
-		return (EAttribute)headerEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getHeader_Value() {
-		return (EAttribute)headerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -706,8 +619,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getContainsAssertion() {
-		return containsAssertionEClass;
+	public EClass getResponseMessageContainsAssertion() {
+		return responseMessageContainsAssertionEClass;
 	}
 
 	/**
@@ -715,8 +628,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEqualsAssertion() {
-		return equalsAssertionEClass;
+	public EClass getResponseMessageEqualsAssertion() {
+		return responseMessageEqualsAssertionEClass;
 	}
 
 	/**
@@ -832,24 +745,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getOpenAPIComplianceAssertion() {
-		return openAPIComplianceAssertionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getOpenAPIComplianceAssertion_Strict() {
-		return (EAttribute)openAPIComplianceAssertionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getAuthorization() {
 		return authorizationEClass;
 	}
@@ -904,33 +799,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBody() {
-		return bodyEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getBody_MediaType() {
-		return (EAttribute)bodyEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getBody_Value() {
-		return (EAttribute)bodyEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getPropertyTransfer() {
 		return propertyTransferEClass;
 	}
@@ -967,8 +835,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getHeaderProperty() {
-		return headerPropertyEClass;
+	public EAttribute getProperty_Expression() {
+		return (EAttribute)propertyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -976,8 +844,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHeaderProperty_Header() {
-		return (EReference)headerPropertyEClass.getEStructuralFeatures().get(0);
+	public EAttribute getProperty_PathLanguage() {
+		return (EAttribute)propertyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1012,8 +880,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getResponseProperty_Request() {
-		return (EReference)responsePropertyEClass.getEStructuralFeatures().get(0);
+	public EClass getInputProperty() {
+		return inputPropertyEClass;
 	}
 
 	/**
@@ -1021,8 +889,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBodyProperty() {
-		return bodyPropertyEClass;
+	public EClass getOutputProperty() {
+		return outputPropertyEClass;
 	}
 
 	/**
@@ -1030,8 +898,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBodyProperty_Body() {
-		return (EReference)bodyPropertyEClass.getEStructuralFeatures().get(0);
+	public EReference getOutputProperty_Request() {
+		return (EReference)outputPropertyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1039,26 +907,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getComplexProperty() {
-		return complexPropertyEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getComplexProperty_PathLanguage() {
-		return (EAttribute)complexPropertyEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getComplexProperty_PathValue() {
-		return (EAttribute)complexPropertyEClass.getEStructuralFeatures().get(1);
+	public EClass getHeaderProperty() {
+		return headerPropertyEClass;
 	}
 
 	/**
@@ -1127,8 +977,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		// Create classes and their features
 		testSuiteEClass = createEClass(TEST_SUITE);
 		createEAttribute(testSuiteEClass, TEST_SUITE__DESCRIPTION);
-		createEAttribute(testSuiteEClass, TEST_SUITE__CREATED_AT);
-		createEAttribute(testSuiteEClass, TEST_SUITE__UPDATED_AT);
 		createEReference(testSuiteEClass, TEST_SUITE__TEST_CASES);
 		createEAttribute(testSuiteEClass, TEST_SUITE__API);
 
@@ -1138,16 +986,14 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 
 		testStepEClass = createEClass(TEST_STEP);
 
-		requestEClass = createEClass(REQUEST);
-		createEAttribute(requestEClass, REQUEST__HTTP_METHOD);
-		createEAttribute(requestEClass, REQUEST__HOST);
-		createEAttribute(requestEClass, REQUEST__PATH);
-		createEAttribute(requestEClass, REQUEST__SCHEME);
-		createEReference(requestEClass, REQUEST__HEADERS);
-		createEReference(requestEClass, REQUEST__PARAMETERS);
-		createEReference(requestEClass, REQUEST__ASSERTIONS);
-		createEReference(requestEClass, REQUEST__AUTHORIZATION);
-		createEReference(requestEClass, REQUEST__BODY);
+		apiRequestEClass = createEClass(API_REQUEST);
+		createEAttribute(apiRequestEClass, API_REQUEST__OPERATION_ID);
+		createEAttribute(apiRequestEClass, API_REQUEST__CONTENT_TYPE);
+		createEAttribute(apiRequestEClass, API_REQUEST__ACCEPT);
+		createEAttribute(apiRequestEClass, API_REQUEST__SCHEME);
+		createEReference(apiRequestEClass, API_REQUEST__PARAMETERS);
+		createEReference(apiRequestEClass, API_REQUEST__ASSERTIONS);
+		createEReference(apiRequestEClass, API_REQUEST__AUTHORIZATION);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
@@ -1156,10 +1002,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		createEAttribute(parameterEClass, PARAMETER__LOCATION);
 		createEAttribute(parameterEClass, PARAMETER__NAME);
 		createEAttribute(parameterEClass, PARAMETER__VALUE);
-
-		headerEClass = createEClass(HEADER);
-		createEAttribute(headerEClass, HEADER__KEY);
-		createEAttribute(headerEClass, HEADER__VALUE);
 
 		assertionEClass = createEClass(ASSERTION);
 		createEAttribute(assertionEClass, ASSERTION__ERROR_MESSAGE);
@@ -1172,9 +1014,9 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		responseMessageAssertionEClass = createEClass(RESPONSE_MESSAGE_ASSERTION);
 		createEAttribute(responseMessageAssertionEClass, RESPONSE_MESSAGE_ASSERTION__VALUE);
 
-		containsAssertionEClass = createEClass(CONTAINS_ASSERTION);
+		responseMessageContainsAssertionEClass = createEClass(RESPONSE_MESSAGE_CONTAINS_ASSERTION);
 
-		equalsAssertionEClass = createEClass(EQUALS_ASSERTION);
+		responseMessageEqualsAssertionEClass = createEClass(RESPONSE_MESSAGE_EQUALS_ASSERTION);
 
 		schemaComplianceAssertionEClass = createEClass(SCHEMA_COMPLIANCE_ASSERTION);
 
@@ -1196,9 +1038,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 
 		validStatusCodesAssertionEClass = createEClass(VALID_STATUS_CODES_ASSERTION);
 
-		openAPIComplianceAssertionEClass = createEClass(OPEN_API_COMPLIANCE_ASSERTION);
-		createEAttribute(openAPIComplianceAssertionEClass, OPEN_API_COMPLIANCE_ASSERTION__STRICT);
-
 		authorizationEClass = createEClass(AUTHORIZATION);
 
 		basicEClass = createEClass(BASIC);
@@ -1208,31 +1047,25 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		oAuth2EClass = createEClass(OAUTH2);
 		createEAttribute(oAuth2EClass, OAUTH2__TOKEN);
 
-		bodyEClass = createEClass(BODY);
-		createEAttribute(bodyEClass, BODY__MEDIA_TYPE);
-		createEAttribute(bodyEClass, BODY__VALUE);
-
 		propertyTransferEClass = createEClass(PROPERTY_TRANSFER);
 		createEReference(propertyTransferEClass, PROPERTY_TRANSFER__SOURCE);
 		createEReference(propertyTransferEClass, PROPERTY_TRANSFER__TARGET);
 
 		propertyEClass = createEClass(PROPERTY);
-
-		headerPropertyEClass = createEClass(HEADER_PROPERTY);
-		createEReference(headerPropertyEClass, HEADER_PROPERTY__HEADER);
+		createEAttribute(propertyEClass, PROPERTY__EXPRESSION);
+		createEAttribute(propertyEClass, PROPERTY__PATH_LANGUAGE);
 
 		parameterPropertyEClass = createEClass(PARAMETER_PROPERTY);
 		createEReference(parameterPropertyEClass, PARAMETER_PROPERTY__PARAMETER);
 
 		responsePropertyEClass = createEClass(RESPONSE_PROPERTY);
-		createEReference(responsePropertyEClass, RESPONSE_PROPERTY__REQUEST);
 
-		bodyPropertyEClass = createEClass(BODY_PROPERTY);
-		createEReference(bodyPropertyEClass, BODY_PROPERTY__BODY);
+		inputPropertyEClass = createEClass(INPUT_PROPERTY);
 
-		complexPropertyEClass = createEClass(COMPLEX_PROPERTY);
-		createEAttribute(complexPropertyEClass, COMPLEX_PROPERTY__PATH_LANGUAGE);
-		createEAttribute(complexPropertyEClass, COMPLEX_PROPERTY__PATH_VALUE);
+		outputPropertyEClass = createEClass(OUTPUT_PROPERTY);
+		createEReference(outputPropertyEClass, OUTPUT_PROPERTY__REQUEST);
+
+		headerPropertyEClass = createEClass(HEADER_PROPERTY);
 
 		// Create enums
 		parameterLocationEEnum = createEEnum(PARAMETER_LOCATION);
@@ -1272,12 +1105,12 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		testSuiteEClass.getESuperTypes().add(this.getNamedElement());
 		testCaseEClass.getESuperTypes().add(this.getNamedElement());
 		testStepEClass.getESuperTypes().add(this.getNamedElement());
-		requestEClass.getESuperTypes().add(this.getTestStep());
+		apiRequestEClass.getESuperTypes().add(this.getTestStep());
 		complianceAssertionEClass.getESuperTypes().add(this.getAssertion());
 		performanceAssertionEClass.getESuperTypes().add(this.getAssertion());
 		responseMessageAssertionEClass.getESuperTypes().add(this.getAssertion());
-		containsAssertionEClass.getESuperTypes().add(this.getResponseMessageAssertion());
-		equalsAssertionEClass.getESuperTypes().add(this.getResponseMessageAssertion());
+		responseMessageContainsAssertionEClass.getESuperTypes().add(this.getResponseMessageAssertion());
+		responseMessageEqualsAssertionEClass.getESuperTypes().add(this.getResponseMessageAssertion());
 		schemaComplianceAssertionEClass.getESuperTypes().add(this.getComplianceAssertion());
 		slaAssertionEClass.getESuperTypes().add(this.getPerformanceAssertion());
 		headerAssertionEClass.getESuperTypes().add(this.getAssertion());
@@ -1286,21 +1119,18 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		httpStatusAssertionEClass.getESuperTypes().add(this.getAssertion());
 		invalidStatusCodesAssertionEClass.getESuperTypes().add(this.getHTTPStatusAssertion());
 		validStatusCodesAssertionEClass.getESuperTypes().add(this.getHTTPStatusAssertion());
-		openAPIComplianceAssertionEClass.getESuperTypes().add(this.getComplianceAssertion());
 		basicEClass.getESuperTypes().add(this.getAuthorization());
 		oAuth2EClass.getESuperTypes().add(this.getAuthorization());
 		propertyTransferEClass.getESuperTypes().add(this.getTestStep());
-		headerPropertyEClass.getESuperTypes().add(this.getProperty());
-		parameterPropertyEClass.getESuperTypes().add(this.getProperty());
-		responsePropertyEClass.getESuperTypes().add(this.getComplexProperty());
-		bodyPropertyEClass.getESuperTypes().add(this.getComplexProperty());
-		complexPropertyEClass.getESuperTypes().add(this.getProperty());
+		parameterPropertyEClass.getESuperTypes().add(this.getInputProperty());
+		responsePropertyEClass.getESuperTypes().add(this.getOutputProperty());
+		inputPropertyEClass.getESuperTypes().add(this.getProperty());
+		outputPropertyEClass.getESuperTypes().add(this.getProperty());
+		headerPropertyEClass.getESuperTypes().add(this.getOutputProperty());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(testSuiteEClass, TestSuite.class, "TestSuite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTestSuite_Description(), ecorePackage.getEString(), "description", null, 0, 1, TestSuite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTestSuite_CreatedAt(), ecorePackage.getEDate(), "createdAt", null, 0, 1, TestSuite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTestSuite_UpdatedAt(), ecorePackage.getEDate(), "updatedAt", null, 0, 1, TestSuite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTestSuite_TestCases(), this.getTestCase(), null, "testCases", null, 0, -1, TestSuite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestSuite_Api(), ecorePackage.getEString(), "api", null, 0, 1, TestSuite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1310,16 +1140,14 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 
 		initEClass(testStepEClass, TestStep.class, "TestStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(requestEClass, Request.class, "Request", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRequest_HttpMethod(), this.getHTTPMethod(), "httpMethod", null, 0, 1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRequest_Host(), ecorePackage.getEString(), "host", null, 0, 1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRequest_Path(), ecorePackage.getEString(), "path", null, 0, 1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRequest_Scheme(), this.getSchemeType(), "scheme", null, 0, 1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRequest_Headers(), this.getHeader(), null, "headers", null, 0, -1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRequest_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRequest_Assertions(), this.getAssertion(), null, "assertions", null, 0, -1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRequest_Authorization(), this.getAuthorization(), null, "authorization", null, 0, 1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRequest_Body(), this.getBody(), null, "body", null, 0, 1, Request.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(apiRequestEClass, APIRequest.class, "APIRequest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAPIRequest_OperationId(), ecorePackage.getEString(), "operationId", null, 0, 1, APIRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAPIRequest_ContentType(), ecorePackage.getEString(), "contentType", null, 0, 1, APIRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAPIRequest_Accept(), ecorePackage.getEString(), "accept", null, 0, 1, APIRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAPIRequest_Scheme(), this.getSchemeType(), "scheme", null, 0, 1, APIRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAPIRequest_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, APIRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAPIRequest_Assertions(), this.getAssertion(), null, "assertions", null, 0, -1, APIRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAPIRequest_Authorization(), this.getAuthorization(), null, "authorization", null, 0, 1, APIRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1328,10 +1156,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEAttribute(getParameter_Location(), this.getParameterLocation(), "location", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParameter_Value(), ecorePackage.getEString(), "value", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(headerEClass, Header.class, "Header", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getHeader_Key(), ecorePackage.getEString(), "key", null, 0, 1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHeader_Value(), ecorePackage.getEString(), "value", null, 0, -1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(assertionEClass, Assertion.class, "Assertion", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAssertion_ErrorMessage(), ecorePackage.getEString(), "errorMessage", null, 0, 1, Assertion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1344,9 +1168,9 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEClass(responseMessageAssertionEClass, ResponseMessageAssertion.class, "ResponseMessageAssertion", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getResponseMessageAssertion_Value(), ecorePackage.getEString(), "value", null, 0, 1, ResponseMessageAssertion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(containsAssertionEClass, ContainsAssertion.class, "ContainsAssertion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(responseMessageContainsAssertionEClass, ResponseMessageContainsAssertion.class, "ResponseMessageContainsAssertion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(equalsAssertionEClass, EqualsAssertion.class, "EqualsAssertion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(responseMessageEqualsAssertionEClass, ResponseMessageEqualsAssertion.class, "ResponseMessageEqualsAssertion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(schemaComplianceAssertionEClass, SchemaComplianceAssertion.class, "SchemaComplianceAssertion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1368,9 +1192,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 
 		initEClass(validStatusCodesAssertionEClass, ValidStatusCodesAssertion.class, "ValidStatusCodesAssertion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(openAPIComplianceAssertionEClass, OpenAPIComplianceAssertion.class, "OpenAPIComplianceAssertion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOpenAPIComplianceAssertion_Strict(), ecorePackage.getEBooleanObject(), "strict", null, 0, 1, OpenAPIComplianceAssertion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(authorizationEClass, Authorization.class, "Authorization", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(basicEClass, Basic.class, "Basic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1380,31 +1201,25 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEClass(oAuth2EClass, OAuth2.class, "OAuth2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOAuth2_Token(), ecorePackage.getEString(), "token", null, 0, 1, OAuth2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(bodyEClass, Body.class, "Body", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBody_MediaType(), ecorePackage.getEString(), "mediaType", null, 0, 1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBody_Value(), ecorePackage.getEString(), "value", null, 0, 1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(propertyTransferEClass, PropertyTransfer.class, "PropertyTransfer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPropertyTransfer_Source(), this.getProperty(), null, "source", null, 1, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPropertyTransfer_Target(), this.getProperty(), null, "target", null, 1, 1, PropertyTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyEClass, Property.class, "Property", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(headerPropertyEClass, HeaderProperty.class, "HeaderProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHeaderProperty_Header(), this.getHeader(), null, "header", null, 0, 1, HeaderProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProperty_Expression(), ecorePackage.getEString(), "expression", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProperty_PathLanguage(), this.getPathLanguage(), "pathLanguage", "undefined", 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(parameterPropertyEClass, ParameterProperty.class, "ParameterProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getParameterProperty_Parameter(), this.getParameter(), null, "parameter", null, 1, 1, ParameterProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(responsePropertyEClass, ResponseProperty.class, "ResponseProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getResponseProperty_Request(), this.getRequest(), null, "request", null, 1, 1, ResponseProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(bodyPropertyEClass, BodyProperty.class, "BodyProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBodyProperty_Body(), this.getBody(), null, "body", null, 1, 1, BodyProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(inputPropertyEClass, InputProperty.class, "InputProperty", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(complexPropertyEClass, ComplexProperty.class, "ComplexProperty", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComplexProperty_PathLanguage(), this.getPathLanguage(), "pathLanguage", "undefined", 0, 1, ComplexProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComplexProperty_PathValue(), ecorePackage.getEString(), "pathValue", null, 0, 1, ComplexProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(outputPropertyEClass, OutputProperty.class, "OutputProperty", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOutputProperty_Request(), this.getAPIRequest(), null, "request", null, 1, 1, OutputProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(headerPropertyEClass, HeaderProperty.class, "HeaderProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(parameterLocationEEnum, ParameterLocation.class, "ParameterLocation");

@@ -3,8 +3,6 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="test" nsURI="http://example.com/rest/test" nsPrefix="">
   <eClassifiers xsi:type="ecore:EClass" name="TestSuite" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="createdAt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="updatedAt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="testCases" upperBound="-1"
         eType="#//TestCase" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="api" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -15,20 +13,17 @@
         eType="#//TestStep" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TestStep" abstract="true" eSuperTypes="#//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Request" eSuperTypes="#//TestStep">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="httpMethod" eType="#//HTTPMethod"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="host" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APIRequest" eSuperTypes="#//TestStep">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accept" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheme" eType="#//SchemeType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="headers" upperBound="-1"
-        eType="#//Header" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//Parameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="assertions" upperBound="-1"
         eType="#//Assertion" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="authorization" eType="#//Authorization"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//Body" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -37,11 +32,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="#//ParameterLocation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Header">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Assertion" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="errorMessage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -56,8 +46,8 @@
       eSuperTypes="#//Assertion">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ContainsAssertion" eSuperTypes="#//ResponseMessageAssertion"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EqualsAssertion" eSuperTypes="#//ResponseMessageAssertion"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ResponseMessageContainsAssertion" eSuperTypes="#//ResponseMessageAssertion"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ResponseMessageEqualsAssertion" eSuperTypes="#//ResponseMessageAssertion"/>
   <eClassifiers xsi:type="ecore:EClass" name="SchemaComplianceAssertion" eSuperTypes="#//ComplianceAssertion"/>
   <eClassifiers xsi:type="ecore:EClass" name="SLAAssertion" eSuperTypes="#//PerformanceAssertion">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
@@ -75,9 +65,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InvalidStatusCodesAssertion" eSuperTypes="#//HTTPStatusAssertion"/>
   <eClassifiers xsi:type="ecore:EClass" name="ValidStatusCodesAssertion" eSuperTypes="#//HTTPStatusAssertion"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OpenAPIComplianceAssertion" eSuperTypes="#//ComplianceAssertion">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strict" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Authorization" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Basic" eSuperTypes="#//Authorization">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -85,10 +72,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OAuth2" eSuperTypes="#//Authorization">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="token" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Body">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediaType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PropertyTransfer" eSuperTypes="#//TestStep">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
@@ -119,24 +102,20 @@
     <eLiterals name="XPath" value="1" literal="xpath"/>
     <eLiterals name="JSONPath" value="2" literal="jsonpath"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Property" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="HeaderProperty" eSuperTypes="#//Property">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="header" eType="#//Header"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Property" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pathLanguage" eType="#//PathLanguage"
+        defaultValueLiteral="undefined"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterProperty" eSuperTypes="#//Property">
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterProperty" eSuperTypes="#//InputProperty">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
         eType="#//Parameter"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResponseProperty" eSuperTypes="#//ComplexProperty">
+  <eClassifiers xsi:type="ecore:EClass" name="ResponseProperty" eSuperTypes="#//OutputProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InputProperty" abstract="true" eSuperTypes="#//Property"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OutputProperty" abstract="true" eSuperTypes="#//Property">
     <eStructuralFeatures xsi:type="ecore:EReference" name="request" lowerBound="1"
-        eType="#//Request"/>
+        eType="#//APIRequest"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BodyProperty" eSuperTypes="#//ComplexProperty">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" lowerBound="1" eType="#//Body"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ComplexProperty" abstract="true" eSuperTypes="#//Property">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pathLanguage" eType="#//PathLanguage"
-        defaultValueLiteral="undefined"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pathValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HeaderProperty" eSuperTypes="#//OutputProperty"/>
 </ecore:EPackage>

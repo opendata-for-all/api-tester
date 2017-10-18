@@ -123,31 +123,13 @@ public interface TestPackage extends EPackage {
 	int TEST_SUITE__DESCRIPTION = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Created At</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST_SUITE__CREATED_AT = NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Updated At</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST_SUITE__UPDATED_AT = NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Test Cases</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SUITE__TEST_CASES = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int TEST_SUITE__TEST_CASES = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Api</b></em>' attribute.
@@ -156,7 +138,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SUITE__API = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int TEST_SUITE__API = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Suite</em>' class.
@@ -165,7 +147,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SUITE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int TEST_SUITE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Suite</em>' class.
@@ -269,14 +251,14 @@ public interface TestPackage extends EPackage {
 	int TEST_STEP_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link som.rest.test.impl.RequestImpl <em>Request</em>}' class.
+	 * The meta object id for the '{@link som.rest.test.impl.APIRequestImpl <em>API Request</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see som.rest.test.impl.RequestImpl
-	 * @see som.rest.test.impl.TestPackageImpl#getRequest()
+	 * @see som.rest.test.impl.APIRequestImpl
+	 * @see som.rest.test.impl.TestPackageImpl#getAPIRequest()
 	 * @generated
 	 */
-	int REQUEST = 3;
+	int API_REQUEST = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -285,34 +267,34 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__NAME = TEST_STEP__NAME;
+	int API_REQUEST__NAME = TEST_STEP__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Http Method</b></em>' attribute.
+	 * The feature id for the '<em><b>Operation Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__HTTP_METHOD = TEST_STEP_FEATURE_COUNT + 0;
+	int API_REQUEST__OPERATION_ID = TEST_STEP_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Host</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__HOST = TEST_STEP_FEATURE_COUNT + 1;
+	int API_REQUEST__CONTENT_TYPE = TEST_STEP_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * The feature id for the '<em><b>Accept</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__PATH = TEST_STEP_FEATURE_COUNT + 2;
+	int API_REQUEST__ACCEPT = TEST_STEP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Scheme</b></em>' attribute.
@@ -321,16 +303,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__SCHEME = TEST_STEP_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Headers</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUEST__HEADERS = TEST_STEP_FEATURE_COUNT + 4;
+	int API_REQUEST__SCHEME = TEST_STEP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -339,7 +312,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__PARAMETERS = TEST_STEP_FEATURE_COUNT + 5;
+	int API_REQUEST__PARAMETERS = TEST_STEP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Assertions</b></em>' containment reference list.
@@ -348,7 +321,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__ASSERTIONS = TEST_STEP_FEATURE_COUNT + 6;
+	int API_REQUEST__ASSERTIONS = TEST_STEP_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Authorization</b></em>' containment reference.
@@ -357,34 +330,25 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__AUTHORIZATION = TEST_STEP_FEATURE_COUNT + 7;
+	int API_REQUEST__AUTHORIZATION = TEST_STEP_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' containment reference.
+	 * The number of structural features of the '<em>API Request</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST__BODY = TEST_STEP_FEATURE_COUNT + 8;
+	int API_REQUEST_FEATURE_COUNT = TEST_STEP_FEATURE_COUNT + 7;
 
 	/**
-	 * The number of structural features of the '<em>Request</em>' class.
+	 * The number of operations of the '<em>API Request</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUEST_FEATURE_COUNT = TEST_STEP_FEATURE_COUNT + 9;
-
-	/**
-	 * The number of operations of the '<em>Request</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUEST_OPERATION_COUNT = TEST_STEP_OPERATION_COUNT + 0;
+	int API_REQUEST_OPERATION_COUNT = TEST_STEP_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link som.rest.test.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -442,52 +406,6 @@ public interface TestPackage extends EPackage {
 	int PARAMETER_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link som.rest.test.impl.HeaderImpl <em>Header</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see som.rest.test.impl.HeaderImpl
-	 * @see som.rest.test.impl.TestPackageImpl#getHeader()
-	 * @generated
-	 */
-	int HEADER = 6;
-
-	/**
-	 * The feature id for the '<em><b>Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HEADER__KEY = 0;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HEADER__VALUE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Header</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HEADER_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Header</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HEADER_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link som.rest.test.impl.AssertionImpl <em>Assertion</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -495,7 +413,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getAssertion()
 	 * @generated
 	 */
-	int ASSERTION = 7;
+	int ASSERTION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
@@ -532,7 +450,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getComplianceAssertion()
 	 * @generated
 	 */
-	int COMPLIANCE_ASSERTION = 8;
+	int COMPLIANCE_ASSERTION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
@@ -578,7 +496,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getPerformanceAssertion()
 	 * @generated
 	 */
-	int PERFORMANCE_ASSERTION = 9;
+	int PERFORMANCE_ASSERTION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
@@ -615,7 +533,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getResponseMessageAssertion()
 	 * @generated
 	 */
-	int RESPONSE_MESSAGE_ASSERTION = 10;
+	int RESPONSE_MESSAGE_ASSERTION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
@@ -654,14 +572,14 @@ public interface TestPackage extends EPackage {
 	int RESPONSE_MESSAGE_ASSERTION_OPERATION_COUNT = ASSERTION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link som.rest.test.impl.ContainsAssertionImpl <em>Contains Assertion</em>}' class.
+	 * The meta object id for the '{@link som.rest.test.impl.ResponseMessageContainsAssertionImpl <em>Response Message Contains Assertion</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see som.rest.test.impl.ContainsAssertionImpl
-	 * @see som.rest.test.impl.TestPackageImpl#getContainsAssertion()
+	 * @see som.rest.test.impl.ResponseMessageContainsAssertionImpl
+	 * @see som.rest.test.impl.TestPackageImpl#getResponseMessageContainsAssertion()
 	 * @generated
 	 */
-	int CONTAINS_ASSERTION = 11;
+	int RESPONSE_MESSAGE_CONTAINS_ASSERTION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
@@ -670,7 +588,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINS_ASSERTION__ERROR_MESSAGE = RESPONSE_MESSAGE_ASSERTION__ERROR_MESSAGE;
+	int RESPONSE_MESSAGE_CONTAINS_ASSERTION__ERROR_MESSAGE = RESPONSE_MESSAGE_ASSERTION__ERROR_MESSAGE;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -679,35 +597,35 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINS_ASSERTION__VALUE = RESPONSE_MESSAGE_ASSERTION__VALUE;
+	int RESPONSE_MESSAGE_CONTAINS_ASSERTION__VALUE = RESPONSE_MESSAGE_ASSERTION__VALUE;
 
 	/**
-	 * The number of structural features of the '<em>Contains Assertion</em>' class.
+	 * The number of structural features of the '<em>Response Message Contains Assertion</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINS_ASSERTION_FEATURE_COUNT = RESPONSE_MESSAGE_ASSERTION_FEATURE_COUNT + 0;
+	int RESPONSE_MESSAGE_CONTAINS_ASSERTION_FEATURE_COUNT = RESPONSE_MESSAGE_ASSERTION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Contains Assertion</em>' class.
+	 * The number of operations of the '<em>Response Message Contains Assertion</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINS_ASSERTION_OPERATION_COUNT = RESPONSE_MESSAGE_ASSERTION_OPERATION_COUNT + 0;
+	int RESPONSE_MESSAGE_CONTAINS_ASSERTION_OPERATION_COUNT = RESPONSE_MESSAGE_ASSERTION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link som.rest.test.impl.EqualsAssertionImpl <em>Equals Assertion</em>}' class.
+	 * The meta object id for the '{@link som.rest.test.impl.ResponseMessageEqualsAssertionImpl <em>Response Message Equals Assertion</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see som.rest.test.impl.EqualsAssertionImpl
-	 * @see som.rest.test.impl.TestPackageImpl#getEqualsAssertion()
+	 * @see som.rest.test.impl.ResponseMessageEqualsAssertionImpl
+	 * @see som.rest.test.impl.TestPackageImpl#getResponseMessageEqualsAssertion()
 	 * @generated
 	 */
-	int EQUALS_ASSERTION = 12;
+	int RESPONSE_MESSAGE_EQUALS_ASSERTION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
@@ -716,7 +634,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EQUALS_ASSERTION__ERROR_MESSAGE = RESPONSE_MESSAGE_ASSERTION__ERROR_MESSAGE;
+	int RESPONSE_MESSAGE_EQUALS_ASSERTION__ERROR_MESSAGE = RESPONSE_MESSAGE_ASSERTION__ERROR_MESSAGE;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -725,25 +643,25 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EQUALS_ASSERTION__VALUE = RESPONSE_MESSAGE_ASSERTION__VALUE;
+	int RESPONSE_MESSAGE_EQUALS_ASSERTION__VALUE = RESPONSE_MESSAGE_ASSERTION__VALUE;
 
 	/**
-	 * The number of structural features of the '<em>Equals Assertion</em>' class.
+	 * The number of structural features of the '<em>Response Message Equals Assertion</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EQUALS_ASSERTION_FEATURE_COUNT = RESPONSE_MESSAGE_ASSERTION_FEATURE_COUNT + 0;
+	int RESPONSE_MESSAGE_EQUALS_ASSERTION_FEATURE_COUNT = RESPONSE_MESSAGE_ASSERTION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Equals Assertion</em>' class.
+	 * The number of operations of the '<em>Response Message Equals Assertion</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EQUALS_ASSERTION_OPERATION_COUNT = RESPONSE_MESSAGE_ASSERTION_OPERATION_COUNT + 0;
+	int RESPONSE_MESSAGE_EQUALS_ASSERTION_OPERATION_COUNT = RESPONSE_MESSAGE_ASSERTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link som.rest.test.impl.SchemaComplianceAssertionImpl <em>Schema Compliance Assertion</em>}' class.
@@ -753,7 +671,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getSchemaComplianceAssertion()
 	 * @generated
 	 */
-	int SCHEMA_COMPLIANCE_ASSERTION = 13;
+	int SCHEMA_COMPLIANCE_ASSERTION = 12;
 
 	/**
 	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
@@ -799,7 +717,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getSLAAssertion()
 	 * @generated
 	 */
-	int SLA_ASSERTION = 14;
+	int SLA_ASSERTION = 13;
 
 	/**
 	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
@@ -845,7 +763,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getHeaderAssertion()
 	 * @generated
 	 */
-	int HEADER_ASSERTION = 15;
+	int HEADER_ASSERTION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
@@ -891,7 +809,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getHeaderEqualsAssertion()
 	 * @generated
 	 */
-	int HEADER_EQUALS_ASSERTION = 16;
+	int HEADER_EQUALS_ASSERTION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
@@ -946,7 +864,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getHeaderExistsAssertion()
 	 * @generated
 	 */
-	int HEADER_EXISTS_ASSERTION = 17;
+	int HEADER_EXISTS_ASSERTION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
@@ -992,7 +910,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getHTTPStatusAssertion()
 	 * @generated
 	 */
-	int HTTP_STATUS_ASSERTION = 18;
+	int HTTP_STATUS_ASSERTION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
@@ -1038,7 +956,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getInvalidStatusCodesAssertion()
 	 * @generated
 	 */
-	int INVALID_STATUS_CODES_ASSERTION = 19;
+	int INVALID_STATUS_CODES_ASSERTION = 18;
 
 	/**
 	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
@@ -1084,7 +1002,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getValidStatusCodesAssertion()
 	 * @generated
 	 */
-	int VALID_STATUS_CODES_ASSERTION = 20;
+	int VALID_STATUS_CODES_ASSERTION = 19;
 
 	/**
 	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
@@ -1123,61 +1041,6 @@ public interface TestPackage extends EPackage {
 	int VALID_STATUS_CODES_ASSERTION_OPERATION_COUNT = HTTP_STATUS_ASSERTION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link som.rest.test.impl.OpenAPIComplianceAssertionImpl <em>Open API Compliance Assertion</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see som.rest.test.impl.OpenAPIComplianceAssertionImpl
-	 * @see som.rest.test.impl.TestPackageImpl#getOpenAPIComplianceAssertion()
-	 * @generated
-	 */
-	int OPEN_API_COMPLIANCE_ASSERTION = 21;
-
-	/**
-	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPEN_API_COMPLIANCE_ASSERTION__ERROR_MESSAGE = COMPLIANCE_ASSERTION__ERROR_MESSAGE;
-
-	/**
-	 * The feature id for the '<em><b>Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPEN_API_COMPLIANCE_ASSERTION__PATH = COMPLIANCE_ASSERTION__PATH;
-
-	/**
-	 * The feature id for the '<em><b>Strict</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPEN_API_COMPLIANCE_ASSERTION__STRICT = COMPLIANCE_ASSERTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Open API Compliance Assertion</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPEN_API_COMPLIANCE_ASSERTION_FEATURE_COUNT = COMPLIANCE_ASSERTION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Open API Compliance Assertion</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPEN_API_COMPLIANCE_ASSERTION_OPERATION_COUNT = COMPLIANCE_ASSERTION_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link som.rest.test.impl.AuthorizationImpl <em>Authorization</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1185,7 +1048,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getAuthorization()
 	 * @generated
 	 */
-	int AUTHORIZATION = 22;
+	int AUTHORIZATION = 20;
 
 	/**
 	 * The number of structural features of the '<em>Authorization</em>' class.
@@ -1213,7 +1076,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getBasic()
 	 * @generated
 	 */
-	int BASIC = 23;
+	int BASIC = 21;
 
 	/**
 	 * The feature id for the '<em><b>Username</b></em>' attribute.
@@ -1259,7 +1122,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getOAuth2()
 	 * @generated
 	 */
-	int OAUTH2 = 24;
+	int OAUTH2 = 22;
 
 	/**
 	 * The feature id for the '<em><b>Token</b></em>' attribute.
@@ -1289,52 +1152,6 @@ public interface TestPackage extends EPackage {
 	int OAUTH2_OPERATION_COUNT = AUTHORIZATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link som.rest.test.impl.BodyImpl <em>Body</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see som.rest.test.impl.BodyImpl
-	 * @see som.rest.test.impl.TestPackageImpl#getBody()
-	 * @generated
-	 */
-	int BODY = 25;
-
-	/**
-	 * The feature id for the '<em><b>Media Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BODY__MEDIA_TYPE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BODY__VALUE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Body</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BODY_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Body</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BODY_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link som.rest.test.impl.PropertyTransferImpl <em>Property Transfer</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1342,7 +1159,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getPropertyTransfer()
 	 * @generated
 	 */
-	int PROPERTY_TRANSFER = 26;
+	int PROPERTY_TRANSFER = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1397,7 +1214,25 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getProperty()
 	 * @generated
 	 */
-	int PROPERTY = 27;
+	int PROPERTY = 24;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__EXPRESSION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Path Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__PATH_LANGUAGE = 1;
 
 	/**
 	 * The number of structural features of the '<em>Property</em>' class.
@@ -1406,7 +1241,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_FEATURE_COUNT = 0;
+	int PROPERTY_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Property</em>' class.
@@ -1418,41 +1253,50 @@ public interface TestPackage extends EPackage {
 	int PROPERTY_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link som.rest.test.impl.HeaderPropertyImpl <em>Header Property</em>}' class.
+	 * The meta object id for the '{@link som.rest.test.impl.InputPropertyImpl <em>Input Property</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see som.rest.test.impl.HeaderPropertyImpl
-	 * @see som.rest.test.impl.TestPackageImpl#getHeaderProperty()
+	 * @see som.rest.test.impl.InputPropertyImpl
+	 * @see som.rest.test.impl.TestPackageImpl#getInputProperty()
 	 * @generated
 	 */
-	int HEADER_PROPERTY = 28;
+	int INPUT_PROPERTY = 27;
 
 	/**
-	 * The feature id for the '<em><b>Header</b></em>' reference.
+	 * The feature id for the '<em><b>Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HEADER_PROPERTY__HEADER = PROPERTY_FEATURE_COUNT + 0;
+	int INPUT_PROPERTY__EXPRESSION = PROPERTY__EXPRESSION;
 
 	/**
-	 * The number of structural features of the '<em>Header Property</em>' class.
+	 * The feature id for the '<em><b>Path Language</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HEADER_PROPERTY_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 1;
+	int INPUT_PROPERTY__PATH_LANGUAGE = PROPERTY__PATH_LANGUAGE;
 
 	/**
-	 * The number of operations of the '<em>Header Property</em>' class.
+	 * The number of structural features of the '<em>Input Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HEADER_PROPERTY_OPERATION_COUNT = PROPERTY_OPERATION_COUNT + 0;
+	int INPUT_PROPERTY_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Input Property</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PROPERTY_OPERATION_COUNT = PROPERTY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link som.rest.test.impl.ParameterPropertyImpl <em>Parameter Property</em>}' class.
@@ -1462,44 +1306,16 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getParameterProperty()
 	 * @generated
 	 */
-	int PARAMETER_PROPERTY = 29;
+	int PARAMETER_PROPERTY = 25;
 
 	/**
-	 * The feature id for the '<em><b>Parameter</b></em>' reference.
+	 * The feature id for the '<em><b>Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_PROPERTY__PARAMETER = PROPERTY_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Parameter Property</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_PROPERTY_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Parameter Property</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_PROPERTY_OPERATION_COUNT = PROPERTY_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link som.rest.test.impl.ComplexPropertyImpl <em>Complex Property</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see som.rest.test.impl.ComplexPropertyImpl
-	 * @see som.rest.test.impl.TestPackageImpl#getComplexProperty()
-	 * @generated
-	 */
-	int COMPLEX_PROPERTY = 32;
+	int PARAMETER_PROPERTY__EXPRESSION = INPUT_PROPERTY__EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Path Language</b></em>' attribute.
@@ -1508,34 +1324,89 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_PROPERTY__PATH_LANGUAGE = PROPERTY_FEATURE_COUNT + 0;
+	int PARAMETER_PROPERTY__PATH_LANGUAGE = INPUT_PROPERTY__PATH_LANGUAGE;
 
 	/**
-	 * The feature id for the '<em><b>Path Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_PROPERTY__PATH_VALUE = PROPERTY_FEATURE_COUNT + 1;
+	int PARAMETER_PROPERTY__PARAMETER = INPUT_PROPERTY_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Complex Property</em>' class.
+	 * The number of structural features of the '<em>Parameter Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_PROPERTY_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 2;
+	int PARAMETER_PROPERTY_FEATURE_COUNT = INPUT_PROPERTY_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Complex Property</em>' class.
+	 * The number of operations of the '<em>Parameter Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_PROPERTY_OPERATION_COUNT = PROPERTY_OPERATION_COUNT + 0;
+	int PARAMETER_PROPERTY_OPERATION_COUNT = INPUT_PROPERTY_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link som.rest.test.impl.OutputPropertyImpl <em>Output Property</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see som.rest.test.impl.OutputPropertyImpl
+	 * @see som.rest.test.impl.TestPackageImpl#getOutputProperty()
+	 * @generated
+	 */
+	int OUTPUT_PROPERTY = 28;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PROPERTY__EXPRESSION = PROPERTY__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Path Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PROPERTY__PATH_LANGUAGE = PROPERTY__PATH_LANGUAGE;
+
+	/**
+	 * The feature id for the '<em><b>Request</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PROPERTY__REQUEST = PROPERTY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Output Property</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PROPERTY_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Output Property</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PROPERTY_OPERATION_COUNT = PROPERTY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link som.rest.test.impl.ResponsePropertyImpl <em>Response Property</em>}' class.
@@ -1545,7 +1416,16 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getResponseProperty()
 	 * @generated
 	 */
-	int RESPONSE_PROPERTY = 30;
+	int RESPONSE_PROPERTY = 26;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSE_PROPERTY__EXPRESSION = OUTPUT_PROPERTY__EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Path Language</b></em>' attribute.
@@ -1554,16 +1434,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSE_PROPERTY__PATH_LANGUAGE = COMPLEX_PROPERTY__PATH_LANGUAGE;
-
-	/**
-	 * The feature id for the '<em><b>Path Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESPONSE_PROPERTY__PATH_VALUE = COMPLEX_PROPERTY__PATH_VALUE;
+	int RESPONSE_PROPERTY__PATH_LANGUAGE = OUTPUT_PROPERTY__PATH_LANGUAGE;
 
 	/**
 	 * The feature id for the '<em><b>Request</b></em>' reference.
@@ -1572,7 +1443,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSE_PROPERTY__REQUEST = COMPLEX_PROPERTY_FEATURE_COUNT + 0;
+	int RESPONSE_PROPERTY__REQUEST = OUTPUT_PROPERTY__REQUEST;
 
 	/**
 	 * The number of structural features of the '<em>Response Property</em>' class.
@@ -1581,7 +1452,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSE_PROPERTY_FEATURE_COUNT = COMPLEX_PROPERTY_FEATURE_COUNT + 1;
+	int RESPONSE_PROPERTY_FEATURE_COUNT = OUTPUT_PROPERTY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Response Property</em>' class.
@@ -1590,17 +1461,26 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSE_PROPERTY_OPERATION_COUNT = COMPLEX_PROPERTY_OPERATION_COUNT + 0;
+	int RESPONSE_PROPERTY_OPERATION_COUNT = OUTPUT_PROPERTY_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link som.rest.test.impl.BodyPropertyImpl <em>Body Property</em>}' class.
+	 * The meta object id for the '{@link som.rest.test.impl.HeaderPropertyImpl <em>Header Property</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see som.rest.test.impl.BodyPropertyImpl
-	 * @see som.rest.test.impl.TestPackageImpl#getBodyProperty()
+	 * @see som.rest.test.impl.HeaderPropertyImpl
+	 * @see som.rest.test.impl.TestPackageImpl#getHeaderProperty()
 	 * @generated
 	 */
-	int BODY_PROPERTY = 31;
+	int HEADER_PROPERTY = 29;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEADER_PROPERTY__EXPRESSION = OUTPUT_PROPERTY__EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Path Language</b></em>' attribute.
@@ -1609,43 +1489,34 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BODY_PROPERTY__PATH_LANGUAGE = COMPLEX_PROPERTY__PATH_LANGUAGE;
+	int HEADER_PROPERTY__PATH_LANGUAGE = OUTPUT_PROPERTY__PATH_LANGUAGE;
 
 	/**
-	 * The feature id for the '<em><b>Path Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Request</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BODY_PROPERTY__PATH_VALUE = COMPLEX_PROPERTY__PATH_VALUE;
+	int HEADER_PROPERTY__REQUEST = OUTPUT_PROPERTY__REQUEST;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' reference.
+	 * The number of structural features of the '<em>Header Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BODY_PROPERTY__BODY = COMPLEX_PROPERTY_FEATURE_COUNT + 0;
+	int HEADER_PROPERTY_FEATURE_COUNT = OUTPUT_PROPERTY_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Body Property</em>' class.
+	 * The number of operations of the '<em>Header Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BODY_PROPERTY_FEATURE_COUNT = COMPLEX_PROPERTY_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Body Property</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BODY_PROPERTY_OPERATION_COUNT = COMPLEX_PROPERTY_OPERATION_COUNT + 0;
+	int HEADER_PROPERTY_OPERATION_COUNT = OUTPUT_PROPERTY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link som.rest.test.ParameterLocation <em>Parameter Location</em>}' enum.
@@ -1655,7 +1526,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getParameterLocation()
 	 * @generated
 	 */
-	int PARAMETER_LOCATION = 33;
+	int PARAMETER_LOCATION = 30;
 
 	/**
 	 * The meta object id for the '{@link som.rest.test.SchemeType <em>Scheme Type</em>}' enum.
@@ -1665,7 +1536,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getSchemeType()
 	 * @generated
 	 */
-	int SCHEME_TYPE = 34;
+	int SCHEME_TYPE = 31;
 
 	/**
 	 * The meta object id for the '{@link som.rest.test.HTTPMethod <em>HTTP Method</em>}' enum.
@@ -1675,7 +1546,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getHTTPMethod()
 	 * @generated
 	 */
-	int HTTP_METHOD = 35;
+	int HTTP_METHOD = 32;
 
 	/**
 	 * The meta object id for the '{@link som.rest.test.PathLanguage <em>Path Language</em>}' enum.
@@ -1685,7 +1556,7 @@ public interface TestPackage extends EPackage {
 	 * @see som.rest.test.impl.TestPackageImpl#getPathLanguage()
 	 * @generated
 	 */
-	int PATH_LANGUAGE = 36;
+	int PATH_LANGUAGE = 33;
 
 
 	/**
@@ -1708,28 +1579,6 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTestSuite_Description();
-
-	/**
-	 * Returns the meta object for the attribute '{@link som.rest.test.TestSuite#getCreatedAt <em>Created At</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Created At</em>'.
-	 * @see som.rest.test.TestSuite#getCreatedAt()
-	 * @see #getTestSuite()
-	 * @generated
-	 */
-	EAttribute getTestSuite_CreatedAt();
-
-	/**
-	 * Returns the meta object for the attribute '{@link som.rest.test.TestSuite#getUpdatedAt <em>Updated At</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Updated At</em>'.
-	 * @see som.rest.test.TestSuite#getUpdatedAt()
-	 * @see #getTestSuite()
-	 * @generated
-	 */
-	EAttribute getTestSuite_UpdatedAt();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link som.rest.test.TestSuite#getTestCases <em>Test Cases</em>}'.
@@ -1796,113 +1645,91 @@ public interface TestPackage extends EPackage {
 	EClass getTestStep();
 
 	/**
-	 * Returns the meta object for class '{@link som.rest.test.Request <em>Request</em>}'.
+	 * Returns the meta object for class '{@link som.rest.test.APIRequest <em>API Request</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Request</em>'.
-	 * @see som.rest.test.Request
+	 * @return the meta object for class '<em>API Request</em>'.
+	 * @see som.rest.test.APIRequest
 	 * @generated
 	 */
-	EClass getRequest();
+	EClass getAPIRequest();
 
 	/**
-	 * Returns the meta object for the attribute '{@link som.rest.test.Request#getHttpMethod <em>Http Method</em>}'.
+	 * Returns the meta object for the attribute '{@link som.rest.test.APIRequest#getOperationId <em>Operation Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Http Method</em>'.
-	 * @see som.rest.test.Request#getHttpMethod()
-	 * @see #getRequest()
+	 * @return the meta object for the attribute '<em>Operation Id</em>'.
+	 * @see som.rest.test.APIRequest#getOperationId()
+	 * @see #getAPIRequest()
 	 * @generated
 	 */
-	EAttribute getRequest_HttpMethod();
+	EAttribute getAPIRequest_OperationId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link som.rest.test.Request#getHost <em>Host</em>}'.
+	 * Returns the meta object for the attribute '{@link som.rest.test.APIRequest#getContentType <em>Content Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Host</em>'.
-	 * @see som.rest.test.Request#getHost()
-	 * @see #getRequest()
+	 * @return the meta object for the attribute '<em>Content Type</em>'.
+	 * @see som.rest.test.APIRequest#getContentType()
+	 * @see #getAPIRequest()
 	 * @generated
 	 */
-	EAttribute getRequest_Host();
+	EAttribute getAPIRequest_ContentType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link som.rest.test.Request#getPath <em>Path</em>}'.
+	 * Returns the meta object for the attribute '{@link som.rest.test.APIRequest#getAccept <em>Accept</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Path</em>'.
-	 * @see som.rest.test.Request#getPath()
-	 * @see #getRequest()
+	 * @return the meta object for the attribute '<em>Accept</em>'.
+	 * @see som.rest.test.APIRequest#getAccept()
+	 * @see #getAPIRequest()
 	 * @generated
 	 */
-	EAttribute getRequest_Path();
+	EAttribute getAPIRequest_Accept();
 
 	/**
-	 * Returns the meta object for the attribute '{@link som.rest.test.Request#getScheme <em>Scheme</em>}'.
+	 * Returns the meta object for the attribute '{@link som.rest.test.APIRequest#getScheme <em>Scheme</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Scheme</em>'.
-	 * @see som.rest.test.Request#getScheme()
-	 * @see #getRequest()
+	 * @see som.rest.test.APIRequest#getScheme()
+	 * @see #getAPIRequest()
 	 * @generated
 	 */
-	EAttribute getRequest_Scheme();
+	EAttribute getAPIRequest_Scheme();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link som.rest.test.Request#getHeaders <em>Headers</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Headers</em>'.
-	 * @see som.rest.test.Request#getHeaders()
-	 * @see #getRequest()
-	 * @generated
-	 */
-	EReference getRequest_Headers();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link som.rest.test.Request#getParameters <em>Parameters</em>}'.
+	 * Returns the meta object for the containment reference list '{@link som.rest.test.APIRequest#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
-	 * @see som.rest.test.Request#getParameters()
-	 * @see #getRequest()
+	 * @see som.rest.test.APIRequest#getParameters()
+	 * @see #getAPIRequest()
 	 * @generated
 	 */
-	EReference getRequest_Parameters();
+	EReference getAPIRequest_Parameters();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link som.rest.test.Request#getAssertions <em>Assertions</em>}'.
+	 * Returns the meta object for the containment reference list '{@link som.rest.test.APIRequest#getAssertions <em>Assertions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Assertions</em>'.
-	 * @see som.rest.test.Request#getAssertions()
-	 * @see #getRequest()
+	 * @see som.rest.test.APIRequest#getAssertions()
+	 * @see #getAPIRequest()
 	 * @generated
 	 */
-	EReference getRequest_Assertions();
+	EReference getAPIRequest_Assertions();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link som.rest.test.Request#getAuthorization <em>Authorization</em>}'.
+	 * Returns the meta object for the containment reference '{@link som.rest.test.APIRequest#getAuthorization <em>Authorization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Authorization</em>'.
-	 * @see som.rest.test.Request#getAuthorization()
-	 * @see #getRequest()
+	 * @see som.rest.test.APIRequest#getAuthorization()
+	 * @see #getAPIRequest()
 	 * @generated
 	 */
-	EReference getRequest_Authorization();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link som.rest.test.Request#getBody <em>Body</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Body</em>'.
-	 * @see som.rest.test.Request#getBody()
-	 * @see #getRequest()
-	 * @generated
-	 */
-	EReference getRequest_Body();
+	EReference getAPIRequest_Authorization();
 
 	/**
 	 * Returns the meta object for class '{@link som.rest.test.NamedElement <em>Named Element</em>}'.
@@ -1967,38 +1794,6 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getParameter_Value();
-
-	/**
-	 * Returns the meta object for class '{@link som.rest.test.Header <em>Header</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Header</em>'.
-	 * @see som.rest.test.Header
-	 * @generated
-	 */
-	EClass getHeader();
-
-	/**
-	 * Returns the meta object for the attribute '{@link som.rest.test.Header#getKey <em>Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Key</em>'.
-	 * @see som.rest.test.Header#getKey()
-	 * @see #getHeader()
-	 * @generated
-	 */
-	EAttribute getHeader_Key();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link som.rest.test.Header#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Value</em>'.
-	 * @see som.rest.test.Header#getValue()
-	 * @see #getHeader()
-	 * @generated
-	 */
-	EAttribute getHeader_Value();
 
 	/**
 	 * Returns the meta object for class '{@link som.rest.test.Assertion <em>Assertion</em>}'.
@@ -2074,24 +1869,24 @@ public interface TestPackage extends EPackage {
 	EAttribute getResponseMessageAssertion_Value();
 
 	/**
-	 * Returns the meta object for class '{@link som.rest.test.ContainsAssertion <em>Contains Assertion</em>}'.
+	 * Returns the meta object for class '{@link som.rest.test.ResponseMessageContainsAssertion <em>Response Message Contains Assertion</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Contains Assertion</em>'.
-	 * @see som.rest.test.ContainsAssertion
+	 * @return the meta object for class '<em>Response Message Contains Assertion</em>'.
+	 * @see som.rest.test.ResponseMessageContainsAssertion
 	 * @generated
 	 */
-	EClass getContainsAssertion();
+	EClass getResponseMessageContainsAssertion();
 
 	/**
-	 * Returns the meta object for class '{@link som.rest.test.EqualsAssertion <em>Equals Assertion</em>}'.
+	 * Returns the meta object for class '{@link som.rest.test.ResponseMessageEqualsAssertion <em>Response Message Equals Assertion</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Equals Assertion</em>'.
-	 * @see som.rest.test.EqualsAssertion
+	 * @return the meta object for class '<em>Response Message Equals Assertion</em>'.
+	 * @see som.rest.test.ResponseMessageEqualsAssertion
 	 * @generated
 	 */
-	EClass getEqualsAssertion();
+	EClass getResponseMessageEqualsAssertion();
 
 	/**
 	 * Returns the meta object for class '{@link som.rest.test.SchemaComplianceAssertion <em>Schema Compliance Assertion</em>}'.
@@ -2218,27 +2013,6 @@ public interface TestPackage extends EPackage {
 	EClass getValidStatusCodesAssertion();
 
 	/**
-	 * Returns the meta object for class '{@link som.rest.test.OpenAPIComplianceAssertion <em>Open API Compliance Assertion</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Open API Compliance Assertion</em>'.
-	 * @see som.rest.test.OpenAPIComplianceAssertion
-	 * @generated
-	 */
-	EClass getOpenAPIComplianceAssertion();
-
-	/**
-	 * Returns the meta object for the attribute '{@link som.rest.test.OpenAPIComplianceAssertion#getStrict <em>Strict</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Strict</em>'.
-	 * @see som.rest.test.OpenAPIComplianceAssertion#getStrict()
-	 * @see #getOpenAPIComplianceAssertion()
-	 * @generated
-	 */
-	EAttribute getOpenAPIComplianceAssertion_Strict();
-
-	/**
 	 * Returns the meta object for class '{@link som.rest.test.Authorization <em>Authorization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2302,38 +2076,6 @@ public interface TestPackage extends EPackage {
 	EAttribute getOAuth2_Token();
 
 	/**
-	 * Returns the meta object for class '{@link som.rest.test.Body <em>Body</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Body</em>'.
-	 * @see som.rest.test.Body
-	 * @generated
-	 */
-	EClass getBody();
-
-	/**
-	 * Returns the meta object for the attribute '{@link som.rest.test.Body#getMediaType <em>Media Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Media Type</em>'.
-	 * @see som.rest.test.Body#getMediaType()
-	 * @see #getBody()
-	 * @generated
-	 */
-	EAttribute getBody_MediaType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link som.rest.test.Body#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see som.rest.test.Body#getValue()
-	 * @see #getBody()
-	 * @generated
-	 */
-	EAttribute getBody_Value();
-
-	/**
 	 * Returns the meta object for class '{@link som.rest.test.PropertyTransfer <em>Property Transfer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2376,25 +2118,26 @@ public interface TestPackage extends EPackage {
 	EClass getProperty();
 
 	/**
-	 * Returns the meta object for class '{@link som.rest.test.HeaderProperty <em>Header Property</em>}'.
+	 * Returns the meta object for the attribute '{@link som.rest.test.Property#getExpression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Header Property</em>'.
-	 * @see som.rest.test.HeaderProperty
+	 * @return the meta object for the attribute '<em>Expression</em>'.
+	 * @see som.rest.test.Property#getExpression()
+	 * @see #getProperty()
 	 * @generated
 	 */
-	EClass getHeaderProperty();
+	EAttribute getProperty_Expression();
 
 	/**
-	 * Returns the meta object for the reference '{@link som.rest.test.HeaderProperty#getHeader <em>Header</em>}'.
+	 * Returns the meta object for the attribute '{@link som.rest.test.Property#getPathLanguage <em>Path Language</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Header</em>'.
-	 * @see som.rest.test.HeaderProperty#getHeader()
-	 * @see #getHeaderProperty()
+	 * @return the meta object for the attribute '<em>Path Language</em>'.
+	 * @see som.rest.test.Property#getPathLanguage()
+	 * @see #getProperty()
 	 * @generated
 	 */
-	EReference getHeaderProperty_Header();
+	EAttribute getProperty_PathLanguage();
 
 	/**
 	 * Returns the meta object for class '{@link som.rest.test.ParameterProperty <em>Parameter Property</em>}'.
@@ -2428,68 +2171,45 @@ public interface TestPackage extends EPackage {
 	EClass getResponseProperty();
 
 	/**
-	 * Returns the meta object for the reference '{@link som.rest.test.ResponseProperty#getRequest <em>Request</em>}'.
+	 * Returns the meta object for class '{@link som.rest.test.InputProperty <em>Input Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Input Property</em>'.
+	 * @see som.rest.test.InputProperty
+	 * @generated
+	 */
+	EClass getInputProperty();
+
+	/**
+	 * Returns the meta object for class '{@link som.rest.test.OutputProperty <em>Output Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Output Property</em>'.
+	 * @see som.rest.test.OutputProperty
+	 * @generated
+	 */
+	EClass getOutputProperty();
+
+	/**
+	 * Returns the meta object for the reference '{@link som.rest.test.OutputProperty#getRequest <em>Request</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Request</em>'.
-	 * @see som.rest.test.ResponseProperty#getRequest()
-	 * @see #getResponseProperty()
+	 * @see som.rest.test.OutputProperty#getRequest()
+	 * @see #getOutputProperty()
 	 * @generated
 	 */
-	EReference getResponseProperty_Request();
+	EReference getOutputProperty_Request();
 
 	/**
-	 * Returns the meta object for class '{@link som.rest.test.BodyProperty <em>Body Property</em>}'.
+	 * Returns the meta object for class '{@link som.rest.test.HeaderProperty <em>Header Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Body Property</em>'.
-	 * @see som.rest.test.BodyProperty
+	 * @return the meta object for class '<em>Header Property</em>'.
+	 * @see som.rest.test.HeaderProperty
 	 * @generated
 	 */
-	EClass getBodyProperty();
-
-	/**
-	 * Returns the meta object for the reference '{@link som.rest.test.BodyProperty#getBody <em>Body</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Body</em>'.
-	 * @see som.rest.test.BodyProperty#getBody()
-	 * @see #getBodyProperty()
-	 * @generated
-	 */
-	EReference getBodyProperty_Body();
-
-	/**
-	 * Returns the meta object for class '{@link som.rest.test.ComplexProperty <em>Complex Property</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Complex Property</em>'.
-	 * @see som.rest.test.ComplexProperty
-	 * @generated
-	 */
-	EClass getComplexProperty();
-
-	/**
-	 * Returns the meta object for the attribute '{@link som.rest.test.ComplexProperty#getPathLanguage <em>Path Language</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Path Language</em>'.
-	 * @see som.rest.test.ComplexProperty#getPathLanguage()
-	 * @see #getComplexProperty()
-	 * @generated
-	 */
-	EAttribute getComplexProperty_PathLanguage();
-
-	/**
-	 * Returns the meta object for the attribute '{@link som.rest.test.ComplexProperty#getPathValue <em>Path Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Path Value</em>'.
-	 * @see som.rest.test.ComplexProperty#getPathValue()
-	 * @see #getComplexProperty()
-	 * @generated
-	 */
-	EAttribute getComplexProperty_PathValue();
+	EClass getHeaderProperty();
 
 	/**
 	 * Returns the meta object for enum '{@link som.rest.test.ParameterLocation <em>Parameter Location</em>}'.
@@ -2573,22 +2293,6 @@ public interface TestPackage extends EPackage {
 		EAttribute TEST_SUITE__DESCRIPTION = eINSTANCE.getTestSuite_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Created At</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TEST_SUITE__CREATED_AT = eINSTANCE.getTestSuite_CreatedAt();
-
-		/**
-		 * The meta object literal for the '<em><b>Updated At</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TEST_SUITE__UPDATED_AT = eINSTANCE.getTestSuite_UpdatedAt();
-
-		/**
 		 * The meta object literal for the '<em><b>Test Cases</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2641,38 +2345,38 @@ public interface TestPackage extends EPackage {
 		EClass TEST_STEP = eINSTANCE.getTestStep();
 
 		/**
-		 * The meta object literal for the '{@link som.rest.test.impl.RequestImpl <em>Request</em>}' class.
+		 * The meta object literal for the '{@link som.rest.test.impl.APIRequestImpl <em>API Request</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see som.rest.test.impl.RequestImpl
-		 * @see som.rest.test.impl.TestPackageImpl#getRequest()
+		 * @see som.rest.test.impl.APIRequestImpl
+		 * @see som.rest.test.impl.TestPackageImpl#getAPIRequest()
 		 * @generated
 		 */
-		EClass REQUEST = eINSTANCE.getRequest();
+		EClass API_REQUEST = eINSTANCE.getAPIRequest();
 
 		/**
-		 * The meta object literal for the '<em><b>Http Method</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Operation Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REQUEST__HTTP_METHOD = eINSTANCE.getRequest_HttpMethod();
+		EAttribute API_REQUEST__OPERATION_ID = eINSTANCE.getAPIRequest_OperationId();
 
 		/**
-		 * The meta object literal for the '<em><b>Host</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Content Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REQUEST__HOST = eINSTANCE.getRequest_Host();
+		EAttribute API_REQUEST__CONTENT_TYPE = eINSTANCE.getAPIRequest_ContentType();
 
 		/**
-		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Accept</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REQUEST__PATH = eINSTANCE.getRequest_Path();
+		EAttribute API_REQUEST__ACCEPT = eINSTANCE.getAPIRequest_Accept();
 
 		/**
 		 * The meta object literal for the '<em><b>Scheme</b></em>' attribute feature.
@@ -2680,15 +2384,7 @@ public interface TestPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REQUEST__SCHEME = eINSTANCE.getRequest_Scheme();
-
-		/**
-		 * The meta object literal for the '<em><b>Headers</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REQUEST__HEADERS = eINSTANCE.getRequest_Headers();
+		EAttribute API_REQUEST__SCHEME = eINSTANCE.getAPIRequest_Scheme();
 
 		/**
 		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
@@ -2696,7 +2392,7 @@ public interface TestPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REQUEST__PARAMETERS = eINSTANCE.getRequest_Parameters();
+		EReference API_REQUEST__PARAMETERS = eINSTANCE.getAPIRequest_Parameters();
 
 		/**
 		 * The meta object literal for the '<em><b>Assertions</b></em>' containment reference list feature.
@@ -2704,7 +2400,7 @@ public interface TestPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REQUEST__ASSERTIONS = eINSTANCE.getRequest_Assertions();
+		EReference API_REQUEST__ASSERTIONS = eINSTANCE.getAPIRequest_Assertions();
 
 		/**
 		 * The meta object literal for the '<em><b>Authorization</b></em>' containment reference feature.
@@ -2712,15 +2408,7 @@ public interface TestPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REQUEST__AUTHORIZATION = eINSTANCE.getRequest_Authorization();
-
-		/**
-		 * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REQUEST__BODY = eINSTANCE.getRequest_Body();
+		EReference API_REQUEST__AUTHORIZATION = eINSTANCE.getAPIRequest_Authorization();
 
 		/**
 		 * The meta object literal for the '{@link som.rest.test.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -2773,32 +2461,6 @@ public interface TestPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PARAMETER__VALUE = eINSTANCE.getParameter_Value();
-
-		/**
-		 * The meta object literal for the '{@link som.rest.test.impl.HeaderImpl <em>Header</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see som.rest.test.impl.HeaderImpl
-		 * @see som.rest.test.impl.TestPackageImpl#getHeader()
-		 * @generated
-		 */
-		EClass HEADER = eINSTANCE.getHeader();
-
-		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute HEADER__KEY = eINSTANCE.getHeader_Key();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute HEADER__VALUE = eINSTANCE.getHeader_Value();
 
 		/**
 		 * The meta object literal for the '{@link som.rest.test.impl.AssertionImpl <em>Assertion</em>}' class.
@@ -2865,24 +2527,24 @@ public interface TestPackage extends EPackage {
 		EAttribute RESPONSE_MESSAGE_ASSERTION__VALUE = eINSTANCE.getResponseMessageAssertion_Value();
 
 		/**
-		 * The meta object literal for the '{@link som.rest.test.impl.ContainsAssertionImpl <em>Contains Assertion</em>}' class.
+		 * The meta object literal for the '{@link som.rest.test.impl.ResponseMessageContainsAssertionImpl <em>Response Message Contains Assertion</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see som.rest.test.impl.ContainsAssertionImpl
-		 * @see som.rest.test.impl.TestPackageImpl#getContainsAssertion()
+		 * @see som.rest.test.impl.ResponseMessageContainsAssertionImpl
+		 * @see som.rest.test.impl.TestPackageImpl#getResponseMessageContainsAssertion()
 		 * @generated
 		 */
-		EClass CONTAINS_ASSERTION = eINSTANCE.getContainsAssertion();
+		EClass RESPONSE_MESSAGE_CONTAINS_ASSERTION = eINSTANCE.getResponseMessageContainsAssertion();
 
 		/**
-		 * The meta object literal for the '{@link som.rest.test.impl.EqualsAssertionImpl <em>Equals Assertion</em>}' class.
+		 * The meta object literal for the '{@link som.rest.test.impl.ResponseMessageEqualsAssertionImpl <em>Response Message Equals Assertion</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see som.rest.test.impl.EqualsAssertionImpl
-		 * @see som.rest.test.impl.TestPackageImpl#getEqualsAssertion()
+		 * @see som.rest.test.impl.ResponseMessageEqualsAssertionImpl
+		 * @see som.rest.test.impl.TestPackageImpl#getResponseMessageEqualsAssertion()
 		 * @generated
 		 */
-		EClass EQUALS_ASSERTION = eINSTANCE.getEqualsAssertion();
+		EClass RESPONSE_MESSAGE_EQUALS_ASSERTION = eINSTANCE.getResponseMessageEqualsAssertion();
 
 		/**
 		 * The meta object literal for the '{@link som.rest.test.impl.SchemaComplianceAssertionImpl <em>Schema Compliance Assertion</em>}' class.
@@ -2997,24 +2659,6 @@ public interface TestPackage extends EPackage {
 		EClass VALID_STATUS_CODES_ASSERTION = eINSTANCE.getValidStatusCodesAssertion();
 
 		/**
-		 * The meta object literal for the '{@link som.rest.test.impl.OpenAPIComplianceAssertionImpl <em>Open API Compliance Assertion</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see som.rest.test.impl.OpenAPIComplianceAssertionImpl
-		 * @see som.rest.test.impl.TestPackageImpl#getOpenAPIComplianceAssertion()
-		 * @generated
-		 */
-		EClass OPEN_API_COMPLIANCE_ASSERTION = eINSTANCE.getOpenAPIComplianceAssertion();
-
-		/**
-		 * The meta object literal for the '<em><b>Strict</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OPEN_API_COMPLIANCE_ASSERTION__STRICT = eINSTANCE.getOpenAPIComplianceAssertion_Strict();
-
-		/**
 		 * The meta object literal for the '{@link som.rest.test.impl.AuthorizationImpl <em>Authorization</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3069,32 +2713,6 @@ public interface TestPackage extends EPackage {
 		EAttribute OAUTH2__TOKEN = eINSTANCE.getOAuth2_Token();
 
 		/**
-		 * The meta object literal for the '{@link som.rest.test.impl.BodyImpl <em>Body</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see som.rest.test.impl.BodyImpl
-		 * @see som.rest.test.impl.TestPackageImpl#getBody()
-		 * @generated
-		 */
-		EClass BODY = eINSTANCE.getBody();
-
-		/**
-		 * The meta object literal for the '<em><b>Media Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BODY__MEDIA_TYPE = eINSTANCE.getBody_MediaType();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BODY__VALUE = eINSTANCE.getBody_Value();
-
-		/**
 		 * The meta object literal for the '{@link som.rest.test.impl.PropertyTransferImpl <em>Property Transfer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3131,22 +2749,20 @@ public interface TestPackage extends EPackage {
 		EClass PROPERTY = eINSTANCE.getProperty();
 
 		/**
-		 * The meta object literal for the '{@link som.rest.test.impl.HeaderPropertyImpl <em>Header Property</em>}' class.
+		 * The meta object literal for the '<em><b>Expression</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see som.rest.test.impl.HeaderPropertyImpl
-		 * @see som.rest.test.impl.TestPackageImpl#getHeaderProperty()
 		 * @generated
 		 */
-		EClass HEADER_PROPERTY = eINSTANCE.getHeaderProperty();
+		EAttribute PROPERTY__EXPRESSION = eINSTANCE.getProperty_Expression();
 
 		/**
-		 * The meta object literal for the '<em><b>Header</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Path Language</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HEADER_PROPERTY__HEADER = eINSTANCE.getHeaderProperty_Header();
+		EAttribute PROPERTY__PATH_LANGUAGE = eINSTANCE.getProperty_PathLanguage();
 
 		/**
 		 * The meta object literal for the '{@link som.rest.test.impl.ParameterPropertyImpl <em>Parameter Property</em>}' class.
@@ -3177,56 +2793,42 @@ public interface TestPackage extends EPackage {
 		EClass RESPONSE_PROPERTY = eINSTANCE.getResponseProperty();
 
 		/**
+		 * The meta object literal for the '{@link som.rest.test.impl.InputPropertyImpl <em>Input Property</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see som.rest.test.impl.InputPropertyImpl
+		 * @see som.rest.test.impl.TestPackageImpl#getInputProperty()
+		 * @generated
+		 */
+		EClass INPUT_PROPERTY = eINSTANCE.getInputProperty();
+
+		/**
+		 * The meta object literal for the '{@link som.rest.test.impl.OutputPropertyImpl <em>Output Property</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see som.rest.test.impl.OutputPropertyImpl
+		 * @see som.rest.test.impl.TestPackageImpl#getOutputProperty()
+		 * @generated
+		 */
+		EClass OUTPUT_PROPERTY = eINSTANCE.getOutputProperty();
+
+		/**
 		 * The meta object literal for the '<em><b>Request</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RESPONSE_PROPERTY__REQUEST = eINSTANCE.getResponseProperty_Request();
+		EReference OUTPUT_PROPERTY__REQUEST = eINSTANCE.getOutputProperty_Request();
 
 		/**
-		 * The meta object literal for the '{@link som.rest.test.impl.BodyPropertyImpl <em>Body Property</em>}' class.
+		 * The meta object literal for the '{@link som.rest.test.impl.HeaderPropertyImpl <em>Header Property</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see som.rest.test.impl.BodyPropertyImpl
-		 * @see som.rest.test.impl.TestPackageImpl#getBodyProperty()
+		 * @see som.rest.test.impl.HeaderPropertyImpl
+		 * @see som.rest.test.impl.TestPackageImpl#getHeaderProperty()
 		 * @generated
 		 */
-		EClass BODY_PROPERTY = eINSTANCE.getBodyProperty();
-
-		/**
-		 * The meta object literal for the '<em><b>Body</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BODY_PROPERTY__BODY = eINSTANCE.getBodyProperty_Body();
-
-		/**
-		 * The meta object literal for the '{@link som.rest.test.impl.ComplexPropertyImpl <em>Complex Property</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see som.rest.test.impl.ComplexPropertyImpl
-		 * @see som.rest.test.impl.TestPackageImpl#getComplexProperty()
-		 * @generated
-		 */
-		EClass COMPLEX_PROPERTY = eINSTANCE.getComplexProperty();
-
-		/**
-		 * The meta object literal for the '<em><b>Path Language</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPLEX_PROPERTY__PATH_LANGUAGE = eINSTANCE.getComplexProperty_PathLanguage();
-
-		/**
-		 * The meta object literal for the '<em><b>Path Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPLEX_PROPERTY__PATH_VALUE = eINSTANCE.getComplexProperty_PathValue();
+		EClass HEADER_PROPERTY = eINSTANCE.getHeaderProperty();
 
 		/**
 		 * The meta object literal for the '{@link som.rest.test.ParameterLocation <em>Parameter Location</em>}' enum.

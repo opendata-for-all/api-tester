@@ -9,40 +9,40 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import som.rest.test.Body;
-import som.rest.test.BodyProperty;
+import som.rest.test.APIRequest;
+import som.rest.test.OutputProperty;
 import som.rest.test.TestPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Body Property</b></em>'.
+ * An implementation of the model object '<em><b>Output Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link som.rest.test.impl.BodyPropertyImpl#getBody <em>Body</em>}</li>
+ *   <li>{@link som.rest.test.impl.OutputPropertyImpl#getRequest <em>Request</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class BodyPropertyImpl extends ComplexPropertyImpl implements BodyProperty {
+public abstract class OutputPropertyImpl extends PropertyImpl implements OutputProperty {
 	/**
-	 * The cached value of the '{@link #getBody() <em>Body</em>}' reference.
+	 * The cached value of the '{@link #getRequest() <em>Request</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBody()
+	 * @see #getRequest()
 	 * @generated
 	 * @ordered
 	 */
-	protected Body body;
+	protected APIRequest request;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BodyPropertyImpl() {
+	protected OutputPropertyImpl() {
 		super();
 	}
 
@@ -53,7 +53,7 @@ public class BodyPropertyImpl extends ComplexPropertyImpl implements BodyPropert
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TestPackage.Literals.BODY_PROPERTY;
+		return TestPackage.Literals.OUTPUT_PROPERTY;
 	}
 
 	/**
@@ -61,16 +61,16 @@ public class BodyPropertyImpl extends ComplexPropertyImpl implements BodyPropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Body getBody() {
-		if (body != null && body.eIsProxy()) {
-			InternalEObject oldBody = (InternalEObject)body;
-			body = (Body)eResolveProxy(oldBody);
-			if (body != oldBody) {
+	public APIRequest getRequest() {
+		if (request != null && request.eIsProxy()) {
+			InternalEObject oldRequest = (InternalEObject)request;
+			request = (APIRequest)eResolveProxy(oldRequest);
+			if (request != oldRequest) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestPackage.BODY_PROPERTY__BODY, oldBody, body));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestPackage.OUTPUT_PROPERTY__REQUEST, oldRequest, request));
 			}
 		}
-		return body;
+		return request;
 	}
 
 	/**
@@ -78,8 +78,8 @@ public class BodyPropertyImpl extends ComplexPropertyImpl implements BodyPropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Body basicGetBody() {
-		return body;
+	public APIRequest basicGetRequest() {
+		return request;
 	}
 
 	/**
@@ -87,11 +87,11 @@ public class BodyPropertyImpl extends ComplexPropertyImpl implements BodyPropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBody(Body newBody) {
-		Body oldBody = body;
-		body = newBody;
+	public void setRequest(APIRequest newRequest) {
+		APIRequest oldRequest = request;
+		request = newRequest;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.BODY_PROPERTY__BODY, oldBody, body));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.OUTPUT_PROPERTY__REQUEST, oldRequest, request));
 	}
 
 	/**
@@ -102,9 +102,9 @@ public class BodyPropertyImpl extends ComplexPropertyImpl implements BodyPropert
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TestPackage.BODY_PROPERTY__BODY:
-				if (resolve) return getBody();
-				return basicGetBody();
+			case TestPackage.OUTPUT_PROPERTY__REQUEST:
+				if (resolve) return getRequest();
+				return basicGetRequest();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,8 +117,8 @@ public class BodyPropertyImpl extends ComplexPropertyImpl implements BodyPropert
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TestPackage.BODY_PROPERTY__BODY:
-				setBody((Body)newValue);
+			case TestPackage.OUTPUT_PROPERTY__REQUEST:
+				setRequest((APIRequest)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -132,8 +132,8 @@ public class BodyPropertyImpl extends ComplexPropertyImpl implements BodyPropert
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TestPackage.BODY_PROPERTY__BODY:
-				setBody((Body)null);
+			case TestPackage.OUTPUT_PROPERTY__REQUEST:
+				setRequest((APIRequest)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -147,10 +147,10 @@ public class BodyPropertyImpl extends ComplexPropertyImpl implements BodyPropert
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TestPackage.BODY_PROPERTY__BODY:
-				return body != null;
+			case TestPackage.OUTPUT_PROPERTY__REQUEST:
+				return request != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //BodyPropertyImpl
+} //OutputPropertyImpl

@@ -32,8 +32,6 @@
     </genEnums>
     <genClasses ecoreClass="TestSuite.ecore#//TestSuite">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//TestSuite/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//TestSuite/createdAt"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//TestSuite/updatedAt"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestSuite.ecore#//TestSuite/testCases"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//TestSuite/api"/>
     </genClasses>
@@ -42,16 +40,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestSuite.ecore#//TestCase/testSteps"/>
     </genClasses>
     <genClasses image="false" ecoreClass="TestSuite.ecore#//TestStep"/>
-    <genClasses ecoreClass="TestSuite.ecore#//Request">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Request/httpMethod"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Request/host"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Request/path"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Request/scheme"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestSuite.ecore#//Request/headers"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestSuite.ecore#//Request/parameters"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestSuite.ecore#//Request/assertions"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestSuite.ecore#//Request/authorization"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestSuite.ecore#//Request/body"/>
+    <genClasses ecoreClass="TestSuite.ecore#//APIRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//APIRequest/operationId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//APIRequest/contentType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//APIRequest/accept"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//APIRequest/scheme"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestSuite.ecore#//APIRequest/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestSuite.ecore#//APIRequest/assertions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestSuite.ecore#//APIRequest/authorization"/>
     </genClasses>
     <genClasses image="false" ecoreClass="TestSuite.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//NamedElement/name"/>
@@ -60,10 +56,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Parameter/location"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Parameter/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Parameter/value"/>
-    </genClasses>
-    <genClasses ecoreClass="TestSuite.ecore#//Header">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Header/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Header/value"/>
     </genClasses>
     <genClasses image="false" ecoreClass="TestSuite.ecore#//Assertion">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Assertion/errorMessage"/>
@@ -75,8 +67,8 @@
     <genClasses image="false" ecoreClass="TestSuite.ecore#//ResponseMessageAssertion">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//ResponseMessageAssertion/value"/>
     </genClasses>
-    <genClasses ecoreClass="TestSuite.ecore#//ContainsAssertion"/>
-    <genClasses ecoreClass="TestSuite.ecore#//EqualsAssertion"/>
+    <genClasses ecoreClass="TestSuite.ecore#//ResponseMessageContainsAssertion"/>
+    <genClasses ecoreClass="TestSuite.ecore#//ResponseMessageEqualsAssertion"/>
     <genClasses ecoreClass="TestSuite.ecore#//SchemaComplianceAssertion"/>
     <genClasses ecoreClass="TestSuite.ecore#//SLAAssertion">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//SLAAssertion/maxTime"/>
@@ -93,9 +85,6 @@
     </genClasses>
     <genClasses ecoreClass="TestSuite.ecore#//InvalidStatusCodesAssertion"/>
     <genClasses ecoreClass="TestSuite.ecore#//ValidStatusCodesAssertion"/>
-    <genClasses ecoreClass="TestSuite.ecore#//OpenAPIComplianceAssertion">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//OpenAPIComplianceAssertion/strict"/>
-    </genClasses>
     <genClasses image="false" ecoreClass="TestSuite.ecore#//Authorization"/>
     <genClasses ecoreClass="TestSuite.ecore#//Basic">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Basic/username"/>
@@ -104,30 +93,22 @@
     <genClasses ecoreClass="TestSuite.ecore#//OAuth2">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//OAuth2/token"/>
     </genClasses>
-    <genClasses ecoreClass="TestSuite.ecore#//Body">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Body/mediaType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Body/value"/>
-    </genClasses>
     <genClasses ecoreClass="TestSuite.ecore#//PropertyTransfer">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference TestSuite.ecore#//PropertyTransfer/source"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference TestSuite.ecore#//PropertyTransfer/target"/>
     </genClasses>
-    <genClasses ecoreClass="TestSuite.ecore#//Property"/>
-    <genClasses ecoreClass="TestSuite.ecore#//HeaderProperty">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TestSuite.ecore#//HeaderProperty/header"/>
+    <genClasses ecoreClass="TestSuite.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Property/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//Property/pathLanguage"/>
     </genClasses>
     <genClasses ecoreClass="TestSuite.ecore#//ParameterProperty">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TestSuite.ecore#//ParameterProperty/parameter"/>
     </genClasses>
-    <genClasses ecoreClass="TestSuite.ecore#//ResponseProperty">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TestSuite.ecore#//ResponseProperty/request"/>
+    <genClasses ecoreClass="TestSuite.ecore#//ResponseProperty"/>
+    <genClasses ecoreClass="TestSuite.ecore#//InputProperty"/>
+    <genClasses image="false" ecoreClass="TestSuite.ecore#//OutputProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TestSuite.ecore#//OutputProperty/request"/>
     </genClasses>
-    <genClasses ecoreClass="TestSuite.ecore#//BodyProperty">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TestSuite.ecore#//BodyProperty/body"/>
-    </genClasses>
-    <genClasses ecoreClass="TestSuite.ecore#//ComplexProperty">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//ComplexProperty/pathLanguage"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestSuite.ecore#//ComplexProperty/pathValue"/>
-    </genClasses>
+    <genClasses ecoreClass="TestSuite.ecore#//HeaderProperty"/>
   </genPackages>
 </genmodel:GenModel>

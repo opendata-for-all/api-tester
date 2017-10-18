@@ -26,7 +26,7 @@ import som.rest.test.TestPackage;
  *
  * @generated
  */
-public class ParameterPropertyImpl extends PropertyImpl implements ParameterProperty {
+public class ParameterPropertyImpl extends InputPropertyImpl implements ParameterProperty {
 	/**
 	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' reference.
 	 * <!-- begin-user-doc -->

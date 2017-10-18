@@ -4,23 +4,23 @@ package som.rest.test.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import som.rest.test.ContainsAssertion;
+import som.rest.test.InputProperty;
 import som.rest.test.TestPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Contains Assertion</b></em>'.
+ * An implementation of the model object '<em><b>Input Property</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ContainsAssertionImpl extends ResponseMessageAssertionImpl implements ContainsAssertion {
+public abstract class InputPropertyImpl extends PropertyImpl implements InputProperty {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ContainsAssertionImpl() {
+	protected InputPropertyImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public class ContainsAssertionImpl extends ResponseMessageAssertionImpl implemen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TestPackage.Literals.CONTAINS_ASSERTION;
+		return TestPackage.Literals.INPUT_PROPERTY;
 	}
 
-} //ContainsAssertionImpl
+} //InputPropertyImpl

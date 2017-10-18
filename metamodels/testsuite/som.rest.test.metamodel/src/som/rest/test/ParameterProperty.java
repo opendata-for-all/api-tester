@@ -19,7 +19,7 @@ package som.rest.test;
  * @model
  * @generated
  */
-public interface ParameterProperty extends Property {
+public interface ParameterProperty extends InputProperty {
 	/**
 	 * Returns the value of the '<em><b>Parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->

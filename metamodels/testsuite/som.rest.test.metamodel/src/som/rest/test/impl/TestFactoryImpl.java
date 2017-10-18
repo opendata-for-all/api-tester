@@ -59,26 +59,22 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 		switch (eClass.getClassifierID()) {
 			case TestPackage.TEST_SUITE: return createTestSuite();
 			case TestPackage.TEST_CASE: return createTestCase();
-			case TestPackage.REQUEST: return createRequest();
+			case TestPackage.API_REQUEST: return createAPIRequest();
 			case TestPackage.PARAMETER: return createParameter();
-			case TestPackage.HEADER: return createHeader();
-			case TestPackage.CONTAINS_ASSERTION: return createContainsAssertion();
-			case TestPackage.EQUALS_ASSERTION: return createEqualsAssertion();
+			case TestPackage.RESPONSE_MESSAGE_CONTAINS_ASSERTION: return createResponseMessageContainsAssertion();
+			case TestPackage.RESPONSE_MESSAGE_EQUALS_ASSERTION: return createResponseMessageEqualsAssertion();
 			case TestPackage.SCHEMA_COMPLIANCE_ASSERTION: return createSchemaComplianceAssertion();
 			case TestPackage.SLA_ASSERTION: return createSLAAssertion();
 			case TestPackage.HEADER_EQUALS_ASSERTION: return createHeaderEqualsAssertion();
 			case TestPackage.HEADER_EXISTS_ASSERTION: return createHeaderExistsAssertion();
 			case TestPackage.INVALID_STATUS_CODES_ASSERTION: return createInvalidStatusCodesAssertion();
 			case TestPackage.VALID_STATUS_CODES_ASSERTION: return createValidStatusCodesAssertion();
-			case TestPackage.OPEN_API_COMPLIANCE_ASSERTION: return createOpenAPIComplianceAssertion();
 			case TestPackage.BASIC: return createBasic();
 			case TestPackage.OAUTH2: return createOAuth2();
-			case TestPackage.BODY: return createBody();
 			case TestPackage.PROPERTY_TRANSFER: return createPropertyTransfer();
-			case TestPackage.HEADER_PROPERTY: return createHeaderProperty();
 			case TestPackage.PARAMETER_PROPERTY: return createParameterProperty();
 			case TestPackage.RESPONSE_PROPERTY: return createResponseProperty();
-			case TestPackage.BODY_PROPERTY: return createBodyProperty();
+			case TestPackage.HEADER_PROPERTY: return createHeaderProperty();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -151,9 +147,9 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Request createRequest() {
-		RequestImpl request = new RequestImpl();
-		return request;
+	public APIRequest createAPIRequest() {
+		APIRequestImpl apiRequest = new APIRequestImpl();
+		return apiRequest;
 	}
 
 	/**
@@ -171,9 +167,9 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Header createHeader() {
-		HeaderImpl header = new HeaderImpl();
-		return header;
+	public ResponseMessageContainsAssertion createResponseMessageContainsAssertion() {
+		ResponseMessageContainsAssertionImpl responseMessageContainsAssertion = new ResponseMessageContainsAssertionImpl();
+		return responseMessageContainsAssertion;
 	}
 
 	/**
@@ -181,19 +177,9 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContainsAssertion createContainsAssertion() {
-		ContainsAssertionImpl containsAssertion = new ContainsAssertionImpl();
-		return containsAssertion;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EqualsAssertion createEqualsAssertion() {
-		EqualsAssertionImpl equalsAssertion = new EqualsAssertionImpl();
-		return equalsAssertion;
+	public ResponseMessageEqualsAssertion createResponseMessageEqualsAssertion() {
+		ResponseMessageEqualsAssertionImpl responseMessageEqualsAssertion = new ResponseMessageEqualsAssertionImpl();
+		return responseMessageEqualsAssertion;
 	}
 
 	/**
@@ -261,16 +247,6 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OpenAPIComplianceAssertion createOpenAPIComplianceAssertion() {
-		OpenAPIComplianceAssertionImpl openAPIComplianceAssertion = new OpenAPIComplianceAssertionImpl();
-		return openAPIComplianceAssertion;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Basic createBasic() {
 		BasicImpl basic = new BasicImpl();
 		return basic;
@@ -291,29 +267,9 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Body createBody() {
-		BodyImpl body = new BodyImpl();
-		return body;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public PropertyTransfer createPropertyTransfer() {
 		PropertyTransferImpl propertyTransfer = new PropertyTransferImpl();
 		return propertyTransfer;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public HeaderProperty createHeaderProperty() {
-		HeaderPropertyImpl headerProperty = new HeaderPropertyImpl();
-		return headerProperty;
 	}
 
 	/**
@@ -341,9 +297,9 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BodyProperty createBodyProperty() {
-		BodyPropertyImpl bodyProperty = new BodyPropertyImpl();
-		return bodyProperty;
+	public HeaderProperty createHeaderProperty() {
+		HeaderPropertyImpl headerProperty = new HeaderPropertyImpl();
+		return headerProperty;
 	}
 
 	/**

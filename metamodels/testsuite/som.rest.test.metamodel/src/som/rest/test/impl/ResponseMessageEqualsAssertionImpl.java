@@ -4,23 +4,23 @@ package som.rest.test.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import som.rest.test.EqualsAssertion;
+import som.rest.test.ResponseMessageEqualsAssertion;
 import som.rest.test.TestPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Equals Assertion</b></em>'.
+ * An implementation of the model object '<em><b>Response Message Equals Assertion</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class EqualsAssertionImpl extends ResponseMessageAssertionImpl implements EqualsAssertion {
+public class ResponseMessageEqualsAssertionImpl extends ResponseMessageAssertionImpl implements ResponseMessageEqualsAssertion {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EqualsAssertionImpl() {
+	protected ResponseMessageEqualsAssertionImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public class EqualsAssertionImpl extends ResponseMessageAssertionImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TestPackage.Literals.EQUALS_ASSERTION;
+		return TestPackage.Literals.RESPONSE_MESSAGE_EQUALS_ASSERTION;
 	}
 
-} //EqualsAssertionImpl
+} //ResponseMessageEqualsAssertionImpl

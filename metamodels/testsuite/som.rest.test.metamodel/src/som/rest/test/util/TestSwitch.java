@@ -87,11 +87,11 @@ public class TestSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TestPackage.REQUEST: {
-				Request request = (Request)theEObject;
-				T result = caseRequest(request);
-				if (result == null) result = caseTestStep(request);
-				if (result == null) result = caseNamedElement(request);
+			case TestPackage.API_REQUEST: {
+				APIRequest apiRequest = (APIRequest)theEObject;
+				T result = caseAPIRequest(apiRequest);
+				if (result == null) result = caseTestStep(apiRequest);
+				if (result == null) result = caseNamedElement(apiRequest);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -104,12 +104,6 @@ public class TestSwitch<T> extends Switch<T> {
 			case TestPackage.PARAMETER: {
 				Parameter parameter = (Parameter)theEObject;
 				T result = caseParameter(parameter);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TestPackage.HEADER: {
-				Header header = (Header)theEObject;
-				T result = caseHeader(header);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -140,19 +134,19 @@ public class TestSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TestPackage.CONTAINS_ASSERTION: {
-				ContainsAssertion containsAssertion = (ContainsAssertion)theEObject;
-				T result = caseContainsAssertion(containsAssertion);
-				if (result == null) result = caseResponseMessageAssertion(containsAssertion);
-				if (result == null) result = caseAssertion(containsAssertion);
+			case TestPackage.RESPONSE_MESSAGE_CONTAINS_ASSERTION: {
+				ResponseMessageContainsAssertion responseMessageContainsAssertion = (ResponseMessageContainsAssertion)theEObject;
+				T result = caseResponseMessageContainsAssertion(responseMessageContainsAssertion);
+				if (result == null) result = caseResponseMessageAssertion(responseMessageContainsAssertion);
+				if (result == null) result = caseAssertion(responseMessageContainsAssertion);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TestPackage.EQUALS_ASSERTION: {
-				EqualsAssertion equalsAssertion = (EqualsAssertion)theEObject;
-				T result = caseEqualsAssertion(equalsAssertion);
-				if (result == null) result = caseResponseMessageAssertion(equalsAssertion);
-				if (result == null) result = caseAssertion(equalsAssertion);
+			case TestPackage.RESPONSE_MESSAGE_EQUALS_ASSERTION: {
+				ResponseMessageEqualsAssertion responseMessageEqualsAssertion = (ResponseMessageEqualsAssertion)theEObject;
+				T result = caseResponseMessageEqualsAssertion(responseMessageEqualsAssertion);
+				if (result == null) result = caseResponseMessageAssertion(responseMessageEqualsAssertion);
+				if (result == null) result = caseAssertion(responseMessageEqualsAssertion);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -218,14 +212,6 @@ public class TestSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TestPackage.OPEN_API_COMPLIANCE_ASSERTION: {
-				OpenAPIComplianceAssertion openAPIComplianceAssertion = (OpenAPIComplianceAssertion)theEObject;
-				T result = caseOpenAPIComplianceAssertion(openAPIComplianceAssertion);
-				if (result == null) result = caseComplianceAssertion(openAPIComplianceAssertion);
-				if (result == null) result = caseAssertion(openAPIComplianceAssertion);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case TestPackage.AUTHORIZATION: {
 				Authorization authorization = (Authorization)theEObject;
 				T result = caseAuthorization(authorization);
@@ -246,12 +232,6 @@ public class TestSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TestPackage.BODY: {
-				Body body = (Body)theEObject;
-				T result = caseBody(body);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case TestPackage.PROPERTY_TRANSFER: {
 				PropertyTransfer propertyTransfer = (PropertyTransfer)theEObject;
 				T result = casePropertyTransfer(propertyTransfer);
@@ -266,16 +246,10 @@ public class TestSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TestPackage.HEADER_PROPERTY: {
-				HeaderProperty headerProperty = (HeaderProperty)theEObject;
-				T result = caseHeaderProperty(headerProperty);
-				if (result == null) result = caseProperty(headerProperty);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case TestPackage.PARAMETER_PROPERTY: {
 				ParameterProperty parameterProperty = (ParameterProperty)theEObject;
 				T result = caseParameterProperty(parameterProperty);
+				if (result == null) result = caseInputProperty(parameterProperty);
 				if (result == null) result = caseProperty(parameterProperty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -283,23 +257,30 @@ public class TestSwitch<T> extends Switch<T> {
 			case TestPackage.RESPONSE_PROPERTY: {
 				ResponseProperty responseProperty = (ResponseProperty)theEObject;
 				T result = caseResponseProperty(responseProperty);
-				if (result == null) result = caseComplexProperty(responseProperty);
+				if (result == null) result = caseOutputProperty(responseProperty);
 				if (result == null) result = caseProperty(responseProperty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TestPackage.BODY_PROPERTY: {
-				BodyProperty bodyProperty = (BodyProperty)theEObject;
-				T result = caseBodyProperty(bodyProperty);
-				if (result == null) result = caseComplexProperty(bodyProperty);
-				if (result == null) result = caseProperty(bodyProperty);
+			case TestPackage.INPUT_PROPERTY: {
+				InputProperty inputProperty = (InputProperty)theEObject;
+				T result = caseInputProperty(inputProperty);
+				if (result == null) result = caseProperty(inputProperty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TestPackage.COMPLEX_PROPERTY: {
-				ComplexProperty complexProperty = (ComplexProperty)theEObject;
-				T result = caseComplexProperty(complexProperty);
-				if (result == null) result = caseProperty(complexProperty);
+			case TestPackage.OUTPUT_PROPERTY: {
+				OutputProperty outputProperty = (OutputProperty)theEObject;
+				T result = caseOutputProperty(outputProperty);
+				if (result == null) result = caseProperty(outputProperty);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TestPackage.HEADER_PROPERTY: {
+				HeaderProperty headerProperty = (HeaderProperty)theEObject;
+				T result = caseHeaderProperty(headerProperty);
+				if (result == null) result = caseOutputProperty(headerProperty);
+				if (result == null) result = caseProperty(headerProperty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -353,17 +334,17 @@ public class TestSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Request</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>API Request</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Request</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>API Request</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRequest(Request object) {
+	public T caseAPIRequest(APIRequest object) {
 		return null;
 	}
 
@@ -394,21 +375,6 @@ public class TestSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseParameter(Parameter object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Header</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Header</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseHeader(Header object) {
 		return null;
 	}
 
@@ -473,32 +439,32 @@ public class TestSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Contains Assertion</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Response Message Contains Assertion</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Contains Assertion</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Response Message Contains Assertion</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseContainsAssertion(ContainsAssertion object) {
+	public T caseResponseMessageContainsAssertion(ResponseMessageContainsAssertion object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Equals Assertion</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Response Message Equals Assertion</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Equals Assertion</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Response Message Equals Assertion</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEqualsAssertion(EqualsAssertion object) {
+	public T caseResponseMessageEqualsAssertion(ResponseMessageEqualsAssertion object) {
 		return null;
 	}
 
@@ -623,21 +589,6 @@ public class TestSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Open API Compliance Assertion</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Open API Compliance Assertion</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseOpenAPIComplianceAssertion(OpenAPIComplianceAssertion object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Authorization</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -683,21 +634,6 @@ public class TestSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Body</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Body</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBody(Body object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Property Transfer</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -724,21 +660,6 @@ public class TestSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseProperty(Property object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Header Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Header Property</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseHeaderProperty(HeaderProperty object) {
 		return null;
 	}
 
@@ -773,32 +694,47 @@ public class TestSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Body Property</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Input Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Body Property</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Input Property</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBodyProperty(BodyProperty object) {
+	public T caseInputProperty(InputProperty object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Complex Property</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Output Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Complex Property</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Output Property</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseComplexProperty(ComplexProperty object) {
+	public T caseOutputProperty(OutputProperty object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Header Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Header Property</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHeaderProperty(HeaderProperty object) {
 		return null;
 	}
 
