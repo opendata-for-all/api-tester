@@ -40,6 +40,7 @@ import core.SecuritySchemeType;
 import core.SecurityScope;
 import core.Tag;
 import core.XMLElement;
+import som.openapi.test.generator.utils.OpenAPIUtils;
 
 public class OpenAPIFactory {
 	CoreFactory coreFactory;
@@ -234,105 +235,135 @@ public class OpenAPIFactory {
 			root.getSchemas().add(schema);
 			schema.setDeclaringContext(root.getApi());
 			root.getApi().getDefinitions().add(schema);
-			discoverSchema(definitionElement.getValue(), schema, root);
+		}
+		for (Entry<String, JsonElement> definitionElement : definitions) {
+			discoverSchema(definitionElement.getValue().getAsJsonObject(), OpenAPIUtils.getSchemaByName(definitionElement.getKey(), root.getApi()),root);
 		}
 	}
 
-	private  void discoverSchema(JsonElement jsonElement, Schema schema,  Root root) {
-		JsonObject jsonObject = jsonElement.getAsJsonObject();
-//		if (jsonObject.has("$ref"))
-//			schema.setRef(jsonObject.get("$ref").getAsString());
-		if (jsonObject.has("format"))
-			schema.setFormat(jsonObject.get("format").getAsString());
-		if (jsonObject.has("description"))
-			schema.setDescription(jsonObject.get("description").getAsString());
-		if (jsonObject.has("title"))
-			schema.setTitle(jsonObject.get("title").getAsString());
-		if (jsonObject.has("type"))
-			schema.setType(core.JSONDataType.get(jsonObject.get("type").getAsString()));
-		if (jsonObject.has("default"))
-			schema.setDefault(jsonObject.get("default").toString());
-		if (jsonObject.has("maximum"))
-			schema.setMaximum(jsonObject.get("maximum").getAsDouble());
-		if (jsonObject.has("exclusiveMaximum"))
-			schema.setExclusiveMaximum(jsonObject.get("exclusiveMaximum").getAsBoolean());
-		if (jsonObject.has("minimum"))
-			schema.setMinimum(jsonObject.get("minimum").getAsDouble());
-		if (jsonObject.has("exclusiveMinimim"))
-			schema.setExclusiveMinimum(jsonObject.get("exclusiveMinimum").getAsBoolean());
-		if (jsonObject.has("maxLength"))
-			schema.setMaxLength(jsonObject.get("maxLength").getAsInt());
-		if (jsonObject.has("minLength"))
-			schema.setMinLength(jsonObject.get("minLength").getAsInt());
-		if (jsonObject.has("pattern"))
-			schema.setPattern(jsonObject.get("pattern").getAsString());
-		if (jsonObject.has("maxItems"))
-			schema.setMaxItems(jsonObject.get("maxItems").getAsInt());
-		if (jsonObject.has("minItems"))
-			schema.setMinItems(jsonObject.get("minItems").getAsInt());
-		if (jsonObject.has("uniqueItems"))
-			schema.setUniqueItems(jsonObject.get("uniqueItems").getAsBoolean());
-		if (jsonObject.has("enum")) {
-			JsonArray enumItems = jsonObject.get("enum").getAsJsonArray();
+	private  void discoverSchema(JsonObject schemaObject, Schema schema,  Root root) {
+		if (schemaObject.has("format"))
+			schema.setFormat(schemaObject.get("format").getAsString());
+		if (schemaObject.has("description"))
+			schema.setDescription(schemaObject.get("description").getAsString());
+		if (schemaObject.has("title"))
+			schema.setTitle(schemaObject.get("title").getAsString());
+		if (schemaObject.has("type"))
+			schema.setType(core.JSONDataType.get(schemaObject.get("type").getAsString()));
+		if (schemaObject.has("default"))
+			schema.setDefault(schemaObject.get("default").toString());
+		if (schemaObject.has("maximum"))
+			schema.setMaximum(schemaObject.get("maximum").getAsDouble());
+		if (schemaObject.has("exclusiveMaximum"))
+			schema.setExclusiveMaximum(schemaObject.get("exclusiveMaximum").getAsBoolean());
+		if (schemaObject.has("minimum"))
+			schema.setMinimum(schemaObject.get("minimum").getAsDouble());
+		if (schemaObject.has("exclusiveMinimim"))
+			schema.setExclusiveMinimum(schemaObject.get("exclusiveMinimum").getAsBoolean());
+		if (schemaObject.has("maxLength"))
+			schema.setMaxLength(schemaObject.get("maxLength").getAsInt());
+		if (schemaObject.has("minLength"))
+			schema.setMinLength(schemaObject.get("minLength").getAsInt());
+		if (schemaObject.has("pattern"))
+			schema.setPattern(schemaObject.get("pattern").getAsString());
+		if (schemaObject.has("maxItems"))
+			schema.setMaxItems(schemaObject.get("maxItems").getAsInt());
+		if (schemaObject.has("minItems"))
+			schema.setMinItems(schemaObject.get("minItems").getAsInt());
+		if (schemaObject.has("uniqueItems"))
+			schema.setUniqueItems(schemaObject.get("uniqueItems").getAsBoolean());
+		if (schemaObject.has("enum")) {
+			JsonArray enumItems = schemaObject.get("enum").getAsJsonArray();
 			for (JsonElement item : enumItems)
 				schema.getEnum().add(item.getAsString());
 		}
-		if (jsonObject.has("multipleOf"))
-			schema.setMultipleOf(jsonObject.get("multipleOf").getAsInt());
-		if (jsonObject.has("maxProperties"))
-			schema.setMaxProperties(jsonObject.get("maxProperties").getAsInt());
-		if (jsonObject.has("minProperties"))
-			schema.setMinProperties(jsonObject.get("minProperties").getAsInt());
+		if (schemaObject.has("multipleOf"))
+			schema.setMultipleOf(schemaObject.get("multipleOf").getAsInt());
+		if (schemaObject.has("maxProperties"))
+			schema.setMaxProperties(schemaObject.get("maxProperties").getAsInt());
+		if (schemaObject.has("minProperties"))
+			schema.setMinProperties(schemaObject.get("minProperties").getAsInt());
 	
-		if (jsonObject.has("properties")) {
-			Set<Entry<String, JsonElement>> properties = jsonObject.get("properties").getAsJsonObject().entrySet();
+		if (schemaObject.has("properties")) {
+			Set<Entry<String, JsonElement>> properties = schemaObject.get("properties").getAsJsonObject().entrySet();
 			for (Entry<String, JsonElement> jsonProperty : properties) {
 				Schema property = coreFactory.createSchema();
 				property.setName(jsonProperty.getKey());
-				JsonObject value = jsonProperty.getValue().getAsJsonObject();
-				if(value.has("#ref")) {
-					String ref = value.get("#ref").getAsString();
-					
-				}
-				schema.getProperties().add(property);
 				property.setDeclaringContext(schema);
 				root.getSchemas().add(property);
-				property.setDeclaringContext(schema);
-				discoverSchema(jsonProperty.getValue(), property, root);
+				schema.getProperties().add(property);
+				JsonObject value = jsonProperty.getValue().getAsJsonObject();
+				if(value.has("$ref")) {
+					String ref = value.get("$ref").getAsString();
+					Schema referencedchema = OpenAPIUtils.getSchemaByPathReference(ref, root.getApi());
+					if(value != null) {
+						property.setValue(referencedchema);
+					}
+				}
+				else
+				discoverSchema(jsonProperty.getValue().getAsJsonObject(), property, root);
 			}
 		}
-		if (jsonObject.has("additionalProperties")) {
-			Schema property = coreFactory.createSchema();
-			schema.setAdditonalProperties(property);
-			root.getSchemas().add(property);
-			discoverSchema(jsonObject.get("additionalProperties"), property, root);
+		if (schemaObject.has("additionalProperties")) {
+			JsonElement additionalProperties = schemaObject.get("additionalProperties");
+			
+			if(additionalProperties.isJsonPrimitive())
+				schema.setAdditonalPropertiesAllowed(additionalProperties.getAsBoolean());
+			else 
+			{
+				JsonObject additionalPropertiesObject = additionalProperties.getAsJsonObject();
+				if(additionalPropertiesObject.has("$ref")) {
+					String ref = additionalPropertiesObject.get("$ref").getAsString();
+					Schema referencedchema = OpenAPIUtils.getSchemaByPathReference(ref, root.getApi());
+					schema.setAdditonalProperties(referencedchema);
+				}
+				else {
+					Schema additionalPropertieSchema = coreFactory.createSchema();
+					schema.setAdditonalProperties(additionalPropertieSchema);
+					root.getSchemas().add(additionalPropertieSchema);
+					discoverSchema(additionalPropertiesObject, additionalPropertieSchema, root);
+				}
+			}
+				
+		
 		}
-		if (jsonObject.has("allOf")) {
-			JsonArray allOfArray = jsonObject.get("allOf").getAsJsonArray();
+		if (schemaObject.has("allOf")) {
+			JsonArray allOfArray = schemaObject.get("allOf").getAsJsonArray();
 			for (JsonElement allOfElement : allOfArray) {
-				Schema allOf = coreFactory.createSchema();
-				schema.getAllOf().add(allOf);
-				root.getSchemas().add(allOf);
-				discoverSchema(allOfElement, allOf, root);
+				JsonObject allOfObject = allOfElement.getAsJsonObject();
+				if(allOfObject.has("$ref")) {
+					schema.getAllOf().add(OpenAPIUtils.getSchemaByPathReference(allOfObject.get("$ref").getAsString(), root.getApi()));
+				}
+				else {
+					Schema allOfSchema = coreFactory.createSchema();
+					schema.getAllOf().add(allOfSchema);
+					root.getSchemas().add(allOfSchema);
+					discoverSchema(allOfObject, allOfSchema, root);
+				}
+				
+			
 			}
 		}
-		if (jsonObject.has("items")) {
-
-				if (jsonObject.get("items").isJsonObject()) {
-				Schema item = coreFactory.createSchema();
-				schema.setItems(item);
-				root.getSchemas().add(item);
-				discoverSchema(jsonObject.get("items"), item, root);
+		if (schemaObject.has("items")) {
+			JsonObject itemsObject = schemaObject.get("items").getAsJsonObject();
+			if(itemsObject.has("$ref")) {
+				schema.setItems(OpenAPIUtils.getSchemaByPathReference(itemsObject.get("$ref").getAsString(),root.getApi()));
+			}
+			else {
+				Schema itemsSchema = coreFactory.createSchema();
+				schema.setItems(itemsSchema);
+				root.getSchemas().add(itemsSchema);
+				discoverSchema(itemsObject,itemsSchema, root);
 			}
 		}
-		if (jsonObject.has("discrimitaor")) {
-			schema.setDiscriminator(jsonObject.get("discriminator").getAsString());
+		if (schemaObject.has("discrimitaor")) {
+			schema.setDiscriminator(schemaObject.get("discriminator").getAsString());
 		}
-		if (jsonObject.has("readOnly"))
-			schema.setReadOnly(jsonObject.get("readOnly").getAsBoolean());
-		if (jsonObject.has("xml")) {
+		if (schemaObject.has("readOnly"))
+			schema.setReadOnly(schemaObject.get("readOnly").getAsBoolean());
+		if (schemaObject.has("xml")) {
 			XMLElement xml = coreFactory.createXMLElement();
-			JsonObject xmlObject = jsonObject.get("xml").getAsJsonObject();
+			JsonObject xmlObject = schemaObject.get("xml").getAsJsonObject();
 			if (xmlObject.has("name"))
 				xml.setName(xmlObject.get("name").getAsString());
 			if (xmlObject.has("namespace"))
@@ -345,17 +376,17 @@ public class OpenAPIFactory {
 				xml.setWrapped(xmlObject.get("wrapped").getAsBoolean());
 			schema.setXml(xml);
 		}
-		if (jsonObject.has("externalDocs")) {
+		if (schemaObject.has("externalDocs")) {
 			ExternalDocs externalDocs = coreFactory.createExternalDocs();
 			schema.setExternalDocs(externalDocs);
-			discoverExternalDocs(jsonObject.get("externalDocs"), externalDocs);
+			discoverExternalDocs(schemaObject.get("externalDocs"), externalDocs);
 		}
-		if (jsonObject.has("example"))
-			schema.setExample(jsonObject.get("example").toString());
-		if (jsonObject.has("required")) {
-			for (JsonElement element : jsonObject.get("required").getAsJsonArray()) {
-				//schema.getRequired().add(element.getAsString());
-				// TODO 
+		if (schemaObject.has("example"))
+			schema.setExample(schemaObject.get("example").toString());
+		if (schemaObject.has("required")) {
+			for (JsonElement requiredItem : schemaObject.get("required").getAsJsonArray()) {
+				schema.getRequired().add(OpenAPIUtils.getPropertyByName(requiredItem.getAsString(), schema));
+			
 			}
 		}
 	}
@@ -368,9 +399,6 @@ public class OpenAPIFactory {
 			Path path = coreFactory.createPath();
 			root.getApi().getPaths().add(path);
 			path.setPattern(pathElement.getKey());
-//			if (pathObject.has("$ref")) {
-//				path.setRef(pathObject.get("$ref").getAsString());
-//			}
 			if (pathObject.has("get")) {
 			Operation getAPIOperation = coreFactory.createOperation();
 				path.setGet(getAPIOperation);
@@ -506,7 +534,7 @@ public class OpenAPIFactory {
 			Schema responseSchema = coreFactory.createSchema();
 			response.setSchema(responseSchema);
 			root.getSchemas().add(responseSchema);
-			discoverSchema(responseObject.get("schema"), responseSchema, root);
+			discoverSchema(responseObject.get("schema").getAsJsonObject(), responseSchema, root);
 		}
 		if (responseObject.has("headers")) {
 			Set<Entry<String, JsonElement>> headers = responseObject.get("headers").getAsJsonObject().entrySet();
@@ -596,7 +624,7 @@ public class OpenAPIFactory {
 			Schema schema = coreFactory.createSchema();
 			aPIParameter.setSchema(schema);
 			root.getSchemas().add(schema);
-			discoverSchema(jsonObject.get("schema"), schema, root);
+			discoverSchema(jsonObject.get("schema").getAsJsonObject(), schema, root);
 		}
 		if (jsonObject.has("type"))
 			aPIParameter.setType(core.JSONDataType.get(jsonObject.get("type").getAsString()));

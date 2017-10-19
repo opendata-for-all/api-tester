@@ -37,20 +37,37 @@ public class OpenAPIUtils {
 
 	}
 
-	public static Schema getSchemaByPathReference(String ref, API api){
+	public static Schema getSchemaByPathReference(String ref, API api) {
 		List<Schema> schemas = api.getDefinitions();
-		for(Schema schema : schemas){
-			if(schema.getRef().equalsIgnoreCase(ref))
+		for (Schema schema : schemas) {
+			if (schema.getRef().equalsIgnoreCase(ref))
 				return schema;
 		}
 		return null;
 	}
-	public static List<Operation> getAllOperations(Root apiRoot){
+
+	public static Schema getSchemaByName(String name, API api) {
+		for (Schema schema : api.getDefinitions()) {
+			if (schema.getName().equalsIgnoreCase(name))
+				return schema;
+		}
+		return null;
+	}
+
+	public static Schema getPropertyByName(String name, Schema schema) {
+		for (Schema property : schema.getProperties())
+			if (property.getName().equals(name))
+				return property;
+		return null;
+
+	}
+
+	public static List<Operation> getAllOperations(Root apiRoot) {
 		TreeIterator<EObject> allElements = apiRoot.eAllContents();
 		List<Operation> allOperations = new ArrayList<>();
-		while(allElements.hasNext()){
+		while (allElements.hasNext()) {
 			EObject object = allElements.next();
-			if(object instanceof Operation){
+			if (object instanceof Operation) {
 				allOperations.add((Operation) object);
 			}
 		}
@@ -59,17 +76,17 @@ public class OpenAPIUtils {
 
 	public static Operation getOperationById(Root apiRoot, String operationId) {
 		List<Operation> allOperations = getAllOperations(apiRoot);
-		for(Operation operation: allOperations){
-			if(operation.getOperationId().equals(operationId))
+		for (Operation operation : allOperations) {
+			if (operation.getOperationId().equals(operationId))
 				return operation;
 		}
 		return null;
 	}
 
-	public static String getPathFromOperation(Operation operation){
-		return ((API)operation.getPath().eContainer()).getHost()+ ((API)operation.getPath().eContainer()).getBasePath() + operation.getPath().getPattern();
-		
-	
+	public static String getPathFromOperation(Operation operation) {
+		return ((API) operation.getPath().eContainer()).getHost()
+				+ ((API) operation.getPath().eContainer()).getBasePath() + operation.getPath().getPattern();
+
 	}
-	
+
 }
