@@ -1161,6 +1161,15 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSchema_Value() {
+		return (EReference)schemaEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getSchema_Properties() {
 		return (EReference)schemaEClass.getEStructuralFeatures().get(7);
 	}
@@ -1895,6 +1904,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEReference(schemaEClass, SCHEMA__ADDITONAL_PROPERTIES);
 		createEReference(schemaEClass, SCHEMA__DECLARING_CONTEXT);
 		createEReference(schemaEClass, SCHEMA__REQUIRED);
+		createEReference(schemaEClass, SCHEMA__VALUE);
 		createEOperation(schemaEClass, SCHEMA___GET_REF);
 
 		responseEClass = createEClass(RESPONSE);
@@ -1941,6 +1951,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		schemaDeclaringContextEClass = createEClass(SCHEMA_DECLARING_CONTEXT);
 
+		responseDeclaringContextEClass = createEClass(RESPONSE_DECLARING_CONTEXT);
+
 		jsonPointerEClass = createEClass(JSON_POINTER);
 		createEAttribute(jsonPointerEClass, JSON_POINTER__REF);
 
@@ -1959,8 +1971,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		arrayContextEClass = createEClass(ARRAY_CONTEXT);
 		createEAttribute(arrayContextEClass, ARRAY_CONTEXT__COLLECTION_FORMAT);
 		createEReference(arrayContextEClass, ARRAY_CONTEXT__ITEMS);
-
-		responseDeclaringContextEClass = createEClass(RESPONSE_DECLARING_CONTEXT);
 
 		// Create enums
 		schemeTypeEEnum = createEEnum(SCHEME_TYPE);
@@ -2142,6 +2152,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEReference(getSchema_AdditonalProperties(), this.getSchema(), null, "additonalProperties", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSchema_DeclaringContext(), this.getSchemaDeclaringContext(), null, "declaringContext", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSchema_Required(), this.getSchema(), null, "required", null, 0, -1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSchema_Value(), this.getSchema(), null, "value", null, 0, 1, Schema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getSchema__GetRef(), ecorePackage.getEString(), "getRef", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -2189,6 +2200,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		initEClass(schemaDeclaringContextEClass, SchemaDeclaringContext.class, "SchemaDeclaringContext", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(responseDeclaringContextEClass, ResponseDeclaringContext.class, "ResponseDeclaringContext", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(jsonPointerEClass, JSONPointer.class, "JSONPointer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJSONPointer_Ref(), ecorePackage.getEString(), "ref", null, 0, 1, JSONPointer.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
@@ -2207,8 +2220,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEClass(arrayContextEClass, ArrayContext.class, "ArrayContext", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getArrayContext_CollectionFormat(), this.getCollectionFormat(), "collectionFormat", null, 0, 1, ArrayContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArrayContext_Items(), this.getItemsDefinition(), null, "items", null, 0, 1, ArrayContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(responseDeclaringContextEClass, ResponseDeclaringContext.class, "ResponseDeclaringContext", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(schemeTypeEEnum, SchemeType.class, "SchemeType");

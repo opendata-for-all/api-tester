@@ -152,6 +152,10 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 				return createSchemaDeclaringContextAdapter();
 			}
 			@Override
+			public Adapter caseResponseDeclaringContext(ResponseDeclaringContext object) {
+				return createResponseDeclaringContextAdapter();
+			}
+			@Override
 			public Adapter caseJSONPointer(JSONPointer object) {
 				return createJSONPointerAdapter();
 			}
@@ -174,10 +178,6 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseArrayContext(ArrayContext object) {
 				return createArrayContextAdapter();
-			}
-			@Override
-			public Adapter caseResponseDeclaringContext(ResponseDeclaringContext object) {
-				return createResponseDeclaringContextAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {

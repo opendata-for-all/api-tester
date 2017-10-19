@@ -27,6 +27,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link core.Schema#getAdditonalProperties <em>Additonal Properties</em>}</li>
  *   <li>{@link core.Schema#getDeclaringContext <em>Declaring Context</em>}</li>
  *   <li>{@link core.Schema#getRequired <em>Required</em>}</li>
+ *   <li>{@link core.Schema#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see core.CorePackage#getSchema()
@@ -127,6 +128,32 @@ public interface Schema extends JSONSchemaSubset, SchemaDeclaringContext, JSONPo
 	 * @generated
 	 */
 	EList<Schema> getRequired();
+
+	/**
+	 * Returns the value of the '<em><b>Value</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Value</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Value</em>' reference.
+	 * @see #setValue(Schema)
+	 * @see core.CorePackage#getSchema_Value()
+	 * @model
+	 * @generated
+	 */
+	Schema getValue();
+
+	/**
+	 * Sets the value of the '{@link core.Schema#getValue <em>Value</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Value</em>' reference.
+	 * @see #getValue()
+	 * @generated
+	 */
+	void setValue(Schema value);
 
 	/**
 	 * Returns the value of the '<em><b>Properties</b></em>' reference list.

@@ -199,6 +199,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="declaringContext" eType="#//SchemaDeclaringContext"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="required" upperBound="-1"
         eType="#//Schema"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Schema"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Response" eSuperTypes="#//SchemaDeclaringContext #//SchemaContext">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -245,6 +246,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParamterDeclaringContext" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="SchemaDeclaringContext" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ResponseDeclaringContext" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="JSONPointer" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ref" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" transient="true" derived="true"/>
@@ -320,5 +322,4 @@
     <eLiterals name="file" value="8"/>
     <eLiterals name="null" value="7"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResponseDeclaringContext" abstract="true"/>
 </ecore:EPackage>

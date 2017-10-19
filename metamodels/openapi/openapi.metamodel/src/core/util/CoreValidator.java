@@ -258,6 +258,8 @@ public class CoreValidator extends EObjectValidator {
 				return validateParamterDeclaringContext((ParamterDeclaringContext)value, diagnostics, context);
 			case CorePackage.SCHEMA_DECLARING_CONTEXT:
 				return validateSchemaDeclaringContext((SchemaDeclaringContext)value, diagnostics, context);
+			case CorePackage.RESPONSE_DECLARING_CONTEXT:
+				return validateResponseDeclaringContext((ResponseDeclaringContext)value, diagnostics, context);
 			case CorePackage.JSON_POINTER:
 				return validateJSONPointer((JSONPointer)value, diagnostics, context);
 			case CorePackage.SECURITY_CONTEXT:
@@ -270,8 +272,6 @@ public class CoreValidator extends EObjectValidator {
 				return validateExternalDocsContext((ExternalDocsContext)value, diagnostics, context);
 			case CorePackage.ARRAY_CONTEXT:
 				return validateArrayContext((ArrayContext)value, diagnostics, context);
-			case CorePackage.RESPONSE_DECLARING_CONTEXT:
-				return validateResponseDeclaringContext((ResponseDeclaringContext)value, diagnostics, context);
 			case CorePackage.SCHEME_TYPE:
 				return validateSchemeType((SchemeType)value, diagnostics, context);
 			case CorePackage.PARAMETER_LOCATION:

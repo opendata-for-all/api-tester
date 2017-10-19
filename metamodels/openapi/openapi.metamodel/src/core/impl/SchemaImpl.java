@@ -47,6 +47,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link core.impl.SchemaImpl#getAdditonalProperties <em>Additonal Properties</em>}</li>
  *   <li>{@link core.impl.SchemaImpl#getDeclaringContext <em>Declaring Context</em>}</li>
  *   <li>{@link core.impl.SchemaImpl#getRequired <em>Required</em>}</li>
+ *   <li>{@link core.impl.SchemaImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -283,6 +284,16 @@ public class SchemaImpl extends JSONSchemaSubsetImpl implements Schema {
 	protected EList<Schema> required;
 
 	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected Schema value;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -458,6 +469,44 @@ public class SchemaImpl extends JSONSchemaSubsetImpl implements Schema {
 			required = new EObjectResolvingEList<Schema>(Schema.class, this, CorePackage.SCHEMA__REQUIRED);
 		}
 		return required;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Schema getValue() {
+		if (value != null && value.eIsProxy()) {
+			InternalEObject oldValue = (InternalEObject)value;
+			value = (Schema)eResolveProxy(oldValue);
+			if (value != oldValue) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.SCHEMA__VALUE, oldValue, value));
+			}
+		}
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Schema basicGetValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValue(Schema newValue) {
+		Schema oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.SCHEMA__VALUE, oldValue, value));
 	}
 
 	/**
@@ -763,6 +812,9 @@ public class SchemaImpl extends JSONSchemaSubsetImpl implements Schema {
 				return basicGetDeclaringContext();
 			case CorePackage.SCHEMA__REQUIRED:
 				return getRequired();
+			case CorePackage.SCHEMA__VALUE:
+				if (resolve) return getValue();
+				return basicGetValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -824,6 +876,9 @@ public class SchemaImpl extends JSONSchemaSubsetImpl implements Schema {
 				getRequired().clear();
 				getRequired().addAll((Collection<? extends Schema>)newValue);
 				return;
+			case CorePackage.SCHEMA__VALUE:
+				setValue((Schema)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -881,6 +936,9 @@ public class SchemaImpl extends JSONSchemaSubsetImpl implements Schema {
 			case CorePackage.SCHEMA__REQUIRED:
 				getRequired().clear();
 				return;
+			case CorePackage.SCHEMA__VALUE:
+				setValue((Schema)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -925,6 +983,8 @@ public class SchemaImpl extends JSONSchemaSubsetImpl implements Schema {
 				return declaringContext != null;
 			case CorePackage.SCHEMA__REQUIRED:
 				return required != null && !required.isEmpty();
+			case CorePackage.SCHEMA__VALUE:
+				return value != null;
 		}
 		return super.eIsSet(featureID);
 	}

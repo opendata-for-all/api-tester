@@ -330,7 +330,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getParameterContext()
 	 * @generated
 	 */
-	int PARAMETER_CONTEXT = 23;
+	int PARAMETER_CONTEXT = 24;
 
 	/**
 	 * The meta object id for the '{@link core.impl.APIImpl <em>API</em>}' class.
@@ -1303,7 +1303,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getSchemaContext()
 	 * @generated
 	 */
-	int SCHEMA_CONTEXT = 24;
+	int SCHEMA_CONTEXT = 25;
 
 	/**
 	 * The meta object id for the '{@link core.impl.ArrayContextImpl <em>Array Context</em>}' class.
@@ -1313,7 +1313,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getArrayContext()
 	 * @generated
 	 */
-	int ARRAY_CONTEXT = 26;
+	int ARRAY_CONTEXT = 27;
 
 	/**
 	 * The meta object id for the '{@link core.impl.ItemsDefinitionImpl <em>Items Definition</em>}' class.
@@ -1804,13 +1804,22 @@ public interface CorePackage extends EPackage {
 	int SCHEMA__REQUIRED = JSON_SCHEMA_SUBSET_FEATURE_COUNT + 15;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEMA__VALUE = JSON_SCHEMA_SUBSET_FEATURE_COUNT + 16;
+
+	/**
 	 * The number of structural features of the '<em>Schema</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_FEATURE_COUNT = JSON_SCHEMA_SUBSET_FEATURE_COUNT + 16;
+	int SCHEMA_FEATURE_COUNT = JSON_SCHEMA_SUBSET_FEATURE_COUNT + 17;
 
 	/**
 	 * The operation id for the '<em>Get Ref</em>' operation.
@@ -2119,7 +2128,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getExternalDocsContext()
 	 * @generated
 	 */
-	int EXTERNAL_DOCS_CONTEXT = 25;
+	int EXTERNAL_DOCS_CONTEXT = 26;
 
 	/**
 	 * The feature id for the '<em><b>External Docs</b></em>' containment reference.
@@ -2485,7 +2494,45 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getJSONPointer()
 	 * @generated
 	 */
-	int JSON_POINTER = 21;
+	int JSON_POINTER = 22;
+
+	/**
+	 * The meta object id for the '{@link core.impl.SecurityContextImpl <em>Security Context</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see core.impl.SecurityContextImpl
+	 * @see core.impl.CorePackageImpl#getSecurityContext()
+	 * @generated
+	 */
+	int SECURITY_CONTEXT = 23;
+
+	/**
+	 * The meta object id for the '{@link core.impl.ResponseDeclaringContextImpl <em>Response Declaring Context</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see core.impl.ResponseDeclaringContextImpl
+	 * @see core.impl.CorePackageImpl#getResponseDeclaringContext()
+	 * @generated
+	 */
+	int RESPONSE_DECLARING_CONTEXT = 21;
+
+	/**
+	 * The number of structural features of the '<em>Response Declaring Context</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSE_DECLARING_CONTEXT_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Response Declaring Context</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSE_DECLARING_CONTEXT_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Ref</b></em>' attribute.
@@ -2513,16 +2560,6 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int JSON_POINTER_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link core.impl.SecurityContextImpl <em>Security Context</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see core.impl.SecurityContextImpl
-	 * @see core.impl.CorePackageImpl#getSecurityContext()
-	 * @generated
-	 */
-	int SECURITY_CONTEXT = 22;
 
 	/**
 	 * The feature id for the '<em><b>Security Requirement</b></em>' reference list.
@@ -2640,34 +2677,6 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int ARRAY_CONTEXT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link core.impl.ResponseDeclaringContextImpl <em>Response Declaring Context</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see core.impl.ResponseDeclaringContextImpl
-	 * @see core.impl.CorePackageImpl#getResponseDeclaringContext()
-	 * @generated
-	 */
-	int RESPONSE_DECLARING_CONTEXT = 27;
-
-	/**
-	 * The number of structural features of the '<em>Response Declaring Context</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESPONSE_DECLARING_CONTEXT_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Response Declaring Context</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESPONSE_DECLARING_CONTEXT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link core.SchemeType <em>Scheme Type</em>}' enum.
@@ -3682,6 +3691,17 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSchema_Required();
+
+	/**
+	 * Returns the meta object for the reference '{@link core.Schema#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @see core.Schema#getValue()
+	 * @see #getSchema()
+	 * @generated
+	 */
+	EReference getSchema_Value();
 
 	/**
 	 * Returns the meta object for the reference list '{@link core.Schema#getProperties <em>Properties</em>}'.
@@ -5138,6 +5158,14 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SCHEMA__REQUIRED = eINSTANCE.getSchema_Required();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEMA__VALUE = eINSTANCE.getSchema_Value();
 
 		/**
 		 * The meta object literal for the '<em><b>Properties</b></em>' reference list feature.

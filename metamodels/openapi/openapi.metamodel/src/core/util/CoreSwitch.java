@@ -222,6 +222,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CorePackage.RESPONSE_DECLARING_CONTEXT: {
+				ResponseDeclaringContext responseDeclaringContext = (ResponseDeclaringContext)theEObject;
+				T result = caseResponseDeclaringContext(responseDeclaringContext);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case CorePackage.JSON_POINTER: {
 				JSONPointer jsonPointer = (JSONPointer)theEObject;
 				T result = caseJSONPointer(jsonPointer);
@@ -255,12 +261,6 @@ public class CoreSwitch<T> extends Switch<T> {
 			case CorePackage.ARRAY_CONTEXT: {
 				ArrayContext arrayContext = (ArrayContext)theEObject;
 				T result = caseArrayContext(arrayContext);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CorePackage.RESPONSE_DECLARING_CONTEXT: {
-				ResponseDeclaringContext responseDeclaringContext = (ResponseDeclaringContext)theEObject;
-				T result = caseResponseDeclaringContext(responseDeclaringContext);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
