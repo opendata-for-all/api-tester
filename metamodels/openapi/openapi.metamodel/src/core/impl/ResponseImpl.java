@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link core.impl.ResponseImpl#getExamples <em>Examples</em>}</li>
  *   <li>{@link core.impl.ResponseImpl#getCode <em>Code</em>}</li>
  *   <li>{@link core.impl.ResponseImpl#getDeclaringContext <em>Declaring Context</em>}</li>
+ *   <li>{@link core.impl.ResponseImpl#getReferenceName <em>Reference Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -122,6 +123,26 @@ public class ResponseImpl extends SchemaDeclaringContextImpl implements Response
 	 * @ordered
 	 */
 	protected ResponseDeclaringContext declaringContext;
+
+	/**
+	 * The default value of the '{@link #getReferenceName() <em>Reference Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReferenceName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REFERENCE_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getReferenceName() <em>Reference Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReferenceName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String referenceName = REFERENCE_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -289,6 +310,27 @@ public class ResponseImpl extends SchemaDeclaringContextImpl implements Response
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getReferenceName() {
+		return referenceName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReferenceName(String newReferenceName) {
+		String oldReferenceName = referenceName;
+		referenceName = newReferenceName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.RESPONSE__REFERENCE_NAME, oldReferenceName, referenceName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -322,6 +364,8 @@ public class ResponseImpl extends SchemaDeclaringContextImpl implements Response
 			case CorePackage.RESPONSE__DECLARING_CONTEXT:
 				if (resolve) return getDeclaringContext();
 				return basicGetDeclaringContext();
+			case CorePackage.RESPONSE__REFERENCE_NAME:
+				return getReferenceName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -355,6 +399,9 @@ public class ResponseImpl extends SchemaDeclaringContextImpl implements Response
 			case CorePackage.RESPONSE__DECLARING_CONTEXT:
 				setDeclaringContext((ResponseDeclaringContext)newValue);
 				return;
+			case CorePackage.RESPONSE__REFERENCE_NAME:
+				setReferenceName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -385,6 +432,9 @@ public class ResponseImpl extends SchemaDeclaringContextImpl implements Response
 			case CorePackage.RESPONSE__DECLARING_CONTEXT:
 				setDeclaringContext((ResponseDeclaringContext)null);
 				return;
+			case CorePackage.RESPONSE__REFERENCE_NAME:
+				setReferenceName(REFERENCE_NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -409,6 +459,8 @@ public class ResponseImpl extends SchemaDeclaringContextImpl implements Response
 				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
 			case CorePackage.RESPONSE__DECLARING_CONTEXT:
 				return declaringContext != null;
+			case CorePackage.RESPONSE__REFERENCE_NAME:
+				return REFERENCE_NAME_EDEFAULT == null ? referenceName != null : !REFERENCE_NAME_EDEFAULT.equals(referenceName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -459,6 +511,8 @@ public class ResponseImpl extends SchemaDeclaringContextImpl implements Response
 		result.append(description);
 		result.append(", code: ");
 		result.append(code);
+		result.append(", referenceName: ");
+		result.append(referenceName);
 		result.append(')');
 		return result.toString();
 	}

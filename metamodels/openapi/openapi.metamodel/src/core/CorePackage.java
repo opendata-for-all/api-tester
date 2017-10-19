@@ -1813,13 +1813,22 @@ public interface CorePackage extends EPackage {
 	int SCHEMA__VALUE = JSON_SCHEMA_SUBSET_FEATURE_COUNT + 16;
 
 	/**
+	 * The feature id for the '<em><b>Additonal Properties Allowed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEMA__ADDITONAL_PROPERTIES_ALLOWED = JSON_SCHEMA_SUBSET_FEATURE_COUNT + 17;
+
+	/**
 	 * The number of structural features of the '<em>Schema</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_FEATURE_COUNT = JSON_SCHEMA_SUBSET_FEATURE_COUNT + 17;
+	int SCHEMA_FEATURE_COUNT = JSON_SCHEMA_SUBSET_FEATURE_COUNT + 18;
 
 	/**
 	 * The operation id for the '<em>Get Ref</em>' operation.
@@ -1904,13 +1913,22 @@ public interface CorePackage extends EPackage {
 	int RESPONSE__DECLARING_CONTEXT = SCHEMA_DECLARING_CONTEXT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Reference Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSE__REFERENCE_NAME = SCHEMA_DECLARING_CONTEXT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Response</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSE_FEATURE_COUNT = SCHEMA_DECLARING_CONTEXT_FEATURE_COUNT + 6;
+	int RESPONSE_FEATURE_COUNT = SCHEMA_DECLARING_CONTEXT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Response</em>' class.
@@ -3704,6 +3722,17 @@ public interface CorePackage extends EPackage {
 	EReference getSchema_Value();
 
 	/**
+	 * Returns the meta object for the attribute '{@link core.Schema#isAdditonalPropertiesAllowed <em>Additonal Properties Allowed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Additonal Properties Allowed</em>'.
+	 * @see core.Schema#isAdditonalPropertiesAllowed()
+	 * @see #getSchema()
+	 * @generated
+	 */
+	EAttribute getSchema_AdditonalPropertiesAllowed();
+
+	/**
 	 * Returns the meta object for the reference list '{@link core.Schema#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3887,6 +3916,17 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getResponse_DeclaringContext();
+
+	/**
+	 * Returns the meta object for the attribute '{@link core.Response#getReferenceName <em>Reference Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Reference Name</em>'.
+	 * @see core.Response#getReferenceName()
+	 * @see #getResponse()
+	 * @generated
+	 */
+	EAttribute getResponse_ReferenceName();
 
 	/**
 	 * Returns the meta object for class '{@link core.Header <em>Header</em>}'.
@@ -5168,6 +5208,14 @@ public interface CorePackage extends EPackage {
 		EReference SCHEMA__VALUE = eINSTANCE.getSchema_Value();
 
 		/**
+		 * The meta object literal for the '<em><b>Additonal Properties Allowed</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCHEMA__ADDITONAL_PROPERTIES_ALLOWED = eINSTANCE.getSchema_AdditonalPropertiesAllowed();
+
+		/**
 		 * The meta object literal for the '<em><b>Properties</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5304,6 +5352,14 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference RESPONSE__DECLARING_CONTEXT = eINSTANCE.getResponse_DeclaringContext();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESPONSE__REFERENCE_NAME = eINSTANCE.getResponse_ReferenceName();
 
 		/**
 		 * The meta object literal for the '{@link core.impl.HeaderImpl <em>Header</em>}' class.

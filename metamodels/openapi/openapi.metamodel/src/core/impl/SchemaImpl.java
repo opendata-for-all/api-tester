@@ -48,6 +48,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link core.impl.SchemaImpl#getDeclaringContext <em>Declaring Context</em>}</li>
  *   <li>{@link core.impl.SchemaImpl#getRequired <em>Required</em>}</li>
  *   <li>{@link core.impl.SchemaImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link core.impl.SchemaImpl#isAdditonalPropertiesAllowed <em>Additonal Properties Allowed</em>}</li>
  * </ul>
  *
  * @generated
@@ -294,6 +295,26 @@ public class SchemaImpl extends JSONSchemaSubsetImpl implements Schema {
 	protected Schema value;
 
 	/**
+	 * The default value of the '{@link #isAdditonalPropertiesAllowed() <em>Additonal Properties Allowed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAdditonalPropertiesAllowed()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ADDITONAL_PROPERTIES_ALLOWED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isAdditonalPropertiesAllowed() <em>Additonal Properties Allowed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAdditonalPropertiesAllowed()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean additonalPropertiesAllowed = ADDITONAL_PROPERTIES_ALLOWED_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -507,6 +528,27 @@ public class SchemaImpl extends JSONSchemaSubsetImpl implements Schema {
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.SCHEMA__VALUE, oldValue, value));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isAdditonalPropertiesAllowed() {
+		return additonalPropertiesAllowed;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAdditonalPropertiesAllowed(boolean newAdditonalPropertiesAllowed) {
+		boolean oldAdditonalPropertiesAllowed = additonalPropertiesAllowed;
+		additonalPropertiesAllowed = newAdditonalPropertiesAllowed;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.SCHEMA__ADDITONAL_PROPERTIES_ALLOWED, oldAdditonalPropertiesAllowed, additonalPropertiesAllowed));
 	}
 
 	/**
@@ -815,6 +857,8 @@ public class SchemaImpl extends JSONSchemaSubsetImpl implements Schema {
 			case CorePackage.SCHEMA__VALUE:
 				if (resolve) return getValue();
 				return basicGetValue();
+			case CorePackage.SCHEMA__ADDITONAL_PROPERTIES_ALLOWED:
+				return isAdditonalPropertiesAllowed();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -879,6 +923,9 @@ public class SchemaImpl extends JSONSchemaSubsetImpl implements Schema {
 			case CorePackage.SCHEMA__VALUE:
 				setValue((Schema)newValue);
 				return;
+			case CorePackage.SCHEMA__ADDITONAL_PROPERTIES_ALLOWED:
+				setAdditonalPropertiesAllowed((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -939,6 +986,9 @@ public class SchemaImpl extends JSONSchemaSubsetImpl implements Schema {
 			case CorePackage.SCHEMA__VALUE:
 				setValue((Schema)null);
 				return;
+			case CorePackage.SCHEMA__ADDITONAL_PROPERTIES_ALLOWED:
+				setAdditonalPropertiesAllowed(ADDITONAL_PROPERTIES_ALLOWED_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -985,6 +1035,8 @@ public class SchemaImpl extends JSONSchemaSubsetImpl implements Schema {
 				return required != null && !required.isEmpty();
 			case CorePackage.SCHEMA__VALUE:
 				return value != null;
+			case CorePackage.SCHEMA__ADDITONAL_PROPERTIES_ALLOWED:
+				return additonalPropertiesAllowed != ADDITONAL_PROPERTIES_ALLOWED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1067,6 +1119,8 @@ public class SchemaImpl extends JSONSchemaSubsetImpl implements Schema {
 		result.append(discriminator);
 		result.append(", readOnly: ");
 		result.append(readOnly);
+		result.append(", additonalPropertiesAllowed: ");
+		result.append(additonalPropertiesAllowed);
 		result.append(')');
 		return result.toString();
 	}

@@ -28,6 +28,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link core.Schema#getDeclaringContext <em>Declaring Context</em>}</li>
  *   <li>{@link core.Schema#getRequired <em>Required</em>}</li>
  *   <li>{@link core.Schema#getValue <em>Value</em>}</li>
+ *   <li>{@link core.Schema#isAdditonalPropertiesAllowed <em>Additonal Properties Allowed</em>}</li>
  * </ul>
  *
  * @see core.CorePackage#getSchema()
@@ -154,6 +155,32 @@ public interface Schema extends JSONSchemaSubset, SchemaDeclaringContext, JSONPo
 	 * @generated
 	 */
 	void setValue(Schema value);
+
+	/**
+	 * Returns the value of the '<em><b>Additonal Properties Allowed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Additonal Properties Allowed</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Additonal Properties Allowed</em>' attribute.
+	 * @see #setAdditonalPropertiesAllowed(boolean)
+	 * @see core.CorePackage#getSchema_AdditonalPropertiesAllowed()
+	 * @model
+	 * @generated
+	 */
+	boolean isAdditonalPropertiesAllowed();
+
+	/**
+	 * Sets the value of the '{@link core.Schema#isAdditonalPropertiesAllowed <em>Additonal Properties Allowed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Additonal Properties Allowed</em>' attribute.
+	 * @see #isAdditonalPropertiesAllowed()
+	 * @generated
+	 */
+	void setAdditonalPropertiesAllowed(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Properties</b></em>' reference list.
