@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <openAPI.core:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:openAPI.core="http://example.com/openAPI/core">
-  <api swagger="2.0" host="petstore.swagger.io" basePath="/v2" definitions="Order Category User Tag Pet ApiResponse">
+  <api swagger="2.0" host="petstore.swagger.io" basePath="/v2" definitions="//@schemas.0 //@schemas.1 //@schemas.2 //@schemas.3 //@schemas.4 //@schemas.5">
     <externalDocs description="Find out more about Swagger" url="http://swagger.io"/>
     <info title="Swagger Petstore" description="This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters." version="1.0.0">
       <contact email="apiteam@swagger.io"/>
@@ -8,14 +8,14 @@
     </info>
     <schemes>http</schemes>
     <paths pattern="/pet">
-      <put summary="Update an existing pet" description="" operationId="updatePet">
+      <put parameters="//@paramters.0" summary="Update an existing pet" description="" operationId="updatePet" responses="//@responses.0 //@responses.1 //@responses.2">
         <tagReferences>pet</tagReferences>
         <consumes>application/json</consumes>
         <consumes>application/xml</consumes>
         <produces>application/xml</produces>
         <produces>application/json</produces>
       </put>
-      <post summary="Add a new pet to the store" description="" operationId="addPet">
+      <post parameters="//@paramters.1" summary="Add a new pet to the store" description="" operationId="addPet" responses="//@responses.3">
         <tagReferences>pet</tagReferences>
         <consumes>application/json</consumes>
         <consumes>application/xml</consumes>
@@ -24,116 +24,116 @@
       </post>
     </paths>
     <paths pattern="/pet/findByStatus">
-      <get summary="Finds Pets by status" description="Multiple status values can be provided with comma separated strings" operationId="findPetsByStatus">
+      <get parameters="//@paramters.2" summary="Finds Pets by status" description="Multiple status values can be provided with comma separated strings" operationId="findPetsByStatus" responses="//@responses.4 //@responses.5">
         <tagReferences>pet</tagReferences>
         <produces>application/xml</produces>
         <produces>application/json</produces>
       </get>
     </paths>
     <paths pattern="/pet/findByTags">
-      <get summary="Finds Pets by tags" description="Muliple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing." operationId="findPetsByTags" deprecated="true">
+      <get parameters="//@paramters.3" summary="Finds Pets by tags" description="Muliple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing." operationId="findPetsByTags" responses="//@responses.6 //@responses.7" deprecated="true">
         <tagReferences>pet</tagReferences>
         <produces>application/xml</produces>
         <produces>application/json</produces>
       </get>
     </paths>
     <paths pattern="/pet/{petId}">
-      <get summary="Find pet by ID" description="Returns a single pet" operationId="getPetById">
+      <get parameters="//@paramters.4" summary="Find pet by ID" description="Returns a single pet" operationId="getPetById" responses="//@responses.8 //@responses.9 //@responses.10">
         <tagReferences>pet</tagReferences>
         <produces>application/xml</produces>
         <produces>application/json</produces>
       </get>
-      <post summary="Updates a pet in the store with form data" description="" operationId="updatePetWithForm">
+      <post parameters="//@paramters.5 //@paramters.6 //@paramters.7" summary="Updates a pet in the store with form data" description="" operationId="updatePetWithForm" responses="//@responses.11">
         <tagReferences>pet</tagReferences>
         <consumes>application/x-www-form-urlencoded</consumes>
         <produces>application/xml</produces>
         <produces>application/json</produces>
       </post>
-      <delete summary="Deletes a pet" description="" operationId="deletePet">
+      <delete parameters="//@paramters.8 //@paramters.9" summary="Deletes a pet" description="" operationId="deletePet" responses="//@responses.12 //@responses.13">
         <tagReferences>pet</tagReferences>
         <produces>application/xml</produces>
         <produces>application/json</produces>
       </delete>
     </paths>
     <paths pattern="/pet/{petId}/uploadImage">
-      <post summary="uploads an image" description="" operationId="uploadFile">
+      <post parameters="//@paramters.10 //@paramters.11 //@paramters.12" summary="uploads an image" description="" operationId="uploadFile" responses="//@responses.14">
         <tagReferences>pet</tagReferences>
         <consumes>multipart/form-data</consumes>
         <produces>application/json</produces>
       </post>
     </paths>
     <paths pattern="/store/inventory">
-      <get summary="Returns pet inventories by status" description="Returns a map of status codes to quantities" operationId="getInventory">
+      <get summary="Returns pet inventories by status" description="Returns a map of status codes to quantities" operationId="getInventory" responses="//@responses.15">
         <tagReferences>store</tagReferences>
         <produces>application/json</produces>
       </get>
     </paths>
     <paths pattern="/store/order">
-      <post summary="Place an order for a pet" description="" operationId="placeOrder">
+      <post parameters="//@paramters.13" summary="Place an order for a pet" description="" operationId="placeOrder" responses="//@responses.16 //@responses.17">
         <tagReferences>store</tagReferences>
         <produces>application/xml</produces>
         <produces>application/json</produces>
       </post>
     </paths>
     <paths pattern="/store/order/{orderId}">
-      <get summary="Find purchase order by ID" description="For valid response try integer IDs with value >= 1 and &lt;= 10. Other values will generated exceptions" operationId="getOrderById">
+      <get parameters="//@paramters.14" summary="Find purchase order by ID" description="For valid response try integer IDs with value >= 1 and &lt;= 10. Other values will generated exceptions" operationId="getOrderById" responses="//@responses.18 //@responses.19 //@responses.20">
         <tagReferences>store</tagReferences>
         <produces>application/xml</produces>
         <produces>application/json</produces>
       </get>
-      <delete summary="Delete purchase order by ID" description="For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors" operationId="deleteOrder">
+      <delete parameters="//@paramters.15" summary="Delete purchase order by ID" description="For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors" operationId="deleteOrder" responses="//@responses.21 //@responses.22">
         <tagReferences>store</tagReferences>
         <produces>application/xml</produces>
         <produces>application/json</produces>
       </delete>
     </paths>
     <paths pattern="/user">
-      <post summary="Create user" description="This can only be done by the logged in user." operationId="createUser">
+      <post parameters="//@paramters.16" summary="Create user" description="This can only be done by the logged in user." operationId="createUser" responses="//@responses.23">
         <tagReferences>user</tagReferences>
         <produces>application/xml</produces>
         <produces>application/json</produces>
       </post>
     </paths>
     <paths pattern="/user/createWithArray">
-      <post summary="Creates list of users with given input array" description="" operationId="createUsersWithArrayInput">
+      <post parameters="//@paramters.17" summary="Creates list of users with given input array" description="" operationId="createUsersWithArrayInput" responses="//@responses.24">
         <tagReferences>user</tagReferences>
         <produces>application/xml</produces>
         <produces>application/json</produces>
       </post>
     </paths>
     <paths pattern="/user/createWithList">
-      <post summary="Creates list of users with given input array" description="" operationId="createUsersWithListInput">
+      <post parameters="//@paramters.18" summary="Creates list of users with given input array" description="" operationId="createUsersWithListInput" responses="//@responses.25">
         <tagReferences>user</tagReferences>
         <produces>application/xml</produces>
         <produces>application/json</produces>
       </post>
     </paths>
     <paths pattern="/user/login">
-      <get summary="Logs user into the system" description="" operationId="loginUser">
+      <get parameters="//@paramters.19 //@paramters.20" summary="Logs user into the system" description="" operationId="loginUser" responses="//@responses.26 //@responses.27">
         <tagReferences>user</tagReferences>
         <produces>application/xml</produces>
         <produces>application/json</produces>
       </get>
     </paths>
     <paths pattern="/user/logout">
-      <get summary="Logs out current logged in user session" description="" operationId="logoutUser">
+      <get summary="Logs out current logged in user session" description="" operationId="logoutUser" responses="//@responses.28">
         <tagReferences>user</tagReferences>
         <produces>application/xml</produces>
         <produces>application/json</produces>
       </get>
     </paths>
     <paths pattern="/user/{username}">
-      <get summary="Get user by user name" description="" operationId="getUserByName">
+      <get parameters="//@paramters.21" summary="Get user by user name" description="" operationId="getUserByName" responses="//@responses.29 //@responses.30 //@responses.31">
         <tagReferences>user</tagReferences>
         <produces>application/xml</produces>
         <produces>application/json</produces>
       </get>
-      <put summary="Updated user" description="This can only be done by the logged in user." operationId="updateUser">
+      <put parameters="//@paramters.22 //@paramters.23" summary="Updated user" description="This can only be done by the logged in user." operationId="updateUser" responses="//@responses.32 //@responses.33">
         <tagReferences>user</tagReferences>
         <produces>application/xml</produces>
         <produces>application/json</produces>
       </put>
-      <delete summary="Delete user" description="This can only be done by the logged in user." operationId="deleteUser">
+      <delete parameters="//@paramters.24" summary="Delete user" description="This can only be done by the logged in user." operationId="deleteUser" responses="//@responses.34 //@responses.35">
         <tagReferences>user</tagReferences>
         <produces>application/xml</produces>
         <produces>application/json</produces>
@@ -152,22 +152,138 @@
       <externalDocs description="Find out more about our store" url="http://swagger.io"/>
     </tags>
   </api>
-  <schemas type="object" name="Order" properties="id petId quantity shipDate status complete" declaringContext="//@api">
+  <paramters schema="//@schemas.34" description="Pet object that needs to be added to the store" name="body" location="body" required="true"/>
+  <paramters schema="//@schemas.35" description="Pet object that needs to be added to the store" name="body" location="body" required="true"/>
+  <paramters type="array" description="Status values that need to be considered for filter" name="status" location="query" required="true"/>
+  <paramters type="array" description="Tags to filter by" name="tags" location="query" required="true"/>
+  <paramters type="integer" format="int64" description="ID of pet to return" name="petId" location="path" required="true"/>
+  <paramters type="integer" format="int64" description="ID of pet that needs to be updated" name="petId" location="path" required="true"/>
+  <paramters type="string" description="Updated name of the pet" name="name" location="formData" required="false"/>
+  <paramters type="string" description="Updated status of the pet" name="status" location="formData" required="false"/>
+  <paramters type="string" name="api_key" location="header" required="false"/>
+  <paramters type="integer" format="int64" description="Pet id to delete" name="petId" location="path" required="true"/>
+  <paramters type="integer" format="int64" description="ID of pet to update" name="petId" location="path" required="true"/>
+  <paramters type="string" description="Additional data to pass to server" name="additionalMetadata" location="formData" required="false"/>
+  <paramters type="file" description="file to upload" name="file" location="formData" required="false"/>
+  <paramters schema="//@schemas.42" description="order placed for purchasing the pet" name="body" location="body" required="true"/>
+  <paramters type="integer" format="int64" description="ID of pet that needs to be fetched" name="orderId" location="path" required="true"/>
+  <paramters type="integer" format="int64" description="ID of the order that needs to be deleted" name="orderId" location="path" required="true"/>
+  <paramters schema="//@schemas.45" description="Created user object" name="body" location="body" required="true"/>
+  <paramters schema="//@schemas.46" description="List of user object" name="body" location="body" required="true"/>
+  <paramters schema="//@schemas.47" description="List of user object" name="body" location="body" required="true"/>
+  <paramters type="string" description="The user name for login" name="username" location="query" required="true"/>
+  <paramters type="string" description="The password for login in clear text" name="password" location="query" required="true"/>
+  <paramters type="string" description="The name that needs to be fetched. Use user1 for testing. " name="username" location="path" required="true"/>
+  <paramters type="string" description="name that need to be updated" name="username" location="path" required="true"/>
+  <paramters schema="//@schemas.50" description="Updated user object" name="body" location="body" required="true"/>
+  <paramters type="string" description="The name that needs to be deleted" name="username" location="path" required="true"/>
+  <schemas type="object" name="Order" properties="//@schemas.6 //@schemas.7 //@schemas.8 //@schemas.9 //@schemas.10 //@schemas.11" declaringContext="//@api">
     <xml name="Order"/>
   </schemas>
-  <schemas type="object" name="Category" properties="id name" declaringContext="//@api">
+  <schemas type="object" name="Category" properties="//@schemas.12 //@schemas.13" declaringContext="//@api">
     <xml name="Category"/>
   </schemas>
-  <schemas type="object" name="User" properties="id username firstName lastName email password phone userStatus" declaringContext="//@api">
+  <schemas type="object" name="User" properties="//@schemas.14 //@schemas.15 //@schemas.16 //@schemas.17 //@schemas.18 //@schemas.19 //@schemas.20 //@schemas.21" declaringContext="//@api">
     <xml name="User"/>
   </schemas>
-  <schemas type="object" name="Tag" properties="id name" declaringContext="//@api">
+  <schemas type="object" name="Tag" properties="//@schemas.22 //@schemas.23" declaringContext="//@api">
     <xml name="Tag"/>
   </schemas>
-  <schemas type="object" name="Pet" properties="id category name photoUrls tags status" declaringContext="//@api">
-    <required>name</required>
-    <required>photoUrls</required>
+  <schemas type="object" name="Pet" properties="//@schemas.24 //@schemas.25 //@schemas.26 //@schemas.27 //@schemas.29 //@schemas.30" declaringContext="//@api" required="//@schemas.26 //@schemas.27">
     <xml name="Pet"/>
   </schemas>
-  <schemas type="object" name="ApiResponse" properties="code type message" declaringContext="//@api"/>
+  <schemas type="object" name="ApiResponse" properties="//@schemas.31 //@schemas.32 //@schemas.33" declaringContext="//@api"/>
+  <schemas type="integer" format="int64" name="id" declaringContext="//@schemas.0"/>
+  <schemas type="integer" format="int64" name="petId" declaringContext="//@schemas.0"/>
+  <schemas type="integer" format="int32" name="quantity" declaringContext="//@schemas.0"/>
+  <schemas type="string" format="date-time" name="shipDate" declaringContext="//@schemas.0"/>
+  <schemas type="string" description="Order Status" name="status" declaringContext="//@schemas.0">
+    <enum>placed</enum>
+    <enum>approved</enum>
+    <enum>delivered</enum>
+  </schemas>
+  <schemas type="boolean" default="false" name="complete" declaringContext="//@schemas.0"/>
+  <schemas type="integer" format="int64" name="id" declaringContext="//@schemas.1"/>
+  <schemas type="string" name="name" declaringContext="//@schemas.1"/>
+  <schemas type="integer" format="int64" name="id" declaringContext="//@schemas.2"/>
+  <schemas type="string" name="username" declaringContext="//@schemas.2"/>
+  <schemas type="string" name="firstName" declaringContext="//@schemas.2"/>
+  <schemas type="string" name="lastName" declaringContext="//@schemas.2"/>
+  <schemas type="string" name="email" declaringContext="//@schemas.2"/>
+  <schemas type="string" name="password" declaringContext="//@schemas.2"/>
+  <schemas type="string" name="phone" declaringContext="//@schemas.2"/>
+  <schemas type="integer" format="int32" description="User Status" name="userStatus" declaringContext="//@schemas.2"/>
+  <schemas type="integer" format="int64" name="id" declaringContext="//@schemas.3"/>
+  <schemas type="string" name="name" declaringContext="//@schemas.3"/>
+  <schemas type="integer" format="int64" name="id" declaringContext="//@schemas.4"/>
+  <schemas name="category" declaringContext="//@schemas.4" value="//@schemas.1"/>
+  <schemas type="string" name="name" example="&quot;doggie&quot;" declaringContext="//@schemas.4"/>
+  <schemas type="array" name="photoUrls" items="//@schemas.28" declaringContext="//@schemas.4">
+    <xml name="photoUrl" wrapped="true"/>
+  </schemas>
+  <schemas type="string"/>
+  <schemas type="array" name="tags" items="//@schemas.3" declaringContext="//@schemas.4">
+    <xml name="tag" wrapped="true"/>
+  </schemas>
+  <schemas type="string" description="pet status in the store" name="status" declaringContext="//@schemas.4">
+    <enum>available</enum>
+    <enum>pending</enum>
+    <enum>sold</enum>
+  </schemas>
+  <schemas type="integer" format="int32" name="code" declaringContext="//@schemas.5"/>
+  <schemas type="string" name="type" declaringContext="//@schemas.5"/>
+  <schemas type="string" name="message" declaringContext="//@schemas.5"/>
+  <schemas/>
+  <schemas/>
+  <schemas type="array" items="//@schemas.4"/>
+  <schemas type="array" items="//@schemas.4"/>
+  <schemas/>
+  <schemas/>
+  <schemas type="object" additonalProperties="//@schemas.41"/>
+  <schemas type="integer" format="int32"/>
+  <schemas/>
+  <schemas/>
+  <schemas/>
+  <schemas/>
+  <schemas type="array" items="//@schemas.2"/>
+  <schemas type="array" items="//@schemas.2"/>
+  <schemas type="string"/>
+  <schemas/>
+  <schemas/>
+  <responses description="Invalid ID supplied" code="400"/>
+  <responses description="Pet not found" code="404"/>
+  <responses description="Validation exception" code="405"/>
+  <responses description="Invalid input" code="405"/>
+  <responses schema="//@schemas.36" description="successful operation" code="200"/>
+  <responses description="Invalid status value" code="400"/>
+  <responses schema="//@schemas.37" description="successful operation" code="200"/>
+  <responses description="Invalid tag value" code="400"/>
+  <responses schema="//@schemas.38" description="successful operation" code="200"/>
+  <responses description="Invalid ID supplied" code="400"/>
+  <responses description="Pet not found" code="404"/>
+  <responses description="Invalid input" code="405"/>
+  <responses description="Invalid ID supplied" code="400"/>
+  <responses description="Pet not found" code="404"/>
+  <responses schema="//@schemas.39" description="successful operation" code="200"/>
+  <responses schema="//@schemas.40" description="successful operation" code="200"/>
+  <responses schema="//@schemas.43" description="successful operation" code="200"/>
+  <responses description="Invalid Order" code="400"/>
+  <responses schema="//@schemas.44" description="successful operation" code="200"/>
+  <responses description="Invalid ID supplied" code="400"/>
+  <responses description="Order not found" code="404"/>
+  <responses description="Invalid ID supplied" code="400"/>
+  <responses description="Order not found" code="404"/>
+  <responses description="successful operation" code="default"/>
+  <responses description="successful operation" code="default"/>
+  <responses description="successful operation" code="default"/>
+  <responses schema="//@schemas.48" description="successful operation" code="200"/>
+  <responses description="Invalid username/password supplied" code="400"/>
+  <responses description="successful operation" code="default"/>
+  <responses schema="//@schemas.49" description="successful operation" code="200"/>
+  <responses description="Invalid username supplied" code="400"/>
+  <responses description="User not found" code="404"/>
+  <responses description="Invalid user supplied" code="400"/>
+  <responses description="User not found" code="404"/>
+  <responses description="Invalid username supplied" code="400"/>
+  <responses description="User not found" code="404"/>
 </openAPI.core:Root>
