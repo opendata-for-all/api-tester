@@ -164,6 +164,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference openAPI.ecore#//Schema/additonalProperties"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference openAPI.ecore#//Schema/declaringContext"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EReference openAPI.ecore#//Schema/required"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference openAPI.ecore#//Schema/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute openAPI.ecore#//Schema/additonalPropertiesAllowed"/>
       <genOperations ecoreOperation="openAPI.ecore#//Schema/getRef"/>
     </genClasses>
     <genClasses ecoreClass="openAPI.ecore#//Response">
@@ -172,6 +174,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference openAPI.ecore#//Response/examples"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute openAPI.ecore#//Response/code"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference openAPI.ecore#//Response/declaringContext"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute openAPI.ecore#//Response/referenceName"/>
     </genClasses>
     <genClasses ecoreClass="openAPI.ecore#//Header">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute openAPI.ecore#//Header/name"/>
@@ -207,8 +210,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute openAPI.ecore#//SecurityScope/description"/>
     </genClasses>
     <genClasses image="false" ecoreClass="openAPI.ecore#//ParamterDeclaringContext"/>
-    <genClasses image="false" ecoreClass="openAPI.ecore#//ResponseContext"/>
     <genClasses image="false" ecoreClass="openAPI.ecore#//SchemaDeclaringContext"/>
+    <genClasses image="false" ecoreClass="openAPI.ecore#//ResponseDeclaringContext"/>
     <genClasses image="false" ecoreClass="openAPI.ecore#//JSONPointer">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute openAPI.ecore#//JSONPointer/ref"/>
     </genClasses>
@@ -228,6 +231,5 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute openAPI.ecore#//ArrayContext/collectionFormat"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference openAPI.ecore#//ArrayContext/items"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="openAPI.ecore#//ResponseDeclaringContext"/>
   </genPackages>
 </genmodel:GenModel>

@@ -60,6 +60,8 @@ public class SchemaItemProvider extends JSONSchemaSubsetItemProvider {
 			addItemsPropertyDescriptor(object);
 			addDeclaringContextPropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
+			addAdditonalPropertiesAllowedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -192,6 +194,50 @@ public class SchemaItemProvider extends JSONSchemaSubsetItemProvider {
 				 false,
 				 false,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Schema_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Schema_value_feature", "_UI_Schema_type"),
+				 CorePackage.Literals.SCHEMA__VALUE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Additonal Properties Allowed feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAdditonalPropertiesAllowedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Schema_additonalPropertiesAllowed_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Schema_additonalPropertiesAllowed_feature", "_UI_Schema_type"),
+				 CorePackage.Literals.SCHEMA__ADDITONAL_PROPERTIES_ALLOWED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -408,6 +454,7 @@ public class SchemaItemProvider extends JSONSchemaSubsetItemProvider {
 			case CorePackage.SCHEMA__DISCRIMINATOR:
 			case CorePackage.SCHEMA__READ_ONLY:
 			case CorePackage.SCHEMA__REQUIRED:
+			case CorePackage.SCHEMA__ADDITONAL_PROPERTIES_ALLOWED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case CorePackage.SCHEMA__EXTERNAL_DOCS:

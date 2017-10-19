@@ -52,6 +52,7 @@ public class ResponseItemProvider extends SchemaDeclaringContextItemProvider {
 			addDescriptionPropertyDescriptor(object);
 			addCodePropertyDescriptor(object);
 			addDeclaringContextPropertyDescriptor(object);
+			addReferenceNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -145,6 +146,28 @@ public class ResponseItemProvider extends SchemaDeclaringContextItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Reference Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReferenceNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Response_referenceName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Response_referenceName_feature", "_UI_Response_type"),
+				 CorePackage.Literals.RESPONSE__REFERENCE_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -194,7 +217,7 @@ public class ResponseItemProvider extends SchemaDeclaringContextItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Response)object).getDescription();
+		String label = ((Response)object).getReferenceName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Response_type") :
 			getString("_UI_Response_type") + " " + label;
@@ -215,6 +238,7 @@ public class ResponseItemProvider extends SchemaDeclaringContextItemProvider {
 		switch (notification.getFeatureID(Response.class)) {
 			case CorePackage.RESPONSE__DESCRIPTION:
 			case CorePackage.RESPONSE__CODE:
+			case CorePackage.RESPONSE__REFERENCE_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case CorePackage.RESPONSE__HEADERS:
