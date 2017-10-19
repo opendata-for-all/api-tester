@@ -26,7 +26,6 @@ import core.ParameterLocation;
 import core.ParamterDeclaringContext;
 import core.Path;
 import core.Response;
-import core.ResponseContext;
 import core.ResponseDeclaringContext;
 import core.Root;
 import core.Schema;
@@ -205,13 +204,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	private EClass parameterContextEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass responseContextEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1592,15 +1584,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getResponseContext() {
-		return responseContextEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getSchemaDeclaringContext() {
 		return schemaDeclaringContextEClass;
 	}
@@ -1956,8 +1939,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		paramterDeclaringContextEClass = createEClass(PARAMTER_DECLARING_CONTEXT);
 
-		responseContextEClass = createEClass(RESPONSE_CONTEXT);
-
 		schemaDeclaringContextEClass = createEClass(SCHEMA_DECLARING_CONTEXT);
 
 		jsonPointerEClass = createEClass(JSON_POINTER);
@@ -2020,7 +2001,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		// Add supertypes to classes
 		apiEClass.getESuperTypes().add(this.getParamterDeclaringContext());
-		apiEClass.getESuperTypes().add(this.getResponseContext());
 		apiEClass.getESuperTypes().add(this.getSchemaDeclaringContext());
 		apiEClass.getESuperTypes().add(this.getJSONPointer());
 		apiEClass.getESuperTypes().add(this.getSecurityContext());
@@ -2030,7 +2010,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		pathEClass.getESuperTypes().add(this.getParamterDeclaringContext());
 		pathEClass.getESuperTypes().add(this.getParameterContext());
 		operationEClass.getESuperTypes().add(this.getParamterDeclaringContext());
-		operationEClass.getESuperTypes().add(this.getResponseContext());
 		operationEClass.getESuperTypes().add(this.getSecurityContext());
 		operationEClass.getESuperTypes().add(this.getParameterContext());
 		operationEClass.getESuperTypes().add(this.getExternalDocsContext());
@@ -2207,8 +2186,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEAttribute(getSecurityScope_Description(), ecorePackage.getEString(), "description", null, 0, 1, SecurityScope.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(paramterDeclaringContextEClass, ParamterDeclaringContext.class, "ParamterDeclaringContext", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(responseContextEClass, ResponseContext.class, "ResponseContext", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(schemaDeclaringContextEClass, SchemaDeclaringContext.class, "SchemaDeclaringContext", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -12,7 +12,6 @@ import core.Parameter;
 import core.ParameterContext;
 import core.Path;
 import core.Response;
-import core.ResponseContext;
 import core.ResponseDeclaringContext;
 import core.Schema;
 import core.SchemaDeclaringContext;
@@ -828,11 +827,6 @@ public class APIImpl extends ParamterDeclaringContextImpl implements API {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == ResponseContext.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == SchemaDeclaringContext.class) {
 			switch (derivedFeatureID) {
 				default: return -1;
@@ -877,11 +871,6 @@ public class APIImpl extends ParamterDeclaringContextImpl implements API {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == ResponseContext.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == SchemaDeclaringContext.class) {
 			switch (baseFeatureID) {
 				default: return -1;

@@ -330,7 +330,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getParameterContext()
 	 * @generated
 	 */
-	int PARAMETER_CONTEXT = 24;
+	int PARAMETER_CONTEXT = 23;
 
 	/**
 	 * The meta object id for the '{@link core.impl.APIImpl <em>API</em>}' class.
@@ -1013,7 +1013,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getSchemaDeclaringContext()
 	 * @generated
 	 */
-	int SCHEMA_DECLARING_CONTEXT = 21;
+	int SCHEMA_DECLARING_CONTEXT = 20;
 
 	/**
 	 * The number of structural features of the '<em>Schema Declaring Context</em>' class.
@@ -1303,7 +1303,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getSchemaContext()
 	 * @generated
 	 */
-	int SCHEMA_CONTEXT = 25;
+	int SCHEMA_CONTEXT = 24;
 
 	/**
 	 * The meta object id for the '{@link core.impl.ArrayContextImpl <em>Array Context</em>}' class.
@@ -1313,7 +1313,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getArrayContext()
 	 * @generated
 	 */
-	int ARRAY_CONTEXT = 27;
+	int ARRAY_CONTEXT = 26;
 
 	/**
 	 * The meta object id for the '{@link core.impl.ItemsDefinitionImpl <em>Items Definition</em>}' class.
@@ -2119,7 +2119,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getExternalDocsContext()
 	 * @generated
 	 */
-	int EXTERNAL_DOCS_CONTEXT = 26;
+	int EXTERNAL_DOCS_CONTEXT = 25;
 
 	/**
 	 * The feature id for the '<em><b>External Docs</b></em>' containment reference.
@@ -2478,34 +2478,6 @@ public interface CorePackage extends EPackage {
 	int SECURITY_SCOPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link core.impl.ResponseContextImpl <em>Response Context</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see core.impl.ResponseContextImpl
-	 * @see core.impl.CorePackageImpl#getResponseContext()
-	 * @generated
-	 */
-	int RESPONSE_CONTEXT = 20;
-
-	/**
-	 * The number of structural features of the '<em>Response Context</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESPONSE_CONTEXT_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Response Context</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESPONSE_CONTEXT_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link core.impl.JSONPointerImpl <em>JSON Pointer</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2513,7 +2485,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getJSONPointer()
 	 * @generated
 	 */
-	int JSON_POINTER = 22;
+	int JSON_POINTER = 21;
 
 	/**
 	 * The feature id for the '<em><b>Ref</b></em>' attribute.
@@ -2550,7 +2522,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getSecurityContext()
 	 * @generated
 	 */
-	int SECURITY_CONTEXT = 23;
+	int SECURITY_CONTEXT = 22;
 
 	/**
 	 * The feature id for the '<em><b>Security Requirement</b></em>' reference list.
@@ -2677,7 +2649,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getResponseDeclaringContext()
 	 * @generated
 	 */
-	int RESPONSE_DECLARING_CONTEXT = 28;
+	int RESPONSE_DECLARING_CONTEXT = 27;
 
 	/**
 	 * The number of structural features of the '<em>Response Declaring Context</em>' class.
@@ -2705,7 +2677,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getSchemeType()
 	 * @generated
 	 */
-	int SCHEME_TYPE = 29;
+	int SCHEME_TYPE = 28;
 
 	/**
 	 * The meta object id for the '{@link core.ParameterLocation <em>Parameter Location</em>}' enum.
@@ -2715,7 +2687,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getParameterLocation()
 	 * @generated
 	 */
-	int PARAMETER_LOCATION = 30;
+	int PARAMETER_LOCATION = 29;
 
 	/**
 	 * The meta object id for the '{@link core.CollectionFormat <em>Collection Format</em>}' enum.
@@ -2725,7 +2697,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getCollectionFormat()
 	 * @generated
 	 */
-	int COLLECTION_FORMAT = 31;
+	int COLLECTION_FORMAT = 30;
 
 	/**
 	 * The meta object id for the '{@link core.OAuth2FlowType <em>OAuth2 Flow Type</em>}' enum.
@@ -2735,7 +2707,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getOAuth2FlowType()
 	 * @generated
 	 */
-	int OAUTH2_FLOW_TYPE = 32;
+	int OAUTH2_FLOW_TYPE = 31;
 
 	/**
 	 * The meta object id for the '{@link core.APIKeyLocation <em>API Key Location</em>}' enum.
@@ -2745,7 +2717,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getAPIKeyLocation()
 	 * @generated
 	 */
-	int API_KEY_LOCATION = 33;
+	int API_KEY_LOCATION = 32;
 
 	/**
 	 * The meta object id for the '{@link core.SecuritySchemeType <em>Security Scheme Type</em>}' enum.
@@ -2755,7 +2727,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getSecuritySchemeType()
 	 * @generated
 	 */
-	int SECURITY_SCHEME_TYPE = 34;
+	int SECURITY_SCHEME_TYPE = 33;
 
 	/**
 	 * The meta object id for the '{@link core.JSONDataType <em>JSON Data Type</em>}' enum.
@@ -2765,7 +2737,7 @@ public interface CorePackage extends EPackage {
 	 * @see core.impl.CorePackageImpl#getJSONDataType()
 	 * @generated
 	 */
-	int JSON_DATA_TYPE = 35;
+	int JSON_DATA_TYPE = 34;
 
 
 	/**
@@ -4219,16 +4191,6 @@ public interface CorePackage extends EPackage {
 	EReference getParameterContext_Parameters();
 
 	/**
-	 * Returns the meta object for class '{@link core.ResponseContext <em>Response Context</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Response Context</em>'.
-	 * @see core.ResponseContext
-	 * @generated
-	 */
-	EClass getResponseContext();
-
-	/**
 	 * Returns the meta object for class '{@link core.SchemaDeclaringContext <em>Schema Declaring Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5570,16 +5532,6 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference PARAMETER_CONTEXT__PARAMETERS = eINSTANCE.getParameterContext_Parameters();
-
-		/**
-		 * The meta object literal for the '{@link core.impl.ResponseContextImpl <em>Response Context</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see core.impl.ResponseContextImpl
-		 * @see core.impl.CorePackageImpl#getResponseContext()
-		 * @generated
-		 */
-		EClass RESPONSE_CONTEXT = eINSTANCE.getResponseContext();
 
 		/**
 		 * The meta object literal for the '{@link core.impl.SchemaDeclaringContextImpl <em>Schema Declaring Context</em>}' class.

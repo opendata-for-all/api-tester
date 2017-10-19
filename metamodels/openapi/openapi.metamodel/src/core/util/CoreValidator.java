@@ -256,8 +256,6 @@ public class CoreValidator extends EObjectValidator {
 				return validateSecurityScope((SecurityScope)value, diagnostics, context);
 			case CorePackage.PARAMTER_DECLARING_CONTEXT:
 				return validateParamterDeclaringContext((ParamterDeclaringContext)value, diagnostics, context);
-			case CorePackage.RESPONSE_CONTEXT:
-				return validateResponseContext((ResponseContext)value, diagnostics, context);
 			case CorePackage.SCHEMA_DECLARING_CONTEXT:
 				return validateSchemaDeclaringContext((SchemaDeclaringContext)value, diagnostics, context);
 			case CorePackage.JSON_POINTER:
@@ -1134,15 +1132,6 @@ public class CoreValidator extends EObjectValidator {
 	 */
 	public boolean validateParameterContext(ParameterContext parameterContext, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(parameterContext, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateResponseContext(ResponseContext responseContext, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(responseContext, diagnostics, context);
 	}
 
 	/**

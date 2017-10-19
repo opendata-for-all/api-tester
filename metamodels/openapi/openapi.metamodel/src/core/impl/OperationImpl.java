@@ -10,7 +10,6 @@ import core.Parameter;
 import core.ParameterContext;
 import core.Path;
 import core.Response;
-import core.ResponseContext;
 import core.ResponseDeclaringContext;
 import core.SchemeType;
 import core.SecurityContext;
@@ -728,11 +727,6 @@ public class OperationImpl extends ParamterDeclaringContextImpl implements Opera
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == ResponseContext.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == SecurityContext.class) {
 			switch (derivedFeatureID) {
 				case CorePackage.OPERATION__SECURITY_REQUIREMENT: return CorePackage.SECURITY_CONTEXT__SECURITY_REQUIREMENT;
@@ -766,11 +760,6 @@ public class OperationImpl extends ParamterDeclaringContextImpl implements Opera
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == ResponseContext.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == SecurityContext.class) {
 			switch (baseFeatureID) {
 				case CorePackage.SECURITY_CONTEXT__SECURITY_REQUIREMENT: return CorePackage.OPERATION__SECURITY_REQUIREMENT;

@@ -29,7 +29,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="responses" upperBound="-1"
         eType="#//Response" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="API" eSuperTypes="#//ParamterDeclaringContext #//ResponseContext #//SchemaDeclaringContext #//JSONPointer #//SecurityContext #//ParameterContext #//ExternalDocsContext #//ResponseDeclaringContext">
+  <eClassifiers xsi:type="ecore:EClass" name="API" eSuperTypes="#//ParamterDeclaringContext #//SchemaDeclaringContext #//JSONPointer #//SecurityContext #//ParameterContext #//ExternalDocsContext #//ResponseDeclaringContext">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="requiredSwaggerVersion correctSwaggerVersion requiredInfoReference requiredPaths"/>
     </eAnnotations>
@@ -122,7 +122,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="patch" eType="#//Operation"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//ParamterDeclaringContext #//ResponseContext #//SecurityContext #//ParameterContext #//ExternalDocsContext #//ResponseDeclaringContext">
+  <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//ParamterDeclaringContext #//SecurityContext #//ParameterContext #//ExternalDocsContext #//ResponseDeclaringContext">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="oneBodyParameterAllowed oneFormDataParameterAllowed hasUniqueParameters xorFormAndBody requiredResponses"/>
     </eAnnotations>
@@ -244,7 +244,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParamterDeclaringContext" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ResponseContext" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="SchemaDeclaringContext" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="JSONPointer" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ref" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
