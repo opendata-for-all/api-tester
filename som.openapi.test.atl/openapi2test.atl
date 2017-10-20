@@ -1,0 +1,122 @@
+-- @atlcompiler emftvm
+-- @path test=/som.rest.test.metamodel/model/TestSuite.ecore
+-- @path openapi=/openapi.metamodel/model/openAPI.ecore
+
+
+module openapi2test;
+create OUT: test from IN: openapi;
+
+rule API2TestSuite {
+	from
+		s: openapi!API
+	to
+		t: test!TestSuite (
+			api <- s.host,
+			name <- 'Test Suite',
+			description <- 'Generated Test Suite',
+			testCases <- openapi!Operation.allInstances() -> collect(e | thisModule.
+					CorrectnessTestCase(e))
+		)
+}
+
+lazy rule CorrectnessTestCase {
+	from
+		s: openapi!Operation
+	to
+		t: test!TestCase (
+			testSteps <- Sequence{thisModule.CorrectnessAPIRequest(s)}
+		)
+}
+
+lazy rule CorrectnessAPIRequest {
+	from
+		s: openapi!Operation
+	to
+		t: test!APIRequest (
+			accept <- 'application/json',
+			scheme <- #http,
+			contentType <- 'application/json',
+			parameters <- s.parameters -> collect(e | thisModule.InferSimpleParameter(e)) -> select(e | not e.oclIsUndefined()).debug()
+		)
+}
+
+lazy rule InferSimpleParameter {
+	from
+		s: openapi!Parameter (
+			s.isSimpleInferencePossible.debug()
+		)
+	to
+		t: test!Parameter (
+			location <- test!ParameterLocation.getEEnumLiteral(s.location.toString().
+					substring(2, s.location.toString().size())),
+			name <- s.name,
+			value <- s.inferSimpleParameter
+		)
+}
+
+helper context openapi!Parameter def: isSimpleInferencePossible: Boolean =
+	if self.location = #body then
+		if not self.schema.oclIsUndefined() then
+			true
+		else
+			false
+		endif
+	else
+		if self.default.oclIsUndefined() then
+			false
+		else
+			if (self.default.size() = 0) then
+				false
+			else
+				true
+			endif
+		endif
+	endif;
+
+helper context openapi!Parameter def: inferSimpleParameter: OclAny =
+	if self.location = #body then
+		if not self.schema.oclIsUndefined() then
+			self.schema.example
+		else
+			OclUndefined
+		endif
+	else
+		self.default
+	endif;
+
+helper context openapi!Schema def: isObject: Boolean =
+	if self.type = #object then
+		true
+	else
+		false
+	endif;
+
+helper context openapi!Schema def: isPrimitive: Boolean =
+	if not self.type = #object and not self.type = 
+			#array then
+		true
+	else
+		false
+	endif;
+
+helper context openapi!Schema def: isPrimitiveArray: Boolean =
+	if self.type =  #array then
+		if self.items.isPrimitive then
+			true
+		else
+			false
+		endif
+	else
+		false
+	endif;
+
+helper context openapi!Schema def: isObjectArray: Boolean =
+	if self.type =  #array then
+		if self.items.isObject then
+			true
+		else
+			false
+		endif
+	else
+		false
+	endif;
