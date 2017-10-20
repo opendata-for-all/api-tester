@@ -83,6 +83,9 @@
     <eLiterals name="undefined" literal="undefined"/>
     <eLiterals name="query" value="1"/>
     <eLiterals name="path" value="2"/>
+    <eLiterals name="header" value="3" literal="header"/>
+    <eLiterals name="body" value="4" literal="body"/>
+    <eLiterals name="formData" value="5" literal="formData"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SchemeType">
     <eLiterals name="undefined" literal="undefined"/>
