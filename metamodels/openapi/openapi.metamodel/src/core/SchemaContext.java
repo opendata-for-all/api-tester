@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface SchemaContext extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Schema</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -47,4 +46,5 @@ public interface SchemaContext extends EObject {
 	 * @generated
 	 */
 	void setSchema(Schema value);
+
 } // SchemaContext

@@ -7,6 +7,7 @@ import core.CollectionFormat;
 import core.CorePackage;
 import core.Header;
 import core.ItemsDefinition;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 

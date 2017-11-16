@@ -26,7 +26,9 @@ public enum SecuritySchemeType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	UNSPECIFIED(0, "unspecified", "unspecified"), /**
+	UNSPECIFIED(0, "unspecified", "unspecified"),
+
+	/**
 	 * The '<em><b>Basic</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

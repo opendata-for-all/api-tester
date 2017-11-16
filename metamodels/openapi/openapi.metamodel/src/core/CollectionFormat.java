@@ -26,7 +26,9 @@ public enum CollectionFormat implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	UNSPECIFIED(0, "unspecified", "unspecified"), /**
+	UNSPECIFIED(0, "unspecified", "unspecified"),
+
+	/**
 	 * The '<em><b>Csv</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

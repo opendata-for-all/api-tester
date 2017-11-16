@@ -14,5 +14,4 @@ package core;
  * @generated
  */
 public interface ItemsDefinition extends JSONSchemaSubset, ArrayContext {
-
 } // ItemsDefinition

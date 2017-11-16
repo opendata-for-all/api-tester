@@ -9,14 +9,18 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
+
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
 import org.eclipse.emf.ecore.util.EObjectValidator;
+
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.Query;
+
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
 
@@ -69,7 +73,6 @@ public class CoreValidator extends EObjectValidator {
 	 * @generated
 	 */
 	private static Constraint api_requiredSwaggerVersionInvOCL;
-
 	/**
 	 * The parsed OCL expression for the definition of the '<em>correctSwaggerVersion</em>' invariant constraint.
 	 * <!-- begin-user-doc -->
@@ -77,7 +80,6 @@ public class CoreValidator extends EObjectValidator {
 	 * @generated
 	 */
 	private static Constraint api_correctSwaggerVersionInvOCL;
-
 	/**
 	 * The parsed OCL expression for the definition of the '<em>requiredInfoReference</em>' invariant constraint.
 	 * <!-- begin-user-doc -->
@@ -85,7 +87,6 @@ public class CoreValidator extends EObjectValidator {
 	 * @generated
 	 */
 	private static Constraint api_requiredInfoReferenceInvOCL;
-
 	/**
 	 * The parsed OCL expression for the definition of the '<em>requiredPaths</em>' invariant constraint.
 	 * <!-- begin-user-doc -->
@@ -93,7 +94,6 @@ public class CoreValidator extends EObjectValidator {
 	 * @generated
 	 */
 	private static Constraint api_requiredPathsInvOCL;
-
 	/**
 	 * The parsed OCL expression for the definition of the '<em>requiredTitle</em>' invariant constraint.
 	 * <!-- begin-user-doc -->
@@ -101,7 +101,6 @@ public class CoreValidator extends EObjectValidator {
 	 * @generated
 	 */
 	private static Constraint info_requiredTitleInvOCL;
-
 	/**
 	 * The parsed OCL expression for the definition of the '<em>requiredAPIVerison</em>' invariant constraint.
 	 * <!-- begin-user-doc -->
@@ -109,7 +108,6 @@ public class CoreValidator extends EObjectValidator {
 	 * @generated
 	 */
 	private static Constraint info_requiredAPIVerisonInvOCL;
-
 	/**
 	 * The parsed OCL expression for the definition of the '<em>requiredName</em>' invariant constraint.
 	 * <!-- begin-user-doc -->
@@ -117,7 +115,6 @@ public class CoreValidator extends EObjectValidator {
 	 * @generated
 	 */
 	private static Constraint license_requiredNameInvOCL;
-
 	/**
 	 * The parsed OCL expression for the definition of the '<em>oneBodyParameterAllowed</em>' invariant constraint.
 	 * <!-- begin-user-doc -->
@@ -125,7 +122,6 @@ public class CoreValidator extends EObjectValidator {
 	 * @generated
 	 */
 	private static Constraint operation_oneBodyParameterAllowedInvOCL;
-
 	/**
 	 * The parsed OCL expression for the definition of the '<em>oneFormDataParameterAllowed</em>' invariant constraint.
 	 * <!-- begin-user-doc -->
@@ -133,7 +129,6 @@ public class CoreValidator extends EObjectValidator {
 	 * @generated
 	 */
 	private static Constraint operation_oneFormDataParameterAllowedInvOCL;
-
 	/**
 	 * The parsed OCL expression for the definition of the '<em>hasUniqueParameters</em>' invariant constraint.
 	 * <!-- begin-user-doc -->
@@ -141,7 +136,6 @@ public class CoreValidator extends EObjectValidator {
 	 * @generated
 	 */
 	private static Constraint operation_hasUniqueParametersInvOCL;
-
 	/**
 	 * The parsed OCL expression for the definition of the '<em>xorFormAndBody</em>' invariant constraint.
 	 * <!-- begin-user-doc -->
@@ -149,7 +143,6 @@ public class CoreValidator extends EObjectValidator {
 	 * @generated
 	 */
 	private static Constraint operation_xorFormAndBodyInvOCL;
-
 	/**
 	 * The parsed OCL expression for the definition of the '<em>requiredResponses</em>' invariant constraint.
 	 * <!-- begin-user-doc -->
@@ -157,7 +150,6 @@ public class CoreValidator extends EObjectValidator {
 	 * @generated
 	 */
 	private static Constraint operation_requiredResponsesInvOCL;
-
 	/**
 	 * The parsed OCL expression for the definition of the '<em>requiredURL</em>' invariant constraint.
 	 * <!-- begin-user-doc -->
@@ -165,7 +157,6 @@ public class CoreValidator extends EObjectValidator {
 	 * @generated
 	 */
 	private static Constraint externalDocs_requiredURLInvOCL;
-
 	/**
 	 * The parsed OCL expression for the definition of the '<em>requiredName</em>' invariant constraint.
 	 * <!-- begin-user-doc -->
@@ -173,7 +164,6 @@ public class CoreValidator extends EObjectValidator {
 	 * @generated
 	 */
 	private static Constraint parameter_requiredNameInvOCL;
-
 	/**
 	 * The parsed OCL expression for the definition of the '<em>requiredLocation</em>' invariant constraint.
 	 * <!-- begin-user-doc -->
@@ -181,11 +171,9 @@ public class CoreValidator extends EObjectValidator {
 	 * @generated
 	 */
 	private static Constraint parameter_requiredLocationInvOCL;
-
 	private static final String OCL_ANNOTATION_SOURCE = "http://www.eclipse.org/emf/2002/Ecore/OCL";
-
+	
 	private static final OCL OCL_ENV = OCL.newInstance();
-
 	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
@@ -1130,44 +1118,8 @@ public class CoreValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateParameterContext(ParameterContext parameterContext, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(parameterContext, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateSchemaDeclaringContext(SchemaDeclaringContext schemaDeclaringContext, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(schemaDeclaringContext, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateSchemaContext(SchemaContext schemaContext, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(schemaContext, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateExternalDocsContext(ExternalDocsContext externalDocsContext, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(externalDocsContext, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateArrayContext(ArrayContext arrayContext, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(arrayContext, diagnostics, context);
 	}
 
 	/**
@@ -1195,6 +1147,42 @@ public class CoreValidator extends EObjectValidator {
 	 */
 	public boolean validateSecurityContext(SecurityContext securityContext, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(securityContext, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateParameterContext(ParameterContext parameterContext, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(parameterContext, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSchemaContext(SchemaContext schemaContext, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(schemaContext, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExternalDocsContext(ExternalDocsContext externalDocsContext, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(externalDocsContext, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateArrayContext(ArrayContext arrayContext, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(arrayContext, diagnostics, context);
 	}
 
 	/**

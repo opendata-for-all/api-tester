@@ -34,7 +34,7 @@ import core.Response;
 import core.Root;
 import core.Schema;
 import core.SchemeType;
-import core.SecurityRequirement;
+//import core.SecurityRequirement;
 import core.SecuritySchema;
 import core.SecuritySchemeType;
 import core.SecurityScope;
@@ -517,14 +517,14 @@ public class OpenAPIFactory {
 		}
 	}
 
-	private  void discoverSecurityRequirement(JsonElement securityElement, SecurityRequirement security) {
-		Set<Entry<String, JsonElement>> securityAttributes = securityElement.getAsJsonObject().entrySet();
-		Entry<String, JsonElement> first = (Entry<String, JsonElement>) securityAttributes.toArray()[0];
-		security.setName(first.getKey());
-		for (JsonElement value : first.getValue().getAsJsonArray())
-			security.getValues().add(value.getAsString());
-
-	}
+//	private  void discoverSecurityRequirement(JsonElement securityElement, SecurityRequirement security) {
+//		Set<Entry<String, JsonElement>> securityAttributes = securityElement.getAsJsonObject().entrySet();
+//		Entry<String, JsonElement> first = (Entry<String, JsonElement>) securityAttributes.toArray()[0];
+//		security.setName(first.getKey());
+//		for (JsonElement value : first.getValue().getAsJsonArray())
+//			security.getValues().add(value.getAsString());
+//
+//	}
 
 	private  void discoverResponse(JsonElement responseElement, Response response, Root root) {
 		JsonObject responseObject = responseElement.getAsJsonObject();

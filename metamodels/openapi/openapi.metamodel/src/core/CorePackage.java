@@ -323,16 +323,6 @@ public interface CorePackage extends EPackage {
 	int PARAMTER_DECLARING_CONTEXT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link core.impl.ParameterContextImpl <em>Parameter Context</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see core.impl.ParameterContextImpl
-	 * @see core.impl.CorePackageImpl#getParameterContext()
-	 * @generated
-	 */
-	int PARAMETER_CONTEXT = 24;
-
-	/**
 	 * The meta object id for the '{@link core.impl.APIImpl <em>API</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1294,26 +1284,6 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int PARAMETER_OPERATION_COUNT = SCHEMA_DECLARING_CONTEXT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link core.impl.SchemaContextImpl <em>Schema Context</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see core.impl.SchemaContextImpl
-	 * @see core.impl.CorePackageImpl#getSchemaContext()
-	 * @generated
-	 */
-	int SCHEMA_CONTEXT = 25;
-
-	/**
-	 * The meta object id for the '{@link core.impl.ArrayContextImpl <em>Array Context</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see core.impl.ArrayContextImpl
-	 * @see core.impl.CorePackageImpl#getArrayContext()
-	 * @generated
-	 */
-	int ARRAY_CONTEXT = 27;
 
 	/**
 	 * The meta object id for the '{@link core.impl.ItemsDefinitionImpl <em>Items Definition</em>}' class.
@@ -2505,26 +2475,6 @@ public interface CorePackage extends EPackage {
 	int SECURITY_SCOPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link core.impl.JSONPointerImpl <em>JSON Pointer</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see core.impl.JSONPointerImpl
-	 * @see core.impl.CorePackageImpl#getJSONPointer()
-	 * @generated
-	 */
-	int JSON_POINTER = 22;
-
-	/**
-	 * The meta object id for the '{@link core.impl.SecurityContextImpl <em>Security Context</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see core.impl.SecurityContextImpl
-	 * @see core.impl.CorePackageImpl#getSecurityContext()
-	 * @generated
-	 */
-	int SECURITY_CONTEXT = 23;
-
-	/**
 	 * The meta object id for the '{@link core.impl.ResponseDeclaringContextImpl <em>Response Declaring Context</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2551,6 +2501,16 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int RESPONSE_DECLARING_CONTEXT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link core.impl.JSONPointerImpl <em>JSON Pointer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see core.impl.JSONPointerImpl
+	 * @see core.impl.CorePackageImpl#getJSONPointer()
+	 * @generated
+	 */
+	int JSON_POINTER = 22;
 
 	/**
 	 * The feature id for the '<em><b>Ref</b></em>' attribute.
@@ -2580,6 +2540,16 @@ public interface CorePackage extends EPackage {
 	int JSON_POINTER_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link core.impl.SecurityContextImpl <em>Security Context</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see core.impl.SecurityContextImpl
+	 * @see core.impl.CorePackageImpl#getSecurityContext()
+	 * @generated
+	 */
+	int SECURITY_CONTEXT = 23;
+
+	/**
 	 * The feature id for the '<em><b>Security Requirement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2605,6 +2575,16 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int SECURITY_CONTEXT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link core.impl.ParameterContextImpl <em>Parameter Context</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see core.impl.ParameterContextImpl
+	 * @see core.impl.CorePackageImpl#getParameterContext()
+	 * @generated
+	 */
+	int PARAMETER_CONTEXT = 24;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
@@ -2634,6 +2614,16 @@ public interface CorePackage extends EPackage {
 	int PARAMETER_CONTEXT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link core.impl.SchemaContextImpl <em>Schema Context</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see core.impl.SchemaContextImpl
+	 * @see core.impl.CorePackageImpl#getSchemaContext()
+	 * @generated
+	 */
+	int SCHEMA_CONTEXT = 25;
+
+	/**
 	 * The feature id for the '<em><b>Schema</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2659,6 +2649,16 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int SCHEMA_CONTEXT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link core.impl.ArrayContextImpl <em>Array Context</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see core.impl.ArrayContextImpl
+	 * @see core.impl.CorePackageImpl#getArrayContext()
+	 * @generated
+	 */
+	int ARRAY_CONTEXT = 27;
 
 	/**
 	 * The feature id for the '<em><b>Collection Format</b></em>' attribute.
@@ -3667,6 +3667,17 @@ public interface CorePackage extends EPackage {
 	EClass getSchema();
 
 	/**
+	 * Returns the meta object for the attribute '{@link core.Schema#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see core.Schema#getName()
+	 * @see #getSchema()
+	 * @generated
+	 */
+	EAttribute getSchema_Name();
+
+	/**
 	 * Returns the meta object for the attribute '{@link core.Schema#getTitle <em>Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3700,6 +3711,105 @@ public interface CorePackage extends EPackage {
 	EAttribute getSchema_MinProperties();
 
 	/**
+	 * Returns the meta object for the attribute '{@link core.Schema#getExample <em>Example</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Example</em>'.
+	 * @see core.Schema#getExample()
+	 * @see #getSchema()
+	 * @generated
+	 */
+	EAttribute getSchema_Example();
+
+	/**
+	 * Returns the meta object for the attribute '{@link core.Schema#getDiscriminator <em>Discriminator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Discriminator</em>'.
+	 * @see core.Schema#getDiscriminator()
+	 * @see #getSchema()
+	 * @generated
+	 */
+	EAttribute getSchema_Discriminator();
+
+	/**
+	 * Returns the meta object for the attribute '{@link core.Schema#getReadOnly <em>Read Only</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Read Only</em>'.
+	 * @see core.Schema#getReadOnly()
+	 * @see #getSchema()
+	 * @generated
+	 */
+	EAttribute getSchema_ReadOnly();
+
+	/**
+	 * Returns the meta object for the reference list '{@link core.Schema#getProperties <em>Properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Properties</em>'.
+	 * @see core.Schema#getProperties()
+	 * @see #getSchema()
+	 * @generated
+	 */
+	EReference getSchema_Properties();
+
+	/**
+	 * Returns the meta object for the reference list '{@link core.Schema#getAllOf <em>All Of</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>All Of</em>'.
+	 * @see core.Schema#getAllOf()
+	 * @see #getSchema()
+	 * @generated
+	 */
+	EReference getSchema_AllOf();
+
+	/**
+	 * Returns the meta object for the reference '{@link core.Schema#getItems <em>Items</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Items</em>'.
+	 * @see core.Schema#getItems()
+	 * @see #getSchema()
+	 * @generated
+	 */
+	EReference getSchema_Items();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link core.Schema#getXml <em>Xml</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Xml</em>'.
+	 * @see core.Schema#getXml()
+	 * @see #getSchema()
+	 * @generated
+	 */
+	EReference getSchema_Xml();
+
+	/**
+	 * Returns the meta object for the reference '{@link core.Schema#getAdditonalProperties <em>Additonal Properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Additonal Properties</em>'.
+	 * @see core.Schema#getAdditonalProperties()
+	 * @see #getSchema()
+	 * @generated
+	 */
+	EReference getSchema_AdditonalProperties();
+
+	/**
+	 * Returns the meta object for the reference '{@link core.Schema#getDeclaringContext <em>Declaring Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Declaring Context</em>'.
+	 * @see core.Schema#getDeclaringContext()
+	 * @see #getSchema()
+	 * @generated
+	 */
+	EReference getSchema_DeclaringContext();
+
+	/**
 	 * Returns the meta object for the reference list '{@link core.Schema#getRequired <em>Required</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3731,116 +3841,6 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSchema_AdditonalPropertiesAllowed();
-
-	/**
-	 * Returns the meta object for the reference list '{@link core.Schema#getProperties <em>Properties</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Properties</em>'.
-	 * @see core.Schema#getProperties()
-	 * @see #getSchema()
-	 * @generated
-	 */
-	EReference getSchema_Properties();
-
-	/**
-	 * Returns the meta object for the attribute '{@link core.Schema#getExample <em>Example</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Example</em>'.
-	 * @see core.Schema#getExample()
-	 * @see #getSchema()
-	 * @generated
-	 */
-	EAttribute getSchema_Example();
-
-	/**
-	 * Returns the meta object for the reference list '{@link core.Schema#getAllOf <em>All Of</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>All Of</em>'.
-	 * @see core.Schema#getAllOf()
-	 * @see #getSchema()
-	 * @generated
-	 */
-	EReference getSchema_AllOf();
-
-	/**
-	 * Returns the meta object for the reference '{@link core.Schema#getItems <em>Items</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Items</em>'.
-	 * @see core.Schema#getItems()
-	 * @see #getSchema()
-	 * @generated
-	 */
-	EReference getSchema_Items();
-
-	/**
-	 * Returns the meta object for the reference '{@link core.Schema#getAdditonalProperties <em>Additonal Properties</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Additonal Properties</em>'.
-	 * @see core.Schema#getAdditonalProperties()
-	 * @see #getSchema()
-	 * @generated
-	 */
-	EReference getSchema_AdditonalProperties();
-
-	/**
-	 * Returns the meta object for the attribute '{@link core.Schema#getDiscriminator <em>Discriminator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Discriminator</em>'.
-	 * @see core.Schema#getDiscriminator()
-	 * @see #getSchema()
-	 * @generated
-	 */
-	EAttribute getSchema_Discriminator();
-
-	/**
-	 * Returns the meta object for the attribute '{@link core.Schema#getReadOnly <em>Read Only</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Read Only</em>'.
-	 * @see core.Schema#getReadOnly()
-	 * @see #getSchema()
-	 * @generated
-	 */
-	EAttribute getSchema_ReadOnly();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link core.Schema#getXml <em>Xml</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Xml</em>'.
-	 * @see core.Schema#getXml()
-	 * @see #getSchema()
-	 * @generated
-	 */
-	EReference getSchema_Xml();
-
-	/**
-	 * Returns the meta object for the attribute '{@link core.Schema#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see core.Schema#getName()
-	 * @see #getSchema()
-	 * @generated
-	 */
-	EAttribute getSchema_Name();
-
-	/**
-	 * Returns the meta object for the reference '{@link core.Schema#getDeclaringContext <em>Declaring Context</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Declaring Context</em>'.
-	 * @see core.Schema#getDeclaringContext()
-	 * @see #getSchema()
-	 * @generated
-	 */
-	EReference getSchema_DeclaringContext();
 
 	/**
 	 * Returns the meta object for the '{@link core.Schema#getRef() <em>Get Ref</em>}' operation.
@@ -4230,6 +4230,68 @@ public interface CorePackage extends EPackage {
 	EClass getParamterDeclaringContext();
 
 	/**
+	 * Returns the meta object for class '{@link core.SchemaDeclaringContext <em>Schema Declaring Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Schema Declaring Context</em>'.
+	 * @see core.SchemaDeclaringContext
+	 * @generated
+	 */
+	EClass getSchemaDeclaringContext();
+
+	/**
+	 * Returns the meta object for class '{@link core.ResponseDeclaringContext <em>Response Declaring Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Response Declaring Context</em>'.
+	 * @see core.ResponseDeclaringContext
+	 * @generated
+	 */
+	EClass getResponseDeclaringContext();
+
+	/**
+	 * Returns the meta object for class '{@link core.JSONPointer <em>JSON Pointer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>JSON Pointer</em>'.
+	 * @see core.JSONPointer
+	 * @generated
+	 */
+	EClass getJSONPointer();
+
+	/**
+	 * Returns the meta object for the attribute '{@link core.JSONPointer#getRef <em>Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ref</em>'.
+	 * @see core.JSONPointer#getRef()
+	 * @see #getJSONPointer()
+	 * @generated
+	 */
+	EAttribute getJSONPointer_Ref();
+
+	/**
+	 * Returns the meta object for class '{@link core.SecurityContext <em>Security Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Security Context</em>'.
+	 * @see core.SecurityContext
+	 * @generated
+	 */
+	EClass getSecurityContext();
+
+	/**
+	 * Returns the meta object for the reference list '{@link core.SecurityContext#getSecurityRequirement <em>Security Requirement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Security Requirement</em>'.
+	 * @see core.SecurityContext#getSecurityRequirement()
+	 * @see #getSecurityContext()
+	 * @generated
+	 */
+	EReference getSecurityContext_SecurityRequirement();
+
+	/**
 	 * Returns the meta object for class '{@link core.ParameterContext <em>Parameter Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4249,16 +4311,6 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getParameterContext_Parameters();
-
-	/**
-	 * Returns the meta object for class '{@link core.SchemaDeclaringContext <em>Schema Declaring Context</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Schema Declaring Context</em>'.
-	 * @see core.SchemaDeclaringContext
-	 * @generated
-	 */
-	EClass getSchemaDeclaringContext();
 
 	/**
 	 * Returns the meta object for class '{@link core.SchemaContext <em>Schema Context</em>}'.
@@ -4333,58 +4385,6 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getArrayContext_Items();
-
-	/**
-	 * Returns the meta object for class '{@link core.ResponseDeclaringContext <em>Response Declaring Context</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Response Declaring Context</em>'.
-	 * @see core.ResponseDeclaringContext
-	 * @generated
-	 */
-	EClass getResponseDeclaringContext();
-
-	/**
-	 * Returns the meta object for class '{@link core.JSONPointer <em>JSON Pointer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>JSON Pointer</em>'.
-	 * @see core.JSONPointer
-	 * @generated
-	 */
-	EClass getJSONPointer();
-
-	/**
-	 * Returns the meta object for the attribute '{@link core.JSONPointer#getRef <em>Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ref</em>'.
-	 * @see core.JSONPointer#getRef()
-	 * @see #getJSONPointer()
-	 * @generated
-	 */
-	EAttribute getJSONPointer_Ref();
-
-	/**
-	 * Returns the meta object for class '{@link core.SecurityContext <em>Security Context</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Security Context</em>'.
-	 * @see core.SecurityContext
-	 * @generated
-	 */
-	EClass getSecurityContext();
-
-	/**
-	 * Returns the meta object for the reference list '{@link core.SecurityContext#getSecurityRequirement <em>Security Requirement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Security Requirement</em>'.
-	 * @see core.SecurityContext#getSecurityRequirement()
-	 * @see #getSecurityContext()
-	 * @generated
-	 */
-	EReference getSecurityContext_SecurityRequirement();
 
 	/**
 	 * Returns the meta object for enum '{@link core.SchemeType <em>Scheme Type</em>}'.
@@ -5168,6 +5168,14 @@ public interface CorePackage extends EPackage {
 		EClass SCHEMA = eINSTANCE.getSchema();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCHEMA__NAME = eINSTANCE.getSchema_Name();
+
+		/**
 		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5192,6 +5200,78 @@ public interface CorePackage extends EPackage {
 		EAttribute SCHEMA__MIN_PROPERTIES = eINSTANCE.getSchema_MinProperties();
 
 		/**
+		 * The meta object literal for the '<em><b>Example</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCHEMA__EXAMPLE = eINSTANCE.getSchema_Example();
+
+		/**
+		 * The meta object literal for the '<em><b>Discriminator</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCHEMA__DISCRIMINATOR = eINSTANCE.getSchema_Discriminator();
+
+		/**
+		 * The meta object literal for the '<em><b>Read Only</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCHEMA__READ_ONLY = eINSTANCE.getSchema_ReadOnly();
+
+		/**
+		 * The meta object literal for the '<em><b>Properties</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEMA__PROPERTIES = eINSTANCE.getSchema_Properties();
+
+		/**
+		 * The meta object literal for the '<em><b>All Of</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEMA__ALL_OF = eINSTANCE.getSchema_AllOf();
+
+		/**
+		 * The meta object literal for the '<em><b>Items</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEMA__ITEMS = eINSTANCE.getSchema_Items();
+
+		/**
+		 * The meta object literal for the '<em><b>Xml</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEMA__XML = eINSTANCE.getSchema_Xml();
+
+		/**
+		 * The meta object literal for the '<em><b>Additonal Properties</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEMA__ADDITONAL_PROPERTIES = eINSTANCE.getSchema_AdditonalProperties();
+
+		/**
+		 * The meta object literal for the '<em><b>Declaring Context</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEMA__DECLARING_CONTEXT = eINSTANCE.getSchema_DeclaringContext();
+
+		/**
 		 * The meta object literal for the '<em><b>Required</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5214,86 +5294,6 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SCHEMA__ADDITONAL_PROPERTIES_ALLOWED = eINSTANCE.getSchema_AdditonalPropertiesAllowed();
-
-		/**
-		 * The meta object literal for the '<em><b>Properties</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SCHEMA__PROPERTIES = eINSTANCE.getSchema_Properties();
-
-		/**
-		 * The meta object literal for the '<em><b>Example</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SCHEMA__EXAMPLE = eINSTANCE.getSchema_Example();
-
-		/**
-		 * The meta object literal for the '<em><b>All Of</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SCHEMA__ALL_OF = eINSTANCE.getSchema_AllOf();
-
-		/**
-		 * The meta object literal for the '<em><b>Items</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SCHEMA__ITEMS = eINSTANCE.getSchema_Items();
-
-		/**
-		 * The meta object literal for the '<em><b>Additonal Properties</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SCHEMA__ADDITONAL_PROPERTIES = eINSTANCE.getSchema_AdditonalProperties();
-
-		/**
-		 * The meta object literal for the '<em><b>Discriminator</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SCHEMA__DISCRIMINATOR = eINSTANCE.getSchema_Discriminator();
-
-		/**
-		 * The meta object literal for the '<em><b>Read Only</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SCHEMA__READ_ONLY = eINSTANCE.getSchema_ReadOnly();
-
-		/**
-		 * The meta object literal for the '<em><b>Xml</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SCHEMA__XML = eINSTANCE.getSchema_Xml();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SCHEMA__NAME = eINSTANCE.getSchema_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Declaring Context</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SCHEMA__DECLARING_CONTEXT = eINSTANCE.getSchema_DeclaringContext();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Ref</b></em>' operation.
@@ -5600,6 +5600,62 @@ public interface CorePackage extends EPackage {
 		EClass PARAMTER_DECLARING_CONTEXT = eINSTANCE.getParamterDeclaringContext();
 
 		/**
+		 * The meta object literal for the '{@link core.impl.SchemaDeclaringContextImpl <em>Schema Declaring Context</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see core.impl.SchemaDeclaringContextImpl
+		 * @see core.impl.CorePackageImpl#getSchemaDeclaringContext()
+		 * @generated
+		 */
+		EClass SCHEMA_DECLARING_CONTEXT = eINSTANCE.getSchemaDeclaringContext();
+
+		/**
+		 * The meta object literal for the '{@link core.impl.ResponseDeclaringContextImpl <em>Response Declaring Context</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see core.impl.ResponseDeclaringContextImpl
+		 * @see core.impl.CorePackageImpl#getResponseDeclaringContext()
+		 * @generated
+		 */
+		EClass RESPONSE_DECLARING_CONTEXT = eINSTANCE.getResponseDeclaringContext();
+
+		/**
+		 * The meta object literal for the '{@link core.impl.JSONPointerImpl <em>JSON Pointer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see core.impl.JSONPointerImpl
+		 * @see core.impl.CorePackageImpl#getJSONPointer()
+		 * @generated
+		 */
+		EClass JSON_POINTER = eINSTANCE.getJSONPointer();
+
+		/**
+		 * The meta object literal for the '<em><b>Ref</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JSON_POINTER__REF = eINSTANCE.getJSONPointer_Ref();
+
+		/**
+		 * The meta object literal for the '{@link core.impl.SecurityContextImpl <em>Security Context</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see core.impl.SecurityContextImpl
+		 * @see core.impl.CorePackageImpl#getSecurityContext()
+		 * @generated
+		 */
+		EClass SECURITY_CONTEXT = eINSTANCE.getSecurityContext();
+
+		/**
+		 * The meta object literal for the '<em><b>Security Requirement</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECURITY_CONTEXT__SECURITY_REQUIREMENT = eINSTANCE.getSecurityContext_SecurityRequirement();
+
+		/**
 		 * The meta object literal for the '{@link core.impl.ParameterContextImpl <em>Parameter Context</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5616,16 +5672,6 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference PARAMETER_CONTEXT__PARAMETERS = eINSTANCE.getParameterContext_Parameters();
-
-		/**
-		 * The meta object literal for the '{@link core.impl.SchemaDeclaringContextImpl <em>Schema Declaring Context</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see core.impl.SchemaDeclaringContextImpl
-		 * @see core.impl.CorePackageImpl#getSchemaDeclaringContext()
-		 * @generated
-		 */
-		EClass SCHEMA_DECLARING_CONTEXT = eINSTANCE.getSchemaDeclaringContext();
 
 		/**
 		 * The meta object literal for the '{@link core.impl.SchemaContextImpl <em>Schema Context</em>}' class.
@@ -5688,52 +5734,6 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ARRAY_CONTEXT__ITEMS = eINSTANCE.getArrayContext_Items();
-
-		/**
-		 * The meta object literal for the '{@link core.impl.ResponseDeclaringContextImpl <em>Response Declaring Context</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see core.impl.ResponseDeclaringContextImpl
-		 * @see core.impl.CorePackageImpl#getResponseDeclaringContext()
-		 * @generated
-		 */
-		EClass RESPONSE_DECLARING_CONTEXT = eINSTANCE.getResponseDeclaringContext();
-
-		/**
-		 * The meta object literal for the '{@link core.impl.JSONPointerImpl <em>JSON Pointer</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see core.impl.JSONPointerImpl
-		 * @see core.impl.CorePackageImpl#getJSONPointer()
-		 * @generated
-		 */
-		EClass JSON_POINTER = eINSTANCE.getJSONPointer();
-
-		/**
-		 * The meta object literal for the '<em><b>Ref</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute JSON_POINTER__REF = eINSTANCE.getJSONPointer_Ref();
-
-		/**
-		 * The meta object literal for the '{@link core.impl.SecurityContextImpl <em>Security Context</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see core.impl.SecurityContextImpl
-		 * @see core.impl.CorePackageImpl#getSecurityContext()
-		 * @generated
-		 */
-		EClass SECURITY_CONTEXT = eINSTANCE.getSecurityContext();
-
-		/**
-		 * The meta object literal for the '<em><b>Security Requirement</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SECURITY_CONTEXT__SECURITY_REQUIREMENT = eINSTANCE.getSecurityContext_SecurityRequirement();
 
 		/**
 		 * The meta object literal for the '{@link core.SchemeType <em>Scheme Type</em>}' enum.

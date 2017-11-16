@@ -6,6 +6,7 @@ import core.ArrayContext;
 import core.CollectionFormat;
 import core.CorePackage;
 import core.ItemsDefinition;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -83,6 +84,27 @@ public class ItemsDefinitionImpl extends JSONSchemaSubsetImpl implements ItemsDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public CollectionFormat getCollectionFormat() {
+		return collectionFormat;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCollectionFormat(CollectionFormat newCollectionFormat) {
+		CollectionFormat oldCollectionFormat = collectionFormat;
+		collectionFormat = newCollectionFormat == null ? COLLECTION_FORMAT_EDEFAULT : newCollectionFormat;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ITEMS_DEFINITION__COLLECTION_FORMAT, oldCollectionFormat, collectionFormat));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ItemsDefinition getItems() {
 		return items;
 	}
@@ -119,27 +141,6 @@ public class ItemsDefinitionImpl extends JSONSchemaSubsetImpl implements ItemsDe
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ITEMS_DEFINITION__ITEMS, newItems, newItems));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CollectionFormat getCollectionFormat() {
-		return collectionFormat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCollectionFormat(CollectionFormat newCollectionFormat) {
-		CollectionFormat oldCollectionFormat = collectionFormat;
-		collectionFormat = newCollectionFormat == null ? COLLECTION_FORMAT_EDEFAULT : newCollectionFormat;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ITEMS_DEFINITION__COLLECTION_FORMAT, oldCollectionFormat, collectionFormat));
 	}
 
 	/**

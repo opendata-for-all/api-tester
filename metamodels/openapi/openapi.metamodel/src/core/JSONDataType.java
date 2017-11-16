@@ -36,7 +36,9 @@ public enum JSONDataType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BOOLEAN(1, "boolean", "boolean"), /**
+	BOOLEAN(1, "boolean", "boolean"),
+
+	/**
 	 * The '<em><b>Integer</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -44,7 +46,9 @@ public enum JSONDataType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INTEGER(2, "integer", "integer"), /**
+	INTEGER(2, "integer", "integer"),
+
+	/**
 	 * The '<em><b>Number</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -52,7 +56,9 @@ public enum JSONDataType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NUMBER(3, "number", "number"), /**
+	NUMBER(3, "number", "number"),
+
+	/**
 	 * The '<em><b>String</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

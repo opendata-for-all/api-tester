@@ -3,6 +3,7 @@
 package core;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,7 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface ParameterContext extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' reference list.
 	 * The list contents are of type {@link core.Parameter}.
@@ -38,4 +38,5 @@ public interface ParameterContext extends EObject {
 	 * @generated
 	 */
 	EList<Parameter> getParameters();
+
 } // ParameterContext

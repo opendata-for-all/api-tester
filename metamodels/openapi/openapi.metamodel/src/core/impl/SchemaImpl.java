@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -485,77 +486,6 @@ public class SchemaImpl extends JSONSchemaSubsetImpl implements Schema {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Schema> getRequired() {
-		if (required == null) {
-			required = new EObjectResolvingEList<Schema>(Schema.class, this, CorePackage.SCHEMA__REQUIRED);
-		}
-		return required;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Schema getValue() {
-		if (value != null && value.eIsProxy()) {
-			InternalEObject oldValue = (InternalEObject)value;
-			value = (Schema)eResolveProxy(oldValue);
-			if (value != oldValue) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.SCHEMA__VALUE, oldValue, value));
-			}
-		}
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Schema basicGetValue() {
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setValue(Schema newValue) {
-		Schema oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.SCHEMA__VALUE, oldValue, value));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isAdditonalPropertiesAllowed() {
-		return additonalPropertiesAllowed;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAdditonalPropertiesAllowed(boolean newAdditonalPropertiesAllowed) {
-		boolean oldAdditonalPropertiesAllowed = additonalPropertiesAllowed;
-		additonalPropertiesAllowed = newAdditonalPropertiesAllowed;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.SCHEMA__ADDITONAL_PROPERTIES_ALLOWED, oldAdditonalPropertiesAllowed, additonalPropertiesAllowed));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getExample() {
 		return example;
 	}
@@ -793,6 +723,77 @@ public class SchemaImpl extends JSONSchemaSubsetImpl implements Schema {
 		declaringContext = newDeclaringContext;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.SCHEMA__DECLARING_CONTEXT, oldDeclaringContext, declaringContext));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Schema> getRequired() {
+		if (required == null) {
+			required = new EObjectResolvingEList<Schema>(Schema.class, this, CorePackage.SCHEMA__REQUIRED);
+		}
+		return required;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Schema getValue() {
+		if (value != null && value.eIsProxy()) {
+			InternalEObject oldValue = (InternalEObject)value;
+			value = (Schema)eResolveProxy(oldValue);
+			if (value != oldValue) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.SCHEMA__VALUE, oldValue, value));
+			}
+		}
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Schema basicGetValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValue(Schema newValue) {
+		Schema oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.SCHEMA__VALUE, oldValue, value));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isAdditonalPropertiesAllowed() {
+		return additonalPropertiesAllowed;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAdditonalPropertiesAllowed(boolean newAdditonalPropertiesAllowed) {
+		boolean oldAdditonalPropertiesAllowed = additonalPropertiesAllowed;
+		additonalPropertiesAllowed = newAdditonalPropertiesAllowed;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.SCHEMA__ADDITONAL_PROPERTIES_ALLOWED, oldAdditonalPropertiesAllowed, additonalPropertiesAllowed));
 	}
 
 	/**
