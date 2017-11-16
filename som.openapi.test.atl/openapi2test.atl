@@ -15,13 +15,15 @@ rule API2TestSuite {
 			name <- 'Test Suite',
 			description <- 'Generated Test Suite',
 			testCases <- openapi!Operation.allInstances() -> collect(e | thisModule.
-					CorrectnessTestCase(e))
+					CorrectnessTestCase(e)) -> select(e | not e.oclIsUndefined())
 		)
 }
 
 lazy rule CorrectnessTestCase {
 	from
-		s: openapi!Operation
+		s: openapi!Operation (
+			s.isSimpleInferencePossible.debug()
+			)
 	to
 		t: test!TestCase (
 			testSteps <- Sequence{thisModule.CorrectnessAPIRequest(s)}
@@ -36,14 +38,18 @@ lazy rule CorrectnessAPIRequest {
 			accept <- 'application/json',
 			scheme <- #http,
 			contentType <- 'application/json',
-			parameters <- s.parameters -> collect(e | thisModule.InferSimpleParameter(e)) -> select(e | not e.oclIsUndefined()).debug()
-		)
+			assertions <- Sequence {a},
+			parameters <- s.parameters -> select(f | f.isSimpleInferencePossible ) -> collect(e | thisModule.InferSimpleParameter(e)) -> select(e | not e.oclIsUndefined())
+			
+		),
+		a: test!ValidStatusCodesAssertion (
+			code <- Sequence {'200'})
 }
 
 lazy rule InferSimpleParameter {
 	from
 		s: openapi!Parameter (
-			s.isSimpleInferencePossible.debug()
+			s.isSimpleInferencePossible
 		)
 	to
 		t: test!Parameter (
@@ -53,6 +59,18 @@ lazy rule InferSimpleParameter {
 			value <- s.inferSimpleParameter
 		)
 }
+
+helper context openapi!Operation def: isSimpleInferencePossible: Boolean =
+	if self.parameters.isEmpty()
+	then
+		 true
+		else
+			if self.parameters -> select(e | e.required) -> select (f | not f.isSimpleInferencePossible )-> isEmpty() then
+			true
+			else
+				false
+				endif
+			endif;
 
 helper context openapi!Parameter def: isSimpleInferencePossible: Boolean =
 	if self.location = #body then
@@ -72,6 +90,7 @@ helper context openapi!Parameter def: isSimpleInferencePossible: Boolean =
 			endif
 		endif
 	endif;
+
 
 helper context openapi!Parameter def: inferSimpleParameter: OclAny =
 	if self.location = #body then
@@ -99,7 +118,7 @@ helper context openapi!Schema def: isPrimitive: Boolean =
 		false
 	endif;
 
-helper context openapi!Schema def: isPrimitiveArray: Boolean =
+helper context openapi!Schema def: isArrayOfPrimitives: Boolean =
 	if self.type =  #array then
 		if self.items.isPrimitive then
 			true
@@ -110,7 +129,7 @@ helper context openapi!Schema def: isPrimitiveArray: Boolean =
 		false
 	endif;
 
-helper context openapi!Schema def: isObjectArray: Boolean =
+helper context openapi!Schema def: isArrayOfObjects: Boolean =
 	if self.type =  #array then
 		if self.items.isObject then
 			true

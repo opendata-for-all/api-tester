@@ -20,16 +20,18 @@
   </api>
   <paramters
       type="string"
-      default=""
+      default="def"
       name="param1"
       location="query"
+      required="true"
       referenceName="param1"
       declaringContext="//@api/@paths.0/@get"/>
   <paramters
       type="string"
-      default="test"
+      default=""
       name="param2"
       location="query"
+      required="false"
       declaringContext="//@api/@paths.0/@get"/>
   <responses
       code="200"

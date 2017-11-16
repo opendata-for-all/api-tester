@@ -2,7 +2,10 @@
 <TestSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://example.com/rest/test" name="Test Suite" description="Generated Test Suite" api="api.example.com">
   <testCases>
     <testSteps xsi:type="APIRequest" contentType="application/json" accept="application/json" scheme="http">
-      <parameters location="query" name="param2" value="test"/>
+      <parameters location="query" name="param1" value="def"/>
+      <assertions xsi:type="ValidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
     </testSteps>
   </testCases>
 </TestSuite>
