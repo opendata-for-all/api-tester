@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.URI;
 /**
  * Main entry point of the 'Acceleo' generation module.
  */
-public class GenerateAll {
+public class GenerateJUnit {
 
 	/**
 	 * The model URI.
@@ -53,7 +53,7 @@ public class GenerateAll {
 	 *             Thrown when the output cannot be saved.
 	 * @generated
 	 */
-	public GenerateAll(URI modelURI, IContainer targetFolder, List<? extends Object> arguments) {
+	public GenerateJUnit(URI modelURI, IContainer targetFolder, List<? extends Object> arguments) {
 		this.modelURI = modelURI;
 		this.targetFolder = targetFolder;
 		this.arguments = arguments;
@@ -74,9 +74,9 @@ public class GenerateAll {
 		}
 		
 		monitor.subTask("Loading...");
-		som.openapi.test.generator.acceleo.common.GenerateSoapUI gen0 = new som.openapi.test.generator.acceleo.common.GenerateSoapUI(modelURI, targetFolder.getLocation().toFile(), arguments);
+		som.openapi.test.generator.acceleo.common.GenerateJUnit gen0 = new som.openapi.test.generator.acceleo.common.GenerateJUnit(modelURI, targetFolder.getLocation().toFile(), arguments);
 		monitor.worked(1);
-		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("som.openapi.test.generator.acceleo", "som.openapi.test.generator.acceleo.common.GenerateSoapUI", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
+		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("som.openapi.test.generator.acceleo", "som.openapi.test.generator.acceleo.common.GenerateJUnit", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 			

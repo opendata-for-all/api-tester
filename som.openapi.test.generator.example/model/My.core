@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<openAPI.core:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:openAPI.core="http://example.com/openAPI/core">
-  <api swagger="2.0" host="petstore.io" basePath="/v2" definitions="Pet">
-    <schemes>http</schemes>
-  </api>
-  <schemas name="Pet" properties="id"/>
-  <schemas name="id"/>
-</openAPI.core:Root>

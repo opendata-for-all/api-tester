@@ -31,8 +31,15 @@
          <action
                class="som.openapi.test.generator.popup.actions.AcceleoGenerateSoapUIAction"
                enablesFor="+"
-               id="som.openapi.test.generator.acceleo.ui.popupMenus.acceleoGenerateAcceleoAction"
+               id="som.openapi.test.generator.acceleo.ui.popupMenus.acceleoGenerateSoapUIAction"
                label="Generate SoapUI project file"
+               menubarPath="som.openapi.test.generator.menu1/group1">
+         </action>
+         <action
+               class="som.openapi.test.generator.popup.actions.AcceleoGenerateJUnitAction"
+               enablesFor="+"
+               id="som.openapi.test.generator.acceleo.ui.popupMenus.acceleoGenerateJUnitAction"
+               label="Generate JUnit tests"
                menubarPath="som.openapi.test.generator.menu1/group1">
          </action>
       </objectContribution>
