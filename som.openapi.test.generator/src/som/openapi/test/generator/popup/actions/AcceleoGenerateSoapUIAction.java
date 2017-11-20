@@ -30,7 +30,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 
 import som.openapi.test.generator.Activator;
-import som.openapi.test.generator.acceleo.ui.common.GenerateAll;
+import som.openapi.test.generator.acceleo.ui.common.GenerateSoapUI;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.ActionDelegate;
@@ -73,7 +73,7 @@ public class AcceleoGenerateSoapUIAction extends ActionDelegate implements IActi
 							URI modelURI = URI.createPlatformResourceURI(model.getFullPath().toString(), true);
 							try {
 								IContainer target = model.getProject().getFolder("src-gen");
-								GenerateAll generator = new GenerateAll(modelURI, target, getArguments());
+								GenerateSoapUI generator = new GenerateSoapUI(modelURI, target, getArguments());
 								generator.doGenerate(monitor);
 							} catch (IOException e) {
 								IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
