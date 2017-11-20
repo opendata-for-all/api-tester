@@ -17,6 +17,9 @@
           operationId="operation1"
           responses="//@responses.0"/>
     </paths>
+    <paths pattern="/path2">
+      <get parameters="//@paramters.2"/>
+    </paths>
   </api>
   <paramters
       type="string"
@@ -33,6 +36,9 @@
       location="query"
       required="false"
       declaringContext="//@api/@paths.0/@get"/>
+  <paramters
+      name="param3"
+      required="true"/>
   <responses
       code="200"
       declaringContext="//@api/@paths.0/@get"
