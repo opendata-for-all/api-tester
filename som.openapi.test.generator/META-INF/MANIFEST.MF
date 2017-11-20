@@ -10,10 +10,15 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi,
- openapi.metamodel;bundle-version="1.0.0",
- org.eclipse.m2m.atl.common;bundle-version="4.0.0",
- org.eclipse.m2m.atl.emftvm;bundle-version="4.0.0",
- som.rest.test.metamodel;bundle-version="1.0.0"
+ openapi.metamodel,
+ org.eclipse.m2m.atl.common,
+ org.eclipse.m2m.atl.emftvm,
+ som.rest.test.metamodel,
+ som.openapi.test.generator.acceleo,
+ org.eclipse.ocl,
+ org.eclipse.ocl.ecore,
+ org.eclipse.acceleo.model,
+ org.eclipse.acceleo.engine
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,

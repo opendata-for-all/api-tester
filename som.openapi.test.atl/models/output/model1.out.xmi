@@ -1,9 +1,203 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<TestSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://example.com/rest/test" name="Test Suite" description="Generated Test Suite" api="api.example.com">
+<TestSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://example.com/rest/test" name="Test Suite" description="Generated Test Suite" api="petstore.swagger.io">
   <testCases>
-    <testSteps xsi:type="APIRequest" contentType="application/json" accept="application/json" scheme="http">
-      <parameters location="query" name="param1" value="def"/>
+    <testSteps xsi:type="APIRequest" operationId="updatePet" contentType="application/json" accept="application/json" scheme="http">
+      <parameters location="body" name="body"/>
       <assertions xsi:type="ValidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="addPet" contentType="application/json" accept="application/json" scheme="http">
+      <parameters location="body" name="body"/>
+      <assertions xsi:type="ValidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="getInventory" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="ValidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="placeOrder" contentType="application/json" accept="application/json" scheme="http">
+      <parameters location="body" name="body"/>
+      <assertions xsi:type="ValidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="createUser" contentType="application/json" accept="application/json" scheme="http">
+      <parameters location="body" name="body"/>
+      <assertions xsi:type="ValidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="createUsersWithArrayInput" contentType="application/json" accept="application/json" scheme="http">
+      <parameters location="body" name="body"/>
+      <assertions xsi:type="ValidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="createUsersWithListInput" contentType="application/json" accept="application/json" scheme="http">
+      <parameters location="body" name="body"/>
+      <assertions xsi:type="ValidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="logoutUser" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="ValidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="updatePet" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="addPet" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="findPetsByStatus" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="findPetsByTags" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="getPetById" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="updatePetWithForm" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="deletePet" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="uploadFile" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="placeOrder" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="getOrderById" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="deleteOrder" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="createUser" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="createUsersWithArrayInput" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="createUsersWithListInput" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="loginUser" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="loginUser" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="getUserByName" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="updateUser" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="updateUser" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases>
+    <testSteps xsi:type="APIRequest" operationId="deleteUser" contentType="application/json" accept="application/json" scheme="http">
+      <assertions xsi:type="InvalidStatusCodesAssertion">
         <code>200</code>
       </assertions>
     </testSteps>

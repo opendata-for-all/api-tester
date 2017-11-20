@@ -28,6 +28,13 @@
                label="Generate TestSuite Model"
                menubarPath="som.openapi.test.generator.menu1/group1">
          </action>
+         <action
+               class="som.openapi.test.generator.popup.actions.AcceleoGenerateSoapUIAction"
+               enablesFor="+"
+               id="som.openapi.test.generator.acceleo.ui.popupMenus.acceleoGenerateAcceleoAction"
+               label="Generate SoapUI project file"
+               menubarPath="som.openapi.test.generator.menu1/group1">
+         </action>
       </objectContribution>
    </extension>
 
