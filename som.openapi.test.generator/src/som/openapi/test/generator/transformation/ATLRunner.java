@@ -23,7 +23,6 @@ import org.eclipse.m2m.atl.emftvm.util.DefaultModuleResolver;
 import org.eclipse.m2m.atl.emftvm.util.ModuleResolver;
 import org.eclipse.m2m.atl.emftvm.util.TimingData;
 
-import core.OpenAPIFactory;
 import core.OpenAPIPackage;
 import som.rest.test.TestPackage;
 
