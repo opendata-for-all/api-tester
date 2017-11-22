@@ -1,6 +1,6 @@
 package som.openapi.test.generator.popup.actions;
 
-import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
@@ -15,10 +15,8 @@ import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 
-import core.Root;
-import som.openapi.test.generator.openapi.OpenAPIJsonFactory;
 import som.openapi.test.generator.transformation.ATLRunner;
-import som.openapi.test.generator.utils.OpenAPIUtils;
+import som.openapi.test.generator.transformation.TestSuiteGenerator;
 
 public class GenerateTestModelAction implements IObjectActionDelegate {
 
@@ -50,17 +48,28 @@ public class GenerateTestModelAction implements IObjectActionDelegate {
 			target.getLocation().toFile().mkdirs();
 		}
 	
-			
-			try {
-				System.out.println(iFile.getLocation().toString());
-				ATLRunner.run(URI.createURI(iFile.getLocationURI().toString()), URI.createPlatformResourceURI(target.getFullPath().toString(), true)
+//			
+//			try {
+//				ATLRunner.run(URI.createURI(iFile.getLocationURI().toString()), URI.createPlatformResourceURI(target.getFullPath().toString(), true)
+//						.appendSegment(iFile.getName().substring(0, iFile.getName().lastIndexOf('.')))
+//						.appendFileExtension("out.xmi")) ;
+//				
+//				
+//		
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			} catch (URISyntaxException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+				try {
+			TestSuiteGenerator testSuiteGenerator = new TestSuiteGenerator();
+	
+				testSuiteGenerator.generateAndSaveTestSuite( URI.createPlatformResourceURI(iFile.getFullPath().toString(), true),URI.createPlatformResourceURI(target.getFullPath().toString(), true)
 						.appendSegment(iFile.getName().substring(0, iFile.getName().lastIndexOf('.')))
-						.appendFileExtension("out.xmi")) ;
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (URISyntaxException e) {
-				// TODO Auto-generated catch block
+						.appendFileExtension("out.xmi"));
+			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
 
