@@ -42,10 +42,10 @@ import core.Tag;
 import core.XMLElement;
 import som.openapi.test.generator.utils.OpenAPIUtils;
 
-public class OpenAPIFactory {
+public class OpenAPIJsonFactory {
 	CoreFactory coreFactory;
 
-	public OpenAPIFactory() {
+	public OpenAPIJsonFactory() {
 		coreFactory = CoreFactory.eINSTANCE;
 	}
 	public Root createOpenAPIModelFromJson(File jsonFile) throws FileNotFoundException, UnsupportedEncodingException {
