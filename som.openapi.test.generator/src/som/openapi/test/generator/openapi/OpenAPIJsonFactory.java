@@ -18,7 +18,6 @@ import com.google.gson.JsonParser;
 import core.API;
 import core.APIKeyLocation;
 import core.Contact;
-import core.CoreFactory;
 import core.Example;
 import core.ExternalDocs;
 import core.Header;
@@ -26,6 +25,7 @@ import core.Info;
 import core.ItemsDefinition;
 import core.License;
 import core.OAuth2FlowType;
+import core.OpenAPIFactory;
 import core.Operation;
 import core.Parameter;
 import core.ParameterLocation;
@@ -43,10 +43,10 @@ import core.XMLElement;
 import som.openapi.test.generator.utils.OpenAPIUtils;
 
 public class OpenAPIJsonFactory {
-	CoreFactory coreFactory;
+	OpenAPIFactory openAPIFactory;
 
 	public OpenAPIJsonFactory() {
-		coreFactory = CoreFactory.eINSTANCE;
+		openAPIFactory = OpenAPIFactory.eINSTANCE;
 	}
 	public Root createOpenAPIModelFromJson(File jsonFile) throws FileNotFoundException, UnsupportedEncodingException {
 		   InputStream in = new FileInputStream(jsonFile);
@@ -59,13 +59,13 @@ public class OpenAPIJsonFactory {
 	}
 	public Root createOpenAPIModelFromJson(JsonObject jsonObject) {
 
-		Root root = coreFactory.createRoot();
-		API api = coreFactory.createAPI();
+		Root root = openAPIFactory.createRoot();
+		API api = openAPIFactory.createAPI();
 		root.setApi(api);
 		if (jsonObject.has("swagger"))
 			api.setSwagger(jsonObject.get("swagger").getAsString());
 		if (jsonObject.has("info")) {
-			Info info = coreFactory.createInfo();
+			Info info = openAPIFactory.createInfo();
 			api.setInfo(info);
 			discoverInfo(jsonObject.get("info"), info);
 		}
@@ -118,7 +118,7 @@ public class OpenAPIJsonFactory {
 			discoverTags(jsonObject.get("tags"), root);
 		}
 		if (jsonObject.has("externalDocs")) {
-			ExternalDocs externalDocs = coreFactory.createExternalDocs();
+			ExternalDocs externalDocs = openAPIFactory.createExternalDocs();
 			api.setExternalDocs(externalDocs);
 			discoverExternalDocs(jsonObject.get("externalDocs"), externalDocs);
 		}
@@ -129,7 +129,7 @@ public class OpenAPIJsonFactory {
 	private  void discoverTags(JsonElement jsonElement, Root root) {
 		JsonArray tagArray = jsonElement.getAsJsonArray();
 		for (JsonElement tagElement : tagArray) {
-			Tag tag = coreFactory.createTag();
+			Tag tag = openAPIFactory.createTag();
 			root.getApi().getTags().add(tag);
 			discoverTag(tagElement, tag);
 		}
@@ -143,7 +143,7 @@ public class OpenAPIJsonFactory {
 		if (tagObject.has("description"))
 			tag.setDescription(tagObject.get("description").getAsString());
 		if (tagObject.has("externalDocs")) {
-			ExternalDocs externalDocs = coreFactory.createExternalDocs();
+			ExternalDocs externalDocs = openAPIFactory.createExternalDocs();
 			tag.setExternalDocs(externalDocs);
 			discoverExternalDocs(tagObject.get("externalDocs"), externalDocs);
 		}
@@ -164,7 +164,7 @@ public class OpenAPIJsonFactory {
 		JsonObject aPIParametersObject = jsonElement.getAsJsonObject();
 		Set<Entry<String, JsonElement>> aPIParameters = aPIParametersObject.entrySet();
 		for (Entry<String, JsonElement> aPIParameterElement : aPIParameters) {
-			Parameter aPIParameter = coreFactory.createParameter();
+			Parameter aPIParameter = openAPIFactory.createParameter();
 			aPIParameter.setName(aPIParameterElement.getKey());
 			root.getApi().getParameters().add(aPIParameter);
 			root.getParamters().add(aPIParameter);
@@ -177,7 +177,7 @@ public class OpenAPIJsonFactory {
 		JsonObject securityDefinitionsObject = jsonElement.getAsJsonObject();
 		Set<Entry<String, JsonElement>> securityDefinitions = securityDefinitionsObject.entrySet();
 		for (Entry<String, JsonElement> securityDefinitionElement : securityDefinitions) {
-			SecuritySchema securityDefinition = coreFactory.createSecuritySchema();
+			SecuritySchema securityDefinition = openAPIFactory.createSecuritySchema();
 			securityDefinition.setGlobalName(securityDefinitionElement.getKey());
 			root.getApi().getSecurityDefinitions().add(securityDefinition);
 			discoverSecuritySchema(securityDefinitionElement.getValue(), securityDefinition);
@@ -204,7 +204,7 @@ public class OpenAPIJsonFactory {
 		if (jsonObject.has("scopes")) {
 			Set<Entry<String, JsonElement>> scopesElements = jsonObject.get("scopes").getAsJsonObject().entrySet();
 			for (Entry<String, JsonElement> scopeElement : scopesElements) {
-				SecurityScope scope = coreFactory.createSecurityScope();
+				SecurityScope scope = openAPIFactory.createSecurityScope();
 				securitySchema.getScopes().add(scope);
 
 				scope.setName(scopeElement.getKey());
@@ -219,7 +219,7 @@ public class OpenAPIJsonFactory {
 		JsonObject responsesObject = jsonElement.getAsJsonObject();
 		Set<Entry<String, JsonElement>> responses = responsesObject.entrySet();
 		for (Entry<String, JsonElement> responseElement : responses) {
-			Response response = coreFactory.createResponse();
+			Response response = openAPIFactory.createResponse();
 			response.setCode(responseElement.getKey());
 			root.getApi().getResponses().add(response);
 			discoverResponse(responseElement.getValue(), response, root);
@@ -230,7 +230,7 @@ public class OpenAPIJsonFactory {
 		JsonObject definitionsObject = jsonElement.getAsJsonObject();
 		Set<Entry<String, JsonElement>> definitions = definitionsObject.entrySet();
 		for (Entry<String, JsonElement> definitionElement : definitions) {
-			Schema schema = coreFactory.createSchema();
+			Schema schema = openAPIFactory.createSchema();
 			schema.setName(definitionElement.getKey());
 			root.getSchemas().add(schema);
 			schema.setDeclaringContext(root.getApi());
@@ -287,7 +287,7 @@ public class OpenAPIJsonFactory {
 		if (schemaObject.has("properties")) {
 			Set<Entry<String, JsonElement>> properties = schemaObject.get("properties").getAsJsonObject().entrySet();
 			for (Entry<String, JsonElement> jsonProperty : properties) {
-				Schema property = coreFactory.createSchema();
+				Schema property = openAPIFactory.createSchema();
 				property.setName(jsonProperty.getKey());
 				property.setDeclaringContext(schema);
 				root.getSchemas().add(property);
@@ -318,7 +318,7 @@ public class OpenAPIJsonFactory {
 					schema.setAdditonalProperties(referencedchema);
 				}
 				else {
-					Schema additionalPropertieSchema = coreFactory.createSchema();
+					Schema additionalPropertieSchema = openAPIFactory.createSchema();
 					schema.setAdditonalProperties(additionalPropertieSchema);
 					root.getSchemas().add(additionalPropertieSchema);
 					discoverSchema(additionalPropertiesObject, additionalPropertieSchema, root);
@@ -335,7 +335,7 @@ public class OpenAPIJsonFactory {
 					schema.getAllOf().add(OpenAPIUtils.getSchemaByPathReference(allOfObject.get("$ref").getAsString(), root.getApi()));
 				}
 				else {
-					Schema allOfSchema = coreFactory.createSchema();
+					Schema allOfSchema = openAPIFactory.createSchema();
 					schema.getAllOf().add(allOfSchema);
 					root.getSchemas().add(allOfSchema);
 					discoverSchema(allOfObject, allOfSchema, root);
@@ -350,7 +350,7 @@ public class OpenAPIJsonFactory {
 				schema.setItems(OpenAPIUtils.getSchemaByPathReference(itemsObject.get("$ref").getAsString(),root.getApi()));
 			}
 			else {
-				Schema itemsSchema = coreFactory.createSchema();
+				Schema itemsSchema = openAPIFactory.createSchema();
 				schema.setItems(itemsSchema);
 				root.getSchemas().add(itemsSchema);
 				discoverSchema(itemsObject,itemsSchema, root);
@@ -362,7 +362,7 @@ public class OpenAPIJsonFactory {
 		if (schemaObject.has("readOnly"))
 			schema.setReadOnly(schemaObject.get("readOnly").getAsBoolean());
 		if (schemaObject.has("xml")) {
-			XMLElement xml = coreFactory.createXMLElement();
+			XMLElement xml = openAPIFactory.createXMLElement();
 			JsonObject xmlObject = schemaObject.get("xml").getAsJsonObject();
 			if (xmlObject.has("name"))
 				xml.setName(xmlObject.get("name").getAsString());
@@ -377,7 +377,7 @@ public class OpenAPIJsonFactory {
 			schema.setXml(xml);
 		}
 		if (schemaObject.has("externalDocs")) {
-			ExternalDocs externalDocs = coreFactory.createExternalDocs();
+			ExternalDocs externalDocs = openAPIFactory.createExternalDocs();
 			schema.setExternalDocs(externalDocs);
 			discoverExternalDocs(schemaObject.get("externalDocs"), externalDocs);
 		}
@@ -396,48 +396,48 @@ public class OpenAPIJsonFactory {
 		Set<Entry<String, JsonElement>> paths = pathsObject.entrySet();
 		for (Entry<String, JsonElement> pathElement : paths) {
 			JsonObject pathObject = pathElement.getValue().getAsJsonObject();
-			Path path = coreFactory.createPath();
+			Path path = openAPIFactory.createPath();
 			root.getApi().getPaths().add(path);
 			path.setPattern(pathElement.getKey());
 			if (pathObject.has("get")) {
-			Operation getAPIOperation = coreFactory.createOperation();
+			Operation getAPIOperation = openAPIFactory.createOperation();
 				path.setGet(getAPIOperation);
 				discoverOperation(pathObject.get("get"), getAPIOperation, root);
 			}
 			if (pathObject.has("put")) {
-				Operation putAPIOperation = coreFactory.createOperation();
+				Operation putAPIOperation = openAPIFactory.createOperation();
 				path.setPut(putAPIOperation);
 				discoverOperation(pathObject.get("put"), putAPIOperation, root);
 			}
 			if (pathObject.has("post")) {
-				Operation aPIOperation = coreFactory.createOperation();
+				Operation aPIOperation = openAPIFactory.createOperation();
 				path.setPost(aPIOperation);
 				discoverOperation(pathObject.get("post"), aPIOperation, root);
 			}
 			if (pathObject.has("delete")) {
-				Operation aPIOperation = coreFactory.createOperation();
+				Operation aPIOperation = openAPIFactory.createOperation();
 				path.setDelete(aPIOperation);
 				discoverOperation(pathObject.get("delete"), aPIOperation, root);
 			}
 			if (pathObject.has("options")) {
-				Operation aPIOperation = coreFactory.createOperation();
+				Operation aPIOperation = openAPIFactory.createOperation();
 				path.setOptions(aPIOperation);
 				discoverOperation(pathObject.get("options"), aPIOperation, root);
 			}
 			if (pathObject.has("head")) {
-				Operation aPIOperation = coreFactory.createOperation();
+				Operation aPIOperation = openAPIFactory.createOperation();
 				path.setHead(aPIOperation);
 				discoverOperation(pathObject.get("head"), aPIOperation, root);
 			}
 			if (pathObject.has("patch")) {
-				Operation aPIOperation = coreFactory.createOperation();
+				Operation aPIOperation = openAPIFactory.createOperation();
 				path.setPatch(aPIOperation);
 				discoverOperation(pathObject.get("patch"), aPIOperation, root);
 			}
 			if (pathObject.has("parameters")) {
 				JsonArray aPIParametersArray = pathObject.get("parameters").getAsJsonArray();
 				for (JsonElement aPIParameterElement : aPIParametersArray) {
-					Parameter aPIParameter = coreFactory.createParameter();
+					Parameter aPIParameter = openAPIFactory.createParameter();
 					path.getParameters().add(aPIParameter);
 					discoverParameter(aPIParameterElement, aPIParameter, root);
 				}
@@ -460,7 +460,7 @@ public class OpenAPIJsonFactory {
 		if (jsonObject.has("description"))
 			aPIOperation.setDescription(jsonObject.get("description").getAsString());
 		if (jsonObject.has("externalDocs")) {
-			ExternalDocs externalDocs = coreFactory.createExternalDocs();
+			ExternalDocs externalDocs = openAPIFactory.createExternalDocs();
 			aPIOperation.setExternalDocs(externalDocs);
 			discoverExternalDocs(jsonObject.get("externalDocs"), externalDocs);
 		}
@@ -480,7 +480,7 @@ public class OpenAPIJsonFactory {
 		if (jsonObject.has("parameters")) {
 			JsonArray aPIParameterArray = jsonObject.get("parameters").getAsJsonArray();
 			for (JsonElement aPIParameterElement : aPIParameterArray) {
-				Parameter aPIParameter = coreFactory.createParameter();
+				Parameter aPIParameter = openAPIFactory.createParameter();
 				aPIOperation.getParameters().add(aPIParameter);
 				root.getParamters().add(aPIParameter);
 				discoverParameter(aPIParameterElement, aPIParameter, root);
@@ -490,7 +490,7 @@ public class OpenAPIJsonFactory {
 		if (jsonObject.has("responses")) {
 			Set<Entry<String, JsonElement>> responses = jsonObject.get("responses").getAsJsonObject().entrySet();
 			for (Entry<String, JsonElement> responseElement : responses) {
-				Response response = coreFactory.createResponse();
+				Response response = openAPIFactory.createResponse();
 				aPIOperation.getResponses().add(response);
 				root.getResponses().add(response);
 				response.setCode(responseElement.getKey());
@@ -531,7 +531,7 @@ public class OpenAPIJsonFactory {
 		if (responseObject.has("description"))
 			response.setDescription(responseObject.get("description").getAsString());
 		if (responseObject.has("schema")) {
-			Schema responseSchema = coreFactory.createSchema();
+			Schema responseSchema = openAPIFactory.createSchema();
 			response.setSchema(responseSchema);
 			root.getSchemas().add(responseSchema);
 			discoverSchema(responseObject.get("schema").getAsJsonObject(), responseSchema, root);
@@ -539,7 +539,7 @@ public class OpenAPIJsonFactory {
 		if (responseObject.has("headers")) {
 			Set<Entry<String, JsonElement>> headers = responseObject.get("headers").getAsJsonObject().entrySet();
 			for (Entry<String, JsonElement> headerEntry : headers) {
-				Header header = coreFactory.createHeader();
+				Header header = openAPIFactory.createHeader();
 				header.setName(headerEntry.getKey());
 				discoverHeader(headerEntry.getValue(), header);
 			}
@@ -548,7 +548,7 @@ public class OpenAPIJsonFactory {
 			Set<Entry<String, JsonElement>> examples = responseObject.get("example").getAsJsonObject().entrySet();
 
 			for (Entry<String, JsonElement> exampleEntry : examples) {
-				Example example = coreFactory.createExample();
+				Example example = openAPIFactory.createExample();
 				example.setMimeType(exampleEntry.getKey());
 				example.setValue(exampleEntry.getValue().toString());
 				response.getExamples().add(example);
@@ -570,7 +570,7 @@ public class OpenAPIJsonFactory {
 			header.setFormat(jsonObject.get("format").getAsString());
 
 		if (jsonObject.has("items")) {
-			ItemsDefinition items = coreFactory.createItemsDefinition();
+			ItemsDefinition items = openAPIFactory.createItemsDefinition();
 			header.setItems(items);
 			discoverItems(jsonObject.get("items"), items);
 		}
@@ -621,7 +621,7 @@ public class OpenAPIJsonFactory {
 		if (jsonObject.has("required"))
 			aPIParameter.setRequired(jsonObject.get("required").getAsBoolean());
 		if (jsonObject.has("schema")) {
-			Schema schema = coreFactory.createSchema();
+			Schema schema = openAPIFactory.createSchema();
 			aPIParameter.setSchema(schema);
 			root.getSchemas().add(schema);
 			discoverSchema(jsonObject.get("schema").getAsJsonObject(), schema, root);
@@ -633,7 +633,7 @@ public class OpenAPIJsonFactory {
 		if (jsonObject.has("allowEmptyValue")) {
 			aPIParameter.setAllowEmplyValue(jsonObject.get("allowEmptyValue").getAsBoolean());
 			if (jsonObject.has("items")) {
-				ItemsDefinition items = coreFactory.createItemsDefinition();
+				ItemsDefinition items = openAPIFactory.createItemsDefinition();
 				aPIParameter.setItems(items);
 				discoverItems(jsonObject.get("items"), items);
 			}
@@ -679,7 +679,7 @@ public class OpenAPIJsonFactory {
 		if (jsonObject.has("format"))
 			items.setFormat(jsonObject.get("format").getAsString());
 		if (jsonObject.has("items")) {
-			ItemsDefinition innerItmes = coreFactory.createItemsDefinition();
+			ItemsDefinition innerItmes = openAPIFactory.createItemsDefinition();
 			items.setItems(innerItmes);
 			discoverItems(jsonObject.get("items"), innerItmes);
 		}
@@ -746,7 +746,7 @@ public class OpenAPIJsonFactory {
 
 	private  void discoverLicense(JsonElement jsonElement, Info info) {
 		JsonObject licenseObject = jsonElement.getAsJsonObject();
-		License license = coreFactory.createLicense();
+		License license = openAPIFactory.createLicense();
 		info.setLicense(license);
 		if (licenseObject.has("name"))
 			license.setName(licenseObject.get("name").getAsString());
@@ -756,7 +756,7 @@ public class OpenAPIJsonFactory {
 
 	private  void discoverContact(JsonElement jsonElement, Info info) {
 		JsonObject contactObject = jsonElement.getAsJsonObject();
-		Contact contact = coreFactory.createContact();
+		Contact contact = openAPIFactory.createContact();
 		info.setContact(contact);
 		if (contactObject.has("name"))
 			contact.setName(contactObject.get("name").getAsString());

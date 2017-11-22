@@ -23,7 +23,8 @@ import org.eclipse.m2m.atl.emftvm.util.DefaultModuleResolver;
 import org.eclipse.m2m.atl.emftvm.util.ModuleResolver;
 import org.eclipse.m2m.atl.emftvm.util.TimingData;
 
-import core.CorePackage;
+import core.OpenAPIFactory;
+import core.OpenAPIPackage;
 import som.rest.test.TestPackage;
 
 public class ATLRunner {
@@ -60,7 +61,7 @@ public class ATLRunner {
 		// Source metamodel
 		if (sourcemmName != null) {
 			Metamodel sourcemm = EmftvmFactory.eINSTANCE.createMetamodel();
-			sourcemm.setResource(resourceSet.getResource(URI.createURI(CorePackage.eNS_URI), true));
+			sourcemm.setResource(resourceSet.getResource(URI.createURI(OpenAPIPackage.eNS_URI), true));
 			env.registerMetaModel(sourcemmName, sourcemm);
 		}
 
