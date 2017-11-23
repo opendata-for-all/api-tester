@@ -1,9 +1,10 @@
 [comment encoding = UTF-8 /]
 [module mainJUnit('http://example.com/rest/test')]
 [import som::openapi::test::generator::codegen::files::generateTestCases /]
+[import som::openapi::test::generator::codegen::files::generatePom  /]
 
 [template public generateJUnit(aTestSuite : TestSuite)]
 [comment @main/]
-
+[aTestSuite.generatePom() /]
 [aTestSuite.generateTestCases() /]
 [/template]
