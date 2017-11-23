@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ASCII"?>
+<TestSuite xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://example.com/rest/test"
+    name="petstore">
+  <testCases
+      name="findPetsByStatusTest"
+      description="Correctness test case for findPetsByStatus">
+    <testSteps
+        xsi:type="APIRequest"
+        name="TestStepFindPetsByStatus"
+        operationId="findPetsByStatus"
+        contentType="application/json"
+        accept="application/json"
+        scheme="http">
+      <parameters
+          name="status"
+          value="&quot;available&quot;"/>
+      <assertions
+          xsi:type="ValidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases
+      name="getInventoryTest"
+      description="Correctness test case for getInventory">
+    <testSteps
+        xsi:type="APIRequest"
+        name="TestStepGetInventory"
+        operationId="getInventory"
+        contentType="application/json"
+        accept="application/json"
+        scheme="http">
+      <assertions
+          xsi:type="ValidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+  <testCases
+      name="logoutUserTest"
+      description="Correctness test case for logoutUser">
+    <testSteps
+        xsi:type="APIRequest"
+        name="TestStepLogoutUser"
+        operationId="logoutUser"
+        contentType="application/json"
+        accept="application/json"
+        scheme="http">
+      <assertions
+          xsi:type="ValidStatusCodesAssertion">
+        <code>200</code>
+      </assertions>
+    </testSteps>
+  </testCases>
+</TestSuite>

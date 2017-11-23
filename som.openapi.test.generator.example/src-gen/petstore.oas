@@ -167,7 +167,7 @@
   <paramters type="integer" format="int64" description="ID of pet to return" name="petId" location="path" required="true"/>
   <paramters type="integer" format="int64" description="ID of pet that needs to be updated" name="petId" location="path" required="true"/>
   <paramters type="string" description="Updated name of the pet" name="name" location="formData" required="false"/>
-  <paramters type="string" description="Updated status of the pet" name="status" location="formData" required="false"/>
+  <paramters type="string" description="Updated status of the pet" name="status" location="query" required="false"/>
   <paramters type="string" name="api_key" location="header" required="false"/>
   <paramters type="integer" format="int64" description="Pet id to delete" name="petId" location="path" required="true"/>
   <paramters type="integer" format="int64" description="ID of pet to update" name="petId" location="path" required="true"/>
