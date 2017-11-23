@@ -15,11 +15,21 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import core.API;
+import core.OpenAPIPackage;
 import core.Operation;
 import core.Root;
 import core.Schema;
 
 public class OpenAPIUtils {
+	
+	public static Root loadOpenAPIModel(URI uri) {
+		ResourceSet resSet = new ResourceSetImpl();
+		resSet.getPackageRegistry().put(OpenAPIPackage.eNS_URI, OpenAPIPackage.eINSTANCE);
+		resSet.getResourceFactoryRegistry().getExtensionToFactoryMap()
+		   .put("oas", new XMIResourceFactoryImpl());
+		Resource resource = resSet.getResource(uri, true);
+		return (Root) resource.getContents().get(0);
+	}
 
 	public static void saveOpenAPIModel(Root apiRoot, URI uri) throws FileNotFoundException {
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
