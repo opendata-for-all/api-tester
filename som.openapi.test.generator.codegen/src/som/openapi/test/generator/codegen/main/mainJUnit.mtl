@@ -1,10 +1,12 @@
 [comment encoding = UTF-8 /]
-[module mainJUnit('http://example.com/rest/test')]
+[module mainJUnit('http://example.com/rest/test','http://example.com/openAPI/core')]
 [import som::openapi::test::generator::codegen::files::generateTestCases /]
 [import som::openapi::test::generator::codegen::files::generatePom  /]
 
 [template public generateJUnit(aTestSuite : TestSuite)]
 [comment @main/]
 [aTestSuite.generatePom() /]
-[aTestSuite.generateTestCases() /]
+
+[aTestSuite.generateTestCases(getOpenAPIModel(aTestSuite)) /]
 [/template]
+[query public getOpenAPIModel(aTestSuite : TestSuite) : Root = invoke('som.openapi.test.generator.codegen.common.AcceleoUtils', 'loadAssociatedOpenAPIModel(som.rest.test.TestSuite)', Sequence {aTestSuite}) /]

@@ -1,17 +1,62 @@
 [comment encoding = UTF-8 /]
-[module generateTestCases('http://example.com/rest/test')]
+[module generateTestCases('http://example.com/rest/test','http://example.com/openAPI/core')]
 
 
-[template public generateTestCases(aTestSuite : TestSuite)]
+[template public generateTestCases(aTestSuite : TestSuite, openAPIModel: Root) ]
 [for (tc : TestCase | aTestSuite.testCases)]
 [file ('src/test/java/openapi/test/'+ tc.name.toUpperFirst().replaceAll(' ', '') +'.java', false, 'UTF-8')]
 package openapi.test;
 
-public class [tc.name.toUpperFirst().toUpperFirst().replaceAll(' ', '')/] {
+import static org.junit.Assert.*;
 
+import org.junit.jupiter.api.Test;
+
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.JsonNode;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
+
+public class [tc.name.toUpperFirst().toUpperFirst().replaceAll(' ', '')/] {
+[for (ts : TestStep | tc.testSteps) ]
+[if (ts.oclIsKindOf(APIRequest))]
+[let operation : Operation = ts.oclAsType(APIRequest).operationId.getOperationById(openAPIModel)]
+
+	@Test
+	public void assert[ts.name.toUpperFirst().toUpperFirst().replaceAll(' ', '')/] () throws UnirestException {
+		
+	HttpResponse<String> response = Unirest.[operation.getOperationMethod(operation)/]("http://[operation.getPath()/]")
+										.header("Accept", "[ts.oclAsType(APIRequest).accept/]").header("Content-type", "[ts.oclAsType(APIRequest).contentType/]")
+[for (p : Parameter | ts.oclAsType(APIRequest).parameters)]
+[let openAPIParameter : core::Parameter = operation.getParameterByName(p.name)]
+[if (openAPIParameter.location.oclAsType(core::ParameterLocation) = core::ParameterLocation::query)]
+	.queryString("[openAPIParameter.name/]",[p.value/])
+[/if]
+[/let]
+[/for]
+.asString();
+[for (assertion : Assertion | ts.oclAsType(APIRequest).assertions)]
+[if (assertion.oclIsKindOf(ValidStatusCodesAssertion))]
+[for (code : String | assertion.oclAsType(ValidStatusCodesAssertion).code)]
+	assertTrue(response.getStatus() == [code/]);
+[/for]
+[/if]
+[if (assertion.oclIsKindOf(InvalidStatusCodesAssertion))]
+[for (code : String | assertion.oclAsType(InvalidStatusCodesAssertion).code)]
+	assertFalse(response.getStatus() == [code/]);
+[/for]
+[/if]
+[/for]
+
+	}
+[/let]
+[/if]	
+[/for]
 }
 
 [/file]
 [/for]
-
 [/template]
+[query public getOperationById(operationId : String, openAPIModel : Root) : Operation = invoke('som.openapi.test.generator.codegen.common.OpenAPIUtils',  'getOperationById(core.Root, java.lang.String)', Sequence{openAPIModel, operationId}) /]
+[query public getPath(operation: Operation) : String = invoke('som.openapi.test.generator.codegen.common.OpenAPIUtils',  'getPathFromOperation(core.Operation)', Sequence{operation}) /]
+[query public getOperationMethod(operation: Operation) : String = invoke('som.openapi.test.generator.codegen.common.OpenAPIUtils',  'getOperationMethod(core.Operation)', Sequence{operation}) /]
+[query public getParameterByName(operation : Operation, name : String) : core::Parameter = operation.parameters -> any(e | e.name.equalsIgnoreCase(name)) /]
