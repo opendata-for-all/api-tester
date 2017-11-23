@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="mainSoapUI" name="som.openapi.test.generator.codegen">
-    <property name="ECLIPSE_HOME" value="../../.."/>
-    <property name="ECLIPSE_WORKSPACE" value="../.."/>
+    <property name="ECLIPSE_HOME" value="../../../../work/eclipse-oxygen/eclipse"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../work/eclipse-oxygen/eclipse/workspace"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="som.openapi.test.generator.codegen.libraryclasspath">
