@@ -30,11 +30,14 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import som.openapi.test.generator.Activator;
 import som.openapi.test.generator.acceleo.ui.common.GenerateJUnit;
+import som.openapi.test.generator.utils.OpenAPIUtils;
 import som.openapi.test.generator.utils.PluginUtils;
 
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.ActionDelegate;
+
+import core.Root;
 
 /**
  * Acceleo code generation.
@@ -74,6 +77,7 @@ public class AcceleoGenerateJUnitAction extends ActionDelegate implements IActio
 							URI modelURI = URI.createPlatformResourceURI(model.getFullPath().toString(), true);
 							try {
 								IContainer target = PluginUtils.createMavenProject("som.openapi.test."+model.getName().substring(0, model.getName().lastIndexOf('.'))+".generated",monitor);
+//								URI openAPIModelURI = URI.createPlatformResourceURI(model.getFullPath().toString(), true).trimFileExtension().appendFileExtension("oas");
 								GenerateJUnit generator = new GenerateJUnit(modelURI, target, getArguments());
 								generator.doGenerate(monitor);
 								target.refreshLocal(IResource.DEPTH_INFINITE, monitor);
@@ -108,11 +112,16 @@ public class AcceleoGenerateJUnitAction extends ActionDelegate implements IActio
 
 	/**
 	 * Computes the arguments of the generator.
+	 * @param uri 
 	 * 
 	 * @return the arguments
 	 * @generated
 	 */
 	protected List<? extends Object> getArguments() {
+//		List<Root> argumetsList = new ArrayList<Root>();
+//		argumetsList.add(OpenAPIUtils.loadOpenAPIModel(uri));
+//		System.out.println(argumetsList.get(0));
+//		return argumetsList;
 		return new ArrayList<String>();
 	}
 
