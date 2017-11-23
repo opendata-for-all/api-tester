@@ -74,7 +74,7 @@ public class GenerateSoapUI {
 		}
 		
 		monitor.subTask("Loading...");
-		som.openapi.test.generator.acceleo.common.GenerateSoapUI gen0 = new som.openapi.test.generator.acceleo.common.GenerateSoapUI(modelURI, targetFolder.getLocation().toFile(), arguments);
+		som.openapi.test.generator.codegen.main.MainSoapUI gen0 = new som.openapi.test.generator.codegen.main.MainSoapUI(modelURI, targetFolder.getLocation().toFile(), arguments);
 		monitor.worked(1);
 		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("som.openapi.test.generator.acceleo", "som.openapi.test.generator.acceleo.common.GenerateSoapUI", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);

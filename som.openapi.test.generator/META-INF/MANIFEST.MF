@@ -14,14 +14,14 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.m2m.atl.common,
  org.eclipse.m2m.atl.emftvm,
  som.rest.test.metamodel,
- som.openapi.test.generator.acceleo,
  org.eclipse.ocl,
  org.eclipse.ocl.ecore,
  org.eclipse.acceleo.model,
  org.eclipse.acceleo.engine,
  org.eclipse.m2e.core,
  org.eclipse.jdt.core,
- org.eclipse.jdt.launching
+ org.eclipse.jdt.launching,
+ som.openapi.test.generator.codegen;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,

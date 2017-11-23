@@ -1,0 +1,17 @@
+[comment encoding = UTF-8 /]
+[module generateTestCases('http://example.com/rest/test')]
+
+
+[template public generateTestCases(aTestSuite : TestSuite)]
+[for (tc : TestCase | aTestSuite.testCases)]
+[file ('src/test/java/openapi/test/'+ tc.name.toUpperFirst().replaceAll(' ', '') +'.java', false, 'UTF-8')]
+package openapi.test;
+
+public class [tc.name.toUpperFirst().toUpperFirst().replaceAll(' ', '')/] {
+
+}
+
+[/file]
+[/for]
+
+[/template]

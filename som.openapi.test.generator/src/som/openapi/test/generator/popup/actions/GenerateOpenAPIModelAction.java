@@ -14,7 +14,7 @@ import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 
 import core.Root;
-import som.openapi.test.generator.openapi.OpenAPIJsonFactory;
+import som.openapi.test.generator.openapi.OpenAPIGenerator;
 import som.openapi.test.generator.utils.OpenAPIUtils;
 
 public class GenerateOpenAPIModelAction implements IObjectActionDelegate {
@@ -47,7 +47,7 @@ public class GenerateOpenAPIModelAction implements IObjectActionDelegate {
 			target.getLocation().toFile().mkdirs();
 		}
 		try {
-			OpenAPIJsonFactory factory = new OpenAPIJsonFactory();
+			OpenAPIGenerator factory = new OpenAPIGenerator();
 			Root apiRoot = factory.createOpenAPIModelFromJson(new File(iFile.getLocation().toString()));
 
 			OpenAPIUtils.saveOpenAPIModel(apiRoot,

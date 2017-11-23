@@ -74,7 +74,7 @@ public class GenerateJUnit {
 		}
 		
 		monitor.subTask("Loading...");
-		som.openapi.test.generator.acceleo.common.GenerateJUnit gen0 = new som.openapi.test.generator.acceleo.common.GenerateJUnit(modelURI, targetFolder.getLocation().toFile(), arguments);
+		som.openapi.test.generator.codegen.main.MainJUnit gen0 = new som.openapi.test.generator.codegen.main.MainJUnit(modelURI, targetFolder.getLocation().toFile(), arguments);
 		monitor.worked(1);
 		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("som.openapi.test.generator.acceleo", "som.openapi.test.generator.acceleo.common.GenerateJUnit", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);

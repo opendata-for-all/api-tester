@@ -1,0 +1,15 @@
+[comment encoding = UTF-8 /]
+[module mainSoapUI('http://example.com/rest/test')]
+
+
+[template public generateSoapUI(aTestSuite : TestSuite)]
+[comment @main/]
+[file ('soapui-project.xml', false, 'UTF-8')]
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="xxxx" activeEnvironment="Default" name="[aTestSuite.name/]" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config">
+   <con:settings/>
+   <con:testSuite id="xxxx" name="[aTestSuite.name/]">
+   </con:testSuite>
+</con:soapui-project>
+[/file]
+[/template]

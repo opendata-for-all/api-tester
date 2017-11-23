@@ -73,7 +73,7 @@ public class AcceleoGenerateJUnitAction extends ActionDelegate implements IActio
 							IFile model = (IFile)filesIt.next();
 							URI modelURI = URI.createPlatformResourceURI(model.getFullPath().toString(), true);
 							try {
-								IContainer target = PluginUtils.createMavenProject("som.openapi.test.generated",monitor);
+								IContainer target = PluginUtils.createMavenProject("som.openapi.test."+model.getName().substring(0, model.getName().lastIndexOf('.'))+".generated",monitor);
 								GenerateJUnit generator = new GenerateJUnit(modelURI, target, getArguments());
 								generator.doGenerate(monitor);
 								target.refreshLocal(IResource.DEPTH_INFINITE, monitor);
