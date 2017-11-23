@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 
 import core.API;
+import core.JSONSchemaSubset;
 import core.OpenAPIPackage;
 import core.Operation;
 import core.Parameter;
@@ -97,12 +98,12 @@ public class OpenAPIUtils {
 	}
 
 	public static String getPathFromOperation(Operation operation) {
-		return ((API) operation.getPath().eContainer()).getHost()
-				+ ((API) operation.getPath().eContainer()).getBasePath() + operation.getPath().getPattern();
+		return ((API) operation.eContainer().eContainer()).getHost()
+				+ ((API) operation.eContainer().eContainer()).getBasePath() + ((Path) operation.eContainer()).getPattern();
 
 	}
 	public static String getOperationMethod(Operation operation) {
-		Path path = operation.getPath();
+		Path path = (Path) operation.eContainer();
 		if (path.getGet() != null && path.getGet().equals(operation))
 			return "get";
 		if (path.getPost() != null && path.getPost().equals(operation))
