@@ -154,8 +154,16 @@
   </api>
   <paramters schema="//@schemas.34" description="Pet object that needs to be added to the store" name="body" location="body" required="true"/>
   <paramters schema="//@schemas.35" description="Pet object that needs to be added to the store" name="body" location="body" required="true"/>
-  <paramters type="array" description="Status values that need to be considered for filter" name="status" location="query" required="true"/>
-  <paramters type="array" description="Tags to filter by" name="tags" location="query" required="true"/>
+  <paramters type="array" description="Status values that need to be considered for filter" collectionFormat="multi" name="status" location="query" required="true">
+    <items type="string" default="&quot;available&quot;">
+      <enum>available</enum>
+      <enum>pending</enum>
+      <enum>sold</enum>
+    </items>
+  </paramters>
+  <paramters type="array" description="Tags to filter by" collectionFormat="multi" name="tags" location="query" required="true">
+    <items type="string"/>
+  </paramters>
   <paramters type="integer" format="int64" description="ID of pet to return" name="petId" location="path" required="true"/>
   <paramters type="integer" format="int64" description="ID of pet that needs to be updated" name="petId" location="path" required="true"/>
   <paramters type="string" description="Updated name of the pet" name="name" location="formData" required="false"/>
@@ -166,8 +174,8 @@
   <paramters type="string" description="Additional data to pass to server" name="additionalMetadata" location="formData" required="false"/>
   <paramters type="file" description="file to upload" name="file" location="formData" required="false"/>
   <paramters schema="//@schemas.42" description="order placed for purchasing the pet" name="body" location="body" required="true"/>
-  <paramters type="integer" format="int64" description="ID of pet that needs to be fetched" name="orderId" location="path" required="true"/>
-  <paramters type="integer" format="int64" description="ID of the order that needs to be deleted" name="orderId" location="path" required="true"/>
+  <paramters type="integer" format="int64" description="ID of pet that needs to be fetched" maximum="10.0" minimum="1.0" name="orderId" location="path" required="true"/>
+  <paramters type="integer" format="int64" description="ID of the order that needs to be deleted" minimum="1.0" name="orderId" location="path" required="true"/>
   <paramters schema="//@schemas.45" description="Created user object" name="body" location="body" required="true"/>
   <paramters schema="//@schemas.46" description="List of user object" name="body" location="body" required="true"/>
   <paramters schema="//@schemas.47" description="List of user object" name="body" location="body" required="true"/>
