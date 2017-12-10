@@ -68,7 +68,7 @@ public class GenerateTestModelAction implements IObjectActionDelegate {
 	
 				testSuiteGenerator.generateAndSaveTestSuite( URI.createPlatformResourceURI(iFile.getFullPath().toString(), true),URI.createPlatformResourceURI(target.getFullPath().toString(), true)
 						.appendSegment(iFile.getName().substring(0, iFile.getName().lastIndexOf('.')))
-						.appendFileExtension("out.xmi"));
+						.appendFileExtension("test"));
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
