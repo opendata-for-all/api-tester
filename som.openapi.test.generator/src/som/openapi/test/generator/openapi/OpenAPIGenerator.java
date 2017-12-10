@@ -9,7 +9,6 @@ import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.util.Set;
 
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import java.util.Map.Entry;
 
 import com.google.gson.JsonArray;
@@ -36,7 +35,7 @@ import core.Response;
 import core.Root;
 import core.Schema;
 import core.SchemeType;
-//import core.SecurityRequirement;
+import core.SecurityRequirement;
 import core.SecuritySchema;
 import core.SecuritySchemeType;
 import core.SecurityScope;
@@ -102,6 +101,9 @@ public class OpenAPIGenerator {
 		if (jsonObject.has("responses")) {
 			discoverResponses(jsonObject.get("responses"), root);
 		}
+		if (jsonObject.has("securityDefinitions")) {
+			discoverSecurityDefinitions(jsonObject.get("securityDefinitions"), root);
+		}
 		if (jsonObject.has("paths")) {
 			discoverPaths(jsonObject.get("paths"), root);
 		}
@@ -110,13 +112,11 @@ public class OpenAPIGenerator {
 			discoverParameters(jsonObject.get("parameters"), root);
 		}
 		
-		if (jsonObject.has("securityDefinitions")) {
-			discoverSecurityDefinitions(jsonObject.get("securityDefinitions"), root);
-		}
+	
 
-//		if (swaggerRoot.has("security")) {
-//			discoverSecurity(swaggerRoot.get("security"), api, factory);
-//		}
+		if (jsonObject.has("security")) {
+			discoverSecurity(jsonObject.get("security"), api);
+		}
 		if (jsonObject.has("tags")) {
 			discoverTags(jsonObject.get("tags"), root);
 		}
@@ -153,15 +153,15 @@ public class OpenAPIGenerator {
 
 	}
 
-//	private  void discoverSecurity(JsonElement jsonElement, API api, CoreFactory factory) {
-//		JsonArray securityArray = jsonElement.getAsJsonArray();
-//		for (JsonElement securityElement : securityArray) {
-//			SecurityRequirement security = factory.createSecurityScope();
-//			api.getSecurityRequirement()
-//			discoverSecurityRequirement(securityElement, security);
-//		}
-//
-//	}
+	private  void discoverSecurity(JsonElement jsonElement, API api) {
+		JsonArray securityArray = jsonElement.getAsJsonArray();
+		for (JsonElement securityElement : securityArray) {
+			SecurityRequirement security = openAPIFactory.createSecurityRequirement();
+			api.getSecurityRequirements().add(security);
+			discoverSecurityRequirement(securityElement, security, api);
+		}
+
+	}
 
 	private  void discoverParameters(JsonElement jsonElement, Root root) {
 		JsonObject aPIParametersObject = jsonElement.getAsJsonObject();
@@ -511,23 +511,24 @@ public class OpenAPIGenerator {
 		if (jsonObject.has("security")) {
 			JsonArray securityArray = jsonObject.get("security").getAsJsonArray();
 			for (JsonElement securityElement : securityArray) {
-//				SecurityRequirement security = factory.createSecurityScope();
-//				aPIOperation.getSecurity().add(security);
-//				discoverSecurityRequirement(securityElement, security);
+				SecurityRequirement security = openAPIFactory.createSecurityRequirement();
+				aPIOperation.getSecurityRequirements().add(security);
+				discoverSecurityRequirement(securityElement, security, root.getApi());
 
 			}
 
 		}
 	}
 
-//	private  void discoverSecurityRequirement(JsonElement securityElement, SecurityRequirement security) {
-//		Set<Entry<String, JsonElement>> securityAttributes = securityElement.getAsJsonObject().entrySet();
-//		Entry<String, JsonElement> first = (Entry<String, JsonElement>) securityAttributes.toArray()[0];
-//		security.setName(first.getKey());
-//		for (JsonElement value : first.getValue().getAsJsonArray())
-//			security.getValues().add(value.getAsString());
-//
-//	}
+	private  void discoverSecurityRequirement(JsonElement securityElement, SecurityRequirement security, API api) {
+		Set<Entry<String, JsonElement>> securityAttributes = securityElement.getAsJsonObject().entrySet();
+		Entry<String, JsonElement> first = (Entry<String, JsonElement>) securityAttributes.toArray()[0];
+		SecuritySchema securitySchema = OpenAPIUtils.getSecuritySchemaByName(api, first.getKey());
+		security.setSecuritySchema(securitySchema);
+		for (JsonElement value : first.getValue().getAsJsonArray())
+			security.getSecurityScopes().add(OpenAPIUtils.getSecurityScopeByName(securitySchema, value.getAsString()));
+
+	}
 
 	private  void discoverResponse(JsonElement responseElement, Response response, Root root) {
 		JsonObject responseObject = responseElement.getAsJsonObject();

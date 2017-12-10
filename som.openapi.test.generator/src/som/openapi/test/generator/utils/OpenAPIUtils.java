@@ -19,6 +19,8 @@ import core.OpenAPIPackage;
 import core.Operation;
 import core.Root;
 import core.Schema;
+import core.SecuritySchema;
+import core.SecurityScope;
 
 public class OpenAPIUtils {
 	
@@ -99,4 +101,16 @@ public class OpenAPIUtils {
 
 	}
 
+	public static SecuritySchema getSecuritySchemaByName (API api, String name) {
+		for(SecuritySchema securitySchema: api.getSecurityDefinitions())
+			if(securitySchema.getGlobalName().equals(name))
+				return securitySchema;
+		return null;
+	}
+	public static SecurityScope getSecurityScopeByName(SecuritySchema securitySchema, String securityScopeName) {
+		for(SecurityScope securityScope: securitySchema.getScopes())
+			if(securityScope.getName().equals(securityScopeName))
+				return securityScope;
+		return null;
+	}
 }
