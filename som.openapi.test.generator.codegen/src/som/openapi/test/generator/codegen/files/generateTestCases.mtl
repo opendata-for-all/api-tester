@@ -4,7 +4,7 @@
 
 [template public generateTestCases(aTestSuite : TestSuite, openAPIModel: Root) ]
 [for (tc : TestCase | aTestSuite.testCases)]
-[file ('src/test/java/openapi/test/'+ tc.name.toUpperFirst().replaceAll(' ', '') +'.java', false, 'UTF-8')]
+[file ('src/test/java/openapi/test/'+ tc.name.toUpperFirst().replaceAll('[^a-zA-Z0-9]', '') +'.java', false, 'UTF-8')]
 package openapi.test;
 
 import static org.junit.Assert.*;
@@ -16,13 +16,13 @@ import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
-public class [tc.name.toUpperFirst().toUpperFirst().replaceAll(' ', '')/] {
+public class [tc.name.toUpperFirst().toUpperFirst().replaceAll('[^a-zA-Z0-9]', '')/] {
 [for (ts : TestStep | tc.testSteps) ]
 [if (ts.oclIsKindOf(APIRequest))]
 [let operation : Operation = ts.oclAsType(APIRequest).operationId.getOperationById(openAPIModel)]
 
 	@Test
-	public void assert[ts.name.toUpperFirst().toUpperFirst().replaceAll(' ', '')/] () throws UnirestException {
+	public void assert[ts.name.toUpperFirst().toUpperFirst().replaceAll('[^a-zA-Z0-9]', '')/] () throws UnirestException {
 		
 	HttpResponse<String> response = Unirest.[operation.getOperationMethod(operation)/]("http://[operation.getPath()/]")
 										.header("Accept", "[ts.oclAsType(APIRequest).accept/]").header("Content-type", "[ts.oclAsType(APIRequest).contentType/]")

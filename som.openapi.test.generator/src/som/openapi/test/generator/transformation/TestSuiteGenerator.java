@@ -139,6 +139,8 @@ public boolean isSimpleInferencePossible(Operation operation) {
 	return true;
 }
 public boolean isSimpleRequiredInferencePossible(Operation operation, Parameter parameter) {
+	if(parameter.getLocation().equals(ParameterLocation.PATH))
+		return false;
 	for(Parameter p: operation.getParameters()) {
 		if(parameter.getLocation().equals(ParameterLocation.PATH) && !p.equals(parameter) && p.getRequired() && !isSimpleInferencePossible(p) )
 			return false;
